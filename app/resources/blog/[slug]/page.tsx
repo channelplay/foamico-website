@@ -9,13 +9,14 @@ import { getBlogPost, blogPosts } from '@/data/blogs'
 import { getPlaceholderImage } from '@/lib/placeholder-images'
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = getBlogPost(params.slug)
+  const { slug } = await params
+  const post = getBlogPost(slug)
   
   if (!post) {
     return {
@@ -92,14 +93,15 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPost(params.slug)
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
+  const post = getBlogPost(slug)
 
   if (!post) {
     notFound()
   }
 
-  const otherPosts = blogPosts.filter(p => p.slug !== params.slug)
+  const otherPosts = blogPosts.filter(p => p.slug !== slug)
 
   return (
     <article className="py-8 lg:py-12">

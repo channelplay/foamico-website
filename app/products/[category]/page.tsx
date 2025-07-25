@@ -5,13 +5,14 @@ import ProductCategoryView from '@/components/product/ProductCategoryView'
 import { getProductByCategory } from '@/data/products'
 
 interface ProductCategoryPageProps {
-  params: {
+  params: Promise<{
     category: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: ProductCategoryPageProps): Promise<Metadata> {
-  const product = getProductByCategory(params.category)
+  const { category } = await params
+  const product = getProductByCategory(category)
   
   if (!product) {
     return {
@@ -34,8 +35,9 @@ export async function generateStaticParams() {
   ]
 }
 
-export default function ProductCategoryPage({ params }: ProductCategoryPageProps) {
-  const product = getProductByCategory(params.category)
+export default async function ProductCategoryPage({ params }: ProductCategoryPageProps) {
+  const { category } = await params
+  const product = getProductByCategory(category)
 
   if (!product) {
     notFound()
