@@ -5,15 +5,13 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Container from '@/components/ui/Container'
 import Card from '@/components/ui/Card'
-import Badge from '@/components/ui/Badge'
 import { products } from '@/data/products'
-import { getPlaceholderImage } from '@/lib/placeholder-images'
 
 const productImages = {
-  'sova': 'product-grid-sova-600x400',
-  'ultima': 'product-grid-ultima-600x400',
-  'natura': 'product-grid-natura-600x400',
-  'marvel': 'product-grid-marvel-600x400'
+  'sova': '/Sova 1.png',
+  'ultima': '/Ultima 1.png',
+  'natura': '/Natura 1.png',
+  'marvel': '/Marvel.png'
 } as const
 
 export default function ProductShowcase() {
@@ -27,11 +25,14 @@ export default function ProductShowcase() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <div className="inline-block bg-[#E1EC9A] text-[#77870D] px-4 py-2 rounded-full text-sm font-semibold mb-4 uppercase tracking-wide">
+            Products
+          </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-foamico-black mb-4">
-            Our Premium Collection
+            Choose Your Comfort Character
           </h2>
           <p className="text-lg text-foamico-gray-600 max-w-2xl mx-auto">
-            Four distinct ranges designed to match your unique sleep preferences and body type
+            Four collections. Four personalities. One good night's sleep.
           </p>
         </motion.div>
 
@@ -44,45 +45,59 @@ export default function ProductShowcase() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Link href={`/products/${product.id}`}>
-                <Card hover className="h-full group cursor-pointer" padding="none">
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={getPlaceholderImage(productImages[product.id as keyof typeof productImages])}
-                    alt={`${product.name} mattress`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="primary">{product.category}</Badge>
+              <Link href={`/products/${product.id}`} className="block">
+                <Card hover className="group cursor-pointer h-[420px] flex flex-col" padding="none">
+                  <div className="relative h-64 overflow-hidden bg-gray-100">
+                    <Image
+                      src={productImages[product.id as keyof typeof productImages]}
+                      alt={`${product.name} mattress`}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    />
                   </div>
-                  {product.warranty === 25 && (
-                    <div className="absolute top-4 right-4">
-                      <Badge variant="success">25 Year Warranty</Badge>
-                    </div>
-                  )}
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-foamico-black mb-2">
-                    {product.name}
-                  </h3>
-                  <p className="text-foamico-gray-600 mb-4 line-clamp-2">
-                    {product.tagline}
-                  </p>
                   
-                  <div className="flex items-center justify-between">
-                    <span className="text-foamico-lime font-medium group-hover:underline">
-                      Explore Range →
-                    </span>
-                    <div className="flex items-center gap-1">
-                      <span className="text-sm text-foamico-gray-500">Support:</span>
-                      <Badge size="small" variant="secondary">
-                        {product.supportLevel}
-                      </Badge>
+                  <div className="flex flex-col flex-grow">
+                    <div className="p-6 pb-4 flex-grow">
+                      <h3 className="text-xl font-semibold text-foamico-black mb-3">
+                        {product.name}
+                      </h3>
+                      <p className="text-foamico-gray-600 text-sm min-h-[4.5rem] line-clamp-3">
+                        {product.tagline}
+                      </p>
+                    </div>
+                    
+                    {/* Divider line */}
+                    <div className="mx-6 border-t border-gray-200"></div>
+                    
+                    {/* CTA Section */}
+                    <div className="p-6 pt-4">
+                      <div className="relative h-10">
+                        {/* Default state - just text */}
+                        <div className="text-[#8BC34A] font-semibold flex items-center gap-2 group-hover:opacity-0 transition-opacity duration-300 h-full">
+                          <span>Explore Range</span>
+                          <span>→</span>
+                        </div>
+                        
+                        {/* Hover state - full button */}
+                        <motion.div 
+                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <button className="w-full h-full bg-[#8BC34A] text-white rounded-lg font-semibold hover:bg-[#7CB342] transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg">
+                            <span>Explore Range</span>
+                            <motion.span
+                              className="inline-block"
+                              animate={{ x: [0, 5, 0] }}
+                              transition={{ duration: 1.5, repeat: Infinity }}
+                            >
+                              →
+                            </motion.span>
+                          </button>
+                        </motion.div>
+                      </div>
                     </div>
                   </div>
-                </div>
                 </Card>
               </Link>
             </motion.div>

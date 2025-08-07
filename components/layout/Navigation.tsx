@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 
@@ -19,7 +20,6 @@ const navigation = [
   },
   { name: 'Resources', href: '/resources' },
   { name: 'About Us', href: '/about' },
-  { name: 'Find a Store', href: '/find-store' },
 ]
 
 export default function Navigation() {
@@ -33,11 +33,11 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/foamicologo.png"
+              src="/Foamico Logo black.png"
               alt="Foamico Logo"
-              width={150}
-              height={60}
-              className="h-12 w-auto"
+              width={254}
+              height={101}
+              className="h-20 w-auto"
               priority
             />
           </Link>
@@ -48,6 +48,7 @@ export default function Navigation() {
               <div key={item.name} className="relative">
                 {item.dropdownItems ? (
                   <div
+                    className="relative"
                     onMouseEnter={() => setProductsDropdownOpen(true)}
                     onMouseLeave={() => setProductsDropdownOpen(false)}
                   >
@@ -58,16 +59,22 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {productsDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
-                        {item.dropdownItems.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.name}
-                            href={dropdownItem.href}
-                            className="block px-4 py-2 text-foamico-black hover:bg-foamico-lime-light hover:text-foamico-lime-dark transition-colors duration-200"
-                          >
-                            {dropdownItem.name}
-                          </Link>
-                        ))}
+                      <div 
+                        className="absolute top-full left-0 mt-0 pt-2 w-48"
+                        onMouseEnter={() => setProductsDropdownOpen(true)}
+                        onMouseLeave={() => setProductsDropdownOpen(false)}
+                      >
+                        <div className="bg-white rounded-lg shadow-lg py-2">
+                          {item.dropdownItems.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.name}
+                              href={dropdownItem.href}
+                              className="block px-4 py-2 text-foamico-black hover:bg-[#E1EC9A] hover:text-[#77870D] transition-colors duration-200"
+                            >
+                              {dropdownItem.name}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
@@ -81,9 +88,11 @@ export default function Navigation() {
                 )}
               </div>
             ))}
-            <Button href="/find-store" size="small">
-              Find a Store
-            </Button>
+            <Link href="/find-store">
+              <button className="px-7 py-3 bg-gradient-to-r from-[#8BC34A] to-[#9CCC65] text-white font-bold text-base rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+                Store Locator
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -121,7 +130,7 @@ export default function Navigation() {
                           <Link
                             key={dropdownItem.name}
                             href={dropdownItem.href}
-                            className="block px-3 py-2 text-base text-foamico-gray-600 hover:text-foamico-lime hover:bg-foamico-lime-light"
+                            className="block px-3 py-2 text-base text-foamico-gray-600 hover:text-[#77870D] hover:bg-[#E1EC9A]"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {dropdownItem.name}
@@ -141,8 +150,8 @@ export default function Navigation() {
                 </div>
               ))}
               <div className="px-3 py-2">
-                <Button href="/find-store" size="small" className="w-full">
-                  Find a Store
+                <Button href="/find-store" size="medium" className="w-full">
+                  Store Locator
                 </Button>
               </div>
             </div>

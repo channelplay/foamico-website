@@ -1,109 +1,79 @@
-import Image from 'next/image'
-import Container from '@/components/ui/Container'
-import Card from '@/components/ui/Card'
-import { getPlaceholderImage } from '@/lib/placeholder-images'
+'use client'
 
 const technologies = [
   {
-    id: 'orthosense',
-    name: 'OrthoSense® Technology',
-    description: 'Specially designed for Indian body types, providing optimal spinal alignment and relief from arthritis-related pain.',
-    icon: 'technology-orthosense-icon-200x200',
-    features: ['Spinal Alignment', 'Muscle Recovery', 'Arthritis Relief']
+    id: 'eurotop',
+    name: 'Eurotop Stitching',
+    description: 'Premium European craftsmanship for superior edge support and durability.',
+    features: ['Pressure Relief', 'Edge Support', 'Enhanced Durability', 'Premium Comfort']
   },
   {
     id: 'iqs',
-    name: 'IQS™ - Intelligent Quality Sleep',
-    description: 'Proprietary technology that adapts to pressure points and sleep movements for optimized sleep performance.',
-    icon: 'technology-iqs-icon-200x200',
-    features: ['Pressure Adaptation', 'Movement Response', 'Sleep Optimization']
+    name: 'IQS™ – Intelligent Quality Sleep',
+    description: 'Smart technology that adapts to your body for optimized sleep performance.',
+    features: ['Sleep Optimization', 'Body Adaptation', 'Temperature Regulation', 'Motion Isolation']
   },
   {
-    id: 'natural-latex',
-    name: '100% Natural Latex',
-    description: 'Plant-based, organic latex that offers superior breathability, pressure relief, and natural resilience.',
-    icon: 'technology-orthosense-icon-200x200',
-    features: ['Eco-friendly', 'Breathable', 'Hypoallergenic']
+    id: 'orthosense',
+    name: 'Orthosense™ Technology',
+    description: 'Specially designed for optimal spinal alignment and pain relief.',
+    features: ['Spinal Alignment', 'Muscle Comfort', 'Arthritis Relief', 'Back Support']
+  },
+  {
+    id: 'dual-feel',
+    name: 'Dual Feel Options',
+    description: 'Customizable comfort with different firmness levels on each side.',
+    features: ['Personalized Comfort', 'Partner Preference', 'Versatile Support', 'Custom Zones']
   }
 ]
 
 export default function TechnologySection() {
   return (
-    <section className="py-16 lg:py-24">
-      <Container>
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foamico-black mb-4">
-            Advanced Sleep Technology
+          <div className="inline-block bg-[#E1EC9A] text-[#77870D] px-4 py-2 rounded-full text-sm font-semibold mb-4 uppercase tracking-wide">
+            Technology
+          </div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Smart Sleep, Desi Approved
           </h2>
-          <p className="text-lg text-foamico-gray-600 max-w-2xl mx-auto">
-            Combining European craftsmanship with technology designed specifically for Indian needs
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Every FOAMICO mattress is powered by high-performance materials and desi-smart tech.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {technologies.map((tech) => (
-            <Card key={tech.id} className="text-center" hover>
-              <div className="w-24 h-24 mx-auto mb-6 relative">
-                <Image
-                  src={getPlaceholderImage(tech.icon as keyof typeof import('@/lib/placeholder-images').placeholderImages)}
-                  alt={`${tech.name} icon`}
-                  fill
-                  className="object-contain"
-                />
+            <div key={tech.id} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow">
+              <div className="mb-4">
+                <div className="w-12 h-12 bg-[#E1EC9A] rounded-lg flex items-center justify-center text-[#77870D] font-bold text-lg">
+                  {tech.name.charAt(0)}
+                </div>
               </div>
               
-              <h3 className="text-xl font-semibold text-foamico-black mb-3">
+              <h3 className="text-xl font-semibold text-[#77870D] mb-3">
                 {tech.name}
               </h3>
               
-              <p className="text-foamico-gray-600 mb-6">
+              <p className="text-gray-600 text-sm mb-4">
                 {tech.description}
               </p>
               
-              <div className="flex flex-wrap gap-2 justify-center">
+              <ul className="space-y-2">
                 {tech.features.map((feature) => (
-                  <span
-                    key={feature}
-                    className="text-sm px-3 py-1 bg-foamico-lime-light text-foamico-lime-dark rounded-full"
-                  >
-                    {feature}
-                  </span>
+                  <li key={feature} className="flex items-start">
+                    <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-sm text-gray-700">{feature}</span>
+                  </li>
                 ))}
-              </div>
-            </Card>
+              </ul>
+            </div>
           ))}
         </div>
-
-        {/* Trust Banner */}
-        <div className="mt-16 bg-foamico-lime rounded-lg p-8 lg:p-12">
-          <div className="grid lg:grid-cols-3 gap-8 text-center text-white">
-            <div>
-              <div className="w-20 h-20 mx-auto mb-4 relative">
-                <Image
-                  src={getPlaceholderImage('warranty-badge-25years-300x300')}
-                  alt="25 Year Warranty"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h4 className="text-2xl font-bold mb-2">25 Year Warranty</h4>
-              <p className="opacity-90">Industry-leading warranty on select products</p>
-            </div>
-            
-            <div>
-              <div className="text-5xl mb-4">🇩🇪</div>
-              <h4 className="text-2xl font-bold mb-2">German Engineering</h4>
-              <p className="opacity-90">Eurotop stitching & Orthoseam support technology</p>
-            </div>
-            
-            <div>
-              <div className="text-5xl mb-4">🌿</div>
-              <h4 className="text-2xl font-bold mb-2">Eco-Friendly</h4>
-              <p className="opacity-90">100% natural latex from sustainable sources</p>
-            </div>
-          </div>
-        </div>
-      </Container>
+      </div>
     </section>
   )
 }

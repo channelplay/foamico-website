@@ -7,6 +7,7 @@ import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import Card from '@/components/ui/Card'
 import LayerVisualization from './LayerVisualization'
+import AppleStyleVariantSelector from './AppleStyleVariantSelector'
 import { Product } from '@/data/products'
 import { getPlaceholderImage } from '@/lib/placeholder-images'
 
@@ -103,26 +104,22 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
 
           {/* Variant Selector */}
           <div className="mb-8">
-            <h3 className="text-lg font-semibold text-foamico-black mb-4">
-              Choose Your Variant
-            </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
-              {product.variants.map((variant) => (
-                <button
-                  key={variant.id}
-                  onClick={() => setSelectedVariant(variant)}
-                  className={`p-4 rounded-lg border-2 transition-all ${
-                    selectedVariant.id === variant.id
-                      ? 'border-foamico-lime bg-foamico-lime-light'
-                      : 'border-foamico-gray-200 hover:border-foamico-lime-light'
-                  }`}
-                >
-                  <span className="font-medium text-foamico-black">
-                    {variant.name}
-                  </span>
-                </button>
-              ))}
-            </div>
+            <AppleStyleVariantSelector 
+              variants={product.variants.map(v => ({
+                id: v.id,
+                name: v.name,
+                size: v.size || 'Standard',
+                price: v.price || 29999,
+                originalPrice: v.originalPrice || 39999,
+                thickness: v.thickness || '8 inches',
+                firmness: v.firmness || 'Medium',
+                inStock: true
+              }))}
+              onSelect={(variant) => {
+                const productVariant = product.variants.find(v => v.id === variant.id)
+                if (productVariant) setSelectedVariant(productVariant)
+              }}
+            />
           </div>
 
           {/* Features Grid */}
