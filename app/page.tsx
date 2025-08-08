@@ -3,7 +3,7 @@ import FeaturesBar from '@/components/home/FeaturesBar'
 import ProductShowcase from '@/components/home/ProductShowcase'
 import TechnologySection from '@/components/home/TechnologySection'
 import TestimonialsSection from '@/components/home/TestimonialsSection'
-import StoreLocatorCTA from '@/components/home/StoreLocatorCTA'
+import ExperienceFirstCTA from '@/components/product/ExperienceFirstCTA'
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <ProductShowcase />
       <TechnologySection />
       <TestimonialsSection />
-      <StoreLocatorCTA />
+      <ExperienceFirstCTA />
     </>
   )
 }
