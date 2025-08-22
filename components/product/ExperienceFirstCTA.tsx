@@ -1,113 +1,275 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import Container from '@/components/ui/Container'
+import Link from 'next/link'
 
 export default function ExperienceFirstCTA() {
+  const [radarPulse, setRadarPulse] = useState(0)
+  const [nearestStore, setNearestStore] = useState({ distance: 2.3, city: 'Mumbai' })
+  const [coordinates, setCoordinates] = useState({ lat: 19.0760, lng: 72.8777 })
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRadarPulse(prev => (prev + 1) % 3)
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
-    <section className="py-12 bg-gradient-to-br from-[#F5F7F0] to-[#E8F5E8]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-cyber-black relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-cyber-grid opacity-10" />
+        <motion.div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 50% 50%, rgba(0,255,136,0.1) 0%, transparent 60%)`,
+          }}
+          animate={{
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+          }}
+        />
+      </div>
+
+      <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
-          {/* Left Side - Main Content */}
-          <div>
+          {/* Left Side - Mission Brief */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="mb-6">
-              <p className="text-[#8BC34A] font-semibold uppercase tracking-wider text-sm mb-3">
-                — EXPERIENCE FIRST
-              </p>
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="text-gray-900">Feel the Comfort </span>
-                <span className="text-[#8BC34A]">Before You Decide</span>
+              <motion.div 
+                className="inline-block glass-panel border border-hud-green px-4 py-2 mb-4"
+                animate={{
+                  borderColor: ['rgba(0,255,136,0.5)', 'rgba(0,212,255,0.5)', 'rgba(0,255,136,0.5)'],
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <span className="text-xs font-mono text-hud-green uppercase tracking-widest">
+                  CHECKPOINT LOCATION
+                </span>
+              </motion.div>
+              
+              <h2 className="text-4xl lg:text-5xl font-cyber font-bold mb-4">
+                <span className="neon-text-cyan">FAST TRAVEL TO</span>
+                <br />
+                <span className="neon-text-green text-5xl lg:text-6xl">CHECKPOINT</span>
               </h2>
             </div>
 
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Visit our exclusive showrooms to experience premium comfort firsthand. Our sleep experts will guide you to find the perfect mattress tailored to your needs.
+            <p className="text-lg font-mono text-hud-cyan/70 mb-8 leading-relaxed">
+              Physical locations available for 
+              <span className="text-hud-green"> HANDS-ON TESTING</span>. 
+              Unlock bonus XP and exclusive rewards at our checkpoints.
             </p>
 
-            {/* Features List */}
-            <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <svg className="w-6 h-6 text-[#8BC34A]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            {/* Mission Objectives */}
+            <div className="space-y-3 mb-8">
+              {[
+                { icon: '◉', text: 'EXPERT CONSULTATION AVAILABLE' },
+                { icon: '◈', text: 'HANDS-ON MATTRESS TESTING' },
+                { icon: '◆', text: 'EXCLUSIVE IN-STORE OFFERS' },
+                { icon: '▣', text: 'INSTANT PURCHASE BENEFITS' },
+              ].map((objective, index) => (
+                <motion.div
+                  key={index}
+                  className="glass-panel p-3 border-l-2 border-hud-green"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className="text-hud-green text-lg">{objective.icon}</span>
+                      <p className="text-sm font-mono text-hud-cyan/80">{objective.text}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Action Button */}
+            <div className="flex gap-4">
+              <Link href="/find-store">
+                <motion.button
+                  className="hud-button hud-button-green px-6 py-3"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="flex items-center gap-2">
+                    <span>◈</span>
+                    FIND STORE
+                    <span className="text-xs opacity-60">[ENTER]</span>
+                  </span>
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Right Side - Radar Map Interface */}
+          <motion.div
+            className="lg:pl-12"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="relative hologram-card p-6">
+              {/* Corner decorations */}
+              <div className="cyber-corner-tl" />
+              <div className="cyber-corner-tr" />
+              <div className="cyber-corner-bl" />
+              <div className="cyber-corner-br" />
+
+              {/* Radar Display */}
+              <div className="relative h-80 mb-6 overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-cyber-dark">
+                  {/* Grid lines */}
+                  <svg className="absolute inset-0 w-full h-full">
+                    <defs>
+                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,212,255,0.1)" strokeWidth="1"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                    
+                    {/* Radar circles */}
+                    {[1, 2, 3].map((ring) => (
+                      <motion.circle
+                        key={ring}
+                        cx="50%"
+                        cy="50%"
+                        r={`${ring * 25}%`}
+                        fill="none"
+                        stroke="rgba(0,255,136,0.2)"
+                        strokeWidth="1"
+                        animate={{
+                          opacity: ring === radarPulse + 1 ? [0.2, 1, 0.2] : 0.2,
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                        }}
+                      />
+                    ))}
+                    
+                    {/* Center point */}
+                    <circle cx="50%" cy="50%" r="4" fill="#00FF88" className="animate-pulse" />
                   </svg>
+                  
+                  {/* Scanning line */}
+                  <motion.div
+                    className="absolute inset-0"
+                    style={{
+                      background: 'conic-gradient(from 0deg, transparent 0deg, rgba(0,255,136,0.3) 30deg, transparent 60deg)',
+                    }}
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: 'linear',
+                    }}
+                  />
+                  
+                  {/* Location markers */}
+                  {[
+                    { x: '30%', y: '40%', active: true },
+                    { x: '70%', y: '30%', active: false },
+                    { x: '50%', y: '70%', active: false },
+                    { x: '20%', y: '60%', active: false },
+                  ].map((marker, index) => (
+                    <motion.div
+                      key={index}
+                      className="absolute"
+                      style={{ left: marker.x, top: marker.y }}
+                      animate={{
+                        scale: marker.active ? [1, 1.5, 1] : 1,
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                      }}
+                    >
+                      <div className={`w-3 h-3 ${marker.active ? 'bg-hud-green' : 'bg-hud-cyan/50'} rounded-full`}>
+                        {marker.active && (
+                          <div className="absolute inset-0 bg-hud-green rounded-full animate-ping" />
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-                <p className="text-gray-700">
-                  Expert consultation from certified sleep specialists
-                </p>
+                
+                {/* HUD Overlay Info */}
+                <div className="absolute top-4 left-4 glass-panel px-3 py-2">
+                  <p className="text-[10px] font-mono text-hud-green">NEAREST CHECKPOINT</p>
+                  <p className="text-sm font-mono text-hud-cyan">{nearestStore.distance} KM</p>
+                </div>
+                
+                <div className="absolute top-4 right-4 glass-panel px-3 py-2">
+                  <p className="text-[10px] font-mono text-hud-orange">LOCATION</p>
+                  <p className="text-sm font-mono text-hud-cyan">{nearestStore.city}</p>
+                </div>
+                
+                <div className="absolute bottom-4 left-4 glass-panel px-3 py-2">
+                  <p className="text-[10px] font-mono text-hud-cyan/60">
+                    LAT: {coordinates.lat.toFixed(4)}
+                  </p>
+                  <p className="text-[10px] font-mono text-hud-cyan/60">
+                    LNG: {coordinates.lng.toFixed(4)}
+                  </p>
+                </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <svg className="w-6 h-6 text-[#8BC34A]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
+              {/* Store Info */}
+              <div className="space-y-4">
+                <div className="glass-panel p-3">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-xs font-mono text-hud-cyan/60">CHECKPOINTS AVAILABLE</span>
+                    <span className="text-sm font-mono text-hud-green">50+</span>
+                  </div>
+                  <div className="h-1 bg-cyber-dark rounded-full overflow-hidden">
+                    <div className="h-full w-3/4 bg-gradient-to-r from-hud-green to-hud-cyan" />
+                  </div>
                 </div>
-                <p className="text-gray-700">
-                  Touch and feel every layer of comfort
-                </p>
-              </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <svg className="w-6 h-6 text-[#8BC34A]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
+                <div className="glass-panel p-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs font-mono text-hud-pink/60">HOTLINE</span>
+                    <a href="tel:+919876543210" className="text-sm font-mono text-hud-pink hover:text-hud-pink-glow transition-colors">
+                      +91 98765 43210
+                    </a>
+                  </div>
                 </div>
-                <p className="text-gray-700">
-                  Exclusive in-store offers and benefits
-                </p>
+
+                <Link href="/find-store">
+                  <motion.button
+                    className="w-full hud-button hud-button-green py-3"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      <span>📍</span>
+                      NAVIGATE TO CHECKPOINT
+                      <span className="text-xs opacity-60">[ENTER]</span>
+                    </span>
+                  </motion.button>
+                </Link>
               </div>
             </div>
-          </div>
-
-          {/* Right Side - Store Locator Card */}
-          <div className="lg:pl-12">
-            <motion.div 
-              className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 text-center shadow-xl border border-white/50"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              {/* Location Icon */}
-              <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-[#F5F7F0] rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-[#8BC34A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-              </div>
-
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Find Your Nearest Store
-              </h3>
-              
-              <p className="text-gray-600 mb-6 text-sm">
-                Available in 50+ cities across India
-              </p>
-
-              <a
-                href="/find-store"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#8BC34A] text-white rounded-full font-semibold hover:bg-[#7CB342] transition-colors w-full sm:w-auto text-sm"
-              >
-                Locate Store
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-gray-600 mb-1 text-sm">Or call us at</p>
-                <a href="tel:+919876543210" className="text-2xl font-bold text-[#8BC34A] hover:text-[#7CB342] transition-colors">
-                  +91 98765 43210
-                </a>
-              </div>
-            </motion.div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

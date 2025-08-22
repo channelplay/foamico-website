@@ -1,97 +1,263 @@
+'use client'
+
 import Link from 'next/link'
-import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 export default function Footer() {
+  const [currentTime, setCurrentTime] = useState(new Date())
+  const [systemUptime, setSystemUptime] = useState(0)
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date())
+      setSystemUptime(prev => prev + 1)
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const formatUptime = (seconds: number) => {
+    const days = Math.floor(seconds / 86400)
+    const hours = Math.floor((seconds % 86400) / 3600)
+    const mins = Math.floor((seconds % 3600) / 60)
+    return `${days}d ${hours}h ${mins}m`
+  }
+
+  const footerLinks = {
+    products: [
+      { name: 'SOVA.exe', href: '/products/sova' },
+      { name: 'ULTIMA.exe', href: '/products/ultima' },
+      { name: 'MARVEL.exe', href: '/products/marvel' },
+      { name: 'NATURA.exe', href: '/products/natura' },
+    ],
+    resources: [
+      { name: 'blog.txt', href: '/blog' },
+      { name: 'sleep_guide.pdf', href: '/sleep-guide' },
+      { name: 'mattress_care.md', href: '/mattress-care' },
+    ],
+    system: [
+      { name: 'locate_store.sh', href: '/find-store' },
+      { name: 'contact.bat', href: '/contact' },
+    ],
+  }
+
   return (
-    <footer className="bg-[#3a3a3a] text-[#FFFFFF]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Logo and Tagline Section */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <Image
-                src="/Foamico Logo white.png"
-                alt="Foamico Logo"
-                width={300}
-                height={120}
-                className="h-24 w-auto"
-              />
-            </Link>
-            <p className="text-[#FFFFFF] mb-6 pr-4">
-              Experience the perfect blend of natural latex, European craftsmanship, and Indian innovation.
-            </p>
+    <footer className="bg-cyber-darker border-t border-hud-cyan/30 relative overflow-hidden">
+      {/* Matrix rain background effect */}
+      <div className="absolute inset-0 opacity-5">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-hud-green/20 font-mono text-xs"
+            style={{ left: `${i * 5}%` }}
+            initial={{ y: -20 }}
+            animate={{ y: '100vh' }}
+            transition={{
+              duration: 10 + Math.random() * 10,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: 'linear',
+            }}
+          >
+            {Math.random().toString(36).substring(2, 8).toUpperCase()}
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="relative z-10">
+        {/* Terminal Header */}
+        <div className="border-b border-hud-cyan/20 bg-cyber-dark/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <span className="text-[10px] font-mono text-hud-green">◉ SYSTEM ONLINE</span>
+                <span className="text-[10px] font-mono text-hud-cyan/60">PID: 2077</span>
+                <span className="text-[10px] font-mono text-hud-orange/60">UPTIME: {formatUptime(systemUptime)}</span>
+              </div>
+              <div className="text-[10px] font-mono text-hud-cyan/60">
+                {currentTime.toLocaleString('en-US', { 
+                  hour12: false,
+                  year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  second: '2-digit'
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Terminal Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            {/* Logo Section */}
+            <div className="lg:col-span-2">
+              <div className="mb-4">
+                <motion.div 
+                  className="inline-block"
+                  animate={{
+                    textShadow: [
+                      '0 0 20px rgba(0,212,255,0.8)',
+                      '0 0 40px rgba(255,0,255,0.8)',
+                      '0 0 20px rgba(0,212,255,0.8)',
+                    ],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  <h2 className="text-3xl font-cyber font-bold">
+                    <span className="text-hud-cyan">FOAM</span>
+                    <span className="text-hud-pink">ICO</span>
+                  </h2>
+                </motion.div>
+                <div className="text-xs font-mono text-hud-cyan/60 mt-1">
+                  v2.0.1 | BUILD 2024.STABLE
+                </div>
+              </div>
+              
+              <div className="font-mono text-sm text-hud-cyan/70 mb-6">
+                <p className="mb-2">$ cat mission.txt</p>
+                <p className="text-hud-green/60 pl-4">
+                  &gt; Upgrading sleep quality for humanity<br />
+                  &gt; One mattress at a time.<br />
+                  &gt; Mission Status: <span className="text-hud-green">ACTIVE</span>
+                </p>
+              </div>
+              
+              {/* Social Links as Network Connections */}
+              <div className="flex gap-4">
+                {[
+                  { name: 'TWITTER', icon: 'X', color: 'cyan' },
+                  { name: 'PINTEREST', icon: 'P', color: 'pink' },
+                  { name: 'INSTAGRAM', icon: 'I', color: 'purple' },
+                  { name: 'LINKEDIN', icon: 'L', color: 'blue' },
+                ].map((social) => (
+                  <motion.a
+                    key={social.name}
+                    href="#"
+                    className={`glass-panel w-10 h-10 flex items-center justify-center border border-hud-${social.color}/50 text-hud-${social.color} hover:shadow-neon-${social.color} transition-all`}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className="font-mono font-bold text-sm">{social.icon}</span>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+
+            {/* Products Directory */}
+            <div>
+              <h3 className="text-sm font-mono text-hud-pink mb-4">
+                <span className="text-hud-cyan/60">$</span> ls products/
+              </h3>
+              <ul className="space-y-2">
+                {footerLinks.products.map((link) => (
+                  <li key={link.name}>
+                    <Link 
+                      href={link.href}
+                      className="text-xs font-mono text-hud-cyan/70 hover:text-hud-cyan hover:text-glow transition-all inline-flex items-center gap-2 group"
+                    >
+                      <span className="text-hud-green/60 group-hover:text-hud-green">▸</span>
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources Directory */}
+            <div>
+              <h3 className="text-sm font-mono text-hud-pink mb-4">
+                <span className="text-hud-cyan/60">$</span> ls resources/
+              </h3>
+              <ul className="space-y-2">
+                {footerLinks.resources.map((link) => (
+                  <li key={link.name}>
+                    <Link 
+                      href={link.href}
+                      className="text-xs font-mono text-hud-cyan/70 hover:text-hud-cyan hover:text-glow transition-all inline-flex items-center gap-2 group"
+                    >
+                      <span className="text-hud-orange/60 group-hover:text-hud-orange">▸</span>
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* System Directory */}
+            <div>
+              <h3 className="text-sm font-mono text-hud-pink mb-4">
+                <span className="text-hud-cyan/60">$</span> ls system/
+              </h3>
+              <ul className="space-y-2">
+                {footerLinks.system.map((link) => (
+                  <li key={link.name}>
+                    <Link 
+                      href={link.href}
+                      className="text-xs font-mono text-hud-cyan/70 hover:text-hud-cyan hover:text-glow transition-all inline-flex items-center gap-2 group"
+                    >
+                      <span className="text-hud-purple/60 group-hover:text-hud-purple">▸</span>
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* ASCII Art Divider */}
+          <div className="my-8 text-hud-cyan/20 font-mono text-xs overflow-hidden">
+            <motion.div
+              animate={{ x: [0, -100] }}
+              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              className="whitespace-nowrap"
+            >
+              ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+            </motion.div>
+          </div>
+
+          {/* Bottom Terminal Line */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-4">
+              <p className="text-xs font-mono text-hud-cyan/60">
+                <span className="text-hud-green/60">$</span> echo $COPYRIGHT
+              </p>
+              <p className="text-xs font-mono text-hud-cyan/50">
+                © 2024 FOAMICO SYSTEMS. ALL RIGHTS RESERVED.
+              </p>
+            </div>
             
-            {/* Social Media Icons */}
-            <div className="flex space-x-4">
-              <a href="#" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors" aria-label="Twitter">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
-                </svg>
-              </a>
-              <a href="#" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors" aria-label="Pinterest">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.176-4.068-2.845 0-4.516 2.135-4.516 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-                </svg>
-              </a>
-              <a href="#" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors" aria-label="Instagram">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd"/>
-                </svg>
-              </a>
-              <a href="#" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors" aria-label="LinkedIn">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
+            <div className="flex gap-6">
+              <Link 
+                href="/privacy"
+                className="text-xs font-mono text-hud-cyan/60 hover:text-hud-cyan transition-colors"
+              >
+                [PRIVACY.POLICY]
+              </Link>
+              <Link 
+                href="/terms"
+                className="text-xs font-mono text-hud-cyan/60 hover:text-hud-cyan transition-colors"
+              >
+                [TERMS.OF.SERVICE]
+              </Link>
             </div>
           </div>
 
-          {/* Products Column */}
-          <div>
-            <h3 className="text-[#FFFFFF] font-semibold mb-4">Products</h3>
-            <ul className="space-y-2">
-              <li><Link href="/products/sova" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">Sova</Link></li>
-              <li><Link href="/products/ultima" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">Ultima</Link></li>
-              <li><Link href="/products/marvel" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">Marvel</Link></li>
-              <li><Link href="/products/natura" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">Natura</Link></li>
-            </ul>
-          </div>
-
-          {/* Resources Column */}
-          <div>
-            <h3 className="text-[#FFFFFF] font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li><Link href="/blog" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">Blog</Link></li>
-              <li><Link href="/sleep-guide" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">Sleep Guide</Link></li>
-              <li><Link href="/mattress-care" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">Mattress Care</Link></li>
-            </ul>
-          </div>
-
-          {/* Company Column */}
-          <div>
-            <h3 className="text-[#FFFFFF] font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><Link href="/about" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">About Us</Link></li>
-              <li><Link href="/stores" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">Find a Store</Link></li>
-              <li><Link href="/contact" className="text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-          </div>
-
-        {/* Legal Footer */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-[#FFFFFF] text-sm mb-4 md:mb-0">
-              © 2024 Foamico. All rights reserved.
+          {/* Terminal Cursor */}
+          <div className="mt-4">
+            <p className="text-xs font-mono text-hud-green/60">
+              <span className="text-hud-cyan/60">foamico@sleep-system</span>
+              <span className="text-hud-pink/60">:</span>
+              <span className="text-hud-cyan/60">~</span>
+              <span className="text-hud-green/60">$</span>
+              <motion.span
+                className="inline-block w-2 h-4 bg-hud-green ml-1"
+                animate={{ opacity: [1, 0] }}
+                transition={{ duration: 0.8, repeat: Infinity }}
+              />
             </p>
-            <div className="flex space-x-6">
-              <Link href="/privacy" className="text-[#FFFFFF] text-sm hover:text-[#FFFFFF] transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-[#FFFFFF] text-sm hover:text-[#FFFFFF] transition-colors">
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
       </div>

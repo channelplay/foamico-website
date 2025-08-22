@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import Container from '@/components/ui/Container'
 
 const variants = [
   { id: 'classic', name: 'Ultima Classic', selected: true },
@@ -11,12 +12,12 @@ const variants = [
 ]
 
 const features = [
-  { icon: '✓', text: 'Smart Layers' },
-  { icon: '✓', text: 'Relieves Backpain' },
-  { icon: '✓', text: 'Anti-allergy' },
-  { icon: '✓', text: 'Comfortable' },
-  { icon: '✓', text: 'Breathable' },
-  { icon: '✓', text: 'Motion Control' }
+  { icon: '◈', text: 'Smart Layers', color: 'hud-pink' },
+  { icon: '◉', text: 'Relieves Backpain', color: 'hud-cyan' },
+  { icon: '◆', text: 'Anti-allergy', color: 'hud-pink' },
+  { icon: '▣', text: 'Comfortable', color: 'hud-orange' },
+  { icon: '◎', text: 'Breathable', color: 'hud-cyan' },
+  { icon: '◈', text: 'Motion Control', color: 'hud-pink' }
 ]
 
 export default function UltimaHeroSection() {
@@ -30,74 +31,164 @@ export default function UltimaHeroSection() {
   }
 
   return (
-    <section className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen bg-cyber-black relative overflow-hidden py-12">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-cyber-grid opacity-10" />
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-b from-hud-pink/5 via-transparent to-hud-cyan/5"
+          animate={{
+            backgroundPosition: ['0% 0%', '100% 100%'],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: 'reverse',
+          }}
+        />
+      </div>
+      
+      <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Side - Image */}
-          <div className="relative">
-            <div className="relative bg-[#D4C4B0] rounded-3xl overflow-hidden h-[600px]">
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="relative hologram-card h-[600px]">
+              {/* Corner decorations */}
+              <div className="cyber-corner-tl" />
+              <div className="cyber-corner-tr" />
+              <div className="cyber-corner-bl" />
+              <div className="cyber-corner-br" />
+              
               {/* Warranty Badge */}
-              <div className="absolute top-6 left-6 z-10">
-                <span className="bg-[#E8F5C8] text-[#5A6B3B] px-4 py-2 rounded-full text-sm font-medium">
-                  25 Year Warranty
-                </span>
+              <div className="absolute top-6 left-6 z-20">
+                <motion.div 
+                  className="glass-panel border border-hud-pink px-4 py-2"
+                  animate={{
+                    boxShadow: [
+                      '0 0 20px rgba(255,0,255,0.3)',
+                      '0 0 40px rgba(255,0,255,0.5)',
+                      '0 0 20px rgba(255,0,255,0.3)',
+                    ],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <span className="text-xs font-mono text-hud-pink uppercase tracking-widest">
+                    25 YEAR PROTOCOL
+                  </span>
+                </motion.div>
               </div>
+              
+              {/* Scan Effect */}
+              <motion.div
+                className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-hud-pink to-transparent z-10"
+                animate={{
+                  top: ['-4px', '100%'],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                }}
+              />
               
               {/* Product Image - Full frame */}
               <Image
                 src={variantImages[selectedVariant as keyof typeof variantImages]}
                 alt={`Ultima ${selectedVariant.charAt(0).toUpperCase() + selectedVariant.slice(1)} Mattress`}
                 fill
-                className="object-cover"
+                className="object-cover rounded-lg"
                 priority
+                style={{
+                  filter: 'brightness(0.9) saturate(1.2)',
+                }}
               />
+              
+              {/* Status Indicator */}
+              <div className="absolute top-6 right-6 z-20">
+                <div className="pulse-dot bg-hud-pink" />
+              </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Side - Content */}
-          <div className="space-y-8">
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             {/* Title and Description */}
             <div>
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">Ultima</h1>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Curvy, gentle and feminine. The kind of comfort that walks in slow motion. Ultima mattresses blend cloud-like comfort with Zero G Latex Foam.
+              <motion.div 
+                className="inline-block glass-panel border border-hud-pink px-4 py-2 mb-6"
+                animate={{
+                  borderColor: ['rgba(255,0,255,0.5)', 'rgba(0,212,255,0.5)', 'rgba(255,0,255,0.5)'],
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <span className="text-xs font-mono text-hud-pink uppercase tracking-widest">
+                  SLEEP CLASS: ULTIMA
+                </span>
+              </motion.div>
+              
+              <h1 className="text-5xl lg:text-6xl font-cyber font-bold mb-6">
+                <span className="neon-text-pink">ULTIMA</span>
+              </h1>
+              <p className="text-lg font-mono text-hud-cyan/70 leading-relaxed">
+                Curvy, gentle and elegant. The kind of comfort that flows in 
+                <span className="text-hud-pink"> ZERO G LATEX FOAM </span>
+                slow motion luxury.
               </p>
             </div>
 
             {/* Variant Selector */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                Choose your comfort variant
-              </h3>
+            <div className="hologram-card">
+              {/* Corner decorations */}
+              <div className="cyber-corner-tl" />
+              <div className="cyber-corner-tr" />
+              <div className="cyber-corner-bl" />
+              <div className="cyber-corner-br" />
+              
+              <div className="bg-gradient-to-r from-hud-pink/10 to-hud-cyan/10 px-4 py-2 mb-4 border-b border-hud-pink/20">
+                <span className="text-xs font-mono text-hud-pink uppercase tracking-widest">
+                  SELECT VARIANT
+                </span>
+              </div>
               
               <div className="flex gap-3">
-                {variants.map((variant) => (
+                {variants.map((variant, index) => (
                   <motion.button
                     key={variant.id}
                     onClick={() => setSelectedVariant(variant.id)}
-                    className={`relative px-4 py-2.5 rounded-xl border-2 text-sm transition-all flex-1
+                    className={`relative px-4 py-3 hud-border text-sm transition-all flex-1
                       ${selectedVariant === variant.id
-                        ? 'border-[#8BC34A] bg-white'
-                        : 'border-gray-200 bg-white hover:border-gray-300'
+                        ? 'border-hud-pink bg-hud-pink/10'
+                        : 'border-hud-cyan/30 bg-cyber-dark/50 hover:border-hud-cyan'
                       }`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    <span className={`font-medium ${
-                      selectedVariant === variant.id ? 'text-[#8BC34A]' : 'text-gray-700'
+                    <span className={`font-mono font-medium ${
+                      selectedVariant === variant.id ? 'text-hud-pink' : 'text-hud-cyan'
                     }`}>
-                      {variant.name}
+                      {variant.name.replace('Ultima ', '')}
                     </span>
                     {selectedVariant === variant.id && (
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute -top-1 -right-1 w-5 h-5 bg-[#8BC34A] rounded-full flex items-center justify-center"
+                        className="absolute -top-2 -right-2 z-10"
                       >
-                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
+                        <div className="pulse-dot bg-hud-pink" />
                       </motion.div>
                     )}
                   </motion.button>
@@ -110,17 +201,19 @@ export default function UltimaHeroSection() {
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-3"
+                  className="glass-panel p-3 border-l-2 border-hud-pink/50"
                 >
-                  <span className="text-[#8BC34A] text-xl">✓</span>
-                  <span className="text-gray-700">{feature.text}</span>
+                  <div className="flex items-center gap-3">
+                    <span className={`text-${feature.color} text-lg`}>{feature.icon}</span>
+                    <span className="text-sm font-mono text-hud-cyan">{feature.text}</span>
+                  </div>
                 </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
         
         {/* Scroll Indicator - Centered */}
@@ -129,11 +222,19 @@ export default function UltimaHeroSection() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <svg className="w-6 h-6 text-[#8BC34A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+          <div className="glass-panel px-4 py-2 border border-hud-pink">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-mono text-hud-pink">SCROLL</span>
+              <motion.div
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <span className="text-hud-pink">▼</span>
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   )
 }

@@ -213,7 +213,7 @@ export const products: Product[] = [
         price: 39999,
         originalPrice: 49999,
         size: 'Queen (60" x 78")',
-        thickness: '10 inches',
+        thickness: '6 inches',
         firmness: 'Medium',
         layers: [
           { name: 'Super Plush Luxeknit Fabric', description: 'Premium breathable surface', material: 'Luxeknit' },

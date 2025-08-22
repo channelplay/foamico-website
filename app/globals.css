@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --font-inter: 'Inter', system-ui, sans-serif;
+  --hud-cyan: #00D4FF;
+  --hud-lavender: #B8A9E5;
+  --hud-pink: #B8A9E5; /* Soft lavender for comfort */
+  --hud-green: #00FF88;
+  --hud-gold: #FFD700;
+  --hud-orange: #FDB863;
 }
 
 html {
@@ -11,5 +19,336 @@ html {
 }
 
 body {
-  @apply text-foamico-black;
+  @apply bg-cyber-black text-hud-cyan-light;
+  background-image: 
+    radial-gradient(ellipse at top, rgba(0,212,255,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(184,169,229,0.08) 0%, transparent 50%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--scan-lines);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+  animation: scan-line 8s linear infinite;
+}
+
+@layer components {
+  .hud-border {
+    @apply border border-hud-cyan/30 relative;
+    background: linear-gradient(135deg, rgba(0,212,255,0.02) 0%, transparent 100%);
+    box-shadow: 
+      inset 0 0 20px rgba(0,212,255,0.05),
+      0 0 20px rgba(0,212,255,0.1);
+  }
+
+  .hud-border::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, transparent 100%);
+  }
+
+  .hud-border:hover::before {
+    @apply opacity-100;
+  }
+
+  .hud-text {
+    @apply text-hud-cyan-light font-mono tracking-wider;
+    text-shadow: 
+      0 0 10px rgba(0,212,255,0.5),
+      0 0 20px rgba(0,212,255,0.3);
+  }
+
+  .hud-title {
+    @apply font-cyber font-bold uppercase tracking-widest;
+    background: linear-gradient(90deg, #00D4FF, #00F0FF, #00D4FF);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+    filter: drop-shadow(0 0 20px rgba(0,212,255,0.5));
+  }
+
+  .neon-text-cyan {
+    @apply text-hud-cyan;
+    text-shadow: 
+      0 0 10px rgba(0,212,255,0.8),
+      0 0 20px rgba(0,212,255,0.6),
+      0 0 30px rgba(0,212,255,0.4),
+      0 0 40px rgba(0,212,255,0.2);
+  }
+
+  .neon-text-pink {
+    @apply text-hud-pink;
+    text-shadow: 
+      0 0 8px rgba(184,169,229,0.7),
+      0 0 16px rgba(184,169,229,0.5),
+      0 0 24px rgba(184,169,229,0.3),
+      0 0 32px rgba(184,169,229,0.2);
+  }
+  
+  .neon-text-lavender {
+    @apply text-hud-lavender;
+    text-shadow: 
+      0 0 8px rgba(184,169,229,0.7),
+      0 0 16px rgba(184,169,229,0.5),
+      0 0 24px rgba(184,169,229,0.3),
+      0 0 32px rgba(184,169,229,0.2);
+  }
+  
+  .neon-text-gold {
+    @apply text-hud-gold;
+    text-shadow: 
+      0 0 8px rgba(255,215,0,0.7),
+      0 0 16px rgba(255,215,0,0.5),
+      0 0 24px rgba(255,215,0,0.3),
+      0 0 32px rgba(255,215,0,0.2);
+  }
+
+  .neon-text-green {
+    @apply text-hud-green;
+    text-shadow: 
+      0 0 10px rgba(0,255,136,0.8),
+      0 0 20px rgba(0,255,136,0.6),
+      0 0 30px rgba(0,255,136,0.4),
+      0 0 40px rgba(0,255,136,0.2);
+  }
+
+  .glass-panel {
+    @apply backdrop-blur-md bg-cyber-dark/30 border border-hud-cyan/20 rounded-lg;
+    box-shadow: 
+      0 8px 32px 0 rgba(0,212,255,0.1),
+      inset 0 0 20px rgba(0,212,255,0.05);
+  }
+
+  .hud-button {
+    @apply relative px-6 py-3 font-mono font-semibold uppercase tracking-wider;
+    @apply border-2 border-hud-cyan bg-transparent text-hud-cyan;
+    @apply transition-all duration-300 overflow-hidden;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  }
+
+  .hud-button::before {
+    content: '';
+    @apply absolute inset-0 bg-hud-cyan/10;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .hud-button:hover::before {
+    transform: translateX(0);
+  }
+
+  .hud-button:hover {
+    @apply text-hud-cyan-glow border-hud-cyan-glow;
+    box-shadow: 
+      0 0 20px rgba(0,212,255,0.5),
+      inset 0 0 20px rgba(0,212,255,0.1);
+    filter: brightness(1.2);
+  }
+
+  .hud-button-pink {
+    @apply border-hud-lavender text-hud-lavender;
+  }
+
+  .hud-button-pink::before {
+    @apply bg-hud-lavender/10;
+  }
+
+  .hud-button-pink:hover {
+    @apply text-hud-lavender-light border-hud-lavender-light;
+    box-shadow: 
+      0 0 15px rgba(184,169,229,0.4),
+      inset 0 0 15px rgba(184,169,229,0.1);
+  }
+  
+  .hud-button-lavender {
+    @apply border-hud-lavender text-hud-lavender;
+  }
+
+  .hud-button-lavender::before {
+    @apply bg-hud-lavender/10;
+  }
+
+  .hud-button-lavender:hover {
+    @apply text-hud-lavender-light border-hud-lavender-light;
+    box-shadow: 
+      0 0 15px rgba(184,169,229,0.4),
+      inset 0 0 15px rgba(184,169,229,0.1);
+  }
+  
+  .hud-button-gold {
+    @apply border-hud-gold text-hud-gold;
+  }
+
+  .hud-button-gold::before {
+    @apply bg-hud-gold/10;
+  }
+
+  .hud-button-gold:hover {
+    @apply text-hud-gold-light border-hud-gold-light;
+    box-shadow: 
+      0 0 15px rgba(255,215,0,0.4),
+      inset 0 0 15px rgba(255,215,0,0.1);
+  }
+
+  .hud-grid {
+    background-image: 
+      linear-gradient(rgba(0,212,255,0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: data-stream 10s linear infinite;
+  }
+
+  .hologram-card {
+    @apply relative glass-panel p-6 overflow-hidden;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.6s;
+  }
+
+  .hologram-card::before {
+    content: '';
+    @apply absolute inset-0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,240,255,0.3) 2px,
+      rgba(0,240,255,0.3) 4px
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .hologram-card:hover::before {
+    opacity: 0.3;
+    animation: scan-line 2s linear infinite;
+  }
+
+  .hologram-card:hover {
+    transform: perspective(1000px) rotateY(5deg);
+  }
+
+  .cyber-corner {
+    @apply absolute w-4 h-4 border-2 border-hud-cyan;
+  }
+
+  .cyber-corner-tl {
+    @apply cyber-corner top-0 left-0 border-r-0 border-b-0;
+  }
+
+  .cyber-corner-tr {
+    @apply cyber-corner top-0 right-0 border-l-0 border-b-0;
+  }
+
+  .cyber-corner-bl {
+    @apply cyber-corner bottom-0 left-0 border-r-0 border-t-0;
+  }
+
+  .cyber-corner-br {
+    @apply cyber-corner bottom-0 right-0 border-l-0 border-t-0;
+  }
+
+  .data-text::before {
+    content: attr(data-text);
+    @apply absolute top-0 left-0 text-hud-pink/50;
+    animation: glitch 2.5s infinite;
+  }
+
+  .data-text::after {
+    content: attr(data-text);
+    @apply absolute top-0 left-0 text-hud-cyan/50;
+    animation: glitch 2.5s infinite reverse;
+  }
+
+  .loading-bar {
+    @apply h-1 bg-gradient-to-r from-hud-cyan via-hud-pink to-hud-green rounded-full;
+    background-size: 200% auto;
+    animation: shimmer 2s linear infinite;
+  }
+
+  .pulse-dot {
+    @apply w-2 h-2 bg-hud-green rounded-full;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .scan-effect {
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0,212,255,0.1) 50%,
+      transparent 100%
+    );
+    height: 200px;
+    animation: scan-line 4s linear infinite;
+  }
+
+  .matrix-text {
+    @apply font-mono text-hud-green/70 text-xs;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    animation: matrix-rain 3s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    filter: drop-shadow(0 0 10px currentColor);
+  }
+
+  .bg-circuit {
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2300D4FF' stroke-width='0.5' opacity='0.1'%3E%3Cpath d='M30 10 L30 20 M30 40 L30 50 M10 30 L20 30 M40 30 L50 30'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+
+  .clip-cyber {
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyber-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-hud-cyan/30 rounded;
+  border: 1px solid rgba(0,212,255,0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-hud-cyan/50;
+  box-shadow: 0 0 10px rgba(0,212,255,0.5);
+}
+
+::selection {
+  @apply bg-hud-pink/30 text-hud-cyan-glow;
+}
+
+::-moz-selection {
+  @apply bg-hud-pink/30 text-hud-cyan-glow;
 }
