@@ -67,9 +67,7 @@ export default function FeaturesBar() {
                       className="object-contain"
                     />
                   </div>
-                ) : (
-                  <feature.icon className="w-12 h-12 text-foamico-lime group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
-                )}
+                ) : null}
                 <div>
                   <h3 className="text-foamico-charcoal font-bold text-xs md:text-sm uppercase tracking-wide">{feature.title}</h3>
                   <p className="text-gray-500 text-xs mt-1">{feature.description}</p>

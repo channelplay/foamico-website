@@ -154,7 +154,7 @@ export default function MarvelHeroSection() {
                   <div>
                     <p className="font-cyber text-lg text-hud-orange">MARVEL</p>
                     <div className="flex gap-4 text-xs font-mono text-hud-cyan/70 mt-1">
-                      <span>HEIGHT: 10"</span>
+                      <span>HEIGHT: 10&quot;</span>
                       <span>SUPPORT: MEDIUM</span>
                     </div>
                   </div>
