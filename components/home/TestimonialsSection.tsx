@@ -294,7 +294,7 @@ export default function TestimonialsSection() {
                   {/* Achievement Message */}
                   <div className="glass-panel bg-cyber-dark/50 p-3 mb-4">
                     <p className="text-sm font-mono text-hud-cyan/90 italic">
-                      "{testimonial.comment}"
+                      &ldquo;{testimonial.comment}&rdquo;
                     </p>
                   </div>
 

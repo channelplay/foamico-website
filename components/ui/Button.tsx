@@ -1,10 +1,10 @@
 'use client'
 
-import { ButtonHTMLAttributes, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, type HTMLMotionProps } from 'framer-motion'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends HTMLMotionProps<'button'> {
   children: ReactNode
   variant?: 'primary' | 'secondary' | 'outline' | 'hud' | 'hud-pink' | 'hud-green'
   size?: 'small' | 'medium' | 'large'
