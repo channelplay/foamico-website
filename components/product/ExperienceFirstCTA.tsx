@@ -99,22 +99,6 @@ export default function ExperienceFirstCTA() {
               ))}
             </div>
 
-            {/* Action Button */}
-            <div className="flex gap-4">
-              <Link href="/find-store">
-                <motion.button
-                  className="hud-button hud-button-green px-6 py-3"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className="flex items-center gap-2">
-                    <span>◈</span>
-                    FIND STORE
-                    <span className="text-xs opacity-60">[ENTER]</span>
-                  </span>
-                </motion.button>
-              </Link>
-            </div>
           </motion.div>
 
           {/* Right Side - Radar Map Interface */}
@@ -252,19 +236,6 @@ export default function ExperienceFirstCTA() {
                   </div>
                 </div>
 
-                <Link href="/find-store">
-                  <motion.button
-                    className="w-full hud-button hud-button-green py-3"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      <span>📍</span>
-                      NAVIGATE TO CHECKPOINT
-                      <span className="text-xs opacity-60">[ENTER]</span>
-                    </span>
-                  </motion.button>
-                </Link>
               </div>
             </div>
           </motion.div>
