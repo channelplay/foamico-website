@@ -55,11 +55,11 @@ export default function UltimaVariantsSection() {
   ]
 
   return (
-    <section id="variants-section" className="py-20 bg-white">
+    <section id="variants-section" className="py-12 md:py-20 bg-white">
       <Container>
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16 px-4">
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -77,7 +77,7 @@ export default function UltimaVariantsSection() {
         </motion.div>
 
         {/* Variants Grid */}
-        <div className="space-y-24">
+        <div className="space-y-16 md:space-y-24">
           {variants.map((item, index) => (
             <motion.div
               key={item.id}
@@ -85,13 +85,13 @@ export default function UltimaVariantsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`grid lg:grid-cols-2 gap-12 items-start ${
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start ${
                 item.imagePosition === 'right' ? 'lg:grid-flow-row-dense' : ''
               }`}
             >
               {/* Image Side */}
               <div className={`${item.imagePosition === 'right' ? 'lg:col-start-2' : ''}`}>
-                <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
+                <div className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden shadow-xl mx-4 lg:mx-0">
                   {/* Warranty Badge */}
                   <div className="absolute top-6 left-6 z-20 bg-primary text-soft-cream px-3 py-1 text-xs font-semibold rounded">
                     25 YEAR WARRANTY
@@ -113,7 +113,7 @@ export default function UltimaVariantsSection() {
               </div>
 
               {/* Content Side */}
-              <div className={`min-h-[500px] flex flex-col ${item.imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
+              <div className={`min-h-[400px] md:min-h-[500px] flex flex-col px-4 lg:px-0 ${item.imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <h3 className="heading-secondary text-2xl">
@@ -138,12 +138,12 @@ export default function UltimaVariantsSection() {
                     <div key={layerIndex} className="mb-2">
                       <motion.button
                         onClick={() => toggleSection(`${item.id}-${layerIndex}`)}
-                        className="w-full px-6 py-4 flex items-center justify-between bg-soft-cream hover:bg-warm-beige/50 transition-colors rounded relative z-10"
+                        className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between bg-soft-cream hover:bg-warm-beige/50 transition-colors rounded relative z-10">
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                       >
                         <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold">
+                          <div className="w-8 h-8 md:w-10 md:h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-sm md:text-base">
                             {String(layerIndex + 1).padStart(2, '0')}
                           </div>
                           <div className="text-left">

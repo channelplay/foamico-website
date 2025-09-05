@@ -15,11 +15,11 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 px-4">
             Let's Talk
           </h1>
           
-          <p className="text-xl lg:text-2xl text-white/90 mb-12">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 md:mb-12 px-4">
             Your perfect sleep is just one call away
           </p>
           

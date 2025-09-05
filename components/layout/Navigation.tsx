@@ -53,7 +53,7 @@ export default function Navigation() {
                   alt="Foamico Logo"
                   width={180}
                   height={60}
-                  className="h-14 w-auto"
+                  className="h-10 md:h-14 w-auto"
                   priority
                 />
               </motion.div>

@@ -32,19 +32,19 @@ export default function SovaHeroSection() {
   }
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-white via-soft-cream to-warm-beige py-20">
+    <section className="min-h-screen bg-gradient-to-br from-white via-soft-cream to-warm-beige py-12 md:py-20">
       
       <Container>
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[70vh] md:min-h-[80vh]">
           
           {/* Left Side - Image */}
           <motion.div 
-            className="relative"
+            className="relative order-2 lg:order-1">
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="relative h-[600px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] md:h-[600px] rounded-lg overflow-hidden shadow-2xl">
               {/* Warranty Badge */}
               <div className="absolute top-6 left-6 z-20 bg-primary text-soft-cream px-4 py-2 text-sm font-semibold rounded">
                 {selectedVariant === 'luxury' ? '25' : '10'} YEAR WARRANTY
@@ -66,7 +66,7 @@ export default function SovaHeroSection() {
 
           {/* Right Side - Content */}
           <motion.div 
-            className="space-y-8"
+            className="space-y-6 md:space-y-8 order-1 lg:order-2 px-4 lg:px-0">
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -75,7 +75,7 @@ export default function SovaHeroSection() {
             <div>
               <p className="text-overline mb-4">Our Collection</p>
               
-              <h1 className="heading-display mb-6" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+              <h1 className="heading-display mb-4 md:mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}>
                 <span className="text-dark">Sova</span>
                 <span className="text-primary"> Mattress</span>
               </h1>
@@ -88,17 +88,17 @@ export default function SovaHeroSection() {
             </div>
 
             {/* Variant Selector */}
-            <div className="card-elegant p-6">
+            <div className="card-elegant p-4 md:p-6">
               <h3 className="text-sm font-semibold text-dark mb-4 uppercase tracking-wider">
                 Select Your Comfort
               </h3>
               
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-2 md:gap-3">
                 {variants.map((variant) => (
                   <motion.button
                     key={variant.id}
                     onClick={() => setSelectedVariant(variant.id)}
-                    className={`relative px-4 py-3 border-2 rounded transition-all
+                    className={`relative px-2 md:px-4 py-2 md:py-3 border-2 rounded transition-all
                       ${selectedVariant === variant.id
                         ? 'border-primary bg-primary/5'
                         : 'border-gray-200 bg-white hover:border-primary/50'

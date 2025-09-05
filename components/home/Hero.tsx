@@ -123,15 +123,15 @@ export default function Hero() {
 
       {/* Main Content */}
       <Container className="relative z-10">
-        <div className="min-h-[80vh] flex items-center justify-center py-20">
+        <div className="min-h-[80vh] flex items-center justify-center py-12 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
             {/* Main Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 30 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="heading-display mb-6"
-              style={{ fontSize: 'clamp(3rem, 8vw, 6rem)' }}
+              className="heading-display mb-6 px-4"
+              style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}
             >
               <span className="text-dark">Sleep</span>
               <span className="text-primary"> Reimagined.</span>
@@ -142,7 +142,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-body text-light-gray mb-8 max-w-2xl mx-auto text-lg"
+              className="text-body text-light-gray mb-8 max-w-2xl mx-auto text-base md:text-lg px-4"
             >
               Experience the perfect fusion of traditional craftsmanship and 
               innovative foam technology, designed to transform your sleep 
@@ -154,7 +154,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center px-4"
             >
               <Link href="/products">
                 <motion.button
@@ -182,7 +182,7 @@ export default function Hero() {
       
       {/* Central featured image */}
       <motion.div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-56 md:w-[500px] md:h-[350px] z-0"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-44 sm:w-80 sm:h-56 md:w-[500px] md:h-[350px] z-0"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ 
           opacity: isLoaded ? 0.10 : 0, 

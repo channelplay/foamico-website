@@ -32,10 +32,10 @@ export default function Footer() {
   return (
     <footer className="bg-[#816842] text-[#f5f0e8] border-t border-[#816842]/20">
       <Container>
-        <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="py-8 md:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Brand Section */}
-            <div className="lg:col-span-2">
+            <div className="sm:col-span-2 lg:col-span-2">
               <div className="mb-6">
                 <div className="bg-white rounded-lg p-3 inline-block">
                   <Image
@@ -43,12 +43,12 @@ export default function Footer() {
                     alt="Foamico Logo"
                     width={180}
                     height={60}
-                    className="h-14 w-auto"
+                    className="h-10 md:h-14 w-auto"
                   />
                 </div>
               </div>
               
-              <p className="text-sm text-[#d4c4a8] mb-6 leading-relaxed">
+              <p className="text-sm text-[#d4c4a8] mb-6 leading-relaxed max-w-lg">
                 Experience the perfect fusion of traditional craftsmanship and 
                 innovative foam technology, designed to transform your sleep 
                 into a luxurious experience.

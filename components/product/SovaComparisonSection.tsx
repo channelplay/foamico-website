@@ -74,11 +74,11 @@ export default function SovaComparisonSection() {
   }
 
   return (
-    <section id="comparison-section" className="py-20 bg-soft-cream">
+    <section id="comparison-section" className="py-12 md:py-20 bg-soft-cream">
       <Container>
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16 px-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function SovaComparisonSection() {
         >
           <p className="text-overline mb-4">Compare Features</p>
           
-          <h2 className="text-5xl md:text-6xl font-bold text-black mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4">
             Sova Mattress Comparison
           </h2>
           <div className="divider-line divider-center" />
@@ -106,7 +106,7 @@ export default function SovaComparisonSection() {
           transition={{ duration: 0.6 }}
         >
           {/* Table Container */}
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto -mx-4 sm:mx-0">
             {/* Table Header */}
             <div className="grid grid-cols-4 bg-soft-cream">
               <div className="p-4 border-r border-gray-200">

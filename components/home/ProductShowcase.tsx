@@ -18,7 +18,7 @@ export default function ProductShowcase() {
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null)
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <Container>
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -29,11 +29,11 @@ export default function ProductShowcase() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-overline mb-4">Our Collection</p>
-            <h2 className="heading-primary mb-4">
+            <h2 className="heading-primary mb-4 text-3xl md:text-5xl px-4">
               Engineered for Perfect Sleep
             </h2>
             <div className="divider-line divider-center" />
-            <p className="text-body text-light-gray max-w-2xl mx-auto mt-6">
+            <p className="text-body text-light-gray max-w-2xl mx-auto mt-6 px-4">
               Each mattress is meticulously crafted using premium materials and innovative foam technology, 
               ensuring exceptional comfort and support for years to come.
             </p>
@@ -42,7 +42,7 @@ export default function ProductShowcase() {
 
         {/* Products Grid - Centered for 2 products */}
         <div className="flex justify-center">
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl px-4 md:px-0">
             {products.map((product, index) => (
             <motion.div
               key={product.id}
@@ -83,7 +83,7 @@ export default function ProductShowcase() {
                   </div>
 
                   {/* Product Info */}
-                  <div className="p-6 flex-grow flex flex-col">
+                  <div className="p-4 md:p-6 flex-grow flex flex-col">
                     <h3 className="heading-secondary text-xl mb-2">
                       {product.name}
                     </h3>
