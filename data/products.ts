@@ -95,7 +95,7 @@ export const products: Product[] = [
     id: 'ultima',
     name: 'Ultima',
     category: 'Light Feel',
-    tagline: 'Curvy, gentle and feminine. The kind of comfort that walks in slow motion.',
+    tagline: 'Luxuriously soft with adaptive comfort for cloud-like sleep.',
     description: 'Ultima mattresses blend cloud-like comfort with Zero G Latex Foam, perfect for those who prefer a lighter, more adaptive sleeping surface.',
     variants: [
       {
@@ -153,82 +153,6 @@ export const products: Product[] = [
     technology: ['OrthoSense®', 'Next-Gen UMS Technology Foam', 'Pine Cone Latex'],
     warranty: 25,
     supportLevel: 'plush'
-  },
-  {
-    id: 'natura',
-    name: 'Natura',
-    category: 'Natural & Earthy',
-    tagline: 'Earthy, breathable and foam free. For those who like their sleep clean and quiet.',
-    description: 'Natura brings you closer to nature with Natural Pincore Latex that adapts to your body contours while maintaining cool, breathable comfort.',
-    variants: [
-      {
-        id: 'natura-1',
-        name: 'Natura 1.0',
-        price: 35999,
-        originalPrice: 45999,
-        size: 'Queen (60" x 78")',
-        thickness: '8 inches',
-        firmness: 'Medium',
-        layers: [
-          { name: 'Super Plush Luxeknit Fabric', description: 'Natural breathable surface', material: 'Luxeknit' },
-          { name: 'Aeroflex Foam Quilt', description: 'Gentle support layer', material: 'Foam Quilt' },
-          { name: 'Natural Pincore Latex', description: 'Naturally cool and responsive', material: 'Natural Latex' },
-          { name: 'Zero G Latex Foam', description: 'Supportive latex core', material: 'Natural Latex' },
-          { name: 'Soft Foam with Quilt', description: 'Natural comfort finish', material: 'Foam Quilt' }
-        ]
-      },
-      {
-        id: 'natura-2',
-        name: 'Natura 2.0',
-        price: 42999,
-        originalPrice: 52999,
-        size: 'Queen (60" x 78")',
-        thickness: '10 inches',
-        firmness: 'Medium-Firm',
-        layers: [
-          { name: 'Super Plush Luxeknit Fabric', description: 'Enhanced natural surface', material: 'Luxeknit' },
-          { name: 'Aeroflex Foam Quilt', description: 'Advanced comfort quilting', material: 'Foam Quilt' },
-          { name: 'Pulse Core Foam', description: 'Pressure relief technology', material: 'Memory Foam' },
-          { name: 'Natural Pincore Latex', description: 'Premium natural latex layer', material: 'Natural Latex' },
-          { name: 'Zero G Latex Foam', description: 'Enhanced latex support', material: 'Natural Latex' },
-          { name: 'Soft Foam with Quilt', description: 'Luxury natural finish', material: 'Foam Quilt' }
-        ]
-      }
-    ],
-    features: ['100% Natural Latex', 'Eco-friendly', 'Anti-allergy', 'Temperature Regulation', 'Breathable', 'Motion Control'],
-    technology: ['OrthoSense®', 'Natural Pincore Technology', 'Zero G Latex'],
-    warranty: 25,
-    supportLevel: 'medium'
-  },
-  {
-    id: 'marvel',
-    name: 'Marvel',
-    category: 'Indian Rivers Inspired',
-    tagline: 'A mattress that bends, stretches and supports like the hero of a nightly soap.',
-    description: 'Marvel mattresses feature innovative Insignia Velio Foam with CNC Cut technology for enhanced airflow and precise pressure relief.',
-    variants: [
-      {
-        id: 'marvel',
-        name: 'Marvel',
-        price: 39999,
-        originalPrice: 49999,
-        size: 'Queen (60" x 78")',
-        thickness: '6 inches',
-        firmness: 'Medium',
-        layers: [
-          { name: 'Super Plush Luxeknit Fabric', description: 'Premium breathable surface', material: 'Luxeknit' },
-          { name: 'Aeroflex Foam Quilt', description: 'Adaptive comfort layer', material: 'Foam Quilt' },
-          { name: 'Pulse Core Foam', description: 'Body contouring support', material: 'Memory Foam' },
-          { name: 'Insignia Velio Foam', description: 'CNC Cut foam for enhanced airflow and cooling', material: 'Advanced Foam' },
-          { name: 'Zero G Latex Foam', description: 'Natural latex support core', material: 'Natural Latex' },
-          { name: 'Soft Foam with Quilt', description: 'Luxury comfort finish', material: 'Foam Quilt' }
-        ]
-      }
-    ],
-    features: ['Advanced Cooling', 'CNC Cut Technology', 'Anti-allergy', 'Superior Airflow', 'Breathable', 'Motion Control'],
-    technology: ['OrthoSense®', 'Insignia Velio Foam', 'CNC Cut Technology'],
-    warranty: 25,
-    supportLevel: 'medium'
   }
 ]
 

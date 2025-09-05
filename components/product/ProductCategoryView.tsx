@@ -109,8 +109,6 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
                 id: v.id,
                 name: v.name,
                 size: v.size || 'Standard',
-                price: v.price || 29999,
-                originalPrice: v.originalPrice || 39999,
                 thickness: v.thickness || '8 inches',
                 firmness: v.firmness || 'Medium',
                 inStock: true

@@ -3,37 +3,26 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-interface Variant {
+interface VariantOption {
   id: string
   name: string
-  size: string
-  price: number
-  originalPrice?: number
-  thickness: string
-  firmness: string
-  inStock: boolean
+  size?: string
+  thickness?: string
+  firmness?: string
+  inStock?: boolean
 }
 
 interface AppleStyleVariantSelectorProps {
-  variants: Variant[]
-  onSelect: (variant: Variant) => void
+  variants: VariantOption[]
+  onSelect: (variant: VariantOption) => void
 }
 
 export default function AppleStyleVariantSelector({ variants, onSelect }: AppleStyleVariantSelectorProps) {
   const [selectedVariant, setSelectedVariant] = useState(variants[0])
 
-  const handleSelect = (variant: Variant) => {
+  const handleSelect = (variant: VariantOption) => {
     setSelectedVariant(variant)
     onSelect(variant)
-  }
-
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price)
   }
 
   return (
@@ -43,9 +32,6 @@ export default function AppleStyleVariantSelector({ variants, onSelect }: AppleS
       <div className="grid gap-3">
         {variants.map((variant) => {
           const isSelected = selectedVariant.id === variant.id
-          const discount = variant.originalPrice 
-            ? Math.round(((variant.originalPrice - variant.price) / variant.originalPrice) * 100)
-            : 0
 
           return (
             <motion.button
@@ -97,21 +83,12 @@ export default function AppleStyleVariantSelector({ variants, onSelect }: AppleS
                 </div>
                 
                 <div className="text-right">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-gray-900">
-                      {formatPrice(variant.price)}
-                    </span>
-                  </div>
-                  {variant.originalPrice && variant.originalPrice > variant.price && (
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="text-sm text-gray-500 line-through">
-                        {formatPrice(variant.originalPrice)}
-                      </span>
-                      <span className="text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded">
-                        {discount}% OFF
-                      </span>
-                    </div>
-                  )}
+                  <motion.button
+                    className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                    whileHover={{ x: 3 }}
+                  >
+                    View Details →
+                  </motion.button>
                 </div>
               </div>
               
@@ -143,9 +120,9 @@ export default function AppleStyleVariantSelector({ variants, onSelect }: AppleS
               {selectedVariant.size} • {selectedVariant.thickness} • {selectedVariant.firmness}
             </p>
           </div>
-          <p className="text-xl font-bold text-[#8BC34A]">
-            {formatPrice(selectedVariant.price)}
-          </p>
+          <button className="btn-primary text-sm">
+            Contact for Pricing
+          </button>
         </div>
       </div>
     </div>

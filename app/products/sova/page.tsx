@@ -1,7 +1,6 @@
 import SovaHeroSection from '@/components/product/SovaHeroSection'
 import SovaVariantsSection from '@/components/product/SovaVariantsSection'
 import SovaComparisonSection from '@/components/product/SovaComparisonSection'
-import ExperienceFirstCTA from '@/components/product/ExperienceFirstCTA'
 import Container from '@/components/ui/Container'
 import { getProductByCategory } from '@/data/products'
 
@@ -22,9 +21,6 @@ export default function SovaPage() {
       
       {/* Comparison Section - Compare all three variants */}
       <SovaComparisonSection />
-      
-      {/* Experience First CTA */}
-      <ExperienceFirstCTA />
     </main>
   )
 }

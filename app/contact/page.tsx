@@ -1,178 +1,51 @@
-import { Metadata } from 'next'
-import Container from '@/components/ui/Container'
-import Card from '@/components/ui/Card'
-import Button from '@/components/ui/Button'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Foamico',
-  description: 'Get in touch with Foamico. We\'re here to help you find your perfect mattress.',
-}
+import Container from '@/components/ui/Container'
+import { motion } from 'framer-motion'
 
 export default function ContactPage() {
+  const phoneNumber = '9654312878'
+  
   return (
-    <div className="py-8 lg:py-12">
+    <section className="min-h-screen flex items-center justify-center py-20" style={{ backgroundColor: '#816842' }}>
       <Container>
-        <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold text-foamico-black mb-4">
-            Get in Touch
+        <motion.div 
+          className="text-center max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6">
+            Let's Talk
           </h1>
-          <p className="text-lg text-foamico-gray-600 max-w-2xl mx-auto">
-            Have questions about our products? Need help choosing the right mattress? 
-            We&apos;re here to help!
+          
+          <p className="text-xl lg:text-2xl text-white/90 mb-12">
+            Your perfect sleep is just one call away
           </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <Card>
-            <h2 className="text-2xl font-bold text-foamico-black mb-6">
-              Send Us a Message
-            </h2>
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-foamico-gray-700 mb-2">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 border border-foamico-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-foamico-lime focus:border-transparent"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foamico-gray-700 mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 border border-foamico-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-foamico-lime focus:border-transparent"
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-foamico-gray-700 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-2 border border-foamico-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-foamico-lime focus:border-transparent"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-foamico-gray-700 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  className="w-full px-4 py-2 border border-foamico-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-foamico-lime focus:border-transparent"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-foamico-gray-700 mb-2">
-                  Subject
-                </label>
-                <select className="w-full px-4 py-2 border border-foamico-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-foamico-lime focus:border-transparent">
-                  <option>Product Inquiry</option>
-                  <option>Store Location</option>
-                  <option>Warranty Information</option>
-                  <option>General Question</option>
-                  <option>Feedback</option>
-                </select>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-foamico-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  rows={5}
-                  className="w-full px-4 py-2 border border-foamico-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-foamico-lime focus:border-transparent resize-none"
-                  required
-                ></textarea>
-              </div>
-              
-              <Button type="submit" className="w-full">
-                Send Message
-              </Button>
-            </form>
-          </Card>
-
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <Card>
-              <h3 className="text-xl font-semibold text-foamico-black mb-4">
-                Customer Support
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <span className="text-foamico-lime text-xl">📞</span>
-                  <div>
-                    <p className="font-medium text-foamico-black">Call Us</p>
-                    <p className="text-foamico-gray-600">1800-123-FOAM (3626)</p>
-                    <p className="text-sm text-foamico-gray-500">Mon-Sat: 9 AM - 7 PM</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-foamico-lime text-xl">✉️</span>
-                  <div>
-                    <p className="font-medium text-foamico-black">Email</p>
-                    <p className="text-foamico-gray-600">support@foamico-mattress.com</p>
-                    <p className="text-sm text-foamico-gray-500">24-48 hour response time</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-foamico-lime text-xl">💬</span>
-                  <div>
-                    <p className="font-medium text-foamico-black">WhatsApp</p>
-                    <p className="text-foamico-gray-600">+91 98765 43210</p>
-                    <p className="text-sm text-foamico-gray-500">Quick responses</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            <Card>
-              <h3 className="text-xl font-semibold text-foamico-black mb-4">
-                Corporate Office
-              </h3>
-              <div className="space-y-3">
-                <p className="text-foamico-gray-700">
-                  Foamico Industries Pvt. Ltd.<br />
-                  Plot No. 123, Sector 45<br />
-                  Gurugram, Haryana 122003<br />
-                  India
-                </p>
-                <div className="pt-3">
-                  <p className="text-sm text-foamico-gray-600">
-                    <span className="font-medium">Business Hours:</span><br />
-                    Monday - Friday: 9:00 AM - 6:00 PM<br />
-                    Saturday: 9:00 AM - 2:00 PM
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="bg-foamico-lime text-white">
-              <h3 className="text-xl font-semibold mb-4">
-                Need Immediate Assistance?
-              </h3>
-              <p className="mb-4 opacity-90">
-                Our sleep experts are available to help you find the perfect mattress 
-                for your needs.
-              </p>
-              <Button href="/find-store" variant="secondary" size="small" className="w-full">
-                Visit Our Store
-              </Button>
-            </Card>
-          </div>
-        </div>
+          
+          <motion.a
+            href={`tel:${phoneNumber}`}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#816842] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-100 font-semibold"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <svg 
+              className="w-6 h-6" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
+              />
+            </svg>
+            <span className="text-lg">{phoneNumber}</span>
+          </motion.a>
+        </motion.div>
       </Container>
-    </div>
+    </section>
   )
 }
