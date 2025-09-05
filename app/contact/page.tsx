@@ -16,7 +16,7 @@ export default function ContactPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 px-4">
-            Let's Talk
+            Let&apos;s Talk
           </h1>
           
           <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 md:mb-12 px-4">

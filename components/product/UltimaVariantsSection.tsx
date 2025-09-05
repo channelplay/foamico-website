@@ -59,7 +59,7 @@ export default function UltimaVariantsSection() {
       <Container>
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-12 md:mb-16 px-4">
+          className="text-center mb-12 md:mb-16 px-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -138,7 +138,7 @@ export default function UltimaVariantsSection() {
                     <div key={layerIndex} className="mb-2">
                       <motion.button
                         onClick={() => toggleSection(`${item.id}-${layerIndex}`)}
-                        className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between bg-soft-cream hover:bg-warm-beige/50 transition-colors rounded relative z-10">
+                        className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between bg-soft-cream hover:bg-warm-beige/50 transition-colors rounded relative z-10"
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                       >
@@ -179,15 +179,6 @@ export default function UltimaVariantsSection() {
                               <p className="text-sm text-dark leading-relaxed">
                                 {layer.description}
                               </p>
-                              {layer.benefits && (
-                                <div className="mt-3 flex flex-wrap gap-2">
-                                  {layer.benefits.map((benefit, idx) => (
-                                    <span key={idx} className="text-xs bg-white px-3 py-1 rounded text-dark">
-                                      {benefit}
-                                    </span>
-                                  ))}
-                                </div>
-                              )}
                             </div>
                           </motion.div>
                         )}

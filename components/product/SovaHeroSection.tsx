@@ -39,7 +39,7 @@ export default function SovaHeroSection() {
           
           {/* Left Side - Image */}
           <motion.div 
-            className="relative order-2 lg:order-1">
+            className="relative order-2 lg:order-1"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -66,7 +66,7 @@ export default function SovaHeroSection() {
 
           {/* Right Side - Content */}
           <motion.div 
-            className="space-y-6 md:space-y-8 order-1 lg:order-2 px-4 lg:px-0">
+            className="space-y-6 md:space-y-8 order-1 lg:order-2 px-4 lg:px-0"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

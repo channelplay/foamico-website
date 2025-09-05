@@ -5,11 +5,11 @@ import TestimonialsSection from '@/components/home/TestimonialsSection'
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Hero />
       <ProductShowcase />
       <TechnologySection />
       <TestimonialsSection />
-    </>
+    </main>
   )
 }

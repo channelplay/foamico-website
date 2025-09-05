@@ -151,7 +151,7 @@ export default function TestimonialsSection() {
                   {/* Review Content */}
                   <blockquote className="text-dark mb-6">
                     <p className="italic">
-                      "{testimonial.comment}"
+                      &ldquo;{testimonial.comment}&rdquo;
                     </p>
                   </blockquote>
 
