@@ -9,6 +9,7 @@ import Container from '@/components/ui/Container'
 export default function UltimaVariantsSection() {
   const product = getProductByCategory('ultima')
   const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({})
+  const [selectedVariant, setSelectedVariant] = useState<string>('classic')
 
   if (!product) return null
 
@@ -30,13 +31,15 @@ export default function UltimaVariantsSection() {
     {
       id: 'classic',
       name: 'Ultima Classic',
+      tagline: 'Cloud Comfort',
       image: '/Ultima 1.png',
       imagePosition: 'left',
       variant: product.variants[0]
     },
     {
       id: 'premium',
-      name: 'Ultima Premium',
+      name: 'Ultima Premium', 
+      tagline: 'Balanced Luxury',
       image: '/Ultima 2.png',
       imagePosition: 'right',
       variant: product.variants[1]
@@ -44,6 +47,7 @@ export default function UltimaVariantsSection() {
     {
       id: 'luxury',
       name: 'Ultima Luxury',
+      tagline: 'Ultimate Plush',
       image: '/Ultima 3.png',
       imagePosition: 'left',
       variant: product.variants[2]
@@ -51,240 +55,142 @@ export default function UltimaVariantsSection() {
   ]
 
   return (
-    <section className="py-20 bg-cyber-black relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-cyber-grid opacity-10" />
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-b from-hud-pink/5 via-transparent to-hud-cyan/5"
-          animate={{
-            backgroundPosition: ['0% 0%', '100% 100%'],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-        />
-      </div>
-      
-      <Container className="relative z-10">
-        {/* Main Section Header */}
+    <section id="variants-section" className="py-12 md:py-20 bg-white">
+      <Container>
+        {/* Section Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16 px-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.div 
-            className="inline-block glass-panel border border-hud-pink px-6 py-2 mb-6"
-            animate={{
-              boxShadow: [
-                '0 0 20px rgba(255,0,255,0.3)',
-                '0 0 40px rgba(255,0,255,0.5)',
-                '0 0 20px rgba(255,0,255,0.3)',
-              ],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <span className="text-xs font-mono text-hud-pink uppercase tracking-widest">
-              VARIANT SELECTION MATRIX
-            </span>
-          </motion.div>
-          
-          <h2 className="text-4xl lg:text-5xl font-cyber font-bold">
-            <span className="neon-text-pink">CHOOSE YOUR</span>
-            <br />
-            <span className="neon-text-cyan text-5xl lg:text-6xl">LUXURY CONFIG</span>
+          <p className="text-overline mb-4">Explore Options</p>
+          <h2 className="heading-primary mb-4">
+            Choose Your Perfect Comfort
           </h2>
+          <div className="divider-line divider-center" />
+          <p className="text-body text-light-gray max-w-2xl mx-auto mt-6">
+            Each Ultima variant is meticulously crafted with distinct layer combinations 
+            to provide the ideal cloud-like sleeping experience for your unique needs.
+          </p>
         </motion.div>
-        
-        {variants.map((item, index) => (
-          <motion.div 
-            key={item.id} 
-            className="mb-32 last:mb-0"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-          >
 
-            {/* Content Grid */}
-            <div className={`grid lg:grid-cols-2 gap-12 items-start ${
-              item.imagePosition === 'right' ? 'lg:grid-flow-dense' : ''
-            }`}>
-              
+        {/* Variants Grid */}
+        <div className="space-y-16 md:space-y-24">
+          {variants.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start ${
+                item.imagePosition === 'right' ? 'lg:grid-flow-row-dense' : ''
+              }`}
+            >
               {/* Image Side */}
-              <div className={`relative ${item.imagePosition === 'right' ? 'lg:col-start-2' : ''}`}>
-                <div className="relative hologram-card h-[500px]">
-                  {/* Corner decorations */}
-                  <div className="cyber-corner-tl" />
-                  <div className="cyber-corner-tr" />
-                  <div className="cyber-corner-bl" />
-                  <div className="cyber-corner-br" />
+              <div className={`${item.imagePosition === 'right' ? 'lg:col-start-2' : ''}`}>
+                <div className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden shadow-xl mx-4 lg:mx-0">
+                  {/* Warranty Badge */}
+                  <div className="absolute top-6 left-6 z-20 bg-primary text-soft-cream px-3 py-1 text-xs font-semibold rounded">
+                    25 YEAR WARRANTY
+                  </div>
                   
-                  {/* Scan Effect */}
-                  <motion.div
-                    className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-hud-pink to-transparent z-10"
-                    animate={{
-                      top: ['-4px', '100%'],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: 'loop',
-                      delay: index * 0.5
-                    }}
-                  />
-                  
+                  {/* Product Image */}
                   <Image
                     src={item.image}
-                    alt={`${item.name} Mattress`}
+                    alt={`${item.name} mattress`}
                     fill
-                    className="object-cover rounded-lg"
-                    style={{
-                      filter: 'brightness(0.9) saturate(1.2)',
-                    }}
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   
-                  {/* Status Indicator */}
-                  <div className="absolute top-6 right-6 z-20">
-                    <div className="pulse-dot bg-hud-pink" />
-                  </div>
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
                   
-                  {/* Variant Label */}
-                  <div className="absolute bottom-6 left-6 z-20">
-                    <div className="glass-panel border border-hud-pink/50 px-3 py-2">
-                      <span className="text-xs font-mono text-hud-pink">CONFIG_{item.id.toUpperCase()}</span>
-                    </div>
-                  </div>
                 </div>
               </div>
 
-              {/* Expandable Layers Side */}
-              <div className={`space-y-4 ${item.imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
-                <div className="flex items-center justify-between mb-6">
+              {/* Content Side */}
+              <div className={`min-h-[400px] md:min-h-[500px] flex flex-col px-4 lg:px-0 ${item.imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
+                <div className="flex justify-between items-start mb-6">
                   <div>
-                    <motion.div 
-                      className="inline-block glass-panel border border-hud-pink/30 px-3 py-1 mb-2"
-                      animate={{ borderColor: ['rgba(255,0,255,0.3)', 'rgba(0,212,255,0.3)', 'rgba(255,0,255,0.3)'] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      <span className="text-[10px] font-mono text-hud-pink uppercase tracking-widest">
-                        ULTIMA_CLASS
-                      </span>
-                    </motion.div>
-                    <h3 className="text-2xl font-cyber text-hud-pink">
-                      {item.name.toUpperCase()}
+                    <h3 className="heading-secondary text-2xl">
+                      {item.name}
                     </h3>
                   </div>
-                  <motion.button 
+                  <button 
                     onClick={scrollToComparison}
-                    className="hud-button hud-button-pink px-4 py-2 text-xs"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    className="btn-secondary text-sm"
                   >
-                    <span className="flex items-center gap-2">
-                      <span>◆</span>
-                      COMPARE
-                      <span className="opacity-60">[C]</span>
-                    </span>
-                  </motion.button>
+                    Compare Variants
+                  </button>
                 </div>
-                
-                {item.variant.layers.map((layer, layerIndex) => (
-                  <motion.div
-                    key={layerIndex}
-                    className="hologram-card mb-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: layerIndex * 0.1 }}
-                  >
-                    <motion.button
-                      onClick={() => toggleSection(`${item.id}-${layerIndex}`)}
-                      className="w-full px-6 py-4 flex items-center justify-between glass-panel hover:bg-hud-pink/5 transition-colors border border-hud-pink/20 hover:border-hud-pink/40"
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.99 }}
-                    >
-                      <div className="flex items-center gap-4">
-                        <motion.div 
-                          className="w-10 h-10 glass-panel border border-hud-pink/50 rounded-full flex items-center justify-center text-hud-pink font-mono font-bold"
-                          animate={{ 
-                            boxShadow: expandedSections[`${item.id}-${layerIndex}`] 
-                              ? ['0 0 10px rgba(255,0,255,0.5)', '0 0 20px rgba(255,0,255,0.8)', '0 0 10px rgba(255,0,255,0.5)']
-                              : '0 0 5px rgba(255,0,255,0.3)'
-                          }}
-                          transition={{ duration: 1, repeat: expandedSections[`${item.id}-${layerIndex}`] ? Infinity : 0 }}
-                        >
-                          {String(layerIndex + 1).padStart(2, '0')}
-                        </motion.div>
-                        <div className="text-left">
-                          <h4 className="font-mono text-hud-cyan text-sm uppercase tracking-wider">{layer.name}</h4>
-                          <div className="text-[10px] font-mono text-hud-pink/60 mt-1">
-                            LAYER_{String(layerIndex + 1).padStart(2, '0')}
+
+                {/* Layer Information */}
+                <div className="space-y-3">
+                  <h4 className="text-sm font-semibold text-dark uppercase tracking-wider mb-4">
+                    Layer Composition
+                  </h4>
+                  
+                  {item.variant.layers?.map((layer, layerIndex) => (
+                    <div key={layerIndex} className="mb-2">
+                      <motion.button
+                        onClick={() => toggleSection(`${item.id}-${layerIndex}`)}
+                        className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between bg-soft-cream hover:bg-warm-beige/50 transition-colors rounded relative z-10"
+                        whileHover={{ scale: 1.01 }}
+                        whileTap={{ scale: 0.99 }}
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-8 h-8 md:w-10 md:h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-sm md:text-base">
+                            {String(layerIndex + 1).padStart(2, '0')}
+                          </div>
+                          <div className="text-left">
+                            <h4 className="font-medium text-dark">{layer.name}</h4>
+                            {layer.thickness && (
+                              <span className="text-xs text-light-gray">
+                                {layer.thickness} thickness
+                              </span>
+                            )}
                           </div>
                         </div>
-                      </div>
-                      <motion.div
-                        className="flex items-center gap-2"
-                        animate={{ rotate: expandedSections[`${item.id}-${layerIndex}`] ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <span className="text-xs font-mono text-hud-cyan/60">
-                          {expandedSections[`${item.id}-${layerIndex}`] ? 'COLLAPSE' : 'EXPAND'}
-                        </span>
-                        <span className="text-hud-cyan text-sm">▼</span>
-                      </motion.div>
-                    </motion.button>
-                    
-                    <AnimatePresence>
-                      {expandedSections[`${item.id}-${layerIndex}`] && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
+                          className="flex items-center gap-2"
+                          animate={{ rotate: expandedSections[`${item.id}-${layerIndex}`] ? 180 : 0 }}
                           transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
                         >
-                          <div className="px-6 pb-4 pt-4 bg-gradient-to-r from-hud-pink/5 to-hud-cyan/5 border-t border-hud-pink/20">
-                            <div className="mb-3">
-                              <span className="text-[10px] font-mono text-hud-pink/60 uppercase tracking-widest">LAYER SPECIFICATION</span>
-                            </div>
-                            <p className="text-sm font-mono text-hud-cyan/80 leading-relaxed mb-3">{layer.description}</p>
-                            {layer.thickness && (
-                              <div className="flex items-center gap-3">
-                                <span className="text-[10px] font-mono text-hud-orange/60 uppercase">THICKNESS:</span>
-                                <span className="text-xs font-mono text-hud-orange">{layer.thickness}</span>
-                              </div>
-                            )}
-                            
-                            {/* Progress Bar Animation */}
-                            <motion.div 
-                              className="mt-3 h-1 bg-cyber-dark rounded-full overflow-hidden"
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              transition={{ delay: 0.2 }}
-                            >
-                              <motion.div 
-                                className="h-full bg-gradient-to-r from-hud-pink to-hud-cyan"
-                                initial={{ width: 0 }}
-                                animate={{ width: '100%' }}
-                                transition={{ duration: 1, delay: 0.3 }}
-                              />
-                            </motion.div>
-                          </div>
+                          <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
                         </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                ))}
-
+                      </motion.button>
+                      
+                      <AnimatePresence>
+                        {expandedSections[`${item.id}-${layerIndex}`] && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-6 pb-4 pt-4 bg-warm-beige/20 border-l-4 border-primary ml-6">
+                              <p className="text-sm text-dark leading-relaxed">
+                                {layer.description}
+                              </p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
+
       </Container>
     </section>
   )

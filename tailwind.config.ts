@@ -9,62 +9,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Free Guy AR/HUD comfort-tech colors
-        hud: {
-          cyan: {
-            DEFAULT: "#00D4FF",
-            light: "#00F0FF",
-            dark: "#0099CC",
-            glow: "#00FFFF",
-          },
-          lavender: {
-            DEFAULT: "#B8A9E5",
-            light: "#D4C5F9",
-            dark: "#9D8EC7",
-            glow: "#C8B9F5",
-          },
-          pink: {
-            DEFAULT: "#B8A9E5", // Soft lavender for comfort
-            light: "#D4C5F9",
-            dark: "#9D8EC7",
-            glow: "#C8B9F5",
-          },
-          green: {
-            DEFAULT: "#00FF88",
-            light: "#00FFA0",
-            dark: "#00CC66",
-            glow: "#00FF00",
-          },
-          gold: {
-            DEFAULT: "#FFD700",
-            light: "#FFED4E",
-            dark: "#DAA520",
-            glow: "#FFEA00",
-          },
-          orange: {
-            DEFAULT: "#FDB863",
-            light: "#FDCE8D",
-            dark: "#F4A460",
-            glow: "#FDC87C",
-          },
-          purple: {
-            DEFAULT: "#9D8EC7",
-            light: "#B8A9E5",
-            dark: "#7B6BA3",
-          },
-          blue: {
-            DEFAULT: "#0066FF",
-            light: "#3385FF",
-            dark: "#0044CC",
-          },
-        },
-        // Dark backgrounds for AR effect
-        cyber: {
-          black: "#0A0A0F",
-          dark: "#0D0D1A",
-          darker: "#050510",
-          grid: "#1A1A2E",
-        },
+        // Luxury Color Palette
+        ivory: "#FAF9F6",
+        champagne: "#F7E7CE",
+        gold: "#D4AF37",
+        "rose-gold": "#E8B4B8",
+        "warm-gray": "#8B8680",
+        charcoal: "#2C2825",
+        obsidian: "#0A0908",
+        pearl: "#FDFCFA",
+        bronze: "#B08D57",
+        cognac: "#834333",
+        sage: "#87936A",
+        
         // Original Foamico colors (preserved)
         foamico: {
           lime: "#A4C639",
@@ -87,164 +44,102 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["'Roboto Mono'", "monospace"],
-        cyber: ["'Orbitron'", "sans-serif"],
+        serif: ["'Playfair Display'", "'Cormorant Garamond'", "serif"],
+        sans: ["'Inter'", "'Space Grotesk'", "system-ui", "sans-serif"],
+        display: ["'Playfair Display'", "serif"],
+        body: ["'Inter'", "sans-serif"],
+      },
+      fontSize: {
+        'display-lg': ['clamp(3rem, 8vw, 6rem)', { lineHeight: '0.95' }],
+        'display-md': ['clamp(2.5rem, 6vw, 4rem)', { lineHeight: '1' }],
+        'display-sm': ['clamp(2rem, 4vw, 3rem)', { lineHeight: '1.1' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+        '30': '7.5rem',
+        '34': '8.5rem',
+        '38': '9.5rem',
       },
       animation: {
-        "fade-in": "fadeIn 0.5s ease-in-out",
-        "slide-up": "slideUp 0.3s ease-out",
-        "pulse-glow": "pulseGlow 2s ease-in-out infinite",
-        "scan-line": "scanLine 8s linear infinite",
-        "glitch": "glitch 2.5s infinite",
+        "fade-in": "fadeIn 1s ease-in-out",
+        "fade-in-up": "fadeInUp 1s ease-out",
+        "slide-up": "slideUp 0.6s ease-out",
+        "scale-in": "scaleIn 0.6s ease-out",
+        "shimmer": "shimmer 8s linear infinite",
         "float": "float 6s ease-in-out infinite",
-        "shimmer": "shimmer 2s linear infinite",
-        "neon-pulse": "neonPulse 1.5s ease-in-out infinite",
-        "data-stream": "dataStream 3s linear infinite",
-        "hud-fade": "hudFade 0.3s ease-out",
-        "matrix-rain": "matrixRain 2s linear infinite",
-        "hologram": "hologram 4s ease-in-out infinite",
-        "electric": "electric 0.5s ease-in-out",
-        "cyber-spin": "cyberSpin 1s linear infinite",
+        "reveal-line": "revealLine 0.8s ease-out forwards",
+        "glow-pulse": "glowPulse 3s ease-in-out infinite",
+        "rotate-slow": "rotateSlow 30s linear infinite",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        fadeInUp: {
+          "0%": { 
+            opacity: "0",
+            transform: "translateY(30px)" 
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "translateY(0)" 
+          },
+        },
         slideUp: {
-          "0%": { transform: "translateY(10px)", opacity: "0" },
+          "0%": { transform: "translateY(20px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
-        pulseGlow: {
-          "0%, 100%": { 
-            opacity: "1",
-            filter: "brightness(1) drop-shadow(0 0 10px currentColor)",
-          },
-          "50%": { 
-            opacity: "0.8",
-            filter: "brightness(1.2) drop-shadow(0 0 20px currentColor)",
-          },
+        scaleIn: {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
         },
-        scanLine: {
-          "0%": { transform: "translateY(-100%)" },
-          "100%": { transform: "translateY(100vh)" },
-        },
-        glitch: {
-          "0%, 100%": { 
-            transform: "translate(0)",
-            filter: "hue-rotate(0deg)",
-          },
-          "20%": { 
-            transform: "translate(-2px, 2px)",
-            filter: "hue-rotate(90deg)",
-          },
-          "40%": { 
-            transform: "translate(-2px, -2px)",
-            filter: "hue-rotate(180deg)",
-          },
-          "60%": { 
-            transform: "translate(2px, 2px)",
-            filter: "hue-rotate(270deg)",
-          },
-          "80%": { 
-            transform: "translate(2px, -2px)",
-            filter: "hue-rotate(360deg)",
-          },
+        shimmer: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "200% 50%" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-20px)" },
+          "50%": { transform: "translateY(-10px)" },
         },
-        shimmer: {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" },
+        revealLine: {
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(1)" },
         },
-        neonPulse: {
+        glowPulse: {
           "0%, 100%": { 
-            textShadow: "0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor",
+            boxShadow: "0 0 20px rgba(212, 175, 55, 0.2)",
           },
           "50%": { 
-            textShadow: "0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor",
+            boxShadow: "0 0 40px rgba(212, 175, 55, 0.4)",
           },
         },
-        dataStream: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(100%)" },
-        },
-        hudFade: {
-          "0%": { 
-            opacity: "0",
-            transform: "scale(0.95) translateY(-10px)",
-          },
-          "100%": { 
-            opacity: "1",
-            transform: "scale(1) translateY(0)",
-          },
-        },
-        matrixRain: {
-          "0%": { 
-            transform: "translateY(-100%)",
-            opacity: "0",
-          },
-          "10%": { opacity: "1" },
-          "90%": { opacity: "1" },
-          "100%": { 
-            transform: "translateY(100vh)",
-            opacity: "0",
-          },
-        },
-        hologram: {
-          "0%, 100%": { 
-            opacity: "0.9",
-            transform: "rotateY(0deg) translateZ(0)",
-          },
-          "50%": { 
-            opacity: "1",
-            transform: "rotateY(180deg) translateZ(10px)",
-          },
-        },
-        electric: {
-          "0%, 100%": { 
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          },
-          "50%": { 
-            clipPath: "polygon(0 0, 100% 0, 100% 45%, 0 55%)",
-          },
-        },
-        cyberSpin: {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
+        rotateSlow: {
+          "from": { transform: "rotate(0deg)" },
+          "to": { transform: "rotate(360deg)" },
         },
       },
       backgroundImage: {
-        'hud-gradient': 'linear-gradient(135deg, #00D4FF33 0%, #FF00FF33 50%, #00FF8833 100%)',
-        'cyber-grid': `linear-gradient(rgba(0,212,255,0.1) 1px, transparent 1px),
-                       linear-gradient(90deg, rgba(0,212,255,0.1) 1px, transparent 1px)`,
-        'scan-lines': `repeating-linear-gradient(
-          0deg,
-          rgba(0,212,255,0.03) 0px,
-          transparent 1px,
-          transparent 2px,
-          rgba(0,212,255,0.03) 3px
-        )`,
-        'hologram-lines': `repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 2px,
-          rgba(0,240,255,0.3) 2px,
-          rgba(0,240,255,0.3) 4px
-        )`,
+        'luxury-gradient': 'linear-gradient(180deg, #FAF9F6 0%, #FDFCFA 50%, #F7F5F2 100%)',
+        'gold-gradient': 'linear-gradient(135deg, #D4AF37, #B08D57)',
+        'metallic-gradient': 'linear-gradient(135deg, #B08D57 0%, #D4AF37 50%, #B08D57 100%)',
+        'radial-glow': 'radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
       },
       boxShadow: {
-        'neon-cyan': '0 0 20px rgba(0,212,255,0.5), 0 0 40px rgba(0,212,255,0.3)',
-        'neon-pink': '0 0 20px rgba(255,0,255,0.5), 0 0 40px rgba(255,0,255,0.3)',
-        'neon-green': '0 0 20px rgba(0,255,136,0.5), 0 0 40px rgba(0,255,136,0.3)',
-        'hud-glow': '0 0 30px rgba(0,212,255,0.4), inset 0 0 20px rgba(0,212,255,0.1)',
-        'hologram': '0 0 40px rgba(0,240,255,0.6), inset 0 0 20px rgba(255,0,255,0.2)',
+        'luxury': '0 4px 20px rgba(0, 0, 0, 0.05), 0 8px 40px rgba(0, 0, 0, 0.03)',
+        'luxury-lg': '0 10px 40px rgba(0, 0, 0, 0.1), 0 20px 60px rgba(212, 175, 55, 0.05)',
+        'glow-gold': '0 0 30px rgba(212, 175, 55, 0.3)',
+        'inner-glow': 'inset 0 0 30px rgba(212, 175, 55, 0.1)',
       },
       backdropBlur: {
         'xs': '2px',
+        'luxury': '10px',
+      },
+      transitionTimingFunction: {
+        'luxury': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        'smooth': 'cubic-bezier(0.43, 0.13, 0.23, 0.96)',
+        'elegant': 'cubic-bezier(0.215, 0.61, 0.355, 1)',
       },
     },
   },
