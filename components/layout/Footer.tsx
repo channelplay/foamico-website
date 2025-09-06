@@ -38,7 +38,7 @@ export default function Footer() {
               <div className="mb-6">
                 <div className="bg-white rounded-lg p-3 inline-block">
                   <Image
-                    src="/Foamico Logo black.png"
+                    src="/foamico-logo-black.png"
                     alt="Foamico Logo"
                     width={180}
                     height={60}

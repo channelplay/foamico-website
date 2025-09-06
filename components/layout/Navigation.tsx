@@ -49,7 +49,7 @@ export default function Navigation() {
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
               >
                 <Image
-                  src="/Foamico Logo black.png"
+                  src="/foamico-logo-black.png"
                   alt="Foamico Logo"
                   width={180}
                   height={60}

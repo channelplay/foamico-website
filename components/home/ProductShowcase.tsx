@@ -8,9 +8,9 @@ import Container from '@/components/ui/Container'
 import { products } from '@/data/products'
 
 const productImages = {
-  'sova': '/Sova 1.png',
-  'ultima': '/Ultima 1.png',
-  'natura': '/Natura 1.png',
+  'sova': '/sova-1.png',
+  'ultima': '/ultima-1.png',
+  'natura': '/natura-1.png',
   'marvel': '/Marvel.png'
 } as const
 

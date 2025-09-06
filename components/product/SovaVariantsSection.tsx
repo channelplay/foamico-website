@@ -31,7 +31,7 @@ export default function SovaVariantsSection() {
       id: 'classic',
       name: 'Sova Classic',
       tagline: 'Essential Comfort',
-      image: '/Sova 1.png',
+      image: '/sova-1.png',
       imagePosition: 'left',
       variant: product.variants[0]
     },
@@ -39,7 +39,7 @@ export default function SovaVariantsSection() {
       id: 'premium',
       name: 'Sova Premium', 
       tagline: 'Enhanced Support',
-      image: '/Sova 2.png',
+      image: '/sova-2.png',
       imagePosition: 'right',
       variant: product.variants[1]
     },
@@ -47,7 +47,7 @@ export default function SovaVariantsSection() {
       id: 'luxury',
       name: 'Sova Luxury',
       tagline: 'Ultimate Indulgence',
-      image: '/Sova 3.png',
+      image: '/sova-3.png',
       imagePosition: 'left',
       variant: product.variants[2]
     }
