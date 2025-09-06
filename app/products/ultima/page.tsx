@@ -1,7 +1,6 @@
 import UltimaHeroSection from '@/components/product/UltimaHeroSection'
 import UltimaVariantsSection from '@/components/product/UltimaVariantsSection'
 import UltimaComparisonSection from '@/components/product/UltimaComparisonSection'
-import Container from '@/components/ui/Container'
 import { getProductByCategory } from '@/data/products'
 
 export default function UltimaPage() {

@@ -1,7 +1,6 @@
 import SovaHeroSection from '@/components/product/SovaHeroSection'
 import SovaVariantsSection from '@/components/product/SovaVariantsSection'
 import SovaComparisonSection from '@/components/product/SovaComparisonSection'
-import Container from '@/components/ui/Container'
 import { getProductByCategory } from '@/data/products'
 
 export default function SovaPage() {

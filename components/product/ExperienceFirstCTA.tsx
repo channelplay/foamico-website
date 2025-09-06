@@ -1,14 +1,13 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Container from '@/components/ui/Container'
-import Link from 'next/link'
 
 export default function ExperienceFirstCTA() {
   const [radarPulse, setRadarPulse] = useState(0)
-  const [nearestStore, setNearestStore] = useState({ distance: 2.3, city: 'Mumbai' })
-  const [coordinates, setCoordinates] = useState({ lat: 19.0760, lng: 72.8777 })
+  const [nearestStore] = useState({ distance: 2.3, city: 'Mumbai' })
+  const [coordinates] = useState({ lat: 19.0760, lng: 72.8777 })
   
   useEffect(() => {
     const interval = setInterval(() => {

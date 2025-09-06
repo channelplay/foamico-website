@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Container from '@/components/ui/Container'
-import Link from 'next/link'
 
 export default function SovaComparisonSection() {
   const [hoveredCell, setHoveredCell] = useState<string | null>(null)
@@ -63,14 +62,6 @@ export default function SovaComparisonSection() {
     classic: 'CLASSIC',
     premium: 'PREMIUM',
     luxury: 'LUXURY'
-  }
-
-  const getVariantColor = (variant: string) => {
-    switch(variant) {
-      case 'luxury': return 'text-primary border-primary bg-primary/5'
-      case 'premium': return 'text-primary border-primary/70 bg-primary/5'
-      default: return 'text-dark border-gray-300 bg-white'
-    }
   }
 
   return (

@@ -9,7 +9,6 @@ import Container from '@/components/ui/Container'
 export default function UltimaVariantsSection() {
   const product = getProductByCategory('ultima')
   const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({})
-  const [selectedVariant, setSelectedVariant] = useState<string>('classic')
 
   if (!product) return null
 
