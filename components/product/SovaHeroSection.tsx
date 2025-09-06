@@ -12,7 +12,7 @@ const variants = [
 ]
 
 const features = [
-  { text: 'Orthopedic Support', icon: '✓' },
+  { text: 'Orthopedic Support - Test', icon: '✓' },
   { text: 'Temperature Regulation', icon: '✓' },
   { text: 'Motion Isolation', icon: '✓' },
   { text: '25 Year Warranty', icon: '✓' },
