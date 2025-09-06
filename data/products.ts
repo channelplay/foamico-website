@@ -35,7 +35,7 @@ export const products: Product[] = [
     name: 'Sova',
     category: 'Heavy Feel',
     tagline: 'Classic comfort with superior support',
-    description: 'Experience the perfect balance of firmness and comfort with Sova mattresses, featuring Bondtech Support Foam for enhanced orthopedic support.',
+    description: 'Testing Experience the perfect balance of firmness and comfort with Sova mattresses, featuring Bondtech Support Foam for enhanced orthopedic support.',
     variants: [
       {
         id: 'sova-classic',
