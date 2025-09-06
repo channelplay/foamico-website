@@ -18,7 +18,7 @@ export default function ProductShowcase() {
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null)
 
   return (
-    <section className="py-12 md:py-20 bg-white">
+    <section id="product-showcase" className="py-12 md:py-20 bg-white">
       <Container>
         {/* Section Header */}
         <div className="text-center mb-16">

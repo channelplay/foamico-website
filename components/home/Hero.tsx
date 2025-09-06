@@ -13,6 +13,13 @@ export default function Hero() {
     setIsLoaded(true)
   }, [])
 
+  const scrollToProductShowcase = () => {
+    const element = document.getElementById('product-showcase')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   // Floating image positions and animations
   const floatingImages = [
     { 
@@ -156,15 +163,14 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="flex flex-col sm:flex-row gap-4 justify-center px-4"
             >
-              <Link href="/products">
-                <motion.button
-                  className="btn-primary"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Explore Collection
-                </motion.button>
-              </Link>
+              <motion.button
+                className="btn-primary"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={scrollToProductShowcase}
+              >
+                Explore Collection
+              </motion.button>
               <Link href="/contact">
                 <motion.button
                   className="btn-secondary"
