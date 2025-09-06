@@ -80,10 +80,15 @@ export default function SovaHeroSection() {
                 <span className="text-primary"> Mattress</span>
               </h1>
               
+              <p className="text-lg font-medium text-dark mb-3">
+                Classic • Premium • Luxury
+              </p>
+              
               <p className="text-body text-light-gray leading-relaxed">
                 Experience the perfect balance of firmness and comfort with our innovative 
                 foam technology, designed for enhanced orthopedic support and 
-                exceptional sleep quality.
+                exceptional sleep quality. Choose from Classic comfort, Premium support, 
+                or Luxury indulgence.
               </p>
             </div>
 
