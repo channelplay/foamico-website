@@ -1,15 +1,5 @@
-import Hero from '@/components/home/Hero'
-import ProductShowcase from '@/components/home/ProductShowcase'
-import TechnologySection from '@/components/home/TechnologySection'
-import TestimonialsSection from '@/components/home/TestimonialsSection'
+import ComingSoonFullscreen from '@/components/home/ComingSoonFullscreen'
 
 export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <ProductShowcase />
-      <TechnologySection />
-      <TestimonialsSection />
-    </main>
-  )
+  return <ComingSoonFullscreen />
 }
