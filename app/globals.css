@@ -269,3 +269,21 @@ body {
   background: rgba(129, 104, 66, 0.15);
   color: var(--color-dark);
 }
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  
+  .heading-display {
+    font-size: 2rem !important;
+  }
+  
+  .heading-primary {
+    font-size: 1.75rem !important;
+  }
+}
