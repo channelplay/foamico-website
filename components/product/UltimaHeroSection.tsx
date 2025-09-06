@@ -31,7 +31,7 @@ export default function UltimaHeroSection() {
   }
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-white via-soft-cream to-warm-beige py-12 md:py-20">
+    <section className="min-h-screen bg-white py-10 md:py-16">
       
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[70vh] md:min-h-[80vh]">
@@ -43,9 +43,9 @@ export default function UltimaHeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="relative h-[400px] md:h-[600px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] md:h-[560px] rounded-lg overflow-hidden shadow-xl border border-gray-200">
               {/* Warranty Badge */}
-              <div className="absolute top-6 left-6 z-20 bg-primary text-soft-cream px-4 py-2 text-sm font-semibold rounded">
+              <div className="absolute top-4 left-4 z-20 bg-white/90 text-primary px-3 py-1.5 text-xs font-semibold tracking-wide rounded shadow-sm">
                 25 YEAR WARRANTY
               </div>
               
@@ -72,35 +72,32 @@ export default function UltimaHeroSection() {
           >
             {/* Title and Description */}
             <div>
-              <p className="text-overline mb-4">Our Collection</p>
+              <p className="uppercase tracking-wider text-xs text-light-gray mb-2">Our Collection</p>
               
-              <h1 className="heading-display mb-4 md:mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}>
+              <h1 className="mb-3 md:mb-4 font-bold" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.75rem)' }}>
                 <span className="text-dark">Ultima</span>
                 <span className="text-primary"> Mattress</span>
               </h1>
               
-              <p className="text-body text-light-gray leading-relaxed">
-                Luxuriously soft with adaptive comfort for cloud-like sleep. 
-                Experience ultimate comfort with our premium Zero G Latex Foam 
-                technology for the perfect plush experience.
+              <p className="text-sm md:text-base text-light-gray leading-relaxed max-w-prose">
+                Luxuriously soft with adaptive comfort for cloud-like sleep. Experience ultimate comfort with our premium Zero G Latex Foam technology for the perfect plush experience.
               </p>
             </div>
 
             {/* Variant Selector */}
-            <div className="card-elegant p-4 md:p-6">
+            <div className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 shadow-lg">
               <h3 className="text-sm font-semibold text-dark mb-4 uppercase tracking-wider">
                 Select Your Comfort
               </h3>
-              
               <div className="grid grid-cols-3 gap-2 md:gap-3">
                 {variants.map((variant) => (
                   <motion.button
                     key={variant.id}
                     onClick={() => setSelectedVariant(variant.id)}
-                    className={`relative px-2 md:px-4 py-2 md:py-3 border-2 rounded transition-all
+                    className={`relative px-3 md:px-4 py-2.5 md:py-3 border rounded-md transition-all text-left
                       ${selectedVariant === variant.id
-                        ? 'border-primary bg-primary/5'
-                        : 'border-gray-200 bg-white hover:border-primary/50'
+                        ? 'border-primary bg-primary/5 shadow-sm'
+                        : 'border-gray-200 bg-white hover:border-primary/40'
                       }`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -145,29 +142,6 @@ export default function UltimaHeroSection() {
 
           </motion.div>
         </div>
-        
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="flex justify-center mt-12"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-lg border border-gray-200">
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-dark font-medium">View Details</span>
-              <motion.svg 
-                className="w-4 h-4 text-primary"
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                animate={{ y: [0, 3, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </motion.svg>
-            </div>
-          </div>
-        </motion.div>
       </Container>
     </section>
   )
