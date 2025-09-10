@@ -80,9 +80,9 @@ export default function ComingSoonFullscreen() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
-              className="bg-white/60 backdrop-blur rounded-xl p-6 shadow-lg border border-white/40"
+              className="bg-foamico-lime rounded-xl p-6 shadow-lg"
             >
-              <h3 className="text-lg font-semibold text-dark">
+              <h3 className="text-lg font-semibold text-white">
                 {feature}
               </h3>
             </motion.div>
