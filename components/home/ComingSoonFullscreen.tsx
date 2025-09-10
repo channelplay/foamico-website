@@ -33,8 +33,8 @@ export default function ComingSoonFullscreen() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="inline-block mb-8"
         >
-          <div className="bg-primary/10 border border-primary/30 rounded-full px-8 py-3">
-            <span className="text-primary font-bold text-lg uppercase tracking-wider">
+          <div className="bg-foamico-lime rounded-full px-8 py-3">
+            <span className="text-white font-bold text-lg uppercase tracking-wider">
               Coming Soon
             </span>
           </div>
