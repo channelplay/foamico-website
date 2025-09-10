@@ -9,6 +9,22 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['framer-motion'],
   },
+  // Configure for Replit environment
+  ...(process.env.NODE_ENV === 'development' && {
+    async headers() {
+      return [
+        {
+          source: '/(.*)',
+          headers: [
+            {
+              key: 'X-Frame-Options',
+              value: 'ALLOWALL',
+            },
+          ],
+        },
+      ];
+    },
+  }),
 };
 
 export default nextConfig;
