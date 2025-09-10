@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
   },
   // Configure for Replit environment
   ...(process.env.NODE_ENV === 'development' && {
+    allowedDevOrigins: ['*.replit.dev'],
     async headers() {
       return [
         {
