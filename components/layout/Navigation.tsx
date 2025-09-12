@@ -15,6 +15,14 @@ const navigation = [
       { name: 'Ultima', href: '/products/ultima', desc: 'Ultimate Luxury' },
     ]
   },
+  {
+    name: 'About Us',
+    href: '/about',
+  },
+  {
+    name: 'Contact Us',
+    href: '/contact',
+  },
 ]
 
 export default function Navigation() {
@@ -146,16 +154,6 @@ export default function Navigation() {
                   )}
                 </div>
               ))}
-              
-              <Link href="/contact">
-                <motion.button 
-                  className="btn-primary text-xs"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Contact Us
-                </motion.button>
-              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -219,13 +217,6 @@ export default function Navigation() {
                       )}
                     </div>
                   ))}
-                  <div className="px-4 pt-4">
-                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                      <button className="btn-primary w-full text-xs">
-                        Contact Us
-                      </button>
-                    </Link>
-                  </div>
                 </div>
               </motion.div>
             )}
