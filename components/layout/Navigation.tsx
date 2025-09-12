@@ -11,8 +11,26 @@ const navigation = [
     name: 'Products',
     href: '/products',
     dropdownItems: [
-      { name: 'Sova', href: '/products/sova', desc: 'Premium Comfort' },
-      { name: 'Ultima', href: '/products/ultima', desc: 'Ultimate Luxury' },
+      { 
+        name: 'Sova', 
+        href: '/products/sova', 
+        desc: 'Premium Comfort',
+        subCategories: [
+          { name: 'Classic', href: '/products/sova/classic' },
+          { name: 'Premium', href: '/products/sova/premium' },
+          { name: 'Luxury', href: '/products/sova/luxury' },
+        ]
+      },
+      { 
+        name: 'Ultima', 
+        href: '/products/ultima', 
+        desc: 'Ultimate Luxury',
+        subCategories: [
+          { name: 'Classic', href: '/products/ultima/classic' },
+          { name: 'Premium', href: '/products/ultima/premium' },
+          { name: 'Luxury', href: '/products/ultima/luxury' },
+        ]
+      },
     ]
   },
   {
@@ -109,25 +127,41 @@ export default function Navigation() {
                       <AnimatePresence>
                         {productsDropdownOpen && (
                           <motion.div
-                            className="absolute top-full left-0 mt-4 w-64 bg-white shadow-xl"
+                            className="absolute top-full left-0 mt-4 w-80 bg-white shadow-xl rounded-lg overflow-hidden"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                           >
-                            {item.dropdownItems.map((dropdownItem) => (
-                              <Link
-                                key={dropdownItem.name}
-                                href={dropdownItem.href}
-                                className="block px-6 py-4 hover:bg-soft-cream transition-colors duration-200 border-b border-gray-100 last:border-0"
-                              >
-                                <p className="font-medium text-dark hover:text-primary transition-colors">
-                                  {dropdownItem.name}
-                                </p>
-                                <p className="text-xs text-light-gray mt-1">
-                                  {dropdownItem.desc}
-                                </p>
-                              </Link>
+                            {item.dropdownItems.map((dropdownItem, index) => (
+                              <div key={dropdownItem.name} className={`${index !== 0 ? 'border-t border-gray-100' : ''}`}>
+                                <Link
+                                  href={dropdownItem.href}
+                                  className="block px-6 py-4 hover:bg-soft-cream transition-colors duration-200"
+                                >
+                                  <p className="font-semibold text-dark hover:text-primary transition-colors">
+                                    {dropdownItem.name}
+                                  </p>
+                                  <p className="text-xs text-light-gray mt-1">
+                                    {dropdownItem.desc}
+                                  </p>
+                                </Link>
+                                {dropdownItem.subCategories && (
+                                  <div className="bg-gray-50 px-6 pb-4">
+                                    <div className="grid grid-cols-3 gap-2">
+                                      {dropdownItem.subCategories.map((subCategory) => (
+                                        <Link
+                                          key={subCategory.name}
+                                          href={subCategory.href}
+                                          className="text-xs text-light-gray hover:text-primary transition-colors py-1 block text-center"
+                                        >
+                                          {subCategory.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
                             ))}
                           </motion.div>
                         )}
