@@ -26,7 +26,6 @@ const navigation = [
 ]
 
 export default function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
@@ -67,8 +66,8 @@ export default function Navigation() {
               </motion.div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-10">
+            {/* Navigation */}
+            <div className="flex items-center gap-10">
               {navigation.map((item) => (
                 <div key={item.name} className="relative">
                   {item.dropdownItems ? (
@@ -156,71 +155,7 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Mobile menu button */}
-            <button
-              type="button"
-              className="lg:hidden p-2 text-dark"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <span className="sr-only">Open main menu</span>
-              {mobileMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
           </div>
-
-          {/* Mobile Navigation */}
-          <AnimatePresence>
-            {mobileMenuOpen && (
-              <motion.div 
-                className="lg:hidden border-t border-gray-200"
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="py-6 space-y-4">
-                  {navigation.map((item) => (
-                    <div key={item.name}>
-                      {item.dropdownItems ? (
-                        <>
-                          <div className="px-4 pb-2 text-sm font-medium text-dark">
-                            {item.name}
-                          </div>
-                          <div className="pl-8 space-y-2">
-                            {item.dropdownItems.map((dropdownItem) => (
-                              <Link
-                                key={dropdownItem.name}
-                                href={dropdownItem.href}
-                                className="block py-2 text-sm text-light-gray hover:text-primary transition-colors"
-                                onClick={() => setMobileMenuOpen(false)}
-                              >
-                                {dropdownItem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          className="block px-4 py-2 text-sm font-medium text-dark hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
         </Container>
       </nav>
       
