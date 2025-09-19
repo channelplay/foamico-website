@@ -46,9 +46,6 @@ export default function ProductGrid() {
                     </h3>
                     <p className="text-foamico-gray-500">{product.category}</p>
                   </div>
-                  <Badge variant="secondary" size="small">
-                    {product.supportLevel}
-                  </Badge>
                 </div>
 
                 <p className="text-foamico-gray-600 mb-6">

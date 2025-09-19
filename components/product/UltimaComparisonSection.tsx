@@ -39,12 +39,6 @@ export default function UltimaComparisonSection() {
       luxury: 'Soft Foam with Quilt'
     },
     {
-      feature: 'Feel',
-      classic: 'Soft',
-      premium: 'Medium-Soft',
-      luxury: 'Plush'
-    },
-    {
       feature: 'Best For',
       classic: 'Cloud-like comfort seekers',
       premium: 'Balanced softness with support',

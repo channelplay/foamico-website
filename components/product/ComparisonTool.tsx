@@ -50,7 +50,6 @@ export default function ComparisonTool() {
 
   const comparisonFeatures = [
     'Category',
-    'Support Level',
     'Warranty',
     'Number of Layers',
     'Top Layer',
@@ -65,8 +64,6 @@ export default function ComparisonTool() {
     switch (feature) {
       case 'Category':
         return product.category
-      case 'Support Level':
-        return <Badge variant="secondary">{product.supportLevel}</Badge>
       case 'Warranty':
         return `${product.warranty} Years`
       case 'Number of Layers':

@@ -39,12 +39,6 @@ export default function SovaComparisonSection() {
       luxury: 'Soft Foam with Quilt'
     },
     {
-      feature: 'Feel',
-      classic: 'Medium-Firm',
-      premium: 'Medium',
-      luxury: 'Medium-Soft'
-    },
-    {
       feature: 'Best For',
       classic: 'Basic orthopedic comfort',
       premium: 'Memory foam comfort with support',

@@ -128,7 +128,6 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
 
           <div className="flex items-center gap-4 mb-6">
             <Badge variant="secondary">{product.category}</Badge>
-            <Badge variant="primary">Support: {product.supportLevel}</Badge>
           </div>
 
           <p className="text-lg text-foamico-gray-700 mb-8">
@@ -143,7 +142,6 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
                 name: v.name,
                 size: v.size || 'Standard',
                 thickness: v.thickness || '8 inches',
-                firmness: v.firmness || 'Medium',
                 inStock: true
               }))}
               onSelect={(variant) => {
