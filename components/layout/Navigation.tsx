@@ -31,16 +31,6 @@ const navigation = [
           { name: 'Luxury', href: '/products/ultima?variant=luxury' },
         ]
       },
-      { 
-        name: 'Natura', 
-        href: '/products/natura', 
-        desc: 'Natural Materials'
-      },
-      { 
-        name: 'Marvel', 
-        href: '/products/marvel', 
-        desc: 'Advanced Technology'
-      },
     ]
   },
   {
