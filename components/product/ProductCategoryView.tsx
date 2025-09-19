@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import Card from '@/components/ui/Card'
@@ -36,7 +37,39 @@ const productHeroImages = {
 } as const
 
 export default function ProductCategoryView({ product }: ProductCategoryViewProps) {
-  const [selectedVariant, setSelectedVariant] = useState(product.variants[0])
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
+  
+  // Initialize selectedVariant based on URL parameter
+  const getInitialVariant = () => {
+    const variantParam = searchParams.get('variant')
+    if (variantParam) {
+      // Find variant that ends with the variant parameter (e.g., 'classic' matches 'sova-classic')
+      const foundVariant = product.variants.find(v => 
+        v.id.toLowerCase().endsWith(`-${variantParam.toLowerCase()}`) ||
+        v.id.toLowerCase() === variantParam.toLowerCase()
+      )
+      if (foundVariant) return foundVariant
+    }
+    return product.variants[0]
+  }
+  
+  const [selectedVariant, setSelectedVariant] = useState(getInitialVariant())
+
+  // Update selectedVariant when URL changes
+  useEffect(() => {
+    const variant = getInitialVariant()
+    setSelectedVariant(variant)
+  }, [searchParams, product.variants])
+
+  // Update URL when variant changes
+  const updateVariantInUrl = (variant: typeof selectedVariant) => {
+    const variantSlug = variant.id.split('-').pop() || variant.id
+    const params = new URLSearchParams(searchParams.toString())
+    params.set('variant', variantSlug)
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false })
+  }
 
   const getVariantImage = () => {
     const images = productHeroImages[product.id as keyof typeof productHeroImages]
@@ -115,7 +148,10 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
               }))}
               onSelect={(variant) => {
                 const productVariant = product.variants.find(v => v.id === variant.id)
-                if (productVariant) setSelectedVariant(productVariant)
+                if (productVariant) {
+                  setSelectedVariant(productVariant)
+                  updateVariantInUrl(productVariant)
+                }
               }}
             />
           </div>
@@ -185,7 +221,10 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
                     ? 'ring-2 ring-foamico-lime'
                     : 'hover:shadow-lg'
                 }`}
-                onClick={() => setSelectedVariant(variant)}
+                onClick={() => {
+                  setSelectedVariant(variant)
+                  updateVariantInUrl(variant)
+                }}
               >
                 <h4 className="text-xl font-semibold text-foamico-black mb-2">
                   {variant.name}
