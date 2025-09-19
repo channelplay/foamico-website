@@ -55,20 +55,6 @@ export default function ProductGrid() {
                   {product.description}
                 </p>
 
-                {/* Key Features */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-foamico-black mb-3">
-                    Key Features:
-                  </h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {product.features.slice(0, 4).map((feature) => (
-                      <div key={feature} className="flex items-center gap-2 text-sm">
-                        <span className="text-foamico-lime">✓</span>
-                        <span className="text-foamico-gray-600">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
                 {/* Variants */}
                 <div className="mb-6">
@@ -97,13 +83,6 @@ export default function ProductGrid() {
                   className="flex-1"
                 >
                   View Details
-                </Button>
-                <Button
-                  href={`/products/compare?products=${product.id}`}
-                  variant="outline"
-                  size="small"
-                >
-                  Compare
                 </Button>
               </div>
             </div>
