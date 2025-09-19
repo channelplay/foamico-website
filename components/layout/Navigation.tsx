@@ -14,12 +14,22 @@ const navigation = [
       { 
         name: 'Sova', 
         href: '/products/sova', 
-        desc: 'Premium Comfort'
+        desc: 'Premium Comfort',
+        subCategories: [
+          { name: 'Classic', href: '/products/sova?variant=classic' },
+          { name: 'Premium', href: '/products/sova?variant=premium' },
+          { name: 'Luxury', href: '/products/sova?variant=luxury' },
+        ]
       },
       { 
         name: 'Ultima', 
         href: '/products/ultima', 
-        desc: 'Ultimate Luxury'
+        desc: 'Ultimate Luxury',
+        subCategories: [
+          { name: 'Classic', href: '/products/ultima?variant=classic' },
+          { name: 'Premium', href: '/products/ultima?variant=premium' },
+          { name: 'Luxury', href: '/products/ultima?variant=luxury' },
+        ]
       },
       { 
         name: 'Natura', 
@@ -146,6 +156,21 @@ export default function Navigation() {
                                     {dropdownItem.desc}
                                   </p>
                                 </Link>
+                                {dropdownItem.subCategories && (
+                                  <div className="bg-gray-50 px-6 pb-4">
+                                    <div className="grid grid-cols-3 gap-2">
+                                      {dropdownItem.subCategories.map((subCategory) => (
+                                        <Link
+                                          key={subCategory.name}
+                                          href={subCategory.href}
+                                          className="text-xs text-light-gray hover:text-primary transition-colors py-1 block text-center"
+                                        >
+                                          {subCategory.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
                               </div>
                             ))}
                           </motion.div>
