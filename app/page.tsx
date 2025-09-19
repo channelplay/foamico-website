@@ -1,5 +1,5 @@
-import ComingSoonFullscreen from '@/components/home/ComingSoonFullscreen'
+import HeroSection from '@/components/home/HeroSection'
 
 export default function Home() {
-  return <ComingSoonFullscreen />
+  return <HeroSection />
 }
