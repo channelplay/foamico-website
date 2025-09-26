@@ -25,9 +25,9 @@ export default function UltimaHeroSection() {
 
   // Map variants to their respective images
   const variantImages = {
-    'classic': '/ultima-1.png',
-    'premium': '/ultima-2.png',
-    'luxury': '/ultima-3.png'
+    'classic': '/ultima-classic.png',
+    'premium': '/ultima-premium.png',
+    'luxury': '/ultima-luxury.png'
   }
 
   return (

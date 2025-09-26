@@ -31,7 +31,7 @@ export default function UltimaVariantsSection() {
       id: 'classic',
       name: 'Ultima Classic',
       tagline: 'Cloud Comfort',
-      image: '/ultima-1.png',
+      image: '/ultima-classic.png',
       imagePosition: 'left',
       variant: product.variants[0]
     },
@@ -39,7 +39,7 @@ export default function UltimaVariantsSection() {
       id: 'premium',
       name: 'Ultima Premium', 
       tagline: 'Balanced Luxury',
-      image: '/ultima-2.png',
+      image: '/ultima-premium.png',
       imagePosition: 'right',
       variant: product.variants[1]
     },
@@ -47,7 +47,7 @@ export default function UltimaVariantsSection() {
       id: 'luxury',
       name: 'Ultima Luxury',
       tagline: 'Ultimate Plush',
-      image: '/ultima-3.png',
+      image: '/ultima-luxury.png',
       imagePosition: 'left',
       variant: product.variants[2]
     }

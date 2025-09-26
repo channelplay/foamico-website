@@ -25,9 +25,9 @@ export default function SovaHeroSection() {
 
   // Map variants to their respective images
   const variantImages = {
-    'classic': '/sova-1.png',
-    'premium': '/sova-2.png',
-    'luxury': '/sova-3.png'
+    'classic': '/sova-classic.png',
+    'premium': '/sova-premium.png',
+    'luxury': '/sova-luxury.png'
   }
 
   return (
