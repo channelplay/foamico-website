@@ -17,7 +17,7 @@ export default function HeroSection() {
       {/* Hero Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/hero-section.png"
+          src="/foamico-hero-new.png"
           alt="Sleep Engineered - Foamico Innovation"
           fill
           className="object-cover"
