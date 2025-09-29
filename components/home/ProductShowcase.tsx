@@ -56,7 +56,7 @@ export default function ProductShowcase() {
               <Link href={`/products/${product.id}`}>
                 <div className="card-elegant group cursor-pointer h-full flex flex-col">
                   {/* Product Image */}
-                  <div className="relative h-64 overflow-hidden bg-soft-cream flex-shrink-0">
+                  <div className="relative h-80 md:h-96 overflow-hidden bg-soft-cream flex-shrink-0">
                     <Image
                       src={productImages[product.id as keyof typeof productImages]}
                       alt={`${product.name} mattress`}
