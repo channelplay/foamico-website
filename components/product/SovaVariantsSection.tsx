@@ -92,8 +92,8 @@ export default function SovaVariantsSection() {
               <div className={`${item.imagePosition === 'right' ? 'lg:col-start-2' : ''}`}>
                 <div className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden shadow-xl mx-4 lg:mx-0">
                   {/* Warranty Badge */}
-                  <div className="absolute top-6 left-6 z-20 bg-primary text-soft-cream px-3 py-1 text-xs font-semibold rounded">
-                    {item.id === 'luxury' ? '25' : '10'} YEAR WARRANTY
+                  <div className="absolute top-4 left-4 z-20 bg-white/90 text-primary px-3 py-1.5 text-xs font-semibold tracking-wide rounded shadow-sm">
+                    {item.id === 'luxury' ? 'UPTO 25' : '10'} YEAR WARRANTY
                   </div>
                   
                   {/* Product Image */}
