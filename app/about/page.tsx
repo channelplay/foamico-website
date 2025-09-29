@@ -23,7 +23,7 @@ export default function AboutPage() {
             {/* First Image - Company Roots Timeline */}
             <div className="w-full">
               <img 
-                src="/attached_assets/FomicoRoots 1_1759122954061.png" 
+                src="/foamico-timeline.png" 
                 alt="Foamico Company Timeline - From Roots 1960 to House of Brands 2025"
                 className="w-full h-auto"
               />
@@ -32,7 +32,7 @@ export default function AboutPage() {
             {/* Second Image - Why Choose Us */}
             <div className="w-full">
               <img 
-                src="/attached_assets/Group 13_1759122960113.png" 
+                src="/why-choose-us.png" 
                 alt="Why Should You Choose Us - 65+ Years of Legacy, European Comfort, Italian Craft"
                 className="w-full h-auto"
               />
