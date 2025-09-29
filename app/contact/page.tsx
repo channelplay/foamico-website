@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container'
 import { motion } from 'framer-motion'
+import { MessageCircle, Phone } from 'lucide-react'
 
 export default function ContactPage() {
   const phoneNumber = '9654312878'
@@ -23,27 +24,29 @@ export default function ContactPage() {
             Your perfect sleep is just one call away
           </p>
           
-          <motion.a
-            href={`tel:${phoneNumber}`}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#816842] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-100 font-semibold"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <svg 
-              className="w-6 h-6" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.a
+              href={`https://wa.me/${phoneNumber}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-green-600 font-semibold"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
-              />
-            </svg>
-            <span className="text-lg">{phoneNumber}</span>
-          </motion.a>
+              <MessageCircle className="w-6 h-6" />
+              <span className="text-lg">WhatsApp Now</span>
+            </motion.a>
+
+            <motion.a
+              href={`tel:${phoneNumber}`}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#816842] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-100 font-semibold"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Phone className="w-6 h-6" />
+              <span className="text-lg">Talk Now</span>
+            </motion.a>
+          </div>
         </motion.div>
       </Container>
     </section>
