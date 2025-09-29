@@ -23,7 +23,7 @@ export default function AboutPage() {
             {/* First Image - Company Roots Timeline */}
             <div className="w-full">
               <img 
-                src="/foamico-timeline.png" 
+                src="/foamico-timeline-new.png" 
                 alt="Foamico Company Timeline - From Roots 1960 to House of Brands 2025"
                 className="w-full h-auto rounded-lg"
               />
