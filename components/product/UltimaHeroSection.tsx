@@ -72,7 +72,6 @@ export default function UltimaHeroSection() {
           >
             {/* Title and Description */}
             <div>
-              <p className="uppercase tracking-wider text-xs text-light-gray mb-2">Our Collection</p>
               
               <h1 className="mb-3 md:mb-4 font-bold" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.75rem)' }}>
                 <span className="text-dark">Ultima</span>
@@ -117,28 +116,6 @@ export default function UltimaHeroSection() {
               </div>
             </div>
 
-            {/* Features Grid */}
-            <div>
-              <h3 className="text-sm font-semibold text-dark mb-4 uppercase tracking-wider">
-                Key Features
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    className="flex items-center gap-2"
-                  >
-                    <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-sm text-dark">{feature.text}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
 
           </motion.div>
         </div>
