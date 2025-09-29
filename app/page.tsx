@@ -7,7 +7,7 @@ import Footer from '@/components/layout/Footer'
 
 export default function Home() {
   return (
-    <>
+    <div style={{ backgroundColor: '#F4F2EC' }} className="min-h-screen">
       <HeroSection />
       
       {/* Spacer between hero and content sections */}
@@ -21,6 +21,6 @@ export default function Home() {
 
       <TestimonialsSection />
       <Footer />
-    </>
+    </div>
   )
 }
