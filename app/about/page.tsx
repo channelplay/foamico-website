@@ -25,7 +25,7 @@ export default function AboutPage() {
               <img 
                 src="/foamico-timeline.png" 
                 alt="Foamico Company Timeline - From Roots 1960 to House of Brands 2025"
-                className="w-full h-auto"
+                className="w-full h-auto rounded-lg"
               />
             </div>
 
