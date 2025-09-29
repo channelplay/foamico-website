@@ -29,7 +29,7 @@ export default function ContactPage() {
               href={`https://wa.me/${phoneNumber}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-green-600 font-semibold"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#816842] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-100 font-semibold"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
