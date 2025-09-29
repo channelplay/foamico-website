@@ -11,11 +11,18 @@ export default function AboutPage() {
     <div style={{ backgroundColor: '#816842' }} className="min-h-screen">
       <div className="py-8 lg:py-12">
         <Container>
+          {/* Top Heading */}
+          <div className="text-center mb-8">
+            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-8">
+              65+ Years of Generation Innovation
+            </h1>
+          </div>
+
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
               About Foamico
-            </h1>
+            </h2>
             <p className="text-lg text-white/90 max-w-3xl mx-auto">
               Pioneers in sleep engineering, crafting premium mattresses through 
               innovative foam technology and scientific research.
