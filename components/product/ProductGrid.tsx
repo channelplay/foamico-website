@@ -30,7 +30,7 @@ export default function ProductGrid() {
               {product.warranty === 25 && (
                 <div className="absolute top-4 left-4">
                   <Badge variant="success" size="medium">
-                    25 Year Warranty
+                    Upto 25 Years Warranty
                   </Badge>
                 </div>
               )}

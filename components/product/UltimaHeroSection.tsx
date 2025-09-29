@@ -15,7 +15,7 @@ const features = [
   { text: 'Smart Layers', icon: '✓' },
   { text: 'Relieves Backpain', icon: '✓' },
   { text: 'Anti-allergy', icon: '✓' },
-  { text: '25 Year Warranty', icon: '✓' },
+  { text: 'Upto 25 Years Warranty', icon: '✓' },
   { text: 'Comfortable', icon: '✓' },
   { text: 'Breathable', icon: '✓' }
 ]
@@ -46,7 +46,7 @@ export default function UltimaHeroSection() {
             <div className="relative h-[400px] md:h-[560px] rounded-lg overflow-hidden shadow-xl border border-gray-200">
               {/* Warranty Badge */}
               <div className="absolute top-4 left-4 z-20 bg-white/90 text-primary px-3 py-1.5 text-xs font-semibold tracking-wide rounded shadow-sm">
-                25 YEAR WARRANTY
+                UPTO 25 YEARS WARRANTY
               </div>
               
               {/* Product Image */}

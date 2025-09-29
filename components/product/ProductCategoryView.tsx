@@ -111,7 +111,7 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
           {product.warranty === 25 && (
             <div className="absolute top-6 left-6">
               <Badge variant="success" size="medium">
-                25 Year Warranty
+                Upto 25 Years Warranty
               </Badge>
             </div>
           )}

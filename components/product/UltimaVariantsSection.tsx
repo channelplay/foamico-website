@@ -93,7 +93,7 @@ export default function UltimaVariantsSection() {
                 <div className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden shadow-xl mx-4 lg:mx-0">
                   {/* Warranty Badge */}
                   <div className="absolute top-6 left-6 z-20 bg-primary text-soft-cream px-3 py-1 text-xs font-semibold rounded">
-                    25 YEAR WARRANTY
+                    UPTO 25 YEARS WARRANTY
                   </div>
                   
                   {/* Product Image */}

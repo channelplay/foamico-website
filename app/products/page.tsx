@@ -27,7 +27,7 @@ export default function ProductsPage() {
           <div className="grid md:grid-cols-4 gap-6 text-center">
             <div>
               <span className="text-3xl mb-2 block">🛡️</span>
-              <h3 className="font-semibold text-foamico-black">25 Year Warranty</h3>
+              <h3 className="font-semibold text-foamico-black">Upto 25 Years Warranty</h3>
               <p className="text-sm text-foamico-gray-600 mt-1">On select products</p>
             </div>
             <div>

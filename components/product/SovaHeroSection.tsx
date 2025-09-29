@@ -15,7 +15,7 @@ const features = [
   { text: 'Orthopedic Support', icon: '✓' },
   { text: 'Temperature Regulation', icon: '✓' },
   { text: 'Motion Isolation', icon: '✓' },
-  { text: '25 Year Warranty', icon: '✓' },
+  { text: 'Upto 25 Years Warranty', icon: '✓' },
   { text: 'Hypoallergenic', icon: '✓' },
   { text: 'Breathable Design', icon: '✓' }
 ]

@@ -34,7 +34,7 @@ export default function ProductShowcase() {
             </h2>
             <div className="divider-line divider-center" />
             <p className="text-body text-light-gray max-w-2xl mx-auto mt-6 px-4">
-              Each mattress is meticulously crafted using premium materials and innovative foam technology, 
+              Each mattress is meticulously designed using premium materials and innovative foam technology, 
               ensuring exceptional comfort and support for years to come.
             </p>
           </motion.div>
@@ -66,7 +66,7 @@ export default function ProductShowcase() {
                     
                     {/* Warranty Badge */}
                     <div className="absolute top-4 left-4 bg-soft-cream text-black px-3 py-1 text-xs font-semibold rounded">
-                      25 YEAR WARRANTY
+                      UPTO 25 YEARS WARRANTY
                     </div>
                     
                     {/* Overlay on Hover */}
