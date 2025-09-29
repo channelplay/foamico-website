@@ -13,7 +13,7 @@ export default function AboutPage() {
         <Container>
           {/* Top Heading */}
           <div className="text-center mb-8">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-8">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-8">
               65+ Years of Generation Innovation
             </h1>
           </div>
