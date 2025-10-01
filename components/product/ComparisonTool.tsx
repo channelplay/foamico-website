@@ -5,16 +5,14 @@ import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Container from '@/components/ui/Container'
 import Card from '@/components/ui/Card'
-import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import { products, Product } from '@/data/products'
-import { getPlaceholderImage } from '@/lib/placeholder-images'
 
 const productImages = {
-  'sova': 'product-grid-sova-600x400',
-  'ultima': 'product-grid-ultima-600x400',
-  'natura': 'product-grid-natura-600x400',
-  'marvel': 'product-grid-marvel-600x400'
+  sova: '/sova-premium.png',
+  ultima: '/ultima-premium.png',
+  natura: '/natura-1.png',
+  marvel: '/Marvel.png'
 } as const
 
 export default function ComparisonTool() {
@@ -118,12 +116,11 @@ export default function ComparisonTool() {
                   <div className="text-center">
                     <div className="relative h-48 mb-4">
                       <Image
-                        src={getPlaceholderImage(
-                          productImages[selectedProducts[index]!.id as keyof typeof productImages]
-                        )}
+                        src={productImages[selectedProducts[index]!.id as keyof typeof productImages] ?? '/sova-premium.png'}
                         alt={selectedProducts[index]!.name}
                         fill
                         className="object-cover rounded-lg"
+                        sizes="(min-width: 1024px) 33vw, 100vw"
                       />
                     </div>
                     <h3 className="text-xl font-semibold text-foamico-black mb-2">

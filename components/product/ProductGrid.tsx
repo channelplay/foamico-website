@@ -3,13 +3,12 @@ import Card from '@/components/ui/Card'
 import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import { products } from '@/data/products'
-import { getPlaceholderImage } from '@/lib/placeholder-images'
 
 const productImages = {
-  'sova': 'product-grid-sova-600x400',
-  'ultima': 'product-grid-ultima-600x400',
-  'natura': 'product-grid-natura-600x400',
-  'marvel': 'product-grid-marvel-600x400'
+  sova: '/sova-premium.png',
+  ultima: '/ultima-premium.png',
+  natura: '/natura-1.png',
+  marvel: '/Marvel.png'
 } as const
 
 export default function ProductGrid() {
@@ -21,10 +20,11 @@ export default function ProductGrid() {
             {/* Product Image */}
             <div className="relative h-64 lg:h-full min-h-[300px]">
               <Image
-                src={getPlaceholderImage(productImages[product.id as keyof typeof productImages])}
+                src={productImages[product.id as keyof typeof productImages] ?? '/sova-premium.png'}
                 alt={`${product.name} mattress`}
                 fill
                 className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               {product.warranty === 25 && (

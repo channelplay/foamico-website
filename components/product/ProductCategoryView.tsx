@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
@@ -10,29 +10,28 @@ import Card from '@/components/ui/Card'
 import LayerVisualization from './LayerVisualization'
 import AppleStyleVariantSelector from './AppleStyleVariantSelector'
 import { Product } from '@/data/products'
-import { getPlaceholderImage } from '@/lib/placeholder-images'
 
 interface ProductCategoryViewProps {
   product: Product
 }
 
 const productHeroImages = {
-  'sova': {
-    'classic': 'sova-classic-hero-1200x800',
-    'premium': 'sova-premium-hero-1200x800',
-    'luxury': 'sova-luxury-hero-1200x800'
+  sova: {
+    'sova-classic': '/sova-classic.png',
+    'sova-premium': '/sova-premium.png',
+    'sova-luxury': '/sova-luxury.png'
   },
-  'ultima': {
-    'classic': 'ultima-classic-hero-1200x800',
-    'premium': 'ultima-premium-hero-1200x800',
-    'luxury': 'ultima-luxury-hero-1200x800'
+  ultima: {
+    'ultima-classic': '/ultima-classic.png',
+    'ultima-premium': '/ultima-premium.png',
+    'ultima-luxury': '/ultima-luxury.png'
   },
-  'natura': {
-    'natura-1': 'natura-1-hero-1200x800',
-    'natura-2': 'natura-2-hero-1200x800'
+  natura: {
+    'natura-1': '/natura-1.png',
+    'natura-2': '/natura-2.png'
   },
-  'marvel': {
-    'marvel': 'marvel-hero-1200x800'
+  marvel: {
+    marvel: '/Marvel.png'
   }
 } as const
 
@@ -41,27 +40,31 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
   const router = useRouter()
   const pathname = usePathname()
   
-  // Initialize selectedVariant based on URL parameter
-  const getInitialVariant = () => {
-    const variantParam = searchParams.get('variant')
+  const resolveVariant = useCallback((variantParam: string | null) => {
     if (variantParam) {
-      // Find variant that ends with the variant parameter (e.g., 'classic' matches 'sova-classic')
-      const foundVariant = product.variants.find(v => 
-        v.id.toLowerCase().endsWith(`-${variantParam.toLowerCase()}`) ||
-        v.id.toLowerCase() === variantParam.toLowerCase()
-      )
-      if (foundVariant) return foundVariant
+      const normalized = variantParam.toLowerCase()
+      const foundVariant = product.variants.find(v => {
+        const variantId = v.id.toLowerCase()
+        return variantId.endsWith(`-${normalized}`) || variantId === normalized
+      })
+      if (foundVariant) {
+        return foundVariant
+      }
     }
     return product.variants[0]
-  }
+  }, [product.variants])
   
-  const [selectedVariant, setSelectedVariant] = useState(getInitialVariant())
+  const [selectedVariant, setSelectedVariant] = useState(() => {
+    const variantParam = searchParams.get('variant')
+    return resolveVariant(variantParam)
+  })
 
   // Update selectedVariant when URL changes
   useEffect(() => {
-    const variant = getInitialVariant()
-    setSelectedVariant(variant)
-  }, [searchParams, product.variants])
+    const variantParam = searchParams.get('variant')
+    const resolvedVariant = resolveVariant(variantParam)
+    setSelectedVariant(prev => (prev.id === resolvedVariant.id ? prev : resolvedVariant))
+  }, [resolveVariant, searchParams])
 
   // Update URL when variant changes
   const updateVariantInUrl = (variant: typeof selectedVariant) => {
@@ -73,8 +76,8 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
 
   const getVariantImage = () => {
     const images = productHeroImages[product.id as keyof typeof productHeroImages]
-    const variantKey = selectedVariant.id.split('-').pop() || selectedVariant.id
-    return images[variantKey as keyof typeof images] || 'product-grid-sova-600x400'
+    const variantKey = selectedVariant.id as keyof typeof images
+    return images?.[variantKey] ?? '/sova-premium.png'
   }
 
   return (
@@ -103,10 +106,13 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
         {/* Product Image */}
         <div className="relative h-[400px] lg:h-[600px] rounded-lg overflow-hidden">
           <Image
-            src={getPlaceholderImage(getVariantImage() as keyof typeof import('@/lib/placeholder-images').placeholderImages)}
+            key={selectedVariant.id}
+            src={getVariantImage()}
             alt={`${product.name} ${selectedVariant.name} mattress`}
             fill
             className="object-cover"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            priority={selectedVariant.id === product.variants[0].id}
           />
           {product.warranty === 25 && (
             <div className="absolute top-6 left-6">

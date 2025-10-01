@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Metadata } from 'next'
 import Container from '@/components/ui/Container'
 
@@ -22,19 +23,25 @@ export default function AboutPage() {
           <div className="space-y-8">
             {/* First Image - Company Roots Timeline */}
             <div className="w-full">
-              <img 
+              <Image 
                 src="/foamico-timeline-new.png" 
                 alt="Foamico Company Timeline - From Roots 1960 to House of Brands 2025"
+                width={1313}
+                height={928}
                 className="w-full h-auto rounded-lg"
+                priority
               />
             </div>
 
             {/* Second Image - Why Choose Us */}
             <div className="w-full">
-              <img 
+              <Image 
                 src="/why-choose-us.png" 
                 alt="Why Should You Choose Us - 65+ Years of Legacy, European Comfort, Italian Craft"
+                width={4094}
+                height={1012}
                 className="w-full h-auto"
+                priority
               />
             </div>
           </div>

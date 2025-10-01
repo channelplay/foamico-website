@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Layer } from '@/data/products'
-import { getPlaceholderImage } from '@/lib/placeholder-images'
 
 interface LayerVisualizationProps {
   layers: Layer[]
@@ -28,10 +27,11 @@ export default function LayerVisualization({ layers }: LayerVisualizationProps) 
         <div className="sticky top-24">
           <div className="relative h-[400px] lg:h-[500px] bg-gray-50 rounded-lg overflow-hidden">
             <Image
-              src={getPlaceholderImage('layer-diagram-generic-800x600')}
+              src="/features-section.png"
               alt="Mattress layer diagram"
               fill
               className="object-contain p-8"
+              priority
             />
           </div>
           

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -50,12 +50,29 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false)
+  const scrolledRef = useRef(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+    let ticking = false
+
+    const updateScrollState = () => {
+      const isScrolled = window.scrollY > 20
+      if (scrolledRef.current !== isScrolled) {
+        scrolledRef.current = isScrolled
+        setScrolled(isScrolled)
+      }
+      ticking = false
     }
-    window.addEventListener('scroll', handleScroll)
+
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(updateScrollState)
+      }
+    }
+
+    updateScrollState()
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
