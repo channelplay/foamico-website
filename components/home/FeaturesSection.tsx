@@ -20,7 +20,7 @@ export default function FeaturesSection() {
       </div>
 
       {/* Full-width Background Image */}
-      <div className="relative h-[380px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+      <div className="relative h-[450px] sm:h-[480px] md:h-[500px] lg:h-[600px] overflow-hidden">
         {/* Mobile Image */}
         <motion.div
           initial={{ opacity: 0, scale: 1.1 }}
