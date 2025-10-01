@@ -8,7 +8,6 @@ import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import Card from '@/components/ui/Card'
 import LayerVisualization from './LayerVisualization'
-import AppleStyleVariantSelector from './AppleStyleVariantSelector'
 import { Product } from '@/data/products'
 
 interface ProductCategoryViewProps {
@@ -102,9 +101,9 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
       </nav>
 
       {/* Product Header */}
-      <div className="grid lg:grid-cols-2 gap-12 mb-16">
+      <div className="grid gap-12 lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)] lg:items-start mb-16">
         {/* Product Image */}
-        <div className="relative h-[400px] lg:h-[600px] rounded-lg overflow-hidden">
+        <div className="relative h-[360px] sm:h-[420px] lg:h-[520px] rounded-3xl overflow-hidden shadow-xl">
           <Image
             key={selectedVariant.id}
             src={getVariantImage()}
@@ -124,64 +123,90 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
         </div>
 
         {/* Product Info */}
-        <div>
-          <div className="mb-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foamico-black mb-2">
+        <div className="flex flex-col gap-6">
+          <div>
+            <h1 className="text-4xl lg:text-[3.25rem] font-bold text-foamico-black mb-3 leading-tight">
               {product.name}
             </h1>
-            <p className="text-xl text-foamico-gray-600">{product.tagline}</p>
+            <p className="text-lg text-foamico-gray-600 max-w-xl">{product.tagline}</p>
           </div>
 
-          <div className="flex items-center gap-4 mb-6">
-            <Badge variant="secondary">{product.category}</Badge>
+          <div className="flex items-center gap-3">
+            <Badge variant="secondary" size="medium">
+              {product.category}
+            </Badge>
           </div>
 
-          <p className="text-lg text-foamico-gray-700 mb-8">
+          <p className="text-base text-foamico-gray-700 leading-relaxed max-w-2xl">
             {product.description}
           </p>
 
-          {/* Variant Selector */}
-          <div className="mb-8">
-            <AppleStyleVariantSelector 
-              variants={product.variants.map(v => ({
-                id: v.id,
-                name: v.name,
-                size: v.size || 'Standard',
-                thickness: v.thickness || '8 inches',
-                inStock: true
-              }))}
-              onSelect={(variant) => {
-                const productVariant = product.variants.find(v => v.id === variant.id)
-                if (productVariant) {
-                  setSelectedVariant(productVariant)
-                  updateVariantInUrl(productVariant)
-                }
-              }}
-            />
+          <div className="bg-white rounded-2xl border border-foamico-gray-100 p-4 sm:p-6 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+              <div>
+                <h3 className="text-sm font-semibold text-foamico-gray-500 uppercase tracking-[0.18em]">
+                  Choose Your Variant
+                </h3>
+                <p className="text-sm text-foamico-gray-600">
+                  Select to view layers and specifications
+                </p>
+              </div>
+              <Button href={`/products/compare?products=${product.id}`} variant="outline" size="small">
+                Compare Variants
+              </Button>
+            </div>
+
+            <div className="grid gap-3">
+              {product.variants.map((variant) => {
+                const isSelected = selectedVariant.id === variant.id
+                return (
+                  <button
+                    key={variant.id}
+                    onClick={() => {
+                      setSelectedVariant(variant)
+                      updateVariantInUrl(variant)
+                    }}
+                    className={`flex items-center justify-between rounded-xl border px-4 py-3 text-left transition-all ${
+                      isSelected
+                        ? 'border-foamico-lime bg-foamico-lime-light shadow-sm'
+                        : 'border-foamico-gray-100 hover:border-foamico-lime-light'
+                    }`}
+                  >
+                    <div className="flex flex-col gap-1">
+                      <span className="text-base font-semibold text-foamico-black">{variant.name}</span>
+                      <span className="text-xs text-foamico-gray-500">
+                        {variant.size} • {variant.thickness}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      {isSelected && (
+                        <span className="text-xs font-semibold text-foamico-lime">Selected</span>
+                      )}
+                      <span className="text-sm text-foamico-gray-500">View Details →</span>
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-2 gap-4 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {product.features.map((feature) => (
-              <div key={feature} className="flex items-center gap-2">
-                <span className="text-foamico-lime text-xl">✓</span>
-                <span className="text-foamico-gray-700">{feature}</span>
+              <div key={feature} className="flex items-center gap-2 rounded-xl border border-foamico-gray-100 bg-white px-4 py-3 text-sm text-foamico-gray-600">
+                <span className="text-foamico-lime text-lg">✓</span>
+                <span>{feature}</span>
               </div>
             ))}
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button href="/find-store" size="large" className="flex-1">
               Find a Store
             </Button>
-            <Button 
-              href={`/products/compare?products=${product.id}`} 
-              variant="outline" 
-              size="large"
-              className="flex-1"
-            >
-              Compare Models
+            <Button href={`/products/compare?products=${product.id}`} variant="outline" size="large" className="flex-1">
+              Talk to an Expert
             </Button>
           </div>
         </div>
