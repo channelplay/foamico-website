@@ -1,6 +1,6 @@
 # Overview
 
-The Foamico Mattress Website is a modern, responsive website for luxury mattresses built with Next.js 14, TypeScript, and Tailwind CSS. The project showcases premium mattress collections with interactive product pages, layer visualization, comparison tools, and a store locator. The website focuses on delivering a luxury brand experience while being technically robust and performance-optimized.
+The Foamico Mattress Website is a modern, responsive website for luxury mattresses built with Next.js 14, TypeScript, and Tailwind CSS. The project showcases premium mattress collections with interactive product pages, layer visualization, comparison tools, and a store locator. The website focuses on delivering a luxury brand experience while being technically robust, performance-optimized, and mobile-friendly with comprehensive accessibility features.
 
 # User Preferences
 
@@ -29,8 +29,17 @@ Preferred communication style: Simple, everyday language.
 ## Design System
 - **Color Palette**: Luxury-focused colors including ivory, champagne, gold, and warm earth tones
 - **Component Library**: Reusable UI components (Button, Card, Badge, Container) with consistent styling
-- **Responsive Design**: Mobile-first approach with breakpoint-based layouts
-- **Animation System**: Coordinated motion design using Framer Motion
+- **Responsive Design**: Mobile-first approach with breakpoint-based layouts optimized for all screen sizes
+- **Animation System**: Coordinated motion design using Framer Motion with mobile-optimized transitions
+
+## Mobile Optimization (October 2025)
+- **Navigation**: Hamburger menu with slide-in panel, overlay dismiss, and ARIA accessibility attributes
+- **Touch Targets**: All interactive elements meet minimum 44px×44px standards (buttons use 56px minimum)
+- **Responsive Typography**: Adaptive text sizing across all breakpoints for optimal readability
+- **Hero Section**: Mobile-optimized heights (60vh on mobile, full screen on desktop) with smart image positioning
+- **Product Cards**: Responsive heights and spacing with active/tap feedback states
+- **Image Performance**: Next.js Image components with proper sizes prop for optimal loading
+- **Interactive States**: Hover, active, and tap feedback on all clickable elements for better UX
 
 ## Performance Optimizations
 - **Image Optimization**: Next.js Image component with WebP/AVIF formats
