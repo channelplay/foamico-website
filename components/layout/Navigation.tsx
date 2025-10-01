@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 import Container from '@/components/ui/Container'
 
 const navigation = [
@@ -47,6 +48,8 @@ export default function Navigation() {
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,6 +57,12 @@ export default function Navigation() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false)
+    setMobileProductsOpen(false)
   }, [])
 
   return (
@@ -65,9 +74,9 @@ export default function Navigation() {
       }`}>
         
         <Container>
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="group">
+            <Link href="/" className="group" onClick={() => setMobileMenuOpen(false)}>
               <motion.div 
                 className="relative flex items-center"
                 whileHover={{ scale: 1.02 }}
@@ -78,14 +87,29 @@ export default function Navigation() {
                   alt="Foamico Logo"
                   width={180}
                   height={60}
-                  className="h-10 md:h-14 w-auto"
+                  className="h-8 md:h-14 w-auto"
                   priority
                 />
               </motion.div>
             </Link>
 
-            {/* Navigation */}
-            <div className="flex items-center gap-10">
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-3 text-dark hover:text-primary transition-colors active:scale-95"
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-10">
               {navigation.map((item) => (
                 <div key={item.name} className="relative">
                   {item.dropdownItems ? (
@@ -192,9 +216,117 @@ export default function Navigation() {
           </div>
         </Container>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/30 z-30 lg:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed top-16 md:top-20 right-0 bottom-0 w-full sm:w-80 bg-white shadow-2xl z-40 lg:hidden overflow-y-auto"
+          >
+            <div className="p-6 space-y-2">
+              {navigation.map((item) => (
+                <div key={item.name}>
+                  {item.dropdownItems ? (
+                    <div>
+                      <button
+                        id="mobile-products-button"
+                        onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+                        className="w-full flex items-center justify-between py-3 px-3 text-lg font-medium text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg active:scale-[0.98] min-h-[44px]"
+                        aria-expanded={mobileProductsOpen}
+                        aria-controls="mobile-products-panel"
+                      >
+                        {item.name}
+                        <motion.svg
+                          animate={{ rotate: mobileProductsOpen ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </motion.svg>
+                      </button>
+                      
+                      <AnimatePresence>
+                        {mobileProductsOpen && (
+                          <motion.div
+                            id="mobile-products-panel"
+                            role="region"
+                            aria-labelledby="mobile-products-button"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden pl-4 space-y-1"
+                          >
+                            {item.dropdownItems.map((dropdownItem) => (
+                              <div key={dropdownItem.name} className="py-1">
+                                <Link
+                                  href={dropdownItem.href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block py-3 px-3 font-semibold text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg active:scale-[0.98] min-h-[44px]"
+                                >
+                                  {dropdownItem.name}
+                                </Link>
+                                <p className="text-sm text-light-gray mt-1 px-3">{dropdownItem.desc}</p>
+                                
+                                {dropdownItem.subCategories && (
+                                  <div className="mt-2 pl-4 space-y-1">
+                                    {dropdownItem.subCategories.map((sub) => (
+                                      <Link
+                                        key={sub.name}
+                                        href={sub.href}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="block py-3 px-3 text-sm text-light-gray hover:text-primary hover:bg-soft-cream transition-all rounded-lg active:scale-[0.98] min-h-[44px]"
+                                      >
+                                        {sub.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-3 px-3 text-lg font-medium text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg active:scale-[0.98] min-h-[44px]"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       {/* Spacer for fixed navigation */}
-      <div className="h-20" />
+      <div className="h-16 md:h-20" />
     </>
   )
 }

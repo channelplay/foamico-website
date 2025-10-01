@@ -54,18 +54,19 @@ export default function ProductShowcase() {
               onMouseLeave={() => setHoveredProduct(null)}
             >
               <Link href={`/products/${product.id}`}>
-                <div className="card-elegant group cursor-pointer h-full flex flex-col">
+                <div className="card-elegant group cursor-pointer h-full flex flex-col active:scale-[0.98] transition-transform">
                   {/* Product Image */}
-                  <div className="relative h-80 md:h-96 overflow-hidden bg-soft-cream flex-shrink-0">
+                  <div className="relative h-72 sm:h-80 md:h-96 overflow-hidden bg-soft-cream flex-shrink-0">
                     <Image
                       src={productImages[product.id as keyof typeof productImages]}
                       alt={`${product.name} mattress`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(min-width: 768px) 50vw, 100vw"
                     />
                     
                     {/* Warranty Badge */}
-                    <div className="absolute top-4 left-4 bg-soft-cream text-black px-3 py-1 text-xs font-semibold rounded">
+                    <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-soft-cream text-black px-2.5 py-1 md:px-3 md:py-1 text-xs font-semibold rounded">
                       UPTO 25 YEARS WARRANTY
                     </div>
                     
@@ -83,11 +84,11 @@ export default function ProductShowcase() {
                   </div>
 
                   {/* Product Info */}
-                  <div className="p-4 md:p-6 flex-grow flex flex-col">
-                    <h3 className="heading-secondary text-xl mb-2">
+                  <div className="p-5 md:p-6 flex-grow flex flex-col">
+                    <h3 className="heading-secondary text-lg md:text-xl mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-small text-light-gray">
+                    <p className="text-sm md:text-base text-light-gray">
                       {product.tagline}
                     </p>
                   </div>

@@ -13,14 +13,14 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[60vh] md:min-h-screen flex items-center overflow-hidden">
       {/* Hero Background Image */}
       <div className="absolute inset-0">
         <Image
           src="/foamico-hero-new.png"
           alt="Sleep Engineered - Foamico Innovation"
           fill
-          className="object-cover object-left"
+          className="object-cover object-left md:object-center"
           priority
           sizes="100vw"
         />
@@ -30,7 +30,7 @@ export default function HeroSection() {
 
       {/* Content Container */}
       <Container className="relative z-10">
-        <div className="min-h-[80vh] flex items-center justify-center py-12 md:py-20">
+        <div className="min-h-[50vh] md:min-h-[80vh] flex items-center justify-center py-8 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
             {/* Empty content area - just maintaining the structure */}
           </div>
