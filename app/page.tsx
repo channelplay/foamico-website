@@ -10,9 +10,6 @@ export default function Home() {
     <div style={{ backgroundColor: '#F4F2EC' }} className="min-h-screen">
       <HeroSection />
       
-      {/* Spacer between hero and content sections */}
-      <div className="h-16 md:h-24 bg-gradient-to-b from-transparent to-soft-cream/30"></div>
-      
       <FeaturesSection />
       
       <FabricQualitySection />
