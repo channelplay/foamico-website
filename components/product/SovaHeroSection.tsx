@@ -11,19 +11,9 @@ const variants = [
   { id: 'luxury', name: 'Luxury', description: 'Ultimate indulgence' }
 ]
 
-const features = [
-  { text: 'Orthopedic Support', icon: '✓' },
-  { text: 'Temperature Regulation', icon: '✓' },
-  { text: 'Motion Isolation', icon: '✓' },
-  { text: 'Upto 25 Years Warranty', icon: '✓' },
-  { text: 'Hypoallergenic', icon: '✓' },
-  { text: 'Breathable Design', icon: '✓' }
-]
-
 export default function SovaHeroSection() {
   const [selectedVariant, setSelectedVariant] = useState('classic')
 
-  // Map variants to their respective images
   const variantImages = {
     'classic': '/sova-classic.png',
     'premium': '/sova-premium.png',
@@ -31,22 +21,21 @@ export default function SovaHeroSection() {
   }
 
   return (
-    <section className="min-h-screen bg-white py-10 md:py-16">
-      
+    <section className="bg-white py-12 md:py-16">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[70vh] md:min-h-[80vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* Left Side - Image */}
           <motion.div 
-            className="relative order-2 lg:order-1"
+            className="relative"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="relative h-[400px] md:h-[560px] rounded-lg overflow-hidden shadow-xl border border-gray-200">
+            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
               {/* Warranty Badge */}
-              <div className="absolute top-4 left-4 z-20 bg-white/90 text-primary px-3 py-1.5 text-xs font-semibold tracking-wide rounded shadow-sm">
-                {selectedVariant === 'luxury' ? '25' : '10'} YEAR WARRANTY
+              <div className="absolute top-4 left-4 z-20 bg-white text-gray-700 px-4 py-2 text-xs font-semibold tracking-wide rounded-sm shadow-md border border-gray-200">
+                {selectedVariant === 'luxury' ? 'UP TO 25 YEAR WARRANTY' : '10 YEAR WARRANTY'}
               </div>
               
               {/* Product Image */}
@@ -57,67 +46,55 @@ export default function SovaHeroSection() {
                 className="object-cover"
                 priority
               />
-              
-              {/* Subtle overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
             </div>
           </motion.div>
 
           {/* Right Side - Content */}
           <motion.div 
-            className="space-y-6 md:space-y-8 order-1 lg:order-2 px-4 lg:px-0"
+            className="space-y-6"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            {/* Title and Description */}
+            {/* Title */}
             <div>
-              
-              <h1 className="mb-3 md:mb-4 font-bold" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.75rem)' }}>
-                <span className="text-dark">Sova</span>
-                <span className="text-primary"> Mattress</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+                Sova Mattress
               </h1>
               
-              
-              <p className="text-sm md:text-base text-light-gray leading-relaxed max-w-prose">
+              <p className="text-base md:text-lg text-gray-500 leading-relaxed">
                 Experience the perfect balance of firmness and comfort with our innovative foam technology, designed for enhanced orthopedic support and exceptional sleep quality.
               </p>
             </div>
 
             {/* Variant Selector */}
-            <div className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 shadow-lg">
-              <h3 className="text-sm font-semibold text-dark mb-4 uppercase tracking-wider">
+            <div>
+              <h3 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider">
                 Select Your Comfort
               </h3>
-              <div className="grid grid-cols-3 gap-2 md:gap-3">
+              <div className="grid grid-cols-3 gap-3">
                 {variants.map((variant) => (
                   <motion.button
                     key={variant.id}
                     onClick={() => setSelectedVariant(variant.id)}
-                    className={`relative px-3 md:px-4 py-2.5 md:py-3 border rounded-md transition-all text-left
+                    className={`px-4 py-3 border rounded-md transition-all text-center
                       ${selectedVariant === variant.id
-                        ? 'border-primary bg-primary/5 shadow-sm'
-                        : 'border-gray-200 bg-white hover:border-primary/40'
+                        ? 'border-gray-900 bg-gray-50'
+                        : 'border-gray-200 bg-white hover:border-gray-400'
                       }`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <div className="text-center">
-                      <span className={`font-medium block ${
-                        selectedVariant === variant.id ? 'text-primary' : 'text-dark'
-                      }`}>
-                        {variant.name}
-                      </span>
-                      <span className="text-xs text-light-gray mt-1">
-                        {variant.description}
-                      </span>
+                    <div className="font-semibold text-gray-900 text-sm md:text-base">
+                      {variant.name}
+                    </div>
+                    <div className="text-xs text-gray-500 mt-1">
+                      {variant.description}
                     </div>
                   </motion.button>
                 ))}
               </div>
             </div>
-
-
           </motion.div>
         </div>
       </Container>

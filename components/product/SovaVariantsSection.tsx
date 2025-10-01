@@ -64,12 +64,12 @@ export default function SovaVariantsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-overline mb-4">Explore Options</p>
-          <h2 className="heading-primary mb-4">
+          <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest mb-3">Explore Options</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
             Choose Your Perfect Comfort
           </h2>
-          <div className="divider-line divider-center" />
-          <p className="text-body text-light-gray max-w-2xl mx-auto mt-6">
+          <div className="w-16 h-0.5 bg-gray-300 mx-auto my-6" />
+          <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
             Each Sova variant is meticulously crafted with distinct layer combinations 
             to provide the ideal sleeping experience for your unique needs.
           </p>
@@ -92,8 +92,8 @@ export default function SovaVariantsSection() {
               <div className={`${item.imagePosition === 'right' ? 'lg:col-start-2' : ''}`}>
                 <div className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden shadow-xl mx-4 lg:mx-0">
                   {/* Warranty Badge */}
-                  <div className="absolute top-4 left-4 z-20 bg-white/90 text-primary px-3 py-1.5 text-xs font-semibold tracking-wide rounded shadow-sm">
-                    {item.id === 'luxury' ? 'UPTO 25' : '10'} YEAR WARRANTY
+                  <div className="absolute top-4 left-4 z-20 bg-white text-gray-700 px-4 py-2 text-xs font-semibold tracking-wide rounded-sm shadow-md border border-gray-200">
+                    {item.id === 'luxury' ? 'UP TO 25 YEAR WARRANTY' : '10 YEAR WARRANTY'}
                   </div>
                   
                   {/* Product Image */}
@@ -112,24 +112,24 @@ export default function SovaVariantsSection() {
               </div>
 
               {/* Content Side */}
-              <div className={`min-h-[400px] md:h-[500px] flex flex-col px-4 lg:px-0 ${item.imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
+              <div className={`flex flex-col px-4 lg:px-0 ${item.imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h3 className="heading-secondary text-2xl">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                       {item.name}
                     </h3>
                   </div>
                   <button 
                     onClick={scrollToComparison}
-                    className="btn-secondary text-sm"
+                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded hover:bg-gray-50 transition-colors text-sm font-medium whitespace-nowrap"
                   >
-                    Compare Variants
+                    COMPARE VARIANTS
                   </button>
                 </div>
 
                 {/* Layer Information */}
-                <div className="space-y-3 flex-1">
-                  <h4 className="text-sm font-semibold text-dark uppercase tracking-wider mb-4">
+                <div className="space-y-3">
+                  <h4 className="text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
                     Layer Composition
                   </h4>
                   
