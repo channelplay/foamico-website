@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function FabricQualitySection() {
   return (
-    <section className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+    <section className="relative hidden md:block h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
       {/* Full-width Background Image */}
       <motion.div
         initial={{ opacity: 0, scale: 1.1 }}
