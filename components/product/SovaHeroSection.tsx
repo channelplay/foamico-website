@@ -44,6 +44,7 @@ export default function SovaHeroSection() {
                 alt={`Sova ${selectedVariant.charAt(0).toUpperCase() + selectedVariant.slice(1)} Mattress`}
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
             </div>
