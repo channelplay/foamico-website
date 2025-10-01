@@ -33,7 +33,7 @@ export default function FeaturesSection() {
             src="/luxury-science-mobile.png"
             alt="Foamico Mattress Engineering Features - Scientific Testing and Innovation"
             fill
-            className="object-cover object-top"
+            className="object-contain object-top"
             sizes="100vw"
             priority
           />
