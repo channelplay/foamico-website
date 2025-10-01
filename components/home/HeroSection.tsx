@@ -14,13 +14,25 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[60vh] md:min-h-screen flex items-center overflow-hidden">
-      {/* Hero Background Image */}
-      <div className="absolute inset-0">
+      {/* Mobile Hero Background Image */}
+      <div className="absolute inset-0 md:hidden">
+        <Image
+          src="/foamico-hero-mobile.png"
+          alt="Sleep Engineered - Foamico Innovation"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
+      </div>
+
+      {/* Desktop Hero Background Image */}
+      <div className="absolute inset-0 hidden md:block">
         <Image
           src="/foamico-hero-new.png"
           alt="Sleep Engineered - Foamico Innovation"
           fill
-          className="object-cover object-left md:object-center"
+          className="object-cover object-center"
           priority
           sizes="100vw"
         />
