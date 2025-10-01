@@ -20,7 +20,7 @@ export default function HeroSection() {
           src="/foamico-hero-new.png"
           alt="Sleep Engineered - Foamico Innovation"
           fill
-          className="object-cover object-right"
+          className="object-cover object-left"
           priority
           sizes="100vw"
         />
