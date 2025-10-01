@@ -1,12 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import Container from '@/components/ui/Container'
 
 export default function UltimaComparisonSection() {
-  const [hoveredCell, setHoveredCell] = useState<string | null>(null)
-
   const comparisonData = [
     {
       feature: 'Top Fabric',
@@ -52,14 +49,8 @@ export default function UltimaComparisonSection() {
     }
   ]
 
-  const variantLabels = {
-    classic: 'CLASSIC',
-    premium: 'PREMIUM',
-    luxury: 'LUXURY'
-  }
-
   return (
-    <section id="comparison-section" className="py-12 md:py-20 bg-soft-cream">
+    <section id="comparison-section" className="py-12 md:py-20 bg-gray-50">
       <Container>
         {/* Section Header */}
         <motion.div 
@@ -69,14 +60,14 @@ export default function UltimaComparisonSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-overline mb-4">Compare Features</p>
+          <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest mb-3">Compare Features</p>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
             Ultima Mattress Comparison
           </h2>
-          <div className="divider-line divider-center" />
+          <div className="w-16 h-0.5 bg-gray-300 mx-auto my-6" />
           
-          <p className="text-body text-light-gray max-w-2xl mx-auto mt-6">
+          <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
             Compare the specifications across Ultima Classic, Premium, and Luxury variants 
             to find the ideal cloud-like comfort for your sleeping needs.
           </p>
@@ -84,104 +75,60 @@ export default function UltimaComparisonSection() {
 
         {/* Comparison Table */}
         <motion.div 
-          className="card-elegant overflow-hidden shadow-xl"
+          className="bg-white rounded-lg overflow-hidden shadow-lg"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           {/* Table Container */}
-          <div className="overflow-x-auto -mx-4 sm:mx-0">
-            {/* Table Header */}
-            <div className="grid grid-cols-4 bg-soft-cream">
-              <div className="p-4 border-r border-gray-200">
-                <span className="text-sm font-semibold uppercase tracking-wider text-black">
-                  Feature
-                </span>
-              </div>
-              {['classic', 'premium', 'luxury'].map((variant) => (
-                <motion.div
-                  key={variant}
-                  className="p-4 text-center border-r border-gray-200 last:border-r-0"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                >
-                  <div className="flex flex-col items-center gap-1">
-                    <span className="text-sm font-semibold uppercase tracking-wider text-black">
-                      {variantLabels[variant as keyof typeof variantLabels]}
-                    </span>
-                    {variant === 'luxury' && (
-                      <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded mt-1">
-                        Premium
-                      </span>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              {/* Table Header */}
+              <thead className="bg-gray-50 border-b border-gray-200">
+                <tr>
+                  <th className="px-6 py-4 text-left text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    Feature
+                  </th>
+                  <th className="px-6 py-4 text-center text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    Classic
+                  </th>
+                  <th className="px-6 py-4 text-center text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    Premium
+                  </th>
+                  <th className="px-6 py-4 text-center text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    Luxury
+                  </th>
+                </tr>
+              </thead>
 
-            {/* Table Body */}
-            <div>
-              {comparisonData.map((row, rowIndex) => (
-                <motion.div
-                  key={row.feature}
-                  className={`grid grid-cols-4 ${
-                    rowIndex % 2 === 0 ? 'bg-white' : 'bg-warm-beige/20'
-                  } hover:bg-warm-beige/30 transition-colors`}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: rowIndex * 0.05 }}
-                >
-                  {/* Feature Column */}
-                  <div className="p-4 border-r border-gray-200 flex items-center">
-                    <span className="font-medium text-dark text-sm">
+              {/* Table Body */}
+              <tbody className="divide-y divide-gray-200">
+                {comparisonData.map((row, rowIndex) => (
+                  <motion.tr
+                    key={row.feature}
+                    className="hover:bg-gray-50 transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: rowIndex * 0.05 }}
+                  >
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900">
                       {row.feature}
-                    </span>
-                  </div>
-
-                  {/* Variant Columns */}
-                  {['classic', 'premium', 'luxury'].map((variant) => {
-                    const cellId = `${variant}-${rowIndex}`
-                    const cellValue = row[variant as keyof typeof row] as string
-                    const isHighlighted = variant === 'luxury' && (
-                      row.feature === 'Adaptive Layer' || 
-                      row.feature === 'Feel'
-                    )
-
-                    return (
-                      <motion.div
-                        key={cellId}
-                        className={`p-4 text-center border-r border-gray-200 last:border-r-0 relative ${
-                          isHighlighted ? 'bg-primary/5' : ''
-                        }`}
-                        onMouseEnter={() => setHoveredCell(cellId)}
-                        onMouseLeave={() => setHoveredCell(null)}
-                        whileHover={{ backgroundColor: 'rgba(129, 104, 66, 0.05)' }}
-                      >
-                        <div className="text-sm text-dark">
-                          {cellValue}
-                          {isHighlighted && (
-                            <span className="ml-2 text-xs text-primary">★</span>
-                          )}
-                        </div>
-
-                        {/* Hover Effect */}
-                        {hoveredCell === cellId && (
-                          <motion.div
-                            className="absolute inset-0 pointer-events-none border-2 border-primary/30 rounded"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.2 }}
-                          />
-                        )}
-                      </motion.div>
-                    )
-                  })}
-                </motion.div>
-              ))}
-            </div>
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600 text-center">
+                      {row.classic}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600 text-center">
+                      {row.premium}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600 text-center">
+                      {row.luxury}
+                    </td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </motion.div>
 

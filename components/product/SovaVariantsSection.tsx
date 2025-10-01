@@ -105,8 +105,6 @@ export default function SovaVariantsSection() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   
-                  {/* Subtle overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
                   
                 </div>
               </div>
@@ -137,18 +135,18 @@ export default function SovaVariantsSection() {
                     <div key={layerIndex}>
                       <motion.button
                         onClick={() => toggleSection(`${item.id}-${layerIndex}`)}
-                        className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between bg-soft-cream hover:bg-warm-beige/50 transition-colors rounded"
+                        className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors rounded"
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                       >
                         <div className="flex items-center gap-4">
-                          <div className="w-8 h-8 md:w-10 md:h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-sm md:text-base">
+                          <div className="w-8 h-8 md:w-10 md:h-10 bg-gray-800 text-white rounded-full flex items-center justify-center font-semibold text-sm md:text-base">
                             {String(layerIndex + 1).padStart(2, '0')}
                           </div>
                           <div className="text-left">
-                            <h4 className="font-medium text-dark">{layer.name}</h4>
+                            <h4 className="font-medium text-gray-900">{layer.name}</h4>
                             {layer.thickness && (
-                              <span className="text-xs text-light-gray">
+                              <span className="text-xs text-gray-500">
                                 {layer.thickness} thickness
                               </span>
                             )}
@@ -159,7 +157,7 @@ export default function SovaVariantsSection() {
                           animate={{ rotate: expandedSections[`${item.id}-${layerIndex}`] ? 180 : 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                           </svg>
                         </motion.div>
@@ -174,8 +172,8 @@ export default function SovaVariantsSection() {
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="px-6 pb-4 pt-4 bg-warm-beige/20 border-l-4 border-primary ml-6">
-                              <p className="text-sm text-dark leading-relaxed">
+                            <div className="px-6 pb-4 pt-4 bg-gray-100 border-l-4 border-gray-800 ml-6">
+                              <p className="text-sm text-gray-700 leading-relaxed">
                                 {layer.description}
                               </p>
                             </div>

@@ -64,12 +64,12 @@ export default function UltimaVariantsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-overline mb-4">Explore Options</p>
-          <h2 className="heading-primary mb-4">
+          <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest mb-3">Explore Options</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
             Choose Your Perfect Comfort
           </h2>
-          <div className="divider-line divider-center" />
-          <p className="text-body text-light-gray max-w-2xl mx-auto mt-6">
+          <div className="w-16 h-0.5 bg-gray-300 mx-auto my-6" />
+          <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
             Each Ultima variant is meticulously crafted with distinct layer combinations 
             to provide the ideal cloud-like sleeping experience for your unique needs.
           </p>
@@ -84,7 +84,7 @@ export default function UltimaVariantsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start ${
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center ${
                 item.imagePosition === 'right' ? 'lg:grid-flow-row-dense' : ''
               }`}
             >
@@ -92,8 +92,8 @@ export default function UltimaVariantsSection() {
               <div className={`${item.imagePosition === 'right' ? 'lg:col-start-2' : ''}`}>
                 <div className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden shadow-xl mx-4 lg:mx-0">
                   {/* Warranty Badge */}
-                  <div className="absolute top-4 left-4 z-20 bg-white/90 text-primary px-3 py-1.5 text-xs font-semibold tracking-wide rounded shadow-sm">
-                    UPTO 25 YEARS WARRANTY
+                  <div className="absolute top-4 left-4 z-20 bg-white text-gray-700 px-4 py-2 text-xs font-semibold tracking-wide rounded-sm shadow-md border border-gray-200">
+                    UP TO 25 YEAR WARRANTY
                   </div>
                   
                   {/* Product Image */}
@@ -105,50 +105,48 @@ export default function UltimaVariantsSection() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   
-                  {/* Subtle overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
                   
                 </div>
               </div>
 
               {/* Content Side */}
-              <div className={`min-h-[400px] md:min-h-[500px] flex flex-col px-4 lg:px-0 ${item.imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
+              <div className={`flex flex-col px-4 lg:px-0 ${item.imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h3 className="heading-secondary text-2xl">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                       {item.name}
                     </h3>
                   </div>
                   <button 
                     onClick={scrollToComparison}
-                    className="btn-secondary text-sm"
+                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded hover:bg-gray-50 transition-colors text-sm font-medium whitespace-nowrap"
                   >
-                    Compare Variants
+                    COMPARE VARIANTS
                   </button>
                 </div>
 
                 {/* Layer Information */}
                 <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-dark uppercase tracking-wider mb-4">
+                  <h4 className="text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
                     Layer Composition
                   </h4>
                   
                   {item.variant.layers?.map((layer, layerIndex) => (
-                    <div key={layerIndex} className="mb-2">
+                    <div key={layerIndex}>
                       <motion.button
                         onClick={() => toggleSection(`${item.id}-${layerIndex}`)}
-                        className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between bg-soft-cream hover:bg-warm-beige/50 transition-colors rounded relative z-10"
+                        className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors rounded"
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                       >
                         <div className="flex items-center gap-4">
-                          <div className="w-8 h-8 md:w-10 md:h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-sm md:text-base">
+                          <div className="w-8 h-8 md:w-10 md:h-10 bg-gray-800 text-white rounded-full flex items-center justify-center font-semibold text-sm md:text-base">
                             {String(layerIndex + 1).padStart(2, '0')}
                           </div>
                           <div className="text-left">
-                            <h4 className="font-medium text-dark">{layer.name}</h4>
+                            <h4 className="font-medium text-gray-900">{layer.name}</h4>
                             {layer.thickness && (
-                              <span className="text-xs text-light-gray">
+                              <span className="text-xs text-gray-500">
                                 {layer.thickness} thickness
                               </span>
                             )}
@@ -159,7 +157,7 @@ export default function UltimaVariantsSection() {
                           animate={{ rotate: expandedSections[`${item.id}-${layerIndex}`] ? 180 : 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                           </svg>
                         </motion.div>
@@ -174,8 +172,8 @@ export default function UltimaVariantsSection() {
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="px-6 pb-4 pt-4 bg-warm-beige/20 border-l-4 border-primary ml-6">
-                              <p className="text-sm text-dark leading-relaxed">
+                            <div className="px-6 pb-4 pt-4 bg-gray-100 border-l-4 border-gray-800 ml-6">
+                              <p className="text-sm text-gray-700 leading-relaxed">
                                 {layer.description}
                               </p>
                             </div>
