@@ -84,13 +84,13 @@ export default function SovaVariantsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center ${
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 tablet:gap-10 lg:gap-12 items-center ${
                 item.imagePosition === 'right' ? 'lg:grid-flow-row-dense' : ''
               }`}
             >
               {/* Image Side */}
               <div className={`${item.imagePosition === 'right' ? 'lg:col-start-2' : ''}`}>
-                <div className="relative h-[300px] md:h-[500px] rounded-lg overflow-hidden shadow-xl mx-4 lg:mx-0">
+                <div className="relative h-[300px] tablet:h-[420px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl mx-4 lg:mx-0">
                   {/* Warranty Badge */}
                   <div className="absolute top-4 left-4 z-20 bg-white text-gray-700 px-4 py-2 text-xs font-semibold tracking-wide rounded-sm shadow-md border border-gray-200">
                     {item.id === 'luxury' ? 'UP TO 25 YEAR WARRANTY' : '10 YEAR WARRANTY'}

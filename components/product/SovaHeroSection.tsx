@@ -21,9 +21,9 @@ export default function SovaHeroSection() {
   }
 
   return (
-    <section className="bg-white py-12 md:py-16">
+    <section className="bg-white py-12 md:py-14 lg:py-16">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 tablet:gap-10 lg:gap-16 items-center">
           
           {/* Left Side - Image */}
           <motion.div 
@@ -32,7 +32,7 @@ export default function SovaHeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
+            <div className="relative h-[400px] tablet:h-[450px] lg:h-[500px] rounded-lg overflow-hidden">
               {/* Warranty Badge */}
               <div className="absolute top-4 left-4 z-20 bg-white text-gray-700 px-4 py-2 text-xs font-semibold tracking-wide rounded-sm shadow-md border border-gray-200">
                 {selectedVariant === 'luxury' ? 'UP TO 25 YEAR WARRANTY' : '10 YEAR WARRANTY'}
@@ -59,11 +59,11 @@ export default function SovaHeroSection() {
           >
             {/* Title */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+              <h1 className="text-4xl tablet:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
                 Sova Mattress
               </h1>
               
-              <p className="text-base md:text-lg text-gray-500 leading-relaxed">
+              <p className="text-base tablet:text-lg text-gray-500 leading-relaxed">
                 Experience the perfect balance of firmness and comfort with our innovative foam technology, designed for enhanced orthopedic support and exceptional sleep quality.
               </p>
             </div>
