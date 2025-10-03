@@ -41,6 +41,14 @@ Preferred communication style: Simple, everyday language.
 - **Image Performance**: Next.js Image components with proper sizes prop for optimal loading
 - **Interactive States**: Hover, active, and tap feedback on all clickable elements for better UX
 
+## Tablet/iPad Optimization (October 2025)
+- **Breakpoint System**: Dedicated tablet breakpoint (768px-1023px) for iPad and tablet devices
+- **Typography Scaling**: Optimized font sizes for tablet screens (heading-display: 2.5rem, heading-primary: 2rem)
+- **Component Spacing**: Tablet-specific gap and padding (tablet:gap-10, tablet-container padding)
+- **Image Heights**: Responsive image containers (tablet:h-[450px] for hero, tablet:h-[420px] for variants)
+- **Button Sizing**: Enhanced button padding (16px 36px) for better tablet interaction
+- **Layout Optimization**: Proper grid spacing and alignment for tablet viewports (768px-1024px)
+
 ## Performance Optimizations
 - **Image Optimization**: Next.js Image component with WebP/AVIF formats
 - **Bundle Optimization**: Experimental package imports optimization for Framer Motion
