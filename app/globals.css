@@ -287,3 +287,35 @@ body {
     font-size: 1.75rem !important;
   }
 }
+
+/* Tablet/iPad Responsive Adjustments (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heading-display {
+    font-size: 2.5rem !important;
+  }
+  
+  .heading-primary {
+    font-size: 2rem !important;
+  }
+  
+  .heading-secondary {
+    font-size: 1.5rem !important;
+  }
+  
+  .text-body {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 16px 36px;
+    font-size: 14px;
+  }
+  
+  /* Container padding for tablets */
+  .tablet-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
