@@ -32,6 +32,15 @@ Preferred communication style: Simple, everyday language.
 - **Responsive Design**: Mobile-first approach with breakpoint-based layouts optimized for all screen sizes
 - **Animation System**: Coordinated motion design using Framer Motion with mobile-optimized transitions
 
+## Sova Product Page - Hermès-Inspired Retro Luxury Design (October 2025)
+- **Color Scheme**: Hermès-inspired palette with cream (#F6F0E6), cognac orange (#FF7A00), deep cognac (#C65A00), ink (#1A0F0A), antique gold (#BFA27B), and soft highlight (#FDF7EF)
+- **Typography**: Playfair Display serif fonts for headings and display text, creating vintage luxury aesthetic with italic styling for elegance
+- **Vintage Elements**: Warranty badges styled as retro seals with orange backgrounds and gold borders, decorative frames around images
+- **Layout Features**: 4px ink-colored borders on images, gold accent dividers, cream/highlight backgrounds, generous spacing for luxurious feel
+- **Interactive Elements**: Variant selector buttons with dark ink backgrounds when selected (high contrast), orange hover states, bordered layer cards
+- **Comparison Table**: Orange header with white text, bordered layout with gold accents, serif typography throughout
+- **Accessibility**: WCAG AA compliant with 17.6:1 contrast on selected buttons, 4.9:1+ on all text elements
+
 ## Mobile Optimization (October 2025)
 - **Navigation**: Hamburger menu with slide-in panel, overlay dismiss, and ARIA accessibility attributes
 - **Touch Targets**: All interactive elements meet minimum 44px×44px standards (buttons use 56px minimum)
