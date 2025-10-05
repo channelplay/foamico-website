@@ -54,29 +54,34 @@ export default function SovaVariantsSection() {
   ]
 
   return (
-    <section id="variants-section" className="py-12 md:py-20 bg-white">
+    <section id="variants-section" className="py-16 md:py-24 bg-hermes-highlight">
       <Container>
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-12 md:mb-16 px-4"
+          className="text-center mb-16 md:mb-20 px-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest mb-3">Explore Options</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-12 h-px bg-hermes-gold"></div>
+            <p className="text-xs font-serif text-hermes-gold uppercase tracking-[0.3em]">Explore Options</p>
+            <div className="w-12 h-px bg-hermes-gold"></div>
+          </div>
+          
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-hermes-ink mb-4">
             Choose Your Perfect Comfort
           </h2>
-          <div className="w-16 h-0.5 bg-gray-300 mx-auto my-6" />
-          <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
+          
+          <p className="text-base md:text-lg text-hermes-ink/70 max-w-2xl mx-auto font-serif italic leading-relaxed">
             Each Sova variant is meticulously crafted with distinct layer combinations 
             to provide the ideal sleeping experience for your unique needs.
           </p>
         </motion.div>
 
         {/* Variants Grid */}
-        <div className="space-y-16 md:space-y-24">
+        <div className="space-y-20 md:space-y-28">
           {variants.map((item, index) => (
             <motion.div
               key={item.id}
@@ -84,50 +89,69 @@ export default function SovaVariantsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 tablet:gap-10 lg:gap-12 items-center ${
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-10 tablet:gap-12 lg:gap-16 items-center ${
                 item.imagePosition === 'right' ? 'lg:grid-flow-row-dense' : ''
               }`}
             >
               {/* Image Side */}
               <div className={`${item.imagePosition === 'right' ? 'lg:col-start-2' : ''}`}>
-                <div className="relative h-[300px] tablet:h-[420px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl mx-4 lg:mx-0">
-                  {/* Warranty Badge */}
-                  <div className="absolute top-4 left-4 z-20 bg-white text-gray-700 px-4 py-2 text-xs font-semibold tracking-wide rounded-sm shadow-md border border-gray-200">
-                    {item.id === 'luxury' ? 'UP TO 25 YEAR WARRANTY' : '10 YEAR WARRANTY'}
+                {/* Decorative Frame */}
+                <div className="relative mx-4 lg:mx-0">
+                  <div className="absolute -inset-3 border border-hermes-gold/30 hidden lg:block"></div>
+                  
+                  <div className="relative h-[320px] tablet:h-[420px] lg:h-[520px] border-4 border-hermes-ink/80 overflow-hidden bg-hermes-cream shadow-luxury-lg">
+                    {/* Vintage Warranty Seal Badge */}
+                    <div className="absolute top-6 left-6 z-20">
+                      <div className="relative bg-hermes-orange text-white px-5 py-3 shadow-xl">
+                        <div className="absolute -inset-1 border border-hermes-gold/40"></div>
+                        <div className="relative">
+                          <div className="text-[10px] font-serif tracking-widest uppercase text-hermes-highlight/90">
+                            Warranty
+                          </div>
+                          <div className="text-sm font-bold tracking-wide mt-0.5">
+                            {item.id === 'luxury' ? '25 YEARS' : '10 YEARS'}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Product Image */}
+                    <Image
+                      src={item.image}
+                      alt={`${item.name} mattress`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
-                  
-                  {/* Product Image */}
-                  <Image
-                    src={item.image}
-                    alt={`${item.name} mattress`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  
-                  
                 </div>
               </div>
 
               {/* Content Side */}
               <div className={`flex flex-col px-4 lg:px-0 ${item.imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
-                <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                      {item.name}
-                    </h3>
-                  </div>
+                {/* Header */}
+                <div className="mb-8">
+                  <div className="w-12 h-0.5 bg-hermes-orange mb-4"></div>
+                  
+                  <h3 className="font-display text-3xl md:text-4xl font-bold text-hermes-ink mb-2">
+                    {item.name}
+                  </h3>
+                  
+                  <p className="font-serif italic text-hermes-cognac text-lg mb-6">
+                    {item.tagline}
+                  </p>
+                  
                   <button 
                     onClick={scrollToComparison}
-                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded hover:bg-gray-50 transition-colors text-sm font-medium whitespace-nowrap"
+                    className="px-6 py-3 border-2 border-hermes-orange bg-transparent text-hermes-orange hover:bg-hermes-orange hover:text-white transition-all text-sm font-serif uppercase tracking-widest"
                   >
-                    COMPARE VARIANTS
+                    Compare Variants
                   </button>
                 </div>
 
                 {/* Layer Information */}
                 <div className="space-y-3">
-                  <h4 className="text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+                  <h4 className="text-xs font-serif font-semibold text-hermes-ink uppercase tracking-[0.2em] border-b border-hermes-gold/30 pb-3 mb-6">
                     Layer Composition
                   </h4>
                   
@@ -135,18 +159,18 @@ export default function SovaVariantsSection() {
                     <div key={layerIndex}>
                       <motion.button
                         onClick={() => toggleSection(`${item.id}-${layerIndex}`)}
-                        className="w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors rounded"
+                        className="w-full px-5 md:px-6 py-4 flex items-center justify-between bg-hermes-cream border-2 border-hermes-gold/30 hover:border-hermes-orange transition-all"
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                       >
                         <div className="flex items-center gap-4">
-                          <div className="w-8 h-8 md:w-10 md:h-10 bg-gray-800 text-white rounded-full flex items-center justify-center font-semibold text-sm md:text-base">
+                          <div className="w-9 h-9 md:w-10 md:h-10 bg-hermes-orange text-white flex items-center justify-center font-display font-bold text-sm md:text-base border border-hermes-gold">
                             {String(layerIndex + 1).padStart(2, '0')}
                           </div>
                           <div className="text-left">
-                            <h4 className="font-medium text-gray-900">{layer.name}</h4>
+                            <h4 className="font-display font-semibold text-hermes-ink">{layer.name}</h4>
                             {layer.thickness && (
-                              <span className="text-xs text-gray-500">
+                              <span className="text-xs font-serif text-hermes-ink/60 italic">
                                 {layer.thickness} thickness
                               </span>
                             )}
@@ -157,8 +181,8 @@ export default function SovaVariantsSection() {
                           animate={{ rotate: expandedSections[`${item.id}-${layerIndex}`] ? 180 : 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <svg className="w-4 h-4 text-hermes-cognac" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                           </svg>
                         </motion.div>
                       </motion.button>
@@ -172,8 +196,8 @@ export default function SovaVariantsSection() {
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="px-6 pb-4 pt-4 bg-gray-100 border-l-4 border-gray-800 ml-6">
-                              <p className="text-sm text-gray-700 leading-relaxed">
+                            <div className="px-6 pb-5 pt-5 bg-hermes-highlight border-l-4 border-hermes-orange ml-6 border-2 border-t-0 border-hermes-gold/20">
+                              <p className="text-sm font-serif text-hermes-ink/80 leading-relaxed italic">
                                 {layer.description}
                               </p>
                             </div>
