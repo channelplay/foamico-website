@@ -30,6 +30,16 @@ export default {
         cognac: "#834333",
         sage: "#87936A",
         
+        // Hermès-Inspired Retro Luxury Palette
+        hermes: {
+          cream: "#F6F0E6",
+          orange: "#FF7A00",
+          cognac: "#C65A00",
+          ink: "#1A0F0A",
+          gold: "#BFA27B",
+          highlight: "#FDF7EF",
+        },
+        
         // Original Foamico colors (preserved)
         foamico: {
           lime: "#A4C639",
