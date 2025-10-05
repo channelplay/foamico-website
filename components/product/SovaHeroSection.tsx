@@ -96,19 +96,19 @@ export default function SovaHeroSection() {
                     onClick={() => setSelectedVariant(variant.id)}
                     className={`px-4 py-4 border-2 transition-all text-center relative overflow-hidden
                       ${selectedVariant === variant.id
-                        ? 'border-hermes-orange bg-hermes-orange text-white shadow-lg'
-                        : 'border-hermes-gold/40 bg-hermes-highlight text-hermes-ink hover:border-hermes-orange hover:bg-hermes-highlight'
+                        ? 'border-hermes-ink bg-hermes-ink text-hermes-highlight shadow-lg'
+                        : 'border-hermes-gold/40 bg-hermes-highlight text-hermes-ink hover:border-hermes-orange hover:bg-hermes-cream'
                       }`}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                   >
                     <div className={`font-display font-bold text-sm md:text-base ${
-                      selectedVariant === variant.id ? 'text-white' : 'text-hermes-ink'
+                      selectedVariant === variant.id ? 'text-hermes-highlight' : 'text-hermes-ink'
                     }`}>
                       {variant.name}
                     </div>
                     <div className={`text-xs mt-1.5 font-serif italic ${
-                      selectedVariant === variant.id ? 'text-hermes-highlight' : 'text-hermes-ink/60'
+                      selectedVariant === variant.id ? 'text-hermes-cream' : 'text-hermes-ink/60'
                     }`}>
                       {variant.description}
                     </div>
