@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function SovaLayersSection() {
   return (
-    <section className="bg-hermes-cream py-16 md:py-20 lg:py-24">
+    <section className="bg-base-cream py-16 md:py-20 lg:py-24">
       <div className="w-full">
         <Image
           src="/sova-layers.png"

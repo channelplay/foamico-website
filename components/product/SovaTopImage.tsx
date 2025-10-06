@@ -18,7 +18,7 @@ export default function SovaTopImage() {
   }
 
   return (
-    <section className="bg-hermes-cream py-12 md:py-16 lg:py-20">
+    <section className="bg-base-cream py-12 md:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           
