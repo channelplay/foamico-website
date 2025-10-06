@@ -1,6 +1,4 @@
 import SovaTopImage from '@/components/product/SovaTopImage'
-import SovaHeroSection from '@/components/product/SovaHeroSection'
-import SovaVariantsSection from '@/components/product/SovaVariantsSection'
 import SovaComparisonSection from '@/components/product/SovaComparisonSection'
 import { getProductByCategory } from '@/data/products'
 
@@ -19,12 +17,6 @@ export default function SovaPage() {
     <main>
       {/* Top Hero Image */}
       <SovaTopImage />
-      
-      {/* Hero Section */}
-      <SovaHeroSection />
-      
-      {/* Variants Section */}
-      <SovaVariantsSection />
       
       {/* Comparison Section */}
       <SovaComparisonSection />
