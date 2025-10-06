@@ -37,41 +37,43 @@ export default function SovaTopImage() {
           <div className="absolute left-[640px] top-0 w-[548.17px] space-y-8 font-fira">
             {/* Title */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#39250E] mb-3">
+              <h1 className="font-bold text-[#39250E] mb-3" style={{ fontSize: '40.26px' }}>
                 Sova <span className="text-[#AD702A]">Classic</span>
               </h1>
-              <p className="text-base md:text-lg text-[#39250E]/70 leading-relaxed mt-4">
+              <p className="text-[#39250E]/70 leading-relaxed mt-4" style={{ fontSize: '15px' }}>
                 Experience the perfect balance of firmness and comfort with our innovative Latex foam technology, designed for enhanced orthopedic support and exceptional sleep quality.
               </p>
             </div>
 
             {/* Model Type Selector */}
             <div>
-              <h3 className="text-sm font-semibold text-[#39250E] mb-4 uppercase tracking-wider">
+              <h3 className="font-semibold text-[#39250E] mb-4 uppercase tracking-wider" style={{ fontSize: '15px' }}>
                 Model Type:
               </h3>
               <div className="flex gap-3">
                 <motion.button
                   onClick={() => handleModelChange('sova')}
-                  className={`px-6 py-3 min-w-[140px] transition-all border-2 font-semibold
+                  className={`transition-all border font-semibold w-[172.03px] h-[39px]
                     ${selectedModel === 'sova'
-                      ? 'bg-[#4A5F5C] text-white border-[#4A5F5C]'
+                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
                       : 'bg-white text-[#39250E] border-hermes-gold/40 hover:border-[#AD702A] hover:bg-hermes-cream'
                     }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
+                  style={{ fontSize: '15px', borderRadius: '5px' }}
                 >
                   Sova
                 </motion.button>
                 <motion.button
                   onClick={() => handleModelChange('ultima')}
-                  className={`px-6 py-3 min-w-[140px] transition-all border-2 font-semibold
+                  className={`transition-all border font-semibold w-[172.03px] h-[39px]
                     ${selectedModel === 'ultima'
-                      ? 'bg-[#4A5F5C] text-white border-[#4A5F5C]'
+                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
                       : 'bg-white text-[#39250E] border-hermes-gold/40 hover:border-[#AD702A] hover:bg-hermes-cream'
                     }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
+                  style={{ fontSize: '15px', borderRadius: '5px' }}
                 >
                   Ultima
                 </motion.button>
@@ -80,43 +82,46 @@ export default function SovaTopImage() {
 
             {/* Product Type Selector */}
             <div>
-              <h3 className="text-sm font-semibold text-[#39250E] mb-4 uppercase tracking-wider">
+              <h3 className="font-semibold text-[#39250E] mb-4 uppercase tracking-wider" style={{ fontSize: '15px' }}>
                 Product Type:
               </h3>
               <div className="flex flex-wrap gap-3">
                 <motion.button
                   onClick={() => setSelectedProduct('classic')}
-                  className={`px-6 py-3 min-w-[140px] transition-all border-2 font-semibold
+                  className={`transition-all border font-semibold w-[172.03px] h-[39px]
                     ${selectedProduct === 'classic'
-                      ? 'bg-[#4A5F5C] text-white border-[#4A5F5C]'
+                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
                       : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
                     }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
+                  style={{ fontSize: '15px', borderRadius: '5px' }}
                 >
                   Sova Classic
                 </motion.button>
                 <motion.button
                   onClick={() => setSelectedProduct('premium')}
-                  className={`px-6 py-3 min-w-[140px] transition-all border-2 font-semibold
+                  className={`transition-all border font-semibold w-[172.03px] h-[39px]
                     ${selectedProduct === 'premium'
-                      ? 'bg-[#4A5F5C] text-white border-[#4A5F5C]'
+                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
                       : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
                     }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
+                  style={{ fontSize: '15px', borderRadius: '5px' }}
                 >
                   Sova Premium
                 </motion.button>
                 <motion.button
                   onClick={() => setSelectedProduct('luxury')}
-                  className={`px-6 py-3 min-w-[140px] transition-all border-2 font-semibold
+                  className={`transition-all border font-semibold w-[172.03px] h-[39px]
                     ${selectedProduct === 'luxury'
-                      ? 'bg-[#4A5F5C] text-white border-[#4A5F5C]'
+                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
                       : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
                     }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
+                  style={{ fontSize: '15px', borderRadius: '5px' }}
                 >
                   Sova Luxury
                 </motion.button>
