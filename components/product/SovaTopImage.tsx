@@ -70,7 +70,7 @@ export default function SovaTopImage() {
                   className={`transition-all border font-semibold w-[172.03px] h-[39px]
                     ${selectedModel === 'ultima'
                       ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                      : 'bg-white text-[#39250E] border-hermes-gold/40 hover:border-[#AD702A] hover:bg-hermes-cream'
+                      : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
                     }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
