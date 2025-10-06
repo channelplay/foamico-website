@@ -25,10 +25,10 @@ export default function SovaTopImage() {
           {/* Left Side - Vintage Illustration */}
           <div className="relative">
             <Image
-              src="/sova-hero.png"
-              alt="Sova Classic Mattress - Vintage illustration showing quality inspection"
-              width={1018}
-              height={1024}
+              src="/sova-hero-new.png"
+              alt="Sova Classic Mattress - 10 Years Warranty - Quality inspection with magnifying glass"
+              width={980}
+              height={980}
               className="w-full h-auto"
               priority
             />
