@@ -1,3 +1,4 @@
+import SovaTopImage from '@/components/product/SovaTopImage'
 import SovaHeroSection from '@/components/product/SovaHeroSection'
 import SovaVariantsSection from '@/components/product/SovaVariantsSection'
 import SovaComparisonSection from '@/components/product/SovaComparisonSection'
@@ -16,6 +17,9 @@ export default function SovaPage() {
 
   return (
     <main>
+      {/* Top Hero Image */}
+      <SovaTopImage />
+      
       {/* Hero Section */}
       <SovaHeroSection />
       
