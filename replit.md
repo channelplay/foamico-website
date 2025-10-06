@@ -2,6 +2,8 @@
 
 The Foamico Mattress Website is a modern, responsive website for luxury mattresses built with Next.js 14, TypeScript, and Tailwind CSS. The project showcases premium mattress collections with interactive product pages, layer visualization, comparison tools, and a store locator. The website focuses on delivering a luxury brand experience while being technically robust, performance-optimized, and mobile-friendly with comprehensive accessibility features.
 
+**Base Color**: The entire website uses a warm cream base color (#F5F3E9) for a consistent, luxurious appearance across all pages.
+
 # User Preferences
 
 Preferred communication style: Simple, everyday language.

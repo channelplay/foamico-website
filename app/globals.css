@@ -148,7 +148,7 @@ body {
   
   /* Card Styles */
   .card-elegant {
-    background: var(--color-white);
+    background: #F5F3E9;
     border-radius: 0;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -177,11 +177,11 @@ body {
 @layer utilities {
   /* Background Colors */
   .bg-warm-beige {
-    background-color: var(--color-warm-beige);
+    background-color: #F5F3E9;
   }
   
   .bg-soft-cream {
-    background-color: var(--color-soft-cream);
+    background-color: #F5F3E9;
   }
   
   /* Text Colors */

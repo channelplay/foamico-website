@@ -7,7 +7,7 @@ function FeaturesSectionComponent() {
   return (
     <section className="relative">
       {/* Heading */}
-      <div className="py-8 md:py-12 lg:py-16 text-center px-4" style={{ backgroundColor: '#F4F2EC' }}>
+      <div className="py-8 md:py-12 lg:py-16 text-center px-4 bg-base-cream">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark">
           Luxury Meets Science
         </h2>
