@@ -66,11 +66,11 @@ export default function SovaComparisonSection() {
             <div className="w-12 h-px bg-hermes-gold"></div>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-hermes-ink mb-4">
+          <h2 className="font-bold text-hermes-ink mb-4" style={{ fontSize: '40.26px' }}>
             Sova Mattress Comparison
           </h2>
           
-          <p className="text-base md:text-lg text-hermes-ink/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-hermes-ink/70 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: '15px' }}>
             Compare the specifications across Sova Classic, Premium, and Luxury variants 
             to find the ideal mattress for your sleeping needs.
           </p>
@@ -90,16 +90,16 @@ export default function SovaComparisonSection() {
               {/* Table Header */}
               <thead className="bg-[#AD702A]">
                 <tr>
-                  <th className="px-6 py-5 text-left text-xs md:text-sm font-bold text-white uppercase tracking-[0.15em]">
+                  <th className="px-6 py-5 text-left font-bold text-white uppercase tracking-[0.15em]" style={{ fontSize: '15px' }}>
                     Feature
                   </th>
-                  <th className="px-6 py-5 text-center text-xs md:text-sm font-bold text-white uppercase tracking-[0.15em]">
+                  <th className="px-6 py-5 text-center font-bold text-white uppercase tracking-[0.15em]" style={{ fontSize: '15px' }}>
                     Classic
                   </th>
-                  <th className="px-6 py-5 text-center text-xs md:text-sm font-bold text-white uppercase tracking-[0.15em]">
+                  <th className="px-6 py-5 text-center font-bold text-white uppercase tracking-[0.15em]" style={{ fontSize: '15px' }}>
                     Premium
                   </th>
-                  <th className="px-6 py-5 text-center text-xs md:text-sm font-bold text-white uppercase tracking-[0.15em]">
+                  <th className="px-6 py-5 text-center font-bold text-white uppercase tracking-[0.15em]" style={{ fontSize: '15px' }}>
                     Luxury
                   </th>
                 </tr>
@@ -116,16 +116,16 @@ export default function SovaComparisonSection() {
                     viewport={{ once: true }}
                     transition={{ delay: rowIndex * 0.05 }}
                   >
-                    <td className="px-6 py-5 text-sm font-semibold text-hermes-ink border-r-2 border-hermes-gold/20">
+                    <td className="px-6 py-5 font-semibold text-hermes-ink border-r-2 border-hermes-gold/20" style={{ fontSize: '15px' }}>
                       {row.feature}
                     </td>
-                    <td className="px-6 py-5 text-sm text-hermes-ink/80 text-center">
+                    <td className="px-6 py-5 text-hermes-ink/80 text-center" style={{ fontSize: '15px' }}>
                       {row.classic}
                     </td>
-                    <td className="px-6 py-5 text-sm text-hermes-ink/80 text-center">
+                    <td className="px-6 py-5 text-hermes-ink/80 text-center" style={{ fontSize: '15px' }}>
                       {row.premium}
                     </td>
-                    <td className="px-6 py-5 text-sm text-hermes-ink/80 text-center">
+                    <td className="px-6 py-5 text-hermes-ink/80 text-center" style={{ fontSize: '15px' }}>
                       {row.luxury}
                     </td>
                   </motion.tr>
