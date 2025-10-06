@@ -18,6 +18,7 @@ export default function SovaTopImage() {
   }
 
   return (
+    <>
     <section className="bg-base-cream py-12 md:py-16 lg:py-20 flex items-center justify-center">
       <div className="w-[1280px] h-[464px] relative">
           
@@ -132,5 +133,10 @@ export default function SovaTopImage() {
           </div>
       </div>
     </section>
+    <section className="bg-base-cream flex items-center justify-center">
+      <div className="w-[1280px] h-[837px]" style={{ backgroundColor: '#EAE5CB' }}>
+      </div>
+    </section>
+    </>
   )
 }
