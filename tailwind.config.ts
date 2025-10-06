@@ -69,6 +69,7 @@ export default {
         sans: ["'Inter'", "'Space Grotesk'", "system-ui", "sans-serif"],
         display: ["'Playfair Display'", "serif"],
         body: ["'Inter'", "sans-serif"],
+        fira: ["var(--font-fira-code)", "monospace"],
       },
       fontSize: {
         'display-lg': ['clamp(3rem, 8vw, 6rem)', { lineHeight: '0.95' }],

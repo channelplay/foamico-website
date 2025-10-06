@@ -35,7 +35,7 @@ export default function SovaTopImage() {
           </div>
 
           {/* Right Side - Content */}
-          <div className="space-y-8 pt-0 lg:pt-8">
+          <div className="space-y-8 pt-0 lg:pt-8 font-fira">
             {/* Title */}
             <div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-hermes-ink mb-3">
