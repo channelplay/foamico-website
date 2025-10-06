@@ -37,10 +37,10 @@ export default function SovaTopImage() {
           <div className="absolute left-[640px] top-0 w-[548.17px] space-y-8 font-fira">
             {/* Title */}
             <div>
-              <h1 className="font-bold text-[#39250E] mb-3" style={{ fontSize: '40.26px' }}>
+              <h1 className="font-bold text-[#39250E]" style={{ fontSize: '40.26px', marginBottom: '14px' }}>
                 Sova <span className="text-[#AD702A]">Classic</span>
               </h1>
-              <p className="text-[#39250E]/70 leading-relaxed mt-4" style={{ fontSize: '15px' }}>
+              <p className="text-[#39250E]/70 leading-relaxed" style={{ fontSize: '15px' }}>
                 Experience the perfect balance of firmness and comfort with our innovative Latex foam technology, designed for enhanced orthopedic support and exceptional sleep quality.
               </p>
             </div>
