@@ -17,6 +17,9 @@ export default {
     },
     extend: {
       colors: {
+        // Base Color for Entire Website
+        "base-cream": "#F5F3E9",
+        
         // Luxury Color Palette
         ivory: "#FAF9F6",
         champagne: "#F7E7CE",

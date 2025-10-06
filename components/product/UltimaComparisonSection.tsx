@@ -50,7 +50,7 @@ export default function UltimaComparisonSection() {
   ]
 
   return (
-    <section id="comparison-section" className="py-12 md:py-20 bg-gray-50">
+    <section id="comparison-section" className="py-12 md:py-20 bg-base-cream">
       <Container>
         {/* Section Header */}
         <motion.div 
@@ -75,7 +75,7 @@ export default function UltimaComparisonSection() {
 
         {/* Comparison Table */}
         <motion.div 
-          className="bg-white rounded-lg overflow-hidden shadow-lg"
+          className="bg-base-cream rounded-lg overflow-hidden shadow-lg border border-gray-200"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

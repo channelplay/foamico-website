@@ -63,7 +63,7 @@ export default function TechnologySection() {
   const [selectedTech, setSelectedTech] = useState<string | null>(null)
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-20 bg-base-cream relative overflow-hidden">
       <Container className="relative z-10">
         {/* Header */}
         <motion.div 

@@ -54,7 +54,7 @@ export default function UltimaVariantsSection() {
   ]
 
   return (
-    <section id="variants-section" className="py-12 md:py-20 bg-white">
+    <section id="variants-section" className="py-12 md:py-20 bg-base-cream">
       <Container>
         {/* Section Header */}
         <motion.div 

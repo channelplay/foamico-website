@@ -18,7 +18,7 @@ export default function Card({
   padding = 'medium',
   onClick
 }: CardProps) {
-  const baseStyles = 'bg-white rounded-lg shadow-md overflow-hidden'
+  const baseStyles = 'bg-base-cream rounded-lg shadow-md overflow-hidden'
   
   const hoverStyles = hover ? 'transition-all duration-200 hover:shadow-lg' : ''
   

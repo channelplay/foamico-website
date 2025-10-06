@@ -21,7 +21,7 @@ export default function UltimaHeroSection() {
   }
 
   return (
-    <section className="bg-white py-12 md:py-14 lg:py-16">
+    <section className="bg-base-cream py-12 md:py-14 lg:py-16">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 tablet:gap-10 lg:gap-16 items-center">
           
