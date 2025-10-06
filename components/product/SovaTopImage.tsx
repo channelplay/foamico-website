@@ -20,10 +20,9 @@ export default function SovaTopImage() {
   return (
     <section className="bg-base-cream py-12 md:py-16 lg:py-20 flex items-center justify-center">
       <div className="w-[1280px] h-[544.39px] relative">
-        <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start pl-[89px] pr-8">
           
           {/* Left Side - Vintage Illustration */}
-          <div className="relative w-[462px] h-[482.75px]">
+          <div className="absolute left-[89px] top-0 w-[462px] h-[482.75px]">
             <Image
               src="/sova-hero-new.png"
               alt="Sova Classic Mattress - 10 Years Warranty - Quality inspection with magnifying glass"
@@ -35,7 +34,7 @@ export default function SovaTopImage() {
           </div>
 
           {/* Right Side - Content */}
-          <div className="space-y-8 pt-0 lg:pt-8 font-fira">
+          <div className="absolute left-[640px] top-0 w-[548.17px] space-y-8 font-fira">
             {/* Title */}
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#39250E] mb-3">
@@ -124,7 +123,6 @@ export default function SovaTopImage() {
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
   )
