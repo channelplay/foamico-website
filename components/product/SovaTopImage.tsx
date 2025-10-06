@@ -23,13 +23,13 @@ export default function SovaTopImage() {
         <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start pl-[89px] pr-8">
           
           {/* Left Side - Vintage Illustration */}
-          <div className="relative">
+          <div className="relative w-[462px] h-[482.75px]">
             <Image
               src="/sova-hero-new.png"
               alt="Sova Classic Mattress - 10 Years Warranty - Quality inspection with magnifying glass"
               width={980}
               height={980}
-              className="w-full h-auto"
+              className="w-[462px] h-[482.75px] object-cover"
               priority
             />
           </div>
