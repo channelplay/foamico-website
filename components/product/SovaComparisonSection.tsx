@@ -50,7 +50,7 @@ export default function SovaComparisonSection() {
   ]
 
   return (
-    <section id="comparison-section" className="py-16 md:py-24 bg-hermes-cream">
+    <section id="comparison-section" className="py-16 md:py-24 bg-hermes-cream font-fira">
       <Container>
         {/* Section Header */}
         <motion.div 
@@ -62,15 +62,15 @@ export default function SovaComparisonSection() {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-px bg-hermes-gold"></div>
-            <p className="text-xs font-serif text-hermes-gold uppercase tracking-[0.3em]">Compare Features</p>
+            <p className="text-xs text-hermes-gold uppercase tracking-[0.3em]">Compare Features</p>
             <div className="w-12 h-px bg-hermes-gold"></div>
           </div>
           
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-hermes-ink mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-hermes-ink mb-4">
             Sova Mattress Comparison
           </h2>
           
-          <p className="text-base md:text-lg text-hermes-ink/70 max-w-2xl mx-auto font-serif italic leading-relaxed">
+          <p className="text-base md:text-lg text-hermes-ink/70 max-w-2xl mx-auto leading-relaxed">
             Compare the specifications across Sova Classic, Premium, and Luxury variants 
             to find the ideal mattress for your sleeping needs.
           </p>
@@ -90,16 +90,16 @@ export default function SovaComparisonSection() {
               {/* Table Header */}
               <thead className="bg-hermes-orange border-b-2 border-hermes-ink">
                 <tr>
-                  <th className="px-6 py-5 text-left text-xs md:text-sm font-display font-bold text-white uppercase tracking-[0.15em]">
+                  <th className="px-6 py-5 text-left text-xs md:text-sm font-bold text-white uppercase tracking-[0.15em]">
                     Feature
                   </th>
-                  <th className="px-6 py-5 text-center text-xs md:text-sm font-display font-bold text-white uppercase tracking-[0.15em]">
+                  <th className="px-6 py-5 text-center text-xs md:text-sm font-bold text-white uppercase tracking-[0.15em]">
                     Classic
                   </th>
-                  <th className="px-6 py-5 text-center text-xs md:text-sm font-display font-bold text-white uppercase tracking-[0.15em]">
+                  <th className="px-6 py-5 text-center text-xs md:text-sm font-bold text-white uppercase tracking-[0.15em]">
                     Premium
                   </th>
-                  <th className="px-6 py-5 text-center text-xs md:text-sm font-display font-bold text-white uppercase tracking-[0.15em]">
+                  <th className="px-6 py-5 text-center text-xs md:text-sm font-bold text-white uppercase tracking-[0.15em]">
                     Luxury
                   </th>
                 </tr>
@@ -116,16 +116,16 @@ export default function SovaComparisonSection() {
                     viewport={{ once: true }}
                     transition={{ delay: rowIndex * 0.05 }}
                   >
-                    <td className="px-6 py-5 text-sm font-display font-semibold text-hermes-ink border-r-2 border-hermes-gold/20">
+                    <td className="px-6 py-5 text-sm font-semibold text-hermes-ink border-r-2 border-hermes-gold/20">
                       {row.feature}
                     </td>
-                    <td className="px-6 py-5 text-sm font-serif text-hermes-ink/80 text-center italic">
+                    <td className="px-6 py-5 text-sm text-hermes-ink/80 text-center">
                       {row.classic}
                     </td>
-                    <td className="px-6 py-5 text-sm font-serif text-hermes-ink/80 text-center italic">
+                    <td className="px-6 py-5 text-sm text-hermes-ink/80 text-center">
                       {row.premium}
                     </td>
-                    <td className="px-6 py-5 text-sm font-serif text-hermes-ink/80 text-center italic">
+                    <td className="px-6 py-5 text-sm text-hermes-ink/80 text-center">
                       {row.luxury}
                     </td>
                   </motion.tr>
