@@ -38,10 +38,10 @@ export default function SovaTopImage() {
           <div className="space-y-8 pt-0 lg:pt-8 font-fira">
             {/* Title */}
             <div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-hermes-ink mb-3">
-                Sova <span className="text-hermes-orange italic">Classic</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-hermes-ink mb-3">
+                Sova <span className="text-hermes-orange">Classic</span>
               </h1>
-              <p className="text-base md:text-lg text-hermes-ink/70 leading-relaxed font-serif mt-4">
+              <p className="text-base md:text-lg text-hermes-ink/70 leading-relaxed mt-4">
                 Experience the perfect balance of firmness and comfort with our innovative Latex foam technology, designed for enhanced orthopedic support and exceptional sleep quality.
               </p>
             </div>
