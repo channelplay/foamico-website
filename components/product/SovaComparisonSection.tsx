@@ -78,7 +78,7 @@ export default function SovaComparisonSection() {
 
         {/* Comparison Table */}
         <motion.div 
-          className="bg-hermes-highlight border-4 border-hermes-ink/80 overflow-hidden shadow-luxury-lg"
+          className="bg-hermes-highlight overflow-hidden shadow-luxury-lg"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -88,7 +88,7 @@ export default function SovaComparisonSection() {
           <div className="overflow-x-auto">
             <table className="w-full">
               {/* Table Header */}
-              <thead className="bg-hermes-orange border-b-2 border-hermes-ink">
+              <thead className="bg-[#AD702A]">
                 <tr>
                   <th className="px-6 py-5 text-left text-xs md:text-sm font-bold text-white uppercase tracking-[0.15em]">
                     Feature
