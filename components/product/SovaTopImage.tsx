@@ -19,7 +19,7 @@ export default function SovaTopImage() {
 
   return (
     <section className="bg-base-cream py-12 md:py-16 lg:py-20 flex items-center justify-center">
-      <div className="w-[1280px] h-[544.39px] relative">
+      <div className="w-[1280px] h-[464px] relative">
           
           {/* Left Side - Vintage Illustration */}
           <div className="absolute left-[89px] top-0 w-[462px] h-[482.75px]">
