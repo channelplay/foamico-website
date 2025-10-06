@@ -34,7 +34,8 @@ export default function SovaTopImage() {
           </div>
 
           {/* Right Side - Content */}
-          <div className="absolute left-[640px] top-0 w-[548.17px] space-y-8 font-fira">
+          <div className="absolute left-[640px] top-0 w-[548.17px] h-[482.75px] flex items-center">
+            <div className="w-full space-y-8 font-fira">
             {/* Title */}
             <div>
               <h1 className="font-bold text-[#39250E]" style={{ fontSize: '40.26px', marginBottom: '14px' }}>
@@ -126,6 +127,7 @@ export default function SovaTopImage() {
                   Sova Luxury
                 </motion.button>
               </div>
+            </div>
             </div>
           </div>
       </div>
