@@ -102,9 +102,9 @@ export default function Navigation() {
                 <Image
                   src="/foamico-logo-black.png"
                   alt="Foamico Logo"
-                  width={180}
-                  height={60}
-                  className="h-8 md:h-14 w-auto"
+                  width={207}
+                  height={69}
+                  className="h-[36.8px] md:h-[64.4px] w-auto"
                   priority
                 />
               </motion.div>
