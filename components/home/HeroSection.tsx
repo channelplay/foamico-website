@@ -16,7 +16,7 @@ export default function HeroSection() {
         className="w-full h-auto max-w-full"
         priority
       />
-      <div className="absolute" style={{ top: '59.37%', left: '20.63%' }}>
+      <div className="absolute" style={{ top: 'calc(59.37% + 15px)', left: '20.63%', transform: 'scale(0.85)', transformOrigin: 'left top' }}>
         <motion.button
           className="bg-[#4C6462] text-white border-none font-semibold px-12 py-4 transition-all hover:bg-[#3d504e] rounded-xl"
           whileHover={{ scale: 1.03 }}
