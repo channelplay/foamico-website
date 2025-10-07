@@ -19,8 +19,18 @@ export default function SovaTopImage() {
 
   return (
     <>
-    <section className="bg-base-cream py-12 md:py-16 lg:py-20 flex items-center justify-center">
-      <div className="w-[1280px] h-[464px] relative">
+    <section className="bg-base-cream flex items-center justify-center px-0">
+      <Image
+        src="/hero-section-new.png"
+        alt="Sleep, Engineered - Foamico Mattress with 65+ years of innovation"
+        width={1469}
+        height={420}
+        className="w-[1469px] h-auto max-w-full"
+        priority
+      />
+    </section>
+    <section className="bg-base-cream py-12 md:py-16 lg:py-20 flex items-center justify-center" style={{ display: 'none' }}>
+      <div className="w-[1280px] h-[464px] relative" style={{ display: 'none' }}>
           
           {/* Left Side - Vintage Illustration */}
           <div className="absolute left-[89px] top-0 w-[462px] h-[482.75px]">
