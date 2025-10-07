@@ -18,12 +18,12 @@ export default function HeroSection() {
       />
       <div className="absolute" style={{ top: '59.37%', left: '20.63%' }}>
         <motion.button
-          className="bg-[#4C6462] text-white border border-[#4C6462] font-semibold w-[172.03px] h-[39px] transition-all hover:bg-[#3d504e]"
+          className="bg-[#4C6462] text-white border-none font-semibold px-12 py-4 transition-all hover:bg-[#3d504e] rounded-xl"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          style={{ fontSize: '15px', borderRadius: '5px' }}
+          style={{ fontSize: '18px' }}
         >
-          Download Catalogue
+          Download Catalogue &gt;
         </motion.button>
       </div>
     </section>
