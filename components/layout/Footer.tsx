@@ -7,24 +7,16 @@ import Container from '@/components/ui/Container'
 export default function Footer() {
   const footerLinks = {
     products: [
-      { name: 'Sova', href: '/products/sova' },
-      { name: 'Ultima', href: '/products/ultima' },
+      { name: 'Sova Classic', href: '/products/sovaclassic' },
+      { name: 'Sova Premium', href: '/products/sovapremium' },
+      { name: 'Sova Luxury', href: '/products/sovaluxury' },
+      { name: 'Ultima Classic', href: '/products/ultimaclassic' },
+      { name: 'Ultima Premium', href: '/products/ultimapremium' },
+      { name: 'Ultima Luxury', href: '/products/ultimaluxury' },
     ],
     company: [
       { name: 'About Us', href: '/about' },
       { name: 'Contact', href: '/contact' },
-    ],
-    support: [
-      { name: 'Sleep Guide', href: '/resources' },
-      { name: 'Mattress Care', href: '/resources' },
-      { name: 'Warranty', href: '/warranty' },
-      { name: 'FAQ', href: '/faq' },
-    ],
-    legal: [
-      { name: 'Privacy Policy', href: '/privacy' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Shipping Policy', href: '/shipping' },
-      { name: 'Return Policy', href: '/returns' },
     ],
   }
 
@@ -32,9 +24,9 @@ export default function Footer() {
     <footer className="bg-[#816842] text-[#f5f0e8] border-t border-[#816842]/20">
       <Container>
         <div className="py-8 md:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Brand Section */}
-            <div className="sm:col-span-2 lg:col-span-2">
+            <div>
               <div className="mb-6">
                 <div className="bg-white rounded-lg p-3 inline-block">
                   <Image
