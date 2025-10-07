@@ -138,10 +138,9 @@ export default function SovaTopImage() {
         <Image
           src="/sova-layers.png"
           alt="Inside the Layers of Comfort - Sova Classic mattress layers"
-          width={1400}
-          height={700}
-          className="object-contain max-w-full max-h-full"
-          style={{ width: 'auto', height: 'auto' }}
+          width={1469}
+          height={741}
+          className="w-full h-full object-contain"
         />
       </div>
     </section>
