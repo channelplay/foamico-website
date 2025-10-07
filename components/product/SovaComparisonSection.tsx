@@ -62,15 +62,15 @@ export default function SovaComparisonSection() {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-px bg-hermes-gold"></div>
-            <p className="text-xs text-hermes-gold uppercase tracking-[0.3em]">Compare Features</p>
+            <p className="text-xs text-hermes-gold uppercase tracking-[0.3em] font-bold font-fira">Compare Features</p>
             <div className="w-12 h-px bg-hermes-gold"></div>
           </div>
           
-          <h2 className="font-bold text-hermes-ink mb-4" style={{ fontSize: '40.26px' }}>
+          <h2 className="font-bold mb-4" style={{ fontSize: '40.26px', color: '#39250E' }}>
             Sova Mattress Comparison
           </h2>
           
-          <p className="text-hermes-ink/70 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: '15px' }}>
+          <p className="max-w-2xl mx-auto leading-relaxed" style={{ fontSize: '15px', color: '#39250E', opacity: 0.7 }}>
             Compare the specifications across Sova Classic, Premium, and Luxury variants 
             to find the ideal mattress for your sleeping needs.
           </p>
@@ -116,16 +116,16 @@ export default function SovaComparisonSection() {
                     viewport={{ once: true }}
                     transition={{ delay: rowIndex * 0.05 }}
                   >
-                    <td className="px-6 py-5 font-semibold text-hermes-ink border-r-2 border-hermes-gold/20" style={{ fontSize: '15px' }}>
+                    <td className="px-6 py-5 font-semibold border-r-2 border-hermes-gold/20" style={{ fontSize: '15px', color: '#39250E' }}>
                       {row.feature}
                     </td>
-                    <td className="px-6 py-5 text-hermes-ink/80 text-center" style={{ fontSize: '15px' }}>
+                    <td className="px-6 py-5 text-center" style={{ fontSize: '15px', color: '#39250E', opacity: 0.8 }}>
                       {row.classic}
                     </td>
-                    <td className="px-6 py-5 text-hermes-ink/80 text-center" style={{ fontSize: '15px' }}>
+                    <td className="px-6 py-5 text-center" style={{ fontSize: '15px', color: '#39250E', opacity: 0.8 }}>
                       {row.premium}
                     </td>
-                    <td className="px-6 py-5 text-hermes-ink/80 text-center" style={{ fontSize: '15px' }}>
+                    <td className="px-6 py-5 text-center" style={{ fontSize: '15px', color: '#39250E', opacity: 0.8 }}>
                       {row.luxury}
                     </td>
                   </motion.tr>
