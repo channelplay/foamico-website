@@ -33,7 +33,7 @@ export default function Home() {
         >
           <div className="flex items-center justify-center mb-1">
             <div className="bg-hermes-gold" style={{ width: '48px', height: '1px', marginRight: '16px' }}></div>
-            <p className="text-hermes-gold uppercase tracking-[0.3em] font-bold font-fira" style={{ fontSize: '15px' }}>Our Collection</p>
+            <p className="text-hermes-gold tracking-[0.3em] font-bold font-fira" style={{ fontSize: '15px', textTransform: 'none' }}>Our Collection</p>
             <div className="bg-hermes-gold" style={{ width: '48px', height: '1px', marginLeft: '16px' }}></div>
           </div>
           
