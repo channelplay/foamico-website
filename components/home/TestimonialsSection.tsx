@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Container from '@/components/ui/Container'
 
@@ -12,7 +11,6 @@ const testimonials = [
     rating: 5,
     comment: "Best mattress I've ever owned! My back pain is completely gone.",
     location: "Mumbai, Maharashtra",
-    image: "https://randomuser.me/api/portraits/women/32.jpg",
     date: "January 2024"
   },
   {
@@ -22,7 +20,6 @@ const testimonials = [
     rating: 5,
     comment: "The comfort features are amazing. I wake up feeling refreshed every day.",
     location: "Bangalore, Karnataka",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
     date: "January 2024"
   },
   {
@@ -32,7 +29,6 @@ const testimonials = [
     rating: 5,
     comment: "Worth the investment. The quality and comfort are unmatched.",
     location: "Delhi NCR",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
     date: "January 2024"
   },
   {
@@ -42,7 +38,6 @@ const testimonials = [
     rating: 5,
     comment: "Perfect balance of firmness and comfort. Best sleep I've had in years!",
     location: "Pune, Maharashtra",
-    image: "https://randomuser.me/api/portraits/men/36.jpg",
     date: "January 2024"
   },
   {
@@ -52,7 +47,6 @@ const testimonials = [
     rating: 5,
     comment: "The natural latex is amazing. No more allergies and peaceful sleep every night.",
     location: "Hyderabad, Telangana",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
     date: "January 2024"
   },
   {
@@ -62,7 +56,6 @@ const testimonials = [
     rating: 5,
     comment: "25-year warranty gave me confidence. The quality is truly exceptional.",
     location: "Gurugram, Haryana",
-    image: "https://randomuser.me/api/portraits/men/46.jpg",
     date: "January 2024"
   },
   {
@@ -72,7 +65,6 @@ const testimonials = [
     rating: 5,
     comment: "Love the eco-friendly materials. Sleeping comfortably with peace of mind!",
     location: "Chennai, Tamil Nadu",
-    image: "https://randomuser.me/api/portraits/women/29.jpg",
     date: "January 2024"
   }
 ]
@@ -125,27 +117,15 @@ export default function TestimonialsSection() {
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="card-elegant h-full p-8">
+                <div className="h-full p-8 rounded-lg" style={{ backgroundColor: '#F6F4F0' }}>
                   {/* Customer Profile */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-full overflow-hidden">
-                      <Image 
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        width={64}
-                        height={64}
-                        className="w-full h-full object-cover"
-                        unoptimized
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-dark">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-sm text-light-gray">
-                        {testimonial.location}
-                      </p>
-                    </div>
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-dark">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-sm text-light-gray">
+                      {testimonial.location}
+                    </p>
                   </div>
 
                   {/* Review Content */}
