@@ -1,5 +1,4 @@
 import HeroSection from '@/components/home/HeroSection'
-import FeaturesSection from '@/components/home/FeaturesSection'
 import ProductShowcase from '@/components/home/ProductShowcase'
 import TestimonialsSection from '@/components/home/TestimonialsSection'
 import Footer from '@/components/layout/Footer'
@@ -19,8 +18,6 @@ export default function Home() {
           className="w-[1468px] h-auto max-w-full"
         />
       </section>
-      
-      <FeaturesSection />
       
       <ProductShowcase />
 
