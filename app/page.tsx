@@ -33,16 +33,16 @@ export default function Home() {
         >
           <div className="flex items-center justify-center mb-1">
             <div className="bg-hermes-gold" style={{ width: '48px', height: '1px', marginRight: '16px' }}></div>
-            <p className="text-hermes-gold uppercase tracking-[0.3em] font-bold font-fira" style={{ fontSize: '15px' }}>Section Label</p>
+            <p className="text-hermes-gold uppercase tracking-[0.3em] font-bold font-fira" style={{ fontSize: '15px' }}>Our Collection</p>
             <div className="bg-hermes-gold" style={{ width: '48px', height: '1px', marginLeft: '16px' }}></div>
           </div>
           
           <h2 className="font-bold" style={{ fontSize: '40px', color: '#39250E', marginTop: '4px', marginBottom: '14px' }}>
-            Heading Text Here
+            Engineered for Perfect Sleep
           </h2>
           
           <p className="mx-auto leading-relaxed font-fira" style={{ fontSize: '15px', color: '#39250E', opacity: 0.7, width: '787.81px', maxWidth: '100%' }}>
-            Description text will go here
+            Each mattress is meticulously designed using premium materials and innovative foam technology, ensuring exceptional comfort and support for years to come.
           </p>
         </motion.div>
       </section>
