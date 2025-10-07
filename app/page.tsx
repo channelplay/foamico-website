@@ -50,9 +50,10 @@ export default function Home() {
         <div className="flex justify-center px-4" style={{ marginTop: '80px' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1400px]">
             {/* Row 1 - Sova Classic */}
-            <motion.div
-              className="rounded-lg shadow-md overflow-hidden"
-              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+            <motion.a
+              href="/products/sova"
+              className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
+              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -60,19 +61,20 @@ export default function Home() {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="/sova-classic-hp.png"
+                  src="/sova-classic-card.png"
                   alt="Sova Classic"
                   fill
                   className="object-cover"
                   sizes="448px"
                 />
               </div>
-            </motion.div>
+            </motion.a>
             
             {/* Sova Premium */}
-            <motion.div
-              className="rounded-lg shadow-md overflow-hidden"
-              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+            <motion.a
+              href="/products/sova"
+              className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
+              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -80,19 +82,20 @@ export default function Home() {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="/sova-premium-hp.png"
+                  src="/sova-premium-card.png"
                   alt="Sova Premium"
                   fill
                   className="object-cover"
                   sizes="448px"
                 />
               </div>
-            </motion.div>
+            </motion.a>
             
             {/* Sova Luxury */}
-            <motion.div
-              className="rounded-lg shadow-md overflow-hidden"
-              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+            <motion.a
+              href="/products/sova"
+              className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
+              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -100,19 +103,20 @@ export default function Home() {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="/sova-luxury-hp.png"
+                  src="/sova-luxury-card.png"
                   alt="Sova Luxury"
                   fill
                   className="object-cover"
                   sizes="448px"
                 />
               </div>
-            </motion.div>
+            </motion.a>
             
             {/* Row 2 - Ultima Classic */}
-            <motion.div
-              className="rounded-lg shadow-md overflow-hidden"
-              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+            <motion.a
+              href="/products/ultima"
+              className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
+              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -120,19 +124,20 @@ export default function Home() {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="/ultima-classic-hp.png"
+                  src="/ultima-classic-card.png"
                   alt="Ultima Classic"
                   fill
                   className="object-cover"
                   sizes="448px"
                 />
               </div>
-            </motion.div>
+            </motion.a>
             
             {/* Ultima Premium */}
-            <motion.div
-              className="rounded-lg shadow-md overflow-hidden"
-              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+            <motion.a
+              href="/products/ultima"
+              className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
+              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -140,19 +145,20 @@ export default function Home() {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="/ultima-premium-hp.png"
+                  src="/ultima-premium-card.png"
                   alt="Ultima Premium"
                   fill
                   className="object-cover"
                   sizes="448px"
                 />
               </div>
-            </motion.div>
+            </motion.a>
             
             {/* Ultima Luxury */}
-            <motion.div
-              className="rounded-lg shadow-md overflow-hidden"
-              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+            <motion.a
+              href="/products/ultima"
+              className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
+              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -160,14 +166,14 @@ export default function Home() {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="/ultima-luxury-hp.png"
+                  src="/ultima-luxury-card.png"
                   alt="Ultima Luxury"
                   fill
                   className="object-cover"
                   sizes="448px"
                 />
               </div>
-            </motion.div>
+            </motion.a>
           </div>
         </div>
       </section>
