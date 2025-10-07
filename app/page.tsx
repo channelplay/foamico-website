@@ -31,13 +31,13 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center justify-center mb-1">
+          <div className="flex items-center justify-center" style={{ marginBottom: '4.5px' }}>
             <div className="bg-hermes-gold" style={{ width: '48px', height: '1px', marginRight: '16px' }}></div>
-            <p className="text-hermes-gold tracking-[0.3em] font-bold font-fira" style={{ fontSize: '15px', textTransform: 'none' }}>Our Collection</p>
+            <p className="text-hermes-gold tracking-[0.3em] font-bold font-fira" style={{ fontSize: '15px', fontWeight: 'bold', textTransform: 'none' }}>Our Collection</p>
             <div className="bg-hermes-gold" style={{ width: '48px', height: '1px', marginLeft: '16px' }}></div>
           </div>
           
-          <h2 className="font-bold" style={{ fontSize: '40px', color: '#39250E', marginTop: '4px', marginBottom: '14px' }}>
+          <h2 className="font-bold" style={{ fontSize: '40px', color: '#39250E', marginBottom: '14px' }}>
             Engineered for Perfect Sleep
           </h2>
           
