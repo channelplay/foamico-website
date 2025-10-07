@@ -54,23 +54,23 @@ export default function SovaComparisonSection() {
       <Container>
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16 md:mb-20 px-4"
+          className="text-center px-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-12 h-px bg-hermes-gold"></div>
-            <p className="text-xs text-hermes-gold uppercase tracking-[0.3em] font-bold font-fira">Compare Features</p>
-            <div className="w-12 h-px bg-hermes-gold"></div>
+          <div className="flex items-center justify-center mb-1">
+            <div className="bg-hermes-gold" style={{ width: '48px', height: '1px', marginRight: '16px' }}></div>
+            <p className="text-hermes-gold uppercase tracking-[0.3em] font-bold font-fira" style={{ fontSize: '15px' }}>Compare Features</p>
+            <div className="bg-hermes-gold" style={{ width: '48px', height: '1px', marginLeft: '16px' }}></div>
           </div>
           
-          <h2 className="font-bold mb-4" style={{ fontSize: '40.26px', color: '#39250E' }}>
+          <h2 className="font-bold" style={{ fontSize: '40px', color: '#39250E', marginTop: '4px', marginBottom: '14px' }}>
             Sova Mattress Comparison
           </h2>
           
-          <p className="max-w-2xl mx-auto leading-relaxed" style={{ fontSize: '15px', color: '#39250E', opacity: 0.7 }}>
+          <p className="mx-auto leading-relaxed font-fira" style={{ fontSize: '15px', color: '#39250E', opacity: 0.7, width: '787.81px', maxWidth: '100%' }}>
             Compare the specifications across Sova Classic, Premium, and Luxury variants 
             to find the ideal mattress for your sleeping needs.
           </p>
