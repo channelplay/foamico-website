@@ -20,7 +20,10 @@ Preferred communication style: Simple, everyday language.
 ## Page Structure
 - **App Router**: Utilizes Next.js 14 app directory structure for file-based routing
 - **Static Pages**: Product pages, about, contact, resources/blog with static generation
-- **Dynamic Routes**: Product categories (`[category]`) and blog posts (`[slug]`)
+- **Individual Product Pages**: Each variant has its own dedicated page route:
+  - Sova variants: `/products/sovaclassic`, `/products/sovapremium`, `/products/sovaluxury`
+  - Ultima variants: `/products/ultimaclassic`, `/products/ultimapremium`, `/products/ultimaluxury`
+- **Product Navigation**: All navigation links (header dropdown, footer, product cards, product page buttons) point to individual variant pages
 - **Layout System**: Centralized header/footer with consistent navigation
 
 ## Data Management
