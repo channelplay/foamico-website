@@ -33,7 +33,7 @@ export default function ProductCards() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1400px]">
           {/* Row 1 - Sova Classic */}
           <motion.a
-            href="/products/sova"
+            href="/products/sovaclassic"
             className="rounded-lg overflow-hidden cursor-pointer"
             style={{ width: '358px', height: '474px', maxWidth: '100%' }}
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export default function ProductCards() {
           
           {/* Sova Premium */}
           <motion.a
-            href="/products/sova"
+            href="/products/sovapremium"
             className="rounded-lg overflow-hidden cursor-pointer"
             style={{ width: '358px', height: '474px', maxWidth: '100%' }}
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export default function ProductCards() {
           
           {/* Sova Luxury */}
           <motion.a
-            href="/products/sova"
+            href="/products/sovaluxury"
             className="rounded-lg overflow-hidden cursor-pointer"
             style={{ width: '358px', height: '474px', maxWidth: '100%' }}
             initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,7 @@ export default function ProductCards() {
           
           {/* Row 2 - Ultima Classic */}
           <motion.a
-            href="/products/ultima"
+            href="/products/ultimaclassic"
             className="rounded-lg overflow-hidden cursor-pointer"
             style={{ width: '358px', height: '474px', maxWidth: '100%' }}
             initial={{ opacity: 0, y: 20 }}
@@ -124,7 +124,7 @@ export default function ProductCards() {
           
           {/* Ultima Premium */}
           <motion.a
-            href="/products/ultima"
+            href="/products/ultimapremium"
             className="rounded-lg overflow-hidden cursor-pointer"
             style={{ width: '358px', height: '474px', maxWidth: '100%' }}
             initial={{ opacity: 0, y: 20 }}
@@ -146,7 +146,7 @@ export default function ProductCards() {
           
           {/* Ultima Luxury */}
           <motion.a
-            href="/products/ultima"
+            href="/products/ultimaluxury"
             className="rounded-lg overflow-hidden cursor-pointer"
             style={{ width: '358px', height: '474px', maxWidth: '100%' }}
             initial={{ opacity: 0, y: 20 }}
