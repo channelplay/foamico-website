@@ -14,22 +14,22 @@ const navigation = [
     dropdownItems: [
       { 
         name: 'Sova', 
-        href: '/products/sova', 
+        href: '/products/sovaclassic', 
         desc: 'Premium Comfort',
         subCategories: [
-          { name: 'Classic', href: '/products/sova?variant=classic' },
-          { name: 'Premium', href: '/products/sova?variant=premium' },
-          { name: 'Luxury', href: '/products/sova?variant=luxury' },
+          { name: 'Classic', href: '/products/sovaclassic' },
+          { name: 'Premium', href: '/products/sovapremium' },
+          { name: 'Luxury', href: '/products/sovaluxury' },
         ]
       },
       { 
         name: 'Ultima', 
-        href: '/products/ultima', 
+        href: '/products/ultimaclassic', 
         desc: 'Ultimate Luxury',
         subCategories: [
-          { name: 'Classic', href: '/products/ultima?variant=classic' },
-          { name: 'Premium', href: '/products/ultima?variant=premium' },
-          { name: 'Luxury', href: '/products/ultima?variant=luxury' },
+          { name: 'Classic', href: '/products/ultimaclassic' },
+          { name: 'Premium', href: '/products/ultimapremium' },
+          { name: 'Luxury', href: '/products/ultimaluxury' },
         ]
       },
     ]
