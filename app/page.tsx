@@ -23,7 +23,7 @@ export default function Home() {
       </section>
       
       {/* New Heading Section */}
-      <section className="bg-base-cream font-fira" style={{ paddingTop: '80px' }}>
+      <section className="font-fira" style={{ paddingTop: '80px', backgroundColor: '#EAE5CB' }}>
         <motion.div 
           className="text-center px-4"
           initial={{ opacity: 0, y: 20 }}
@@ -47,13 +47,13 @@ export default function Home() {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="flex justify-center px-4" style={{ marginTop: '80px' }}>
+        <div className="flex justify-center px-4" style={{ marginTop: '80px', paddingBottom: '80px' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1400px]">
             {/* Row 1 - Sova Classic */}
             <motion.a
               href="/products/sova"
               className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
-              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
+              style={{ width: '358px', height: '474px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -65,7 +65,7 @@ export default function Home() {
                   alt="Sova Classic"
                   fill
                   className="object-cover"
-                  sizes="448px"
+                  sizes="358px"
                 />
               </div>
             </motion.a>
@@ -74,7 +74,7 @@ export default function Home() {
             <motion.a
               href="/products/sova"
               className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
-              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
+              style={{ width: '358px', height: '474px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function Home() {
                   alt="Sova Premium"
                   fill
                   className="object-cover"
-                  sizes="448px"
+                  sizes="358px"
                 />
               </div>
             </motion.a>
@@ -95,7 +95,7 @@ export default function Home() {
             <motion.a
               href="/products/sova"
               className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
-              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
+              style={{ width: '358px', height: '474px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -107,7 +107,7 @@ export default function Home() {
                   alt="Sova Luxury"
                   fill
                   className="object-cover"
-                  sizes="448px"
+                  sizes="358px"
                 />
               </div>
             </motion.a>
@@ -116,7 +116,7 @@ export default function Home() {
             <motion.a
               href="/products/ultima"
               className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
-              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
+              style={{ width: '358px', height: '474px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -128,7 +128,7 @@ export default function Home() {
                   alt="Ultima Classic"
                   fill
                   className="object-cover"
-                  sizes="448px"
+                  sizes="358px"
                 />
               </div>
             </motion.a>
@@ -137,7 +137,7 @@ export default function Home() {
             <motion.a
               href="/products/ultima"
               className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
-              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
+              style={{ width: '358px', height: '474px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -149,7 +149,7 @@ export default function Home() {
                   alt="Ultima Premium"
                   fill
                   className="object-cover"
-                  sizes="448px"
+                  sizes="358px"
                 />
               </div>
             </motion.a>
@@ -158,7 +158,7 @@ export default function Home() {
             <motion.a
               href="/products/ultima"
               className="rounded-lg overflow-hidden cursor-pointer transition-transform hover:scale-105"
-              style={{ width: '448px', height: '592px', maxWidth: '100%' }}
+              style={{ width: '358px', height: '474px', maxWidth: '100%' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -170,7 +170,7 @@ export default function Home() {
                   alt="Ultima Luxury"
                   fill
                   className="object-cover"
-                  sizes="448px"
+                  sizes="358px"
                 />
               </div>
             </motion.a>
