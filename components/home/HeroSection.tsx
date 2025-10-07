@@ -21,7 +21,7 @@ export default function HeroSection() {
           className="bg-[#4C6462] text-white border-none font-semibold px-12 py-4 transition-all hover:bg-[#3d504e] rounded-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           style={{ fontSize: '18px' }}
