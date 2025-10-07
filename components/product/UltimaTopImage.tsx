@@ -5,25 +5,25 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 
-interface SovaTopImageProps {
+interface UltimaTopImageProps {
   variant?: 'classic' | 'premium' | 'luxury'
 }
 
-export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps) {
+export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImageProps) {
   const router = useRouter()
-  const [selectedModel, setSelectedModel] = useState('sova')
+  const [selectedModel, setSelectedModel] = useState('ultima')
   const [selectedProduct, setSelectedProduct] = useState(variant)
 
   const handleModelChange = (model: string) => {
     setSelectedModel(model)
-    if (model === 'ultima') {
-      router.push('/products/ultimaclassic')
+    if (model === 'sova') {
+      router.push('/products/sovaclassic')
     }
   }
 
   const handleProductChange = (product: string) => {
     setSelectedProduct(product as 'classic' | 'premium' | 'luxury')
-    router.push(`/products/sova${product}`)
+    router.push(`/products/ultima${product}`)
   }
 
   return (
@@ -34,8 +34,8 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
           {/* Left Side - Vintage Illustration */}
           <div className="absolute left-[89px] top-0 w-[462px] h-[482.75px]">
             <Image
-              src="/sova-hero-new.png"
-              alt="Sova Classic Mattress - 10 Years Warranty - Quality inspection with magnifying glass"
+              src="/ultima-hero-new.png"
+              alt="Ultima Mattress - 25 Years Warranty"
               width={980}
               height={980}
               className="w-[462px] h-[482.75px] object-cover"
@@ -49,10 +49,10 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
             {/* Title */}
             <div>
               <h1 className="font-bold text-[#39250E]" style={{ fontSize: '40.26px', marginBottom: '14px' }}>
-                Sova <span className="text-[#AD702A]">{selectedProduct.charAt(0).toUpperCase() + selectedProduct.slice(1)}</span>
+                Ultima <span className="text-[#AD702A]">{selectedProduct.charAt(0).toUpperCase() + selectedProduct.slice(1)}</span>
               </h1>
               <p className="text-[#39250E]/70 leading-relaxed" style={{ fontSize: '15px' }}>
-                Experience the perfect balance of firmness and comfort with our innovative Latex foam technology, designed for enhanced orthopedic support and exceptional sleep quality.
+                Ultimate luxury and support with our premium foam technology, designed for the most discerning sleepers seeking exceptional comfort.
               </p>
             </div>
 
@@ -67,7 +67,7 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
                   className={`transition-all border font-semibold w-[172.03px] h-[39px]
                     ${selectedModel === 'sova'
                       ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                      : 'bg-white text-[#39250E] border-hermes-gold/40 hover:border-[#AD702A] hover:bg-hermes-cream'
+                      : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
                     }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
@@ -80,7 +80,7 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
                   className={`transition-all border font-semibold w-[172.03px] h-[39px]
                     ${selectedModel === 'ultima'
                       ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                      : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
+                      : 'bg-white text-[#39250E] border-hermes-gold/40 hover:border-[#AD702A] hover:bg-hermes-cream'
                     }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
@@ -108,7 +108,7 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
                   whileTap={{ scale: 0.97 }}
                   style={{ fontSize: '15px', borderRadius: '5px' }}
                 >
-                  Sova Classic
+                  Ultima Classic
                 </motion.button>
                 <motion.button
                   onClick={() => handleProductChange('premium')}
@@ -121,7 +121,7 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
                   whileTap={{ scale: 0.97 }}
                   style={{ fontSize: '15px', borderRadius: '5px' }}
                 >
-                  Sova Premium
+                  Ultima Premium
                 </motion.button>
                 <motion.button
                   onClick={() => handleProductChange('luxury')}
@@ -134,7 +134,7 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
                   whileTap={{ scale: 0.97 }}
                   style={{ fontSize: '15px', borderRadius: '5px' }}
                 >
-                  Sova Luxury
+                  Ultima Luxury
                 </motion.button>
               </div>
             </div>
@@ -144,8 +144,8 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
     </section>
     <section className="bg-base-cream flex items-center justify-center px-0">
       <Image
-        src="/sova-layers-new.png"
-        alt="Inside the Layers of Comfort - Sova Classic mattress layers"
+        src="/ultima-layers-new.png"
+        alt="Inside the Layers of Comfort - Ultima mattress layers"
         width={1469}
         height={740}
         className="object-contain"
