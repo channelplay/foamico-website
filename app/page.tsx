@@ -45,6 +45,63 @@ export default function Home() {
             Each mattress is meticulously designed using premium materials and innovative foam technology, ensuring exceptional comfort and support for years to come.
           </p>
         </motion.div>
+
+        {/* Cards Grid */}
+        <div className="flex justify-center px-4" style={{ marginTop: '80px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1400px]">
+            {/* Row 1 */}
+            <motion.div
+              className="rounded-lg shadow-md"
+              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            ></motion.div>
+            <motion.div
+              className="rounded-lg shadow-md"
+              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            ></motion.div>
+            <motion.div
+              className="rounded-lg shadow-md"
+              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            ></motion.div>
+            
+            {/* Row 2 */}
+            <motion.div
+              className="rounded-lg shadow-md"
+              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            ></motion.div>
+            <motion.div
+              className="rounded-lg shadow-md"
+              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            ></motion.div>
+            <motion.div
+              className="rounded-lg shadow-md"
+              style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            ></motion.div>
+          </div>
+        </div>
       </section>
       
       <ProductShowcase />
