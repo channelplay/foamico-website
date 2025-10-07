@@ -136,7 +136,7 @@ export default function SovaTopImage() {
     <section className="bg-base-cream flex items-center justify-center px-0">
       <div className="w-[1469px] h-[708px] flex justify-center" style={{ backgroundColor: '#EAE5CB', paddingTop: '80px', boxSizing: 'border-box' }}>
         <Image
-          src="/sova-layers.png"
+          src="/sova-layers-new.png"
           alt="Inside the Layers of Comfort - Sova Classic mattress layers"
           width={1087}
           height={548}
