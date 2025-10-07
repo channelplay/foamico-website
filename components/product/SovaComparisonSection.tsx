@@ -50,7 +50,7 @@ export default function SovaComparisonSection() {
   ]
 
   return (
-    <section id="comparison-section" className="py-16 md:py-24 bg-hermes-cream font-fira">
+    <section id="comparison-section" className="py-16 md:py-24 font-fira" style={{ backgroundColor: '#F5F3E9' }}>
       <Container>
         {/* Section Header */}
         <motion.div 
@@ -78,7 +78,7 @@ export default function SovaComparisonSection() {
 
         {/* Comparison Table */}
         <motion.div 
-          className="bg-hermes-highlight overflow-hidden shadow-luxury-lg"
+          className="bg-white overflow-hidden shadow-luxury-lg rounded-[24px]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
