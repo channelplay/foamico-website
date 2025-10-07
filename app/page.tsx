@@ -49,57 +49,125 @@ export default function Home() {
         {/* Cards Grid */}
         <div className="flex justify-center px-4" style={{ marginTop: '80px' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1400px]">
-            {/* Row 1 */}
+            {/* Row 1 - Sova Classic */}
             <motion.div
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md overflow-hidden"
               style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-            ></motion.div>
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/sova-classic-hp.png"
+                  alt="Sova Classic"
+                  fill
+                  className="object-cover"
+                  sizes="448px"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Sova Premium */}
             <motion.div
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md overflow-hidden"
               style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-            ></motion.div>
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/sova-premium-hp.png"
+                  alt="Sova Premium"
+                  fill
+                  className="object-cover"
+                  sizes="448px"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Sova Luxury */}
             <motion.div
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md overflow-hidden"
               style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-            ></motion.div>
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/sova-luxury-hp.png"
+                  alt="Sova Luxury"
+                  fill
+                  className="object-cover"
+                  sizes="448px"
+                />
+              </div>
+            </motion.div>
             
-            {/* Row 2 */}
+            {/* Row 2 - Ultima Classic */}
             <motion.div
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md overflow-hidden"
               style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-            ></motion.div>
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/ultima-classic-hp.png"
+                  alt="Ultima Classic"
+                  fill
+                  className="object-cover"
+                  sizes="448px"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Ultima Premium */}
             <motion.div
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md overflow-hidden"
               style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
-            ></motion.div>
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/ultima-premium-hp.png"
+                  alt="Ultima Premium"
+                  fill
+                  className="object-cover"
+                  sizes="448px"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Ultima Luxury */}
             <motion.div
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md overflow-hidden"
               style={{ width: '448px', height: '592px', maxWidth: '100%', backgroundColor: '#FFFFFF' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-            ></motion.div>
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/ultima-luxury-hp.png"
+                  alt="Ultima Luxury"
+                  fill
+                  className="object-cover"
+                  sizes="448px"
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
