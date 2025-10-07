@@ -117,7 +117,7 @@ export default function TestimonialsSection() {
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="h-full p-8 rounded-lg" style={{ backgroundColor: '#F6F4F0' }}>
+                <div className="h-full p-8 rounded-lg" style={{ backgroundColor: '#FFFFFF' }}>
                   {/* Customer Profile */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-dark">
