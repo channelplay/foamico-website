@@ -21,7 +21,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-[#816842] text-[#f5f0e8] border-t border-[#816842]/20">
+    <footer className="bg-[#342917] text-[#f5f0e8] border-t border-[#342917]/20">
       <Container>
         <div className="py-8 md:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
