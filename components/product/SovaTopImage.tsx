@@ -14,6 +14,27 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
   const [selectedModel, setSelectedModel] = useState('sova')
   const [selectedProduct, setSelectedProduct] = useState(variant)
 
+  // Determine the hero image based on variant
+  const getHeroImage = () => {
+    if (variant === 'luxury') return '/sova-luxury-hero-new.png?v=2'
+    if (variant === 'premium') return '/sova-premium-hero-new.png?v=2'
+    return '/sova-hero-new.png?v=2' // classic variant, cache bust to force reload
+  }
+
+  // Determine the layers image based on variant for desktop
+  const getLayersImage = () => {
+    if (variant === 'luxury') return '/Sova Luxury Layers.png'
+    if (variant === 'premium') return '/Sova Premium Layers.png'
+    return '/Sova Classic Layers.png' // classic variant
+  }
+
+  // Determine the layers image for mobile
+  const getMobileLayersImage = () => {
+    if (variant === 'luxury') return '/Sova luxury ultima classic mobile.png'
+    if (variant === 'premium') return '/Sova classic premium.png'
+    return '/Sova classic premium.png' // classic variant uses same image as premium
+  }
+
   const handleModelChange = (model: string) => {
     setSelectedModel(model)
     if (model === 'ultima') {
@@ -35,8 +56,8 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
           {/* Hero Image */}
           <div className="w-full max-w-md">
             <Image
-              src="/sova-hero-new.png"
-              alt="Sova Classic Mattress - 10 Years Warranty"
+              src={getHeroImage()}
+              alt={`Sova ${variant.charAt(0).toUpperCase() + variant.slice(1)} Mattress - 10 Years Warranty`}
               width={462}
               height={483}
               className="w-full h-auto object-cover"
@@ -147,8 +168,8 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
             {/* Left Side - Vintage Illustration */}
             <div className="absolute left-[89px] top-0 w-[462px] h-[482.75px]">
               <Image
-                src="/sova-hero-new.png"
-                alt="Sova Classic Mattress - 10 Years Warranty - Quality inspection with magnifying glass"
+                src={getHeroImage()}
+                alt={`Sova ${variant.charAt(0).toUpperCase() + variant.slice(1)} Mattress - 10 Years Warranty - Quality inspection with magnifying glass`}
                 width={980}
                 height={980}
                 className="w-[462px] h-[482.75px] object-cover"
@@ -258,50 +279,128 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
       </div>
     </section>
 
-    {/* Mobile/Tablet: Image Frame and Layers Dropdown */}
-    <section className="bg-base-cream lg:hidden px-4 py-8">
-      <div className="max-w-md mx-auto space-y-6">
-        {/* Image Frame - Same size as top section */}
-        <div className="w-full">
+    {/* Mobile/Tablet: Layers Section with Heading and Dropdown */}
+    <section className="bg-base-cream lg:hidden py-8">
+      <div className="container mx-auto px-4">
+        {/* Section Header - Mobile Only */}
+        <div className="text-center mb-6">
+          <div className="flex items-center justify-center mb-[5px]">
+            <div className="w-8 h-[1px] mr-3 bg-[#AD702A]"></div>
+            <p className="font-bold font-fira text-xs text-[#AD702A] whitespace-nowrap uppercase tracking-[0.15em]">Inside the Layers</p>
+            <div className="w-8 h-[1px] ml-3 bg-[#AD702A]"></div>
+          </div>
+          
+          <h2 className="font-bold font-fira text-2xl text-[#39250E] mt-1 mb-3">
+            Mattress Layers
+          </h2>
+          
+          <p className="mx-auto leading-relaxed font-fira text-sm text-[#39250E]/70 px-4 max-w-md">
+            Discover the advanced technology and premium materials that make up your perfect sleep surface.
+          </p>
+        </div>
+
+        {/* Layers Image - Same size as top section */}
+        <div className="max-w-md mx-auto mb-6">
           <Image
-            src="/sova-layers-new.png"
-            alt="Inside the Layers of Comfort - Sova Classic mattress layers"
+            src={getMobileLayersImage()}
+            alt={`Inside the Layers of Comfort - Sova ${variant.charAt(0).toUpperCase() + variant.slice(1)} mattress layers`}
             width={462}
             height={483}
-            className="w-full h-auto object-cover rounded-lg"
+            className="w-full h-auto object-cover"
           />
         </div>
         
-        {/* Layers Description Dropdown Box */}
-        <div className="bg-white rounded-lg shadow-md">
-          <details className="group">
-            <summary className="flex items-center justify-between p-4 cursor-pointer list-none">
-              <h3 className="font-bold text-[#39250E] text-lg">Mattress Layers</h3>
-              <svg className="w-5 h-5 text-[#AD702A] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        {/* Layers Description - Individual Dropdowns */}
+        <div className="bg-white rounded-lg shadow-md p-4 space-y-3 max-w-md mx-auto">
+          <h3 className="font-bold text-[#39250E] text-lg mb-4 text-center">Layer Details</h3>
+          
+          {/* Layer 1 */}
+          <details className="group border-b border-gray-200 pb-3">
+            <summary className="flex items-center justify-between cursor-pointer list-none">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">1</span>
+                </div>
+                <h4 className="font-semibold text-[#39250E] text-sm">Super Plush Luxeknit Fabric</h4>
+              </div>
+              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div className="px-4 pb-4 space-y-3">
-              <div className="border-l-4 border-[#AD702A] pl-3">
-                <h4 className="font-semibold text-[#39250E]">Top Fabric</h4>
-                <p className="text-sm text-[#39250E]/70">Luxeknit Fabric for premium comfort</p>
+            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
+              Premium Luxeknit fabric provides exceptional comfort and breathability for a luxurious sleep experience.
+            </div>
+          </details>
+
+          {/* Layer 2 */}
+          <details className="group border-b border-gray-200 pb-3">
+            <summary className="flex items-center justify-between cursor-pointer list-none">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">2</span>
+                </div>
+                <h4 className="font-semibold text-[#39250E] text-sm">Aeroflex Foam Quilt</h4>
               </div>
-              <div className="border-l-4 border-[#AD702A] pl-3">
-                <h4 className="font-semibold text-[#39250E]">Comfort Layer</h4>
-                <p className="text-sm text-[#39250E]/70">Aeroflex Foam Quilt for optimal support</p>
+              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
+              Advanced Aeroflex foam quilting provides optimal pressure relief and temperature regulation.
+            </div>
+          </details>
+
+          {/* Layer 3 */}
+          <details className="group border-b border-gray-200 pb-3">
+            <summary className="flex items-center justify-between cursor-pointer list-none">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">3</span>
+                </div>
+                <h4 className="font-semibold text-[#39250E] text-sm">Pulse Core Foam</h4>
               </div>
-              <div className="border-l-4 border-[#AD702A] pl-3">
-                <h4 className="font-semibold text-[#39250E]">Body Support Layer</h4>
-                <p className="text-sm text-[#39250E]/70">Pulse Core Foam for body contouring</p>
+              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
+              Pulse Core technology adapts to your body contours, providing targeted support where you need it most.
+            </div>
+          </details>
+
+          {/* Layer 4 */}
+          <details className="group border-b border-gray-200 pb-3">
+            <summary className="flex items-center justify-between cursor-pointer list-none">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">4</span>
+                </div>
+                <h4 className="font-semibold text-[#39250E] text-sm">Bondtech Support Foam</h4>
               </div>
-              <div className="border-l-4 border-[#AD702A] pl-3">
-                <h4 className="font-semibold text-[#39250E]">Main Support</h4>
-                <p className="text-sm text-[#39250E]/70">Bondtech Support Foam for durability</p>
+              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
+              High-density Bondtech foam ensures long-lasting durability and consistent support throughout the mattress life.
+            </div>
+          </details>
+
+          {/* Layer 5 */}
+          <details className="group pb-3">
+            <summary className="flex items-center justify-between cursor-pointer list-none">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">5</span>
+                </div>
+                <h4 className="font-semibold text-[#39250E] text-sm">Support Foam Quilt</h4>
               </div>
-              <div className="border-l-4 border-[#AD702A] pl-3">
-                <h4 className="font-semibold text-[#39250E]">Bottom Layer</h4>
-                <p className="text-sm text-[#39250E]/70">Support Foam Quilt for foundation</p>
-              </div>
+              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
+              Foundation support foam quilt provides stable base support and enhances mattress longevity.
             </div>
           </details>
         </div>
@@ -312,8 +411,8 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
     <section className="bg-base-cream hidden lg:block">
       <div className="flex items-center justify-center">
         <Image
-          src="/sova-layers-new.png"
-          alt="Inside the Layers of Comfort - Sova Classic mattress layers"
+          src={getLayersImage()}
+          alt={`Inside the Layers of Comfort - Sova ${variant.charAt(0).toUpperCase() + variant.slice(1)} mattress layers`}
           width={1469}
           height={740}
           className="object-contain"

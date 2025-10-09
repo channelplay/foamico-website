@@ -50,24 +50,27 @@ export default function UltimaComparisonSection() {
   ]
 
   return (
-    <section id="comparison-section" className="py-12 md:py-20 bg-base-cream">
+    <section id="comparison-section" className="py-16 md:py-24 font-fira" style={{ backgroundColor: '#F5F3E9' }}>
       <Container>
-        {/* Section Header */}
+        {/* Section Header - Responsive */}
         <motion.div 
-          className="text-center mb-12 md:mb-16 px-4"
+          className="text-center px-4 mb-8 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest mb-3">Compare Features</p>
+          <div className="flex items-center justify-center mb-[5px]">
+            <div className="w-8 md:w-12 h-[1px] mr-3 md:mr-4 bg-[#AD702A]"></div>
+            <p className="font-bold font-fira text-xs md:text-sm lg:text-[15px] text-[#AD702A] whitespace-nowrap uppercase tracking-[0.15em] md:tracking-[0.3em]">Compare Features</p>
+            <div className="w-8 md:w-12 h-[1px] ml-3 md:ml-4 bg-[#AD702A]"></div>
+          </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+          <h2 className="font-bold font-fira text-2xl md:text-3xl lg:text-[40px] text-[#39250E] mt-1 mb-3 md:mb-[14px]">
             Ultima Mattress Comparison
           </h2>
-          <div className="w-16 h-0.5 bg-gray-300 mx-auto my-6" />
           
-          <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="mx-auto leading-relaxed font-fira text-sm md:text-[15px] text-[#39250E]/70 max-w-full lg:max-w-[787.81px] px-4 md:px-8 lg:px-0">
             Compare the specifications across Ultima Classic, Premium, and Luxury variants 
             to find the ideal cloud-like comfort for your sleeping needs.
           </p>
@@ -75,7 +78,7 @@ export default function UltimaComparisonSection() {
 
         {/* Comparison Table */}
         <motion.div 
-          className="bg-base-cream rounded-lg overflow-hidden shadow-lg border border-gray-200"
+          className="bg-white overflow-hidden shadow-luxury-lg rounded-[24px]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -84,45 +87,45 @@ export default function UltimaComparisonSection() {
           {/* Table Container */}
           <div className="overflow-x-auto">
             <table className="w-full">
-              {/* Table Header */}
-              <thead className="bg-gray-50 border-b border-gray-200">
+              {/* Table Header - Responsive */}
+              <thead className="bg-[#AD702A]">
                 <tr>
-                  <th className="px-6 py-4 text-left text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                  <th className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-left font-bold text-white uppercase tracking-[0.1em] md:tracking-[0.15em] text-xs md:text-sm lg:text-[15px]">
                     Feature
                   </th>
-                  <th className="px-6 py-4 text-center text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                  <th className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center font-bold text-white uppercase tracking-[0.1em] md:tracking-[0.15em] text-xs md:text-sm lg:text-[15px]">
                     Classic
                   </th>
-                  <th className="px-6 py-4 text-center text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                  <th className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center font-bold text-white uppercase tracking-[0.1em] md:tracking-[0.15em] text-xs md:text-sm lg:text-[15px]">
                     Premium
                   </th>
-                  <th className="px-6 py-4 text-center text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                  <th className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center font-bold text-white uppercase tracking-[0.1em] md:tracking-[0.15em] text-xs md:text-sm lg:text-[15px]">
                     Luxury
                   </th>
                 </tr>
               </thead>
 
               {/* Table Body */}
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y-2 divide-hermes-gold/20">
                 {comparisonData.map((row, rowIndex) => (
                   <motion.tr
                     key={row.feature}
-                    className="hover:bg-gray-50 transition-colors"
+                    className="hover:bg-hermes-cream transition-colors"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: rowIndex * 0.05 }}
                   >
-                    <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 font-semibold border-r-2 border-hermes-gold/20 text-xs md:text-sm lg:text-[15px] text-[#39250E]">
                       {row.feature}
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-600 text-center">
+                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
                       {row.classic}
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-600 text-center">
+                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
                       {row.premium}
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-600 text-center">
+                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
                       {row.luxury}
                     </td>
                   </motion.tr>

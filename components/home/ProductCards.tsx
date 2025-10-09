@@ -43,7 +43,7 @@ export default function ProductCards() {
   }
 
   return (
-    <section className="font-fira pt-20 lg:pt-0" style={{ backgroundColor: '#EAE5CB' }}>
+    <section className="font-fira pt-12 md:pt-16 lg:pt-20 bg-[#EAE5CB]">
       <motion.div 
         className="text-center px-4"
         initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export default function ProductCards() {
       >
         <div className="flex items-center justify-center mb-[5px]">
           <div className="w-8 md:w-12 h-[1px] mr-3 md:mr-4 bg-[#AD702A]"></div>
-          <p className="font-bold font-fira text-xs md:text-sm lg:text-[15px] text-[#AD702A] whitespace-nowrap" style={{ letterSpacing: '0' }}>Our Collection</p>
+          <p className="font-bold font-fira text-xs md:text-sm lg:text-[15px] text-[#AD702A] whitespace-nowrap tracking-normal">Our Collection</p>
           <div className="w-8 md:w-12 h-[1px] ml-3 md:ml-4 bg-[#AD702A]"></div>
         </div>
         
@@ -67,7 +67,7 @@ export default function ProductCards() {
       </motion.div>
 
       {/* Mobile/Tablet: Horizontal Scroll with Navigation */}
-      <div className="lg:hidden relative mt-12 md:mt-16 pb-12 md:pb-16" style={{ marginTop: '40px', paddingBottom: '40px' }}>
+      <div className="lg:hidden relative mt-[40px] pb-[40px]">
         {/* Left Arrow */}
         <button
           onClick={() => scroll('left')}
@@ -96,12 +96,11 @@ export default function ProductCards() {
           className="overflow-x-auto scrollbar-hide scroll-smooth"
           onScroll={checkScrollButtons}
         >
-          <div className="flex gap-4 md:gap-6 px-12 md:px-16" style={{ width: 'max-content' }}>
+          <div className="flex gap-4 md:gap-6 px-12 md:px-16 w-max">
           {/* Row 1 - Sova Classic */}
           <motion.a
             href="/products/sovaclassic"
-            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
-            style={{ width: '280px', height: '370px' }}
+            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -123,8 +122,7 @@ export default function ProductCards() {
           {/* Sova Premium */}
           <motion.a
             href="/products/sovapremium"
-            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
-            style={{ width: '280px', height: '370px' }}
+            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -147,7 +145,7 @@ export default function ProductCards() {
           <motion.a
             href="/products/sovaluxury"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
-            style={{ width: '280px', height: '370px' }}
+            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -170,7 +168,7 @@ export default function ProductCards() {
           <motion.a
             href="/products/ultimaclassic"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
-            style={{ width: '280px', height: '370px' }}
+            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -192,7 +190,7 @@ export default function ProductCards() {
           <motion.a
             href="/products/ultimapremium"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
-            style={{ width: '280px', height: '370px' }}
+            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -214,7 +212,7 @@ export default function ProductCards() {
           <motion.a
             href="/products/ultimaluxury"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
-            style={{ width: '280px', height: '370px' }}
+            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -236,13 +234,12 @@ export default function ProductCards() {
       </div>
 
       {/* Desktop: Grid Layout */}
-      <div className="hidden lg:flex justify-center px-4 mt-20 pb-20" style={{ marginTop: '80px', paddingBottom: '80px' }}>
+      <div className="hidden lg:flex justify-center px-4 mt-[80px] pb-[80px]">
         <div className="grid grid-cols-3 gap-6 max-w-[1400px]">
           {/* Row 1 - Sova Classic */}
           <motion.a
             href="/products/sovaclassic"
-            className="rounded-lg overflow-hidden cursor-pointer"
-            style={{ width: '358px', height: '474px' }}
+            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -264,8 +261,7 @@ export default function ProductCards() {
           {/* Sova Premium */}
           <motion.a
             href="/products/sovapremium"
-            className="rounded-lg overflow-hidden cursor-pointer"
-            style={{ width: '358px', height: '474px' }}
+            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -287,8 +283,7 @@ export default function ProductCards() {
           {/* Sova Luxury */}
           <motion.a
             href="/products/sovaluxury"
-            className="rounded-lg overflow-hidden cursor-pointer"
-            style={{ width: '358px', height: '474px' }}
+            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -310,8 +305,7 @@ export default function ProductCards() {
           {/* Row 2 - Ultima Classic */}
           <motion.a
             href="/products/ultimaclassic"
-            className="rounded-lg overflow-hidden cursor-pointer"
-            style={{ width: '358px', height: '474px' }}
+            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -332,8 +326,7 @@ export default function ProductCards() {
           {/* Ultima Premium */}
           <motion.a
             href="/products/ultimapremium"
-            className="rounded-lg overflow-hidden cursor-pointer"
-            style={{ width: '358px', height: '474px' }}
+            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -354,8 +347,7 @@ export default function ProductCards() {
           {/* Ultima Luxury */}
           <motion.a
             href="/products/ultimaluxury"
-            className="rounded-lg overflow-hidden cursor-pointer"
-            style={{ width: '358px', height: '474px' }}
+            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}

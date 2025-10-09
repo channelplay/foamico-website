@@ -1,52 +1,135 @@
-import Image from 'next/image'
-import { Metadata } from 'next'
-import Container from '@/components/ui/Container'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'About Us | Foamico - Sleep Engineering Excellence',
-  description: 'Discover the story behind Foamico\'s innovative sleep engineering. Learn about our commitment to scientific research and premium mattress craftsmanship.',
-}
+import Image from 'next/image'
+import { useRef, useState, useEffect } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 export default function AboutPage() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  const checkScrollButtons = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current
+      setCanScrollLeft(scrollLeft > 0)
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1)
+    }
+  }
+
+  useEffect(() => {
+    checkScrollButtons()
+    const container = scrollContainerRef.current
+    if (container) {
+      container.addEventListener('scroll', checkScrollButtons)
+      window.addEventListener('resize', checkScrollButtons)
+      return () => {
+        container.removeEventListener('scroll', checkScrollButtons)
+        window.removeEventListener('resize', checkScrollButtons)
+      }
+    }
+  }, [])
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 300
+      const currentScroll = scrollContainerRef.current.scrollLeft
+      scrollContainerRef.current.scrollTo({
+        left: direction === 'left' ? currentScroll - scrollAmount : currentScroll + scrollAmount,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
-    <div style={{ backgroundColor: '#816842' }} className="min-h-screen">
-      <div className="py-8 lg:py-12">
-        <Container>
-          {/* Top Heading */}
-          <div className="text-center mb-16">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-8">
-              65+ Years of Generation Innovation
-            </h1>
+    <>
+      {/* Mobile/Tablet: Show only heading and story scroll */}
+      <section className="bg-base-cream pt-12 md:pt-16 pb-8 lg:hidden">
+        {/* Header Section */}
+        <div className="flex flex-col items-center justify-center px-4 mb-8 md:mb-12">
+          <div className="flex items-center justify-center mb-[5px]">
+            <div className="w-8 md:w-12 h-[1px] mr-3 md:mr-4 bg-[#AD702A]"></div>
+            <p className="font-bold font-fira text-xs md:text-sm text-[#AD702A] whitespace-nowrap">Since 1960's</p>
+            <div className="w-8 md:w-12 h-[1px] ml-3 md:ml-4 bg-[#AD702A]"></div>
           </div>
+          
+          <h2 className="font-bold font-fira text-2xl md:text-3xl text-[#39250E] mb-3 md:mb-[14px] text-center">
+            The Foamico Journey
+          </h2>
+          
+          <p className="mx-auto font-fira text-sm md:text-[15px] text-[#39250E] max-w-full lg:max-w-[787.81px] px-4 md:px-8 text-center">
+            Generations of expertise and innovation have shaped Foamico into what it is today — a brand driven by the science of sleep. Each phase of the journey has been marked by dedication to quality, innovation in materials, and a relentless pursuit of comfort.
+          </p>
+        </div>
 
-          {/* Image Sections */}
-          <div className="space-y-8">
-            {/* First Image - Company Roots Timeline */}
-            <div className="w-full">
-              <Image 
-                src="/foamico-timeline-new.png" 
-                alt="Foamico Company Timeline - From Roots 1960 to House of Brands 2025"
-                width={1313}
-                height={928}
-                className="w-full h-auto rounded-lg"
+        {/* Horizontal Scrolling Story Stripe */}
+        <div className="relative w-full">
+          {/* Left Arrow */}
+          <button
+            onClick={() => scroll('left')}
+            className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-300 ${
+              canScrollLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-5 h-5 text-[#39250E]" />
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={() => scroll('right')}
+            className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-300 ${
+              canScrollRight ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-5 h-5 text-[#39250E]" />
+          </button>
+
+          {/* Scroll Container */}
+          <div 
+            ref={scrollContainerRef}
+            className="overflow-x-auto scrollbar-hide scroll-smooth"
+            onScroll={checkScrollButtons}
+          >
+            <div className="px-4 md:px-8">
+              <Image
+                src="/Story Scroll.png"
+                alt="Foamico Journey Timeline - From 1960s to Present"
+                width={2000}
+                height={600}
+                className="h-[280px] md:h-[350px] w-auto"
+                style={{ maxWidth: 'none' }}
                 priority
               />
             </div>
-
-            {/* Second Image - Why Choose Us */}
-            <div className="w-full">
-              <Image 
-                src="/why-choose-us.png" 
-                alt="Why Should You Choose Us - 65+ Years of Legacy, European Comfort, Italian Craft"
-                width={4094}
-                height={1012}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
           </div>
-        </Container>
-      </div>
-    </div>
+        </div>
+      </section>
+
+      {/* Desktop: Show About Us Image */}
+      <section className="hidden lg:block bg-base-cream py-0">
+        <div className="w-full">
+          <Image 
+            src="/About us.png" 
+            alt="About Foamico - 65+ Years of Sleep Innovation"
+            width={1920}
+            height={2880}
+            className="w-full h-auto"
+            priority
+          />
+        </div>
+      </section>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </>
   )
 }
