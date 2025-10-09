@@ -70,10 +70,11 @@ const testimonials = [
 ]
 
 export default function TestimonialsSection() {
-  const duplicatedTestimonials = [...testimonials, ...testimonials]
+  // Triple the testimonials for seamless looping
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials]
 
   return (
-    <section className="py-20 bg-warm-beige relative overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-20 bg-warm-beige relative overflow-hidden">
       <Container className="relative z-10">
         {/* Header */}
         <motion.div 
@@ -83,29 +84,32 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-overline mb-4">Customer Reviews</p>
-          <h2 className="heading-primary mb-4">
+          <div className="flex items-center justify-center mb-[5px]">
+            <div className="w-8 md:w-12 h-[1px] mr-3 md:mr-4 bg-[#AD702A]"></div>
+            <p className="font-bold font-fira text-xs md:text-sm lg:text-[15px] text-[#AD702A] whitespace-nowrap" style={{ letterSpacing: '0' }}>Customer Reviews</p>
+            <div className="w-8 md:w-12 h-[1px] ml-3 md:ml-4 bg-[#AD702A]"></div>
+          </div>
+          <h2 className="font-bold font-fira text-2xl md:text-3xl lg:text-[40px] text-[#39250E] mb-3 md:mb-[14px]">
             What Our Customers Say
           </h2>
-          <div className="divider-line divider-center" />
-          <p className="text-body text-light-gray max-w-2xl mx-auto mt-6">
+          <p className="mx-auto font-fira text-sm md:text-[15px] text-[#39250E] max-w-full lg:max-w-[787.81px] px-4 md:px-8 lg:px-0">
             Real experiences from our valued customers who have transformed 
             their sleep with Foamico mattresses.
           </p>
         </motion.div>
 
         {/* Scrolling Testimonials */}
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <motion.div 
             className="flex gap-6"
             animate={{
-              x: [0, -100 * testimonials.length + '%'],
+              x: ['0%', '-33.33%'],
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 60,
+                duration: 120,
                 ease: "linear",
               },
             }}
@@ -113,11 +117,11 @@ export default function TestimonialsSection() {
             {duplicatedTestimonials.map((testimonial, index) => (
               <motion.div 
                 key={`${testimonial.id}-${index}`}
-                className="flex-shrink-0 w-[400px]"
+                className="flex-shrink-0 w-[280px] md:w-[350px] lg:w-[400px]"
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="h-full p-8 rounded-lg" style={{ backgroundColor: '#FFFFFF' }}>
+                <div className="h-full p-4 md:p-6 lg:p-8 rounded-lg bg-white">
                   {/* Customer Profile */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-dark">
@@ -183,18 +187,18 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <div className="inline-flex gap-8">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 lg:gap-12">
             <div className="text-center">
-              <p className="text-2xl font-semibold text-primary">50,000+</p>
-              <p className="text-sm text-light-gray">Happy Customers</p>
+              <p className="text-xl md:text-2xl font-semibold text-primary">50,000+</p>
+              <p className="text-xs md:text-sm text-light-gray">Happy Customers</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-semibold text-primary">4.9/5</p>
-              <p className="text-sm text-light-gray">Average Rating</p>
+              <p className="text-xl md:text-2xl font-semibold text-primary">4.9/5</p>
+              <p className="text-xs md:text-sm text-light-gray">Average Rating</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-semibold text-primary">98%</p>
-              <p className="text-sm text-light-gray">Would Recommend</p>
+              <p className="text-xl md:text-2xl font-semibold text-primary">98%</p>
+              <p className="text-xs md:text-sm text-light-gray">Would Recommend</p>
             </div>
           </div>
         </motion.div>

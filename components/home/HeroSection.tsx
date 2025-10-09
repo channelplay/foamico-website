@@ -29,7 +29,7 @@ export default function HeroSection() {
       />
       
       {/* Button - positioned differently for mobile vs desktop */}
-      <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 lg:top-[59.37%] lg:left-[20.63%] lg:translate-x-0 lg:-translate-y-0 lg:bottom-auto">
+      <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 lg:top-[64.37%] lg:left-[20.63%] lg:translate-x-0 lg:-translate-y-0 lg:bottom-auto">
         <motion.button
           className="bg-[#4C6462] text-white border-none font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#3d504e] rounded-xl text-sm lg:text-lg lg:scale-85 lg:origin-left whitespace-nowrap"
           initial={{ opacity: 0, y: 20 }}

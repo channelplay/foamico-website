@@ -34,10 +34,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <head>
-        <GoogleAnalytics />
-      </head>
       <body className={`${inter.variable} ${firaCode.variable} font-sans antialiased`}>
+        <GoogleAnalytics />
         <Header />
         {children}
       </body>

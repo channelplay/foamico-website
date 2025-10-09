@@ -14,23 +14,13 @@ const navigation = [
     dropdownItems: [
       { 
         name: 'Sova', 
-        href: '/products/sovaclassic', 
+        href: null, 
         desc: 'Premium Comfort',
-        subCategories: [
-          { name: 'Classic', href: '/products/sovaclassic' },
-          { name: 'Premium', href: '/products/sovapremium' },
-          { name: 'Luxury', href: '/products/sovaluxury' },
-        ]
       },
       { 
         name: 'Ultima', 
-        href: '/products/ultimaclassic', 
+        href: null, 
         desc: 'Ultimate Luxury',
-        subCategories: [
-          { name: 'Classic', href: '/products/ultimaclassic' },
-          { name: 'Premium', href: '/products/ultimapremium' },
-          { name: 'Luxury', href: '/products/ultimaluxury' },
-        ]
       },
     ]
   },
@@ -47,6 +37,7 @@ const navigation = [
 export default function Navigation() {
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+  const [hoveredProduct, setHoveredProduct] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false)
@@ -86,12 +77,12 @@ export default function Navigation() {
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-white shadow-lg' 
-          : 'bg-white/95 backdrop-blur-sm'
+          ? 'bg-[#F6F4F0] shadow-lg' 
+          : 'bg-[#F6F4F0]/95 backdrop-blur-sm'
       }`}>
         
         <Container>
-          <div className="flex justify-between items-center h-16 md:h-20">
+          <div className="flex justify-between items-center h-[70.4px] md:h-[88px]">
             {/* Logo */}
             <Link href="/" className="group" onClick={() => setMobileMenuOpen(false)}>
               <motion.div 
@@ -104,7 +95,7 @@ export default function Navigation() {
                   alt="Foamico Logo"
                   width={207}
                   height={69}
-                  className="h-[36.8px] md:h-[64.4px] w-auto"
+                  className="h-[40.48px] md:h-[70.84px] w-auto"
                   priority
                 />
               </motion.div>
@@ -139,6 +130,7 @@ export default function Navigation() {
                       onMouseLeave={() => {
                         setProductsDropdownOpen(false)
                         setHoveredItem(null)
+                        setHoveredProduct(null)
                       }}
                     >
                       <button 
@@ -168,42 +160,67 @@ export default function Navigation() {
                       <AnimatePresence>
                         {productsDropdownOpen && (
                           <motion.div
-                            className="absolute top-full left-0 mt-4 w-80 bg-white shadow-xl rounded-lg overflow-hidden"
+                            className="absolute top-full left-0 mt-2 bg-white shadow-xl rounded-2xl overflow-hidden flex"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
+                            style={{ width: '360px' }}
                           >
-                            {item.dropdownItems.map((dropdownItem, index) => (
-                              <div key={dropdownItem.name} className={`${index !== 0 ? 'border-t border-gray-100' : ''}`}>
-                                <Link
-                                  href={dropdownItem.href}
-                                  className="block px-6 py-4 hover:bg-soft-cream transition-colors duration-200"
+                            {/* Left Column - Product Lines */}
+                            <div className="bg-white p-4 flex-1">
+                              {item.dropdownItems.map((dropdownItem, index) => (
+                                <div
+                                  key={dropdownItem.name}
+                                  className="flex items-center justify-between py-3 px-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors"
+                                  onMouseEnter={() => setHoveredProduct(dropdownItem.name)}
                                 >
-                                  <p className="font-semibold text-dark hover:text-primary transition-colors">
-                                    {dropdownItem.name}
-                                  </p>
-                                  <p className="text-xs text-light-gray mt-1">
-                                    {dropdownItem.desc}
-                                  </p>
-                                </Link>
-                                {dropdownItem.subCategories && (
-                                  <div className="bg-gray-50 px-6 pb-4">
-                                    <div className="grid grid-cols-3 gap-2">
-                                      {dropdownItem.subCategories.map((subCategory) => (
-                                        <Link
-                                          key={subCategory.name}
-                                          href={subCategory.href}
-                                          className="text-xs text-light-gray hover:text-primary transition-colors py-1 block text-center"
-                                        >
-                                          {subCategory.name}
-                                        </Link>
-                                      ))}
-                                    </div>
+                                  <div>
+                                    <p className="font-semibold text-base text-[#2c2c2c]">
+                                      {dropdownItem.name}
+                                    </p>
                                   </div>
-                                )}
-                              </div>
-                            ))}
+                                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                  </svg>
+                                </div>
+                              ))}
+                            </div>
+                            
+                            {/* Right Column - Categories (only visible on hover) */}
+                            <AnimatePresence>
+                              {hoveredProduct && (
+                                <motion.div 
+                                  className="bg-[#f8f8f8] p-4 border-l border-gray-200"
+                                  initial={{ opacity: 0 }}
+                                  animate={{ opacity: 1 }}
+                                  exit={{ opacity: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  style={{ width: '160px' }}
+                                >
+                                  <div className="space-y-2">
+                                    <Link
+                                      href={hoveredProduct === 'Sova' ? '/products/sovaclassic' : '/products/ultimaclassic'}
+                                      className="block py-2 px-3 text-[#2c2c2c] hover:bg-white rounded-lg transition-colors font-medium text-sm"
+                                    >
+                                      Classic
+                                    </Link>
+                                    <Link
+                                      href={hoveredProduct === 'Sova' ? '/products/sovapremium' : '/products/ultimapremium'}
+                                      className="block py-2 px-3 text-[#2c2c2c] hover:bg-white rounded-lg transition-colors font-medium text-sm"
+                                    >
+                                      Premium
+                                    </Link>
+                                    <Link
+                                      href={hoveredProduct === 'Sova' ? '/products/sovaluxury' : '/products/ultimaluxury'}
+                                      className="block py-2 px-3 text-[#2c2c2c] hover:bg-white rounded-lg transition-colors font-medium text-sm"
+                                    >
+                                      Luxury
+                                    </Link>
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -256,7 +273,7 @@ export default function Navigation() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-16 md:top-20 right-0 bottom-0 w-full sm:w-80 bg-white shadow-2xl z-40 lg:hidden overflow-y-auto"
+            className="fixed top-[70.4px] md:top-[88px] right-0 bottom-0 w-full sm:w-80 bg-[#F6F4F0] shadow-2xl z-40 lg:hidden overflow-y-auto"
           >
             <div className="p-6 space-y-2">
               {navigation.map((item) => (
@@ -343,7 +360,7 @@ export default function Navigation() {
       </AnimatePresence>
       
       {/* Spacer for fixed navigation */}
-      <div className="h-16 md:h-20" />
+      <div className="h-[70.4px] md:h-[88px]" />
     </>
   )
 }
