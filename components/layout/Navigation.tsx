@@ -314,29 +314,20 @@ export default function Navigation() {
                           >
                             {item.dropdownItems.map((dropdownItem) => (
                               <div key={dropdownItem.name} className="py-1">
-                                <Link
-                                  href={dropdownItem.href}
-                                  onClick={() => setMobileMenuOpen(false)}
-                                  className="block py-3 px-3 font-semibold text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg active:scale-[0.98] min-h-[44px]"
-                                >
-                                  {dropdownItem.name}
-                                </Link>
-                                <p className="text-sm text-light-gray mt-1 px-3">{dropdownItem.desc}</p>
-                                
-                                {dropdownItem.subCategories && (
-                                  <div className="mt-2 pl-4 space-y-1">
-                                    {dropdownItem.subCategories.map((sub) => (
-                                      <Link
-                                        key={sub.name}
-                                        href={sub.href}
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className="block py-3 px-3 text-sm text-light-gray hover:text-primary hover:bg-soft-cream transition-all rounded-lg active:scale-[0.98] min-h-[44px]"
-                                      >
-                                        {sub.name}
-                                      </Link>
-                                    ))}
+                                {dropdownItem.href ? (
+                                  <Link
+                                    href={dropdownItem.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="block py-3 px-3 font-semibold text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg active:scale-[0.98] min-h-[44px]"
+                                  >
+                                    {dropdownItem.name}
+                                  </Link>
+                                ) : (
+                                  <div className="block py-3 px-3 font-semibold text-dark min-h-[44px]">
+                                    {dropdownItem.name}
                                   </div>
                                 )}
+                                <p className="text-sm text-light-gray mt-1 px-3">{dropdownItem.desc}</p>
                               </div>
                             ))}
                           </motion.div>

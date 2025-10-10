@@ -144,7 +144,6 @@ export default function ProductCards() {
           {/* Sova Luxury */}
           <motion.a
             href="/products/sovaluxury"
-            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +166,6 @@ export default function ProductCards() {
           {/* Row 2 - Ultima Classic */}
           <motion.a
             href="/products/ultimaclassic"
-            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +187,6 @@ export default function ProductCards() {
           {/* Ultima Premium */}
           <motion.a
             href="/products/ultimapremium"
-            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -211,7 +208,6 @@ export default function ProductCards() {
           {/* Ultima Luxury */}
           <motion.a
             href="/products/ultimaluxury"
-            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

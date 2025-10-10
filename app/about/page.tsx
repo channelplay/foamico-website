@@ -49,7 +49,7 @@ export default function AboutPage() {
         <div className="flex flex-col items-center justify-center px-4 mb-8 md:mb-12">
           <div className="flex items-center justify-center mb-[5px]">
             <div className="w-8 md:w-12 h-[1px] mr-3 md:mr-4 bg-[#AD702A]"></div>
-            <p className="font-bold font-fira text-xs md:text-sm text-[#AD702A] whitespace-nowrap">Since 1960's</p>
+            <p className="font-bold font-fira text-xs md:text-sm text-[#AD702A] whitespace-nowrap">Since 1960&apos;s</p>
             <div className="w-8 md:w-12 h-[1px] ml-3 md:ml-4 bg-[#AD702A]"></div>
           </div>
           
