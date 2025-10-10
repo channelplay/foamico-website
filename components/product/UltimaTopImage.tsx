@@ -52,8 +52,8 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
     <>
     <section className="bg-base-cream py-8 md:py-12 lg:py-20">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        {/* Mobile/Tablet: Stack vertically */}
-        <div className="lg:hidden flex flex-col items-center space-y-8">
+        {/* Mobile: Stack vertically */}
+        <div className="md:hidden flex flex-col items-center space-y-8">
           {/* Hero Image */}
           <div className="w-full max-w-md">
             <Image
@@ -163,8 +163,8 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
           </div>
         </div>
 
-        {/* Desktop: Original layout */}
-        <div className="hidden lg:flex items-center justify-center">
+        {/* Tablet/Desktop: Original layout */}
+        <div className="hidden md:flex items-center justify-center">
           <div className="w-[1280px] h-[464px] relative">
             {/* Left Side - Vintage Illustration */}
             <div className="absolute left-[89px] top-0 w-[462px] h-[482.75px]">
@@ -280,8 +280,8 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
       </div>
     </section>
 
-    {/* Mobile/Tablet: Layers Section with Heading and Dropdown */}
-    <section className="bg-base-cream lg:hidden py-8">
+    {/* Mobile: Layers Section with Heading and Dropdown */}
+    <section className="bg-base-cream md:hidden py-8">
       <div className="container mx-auto px-4">
         {/* Section Header - Mobile Only */}
         <div className="text-center mb-6">
@@ -307,7 +307,7 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
             alt={`Inside the Layers of Comfort - Ultima ${variant.charAt(0).toUpperCase() + variant.slice(1)} mattress layers`}
             width={462}
             height={483}
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover landscape:scale-90"
           />
         </div>
         
@@ -408,8 +408,8 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
       </div>
     </section>
 
-    {/* Desktop: Original Layers Image */}
-    <section className="bg-base-cream hidden lg:block">
+    {/* Tablet/Desktop: Original Layers Image */}
+    <section className="bg-base-cream hidden md:block">
       <div className="flex items-center justify-center">
         <Image
           src={getLayersImage()}
