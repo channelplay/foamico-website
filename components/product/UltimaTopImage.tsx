@@ -164,22 +164,22 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
         </div>
 
         {/* Tablet/Desktop: Original layout */}
-        <div className="hidden md:flex items-center justify-center">
-          <div className="w-[1280px] h-[464px] relative">
+        <div className="hidden md:flex items-center justify-center px-4">
+          <div className="w-full max-w-[1280px] flex items-center gap-8 lg:gap-16">
             {/* Left Side - Vintage Illustration */}
-            <div className="absolute left-[89px] top-0 w-[462px] h-[482.75px]">
+            <div className="flex-shrink-0">
               <Image
                 src={getHeroImage()}
                 alt={`Ultima ${variant.charAt(0).toUpperCase() + variant.slice(1)} Mattress - 25 Years Warranty - Quality inspection with magnifying glass`}
-                width={980}
-                height={980}
-                className="w-[462px] h-[482.75px] object-cover"
+                width={462}
+                height={483}
+                className="w-[350px] md:w-[400px] lg:w-[462px] h-auto object-cover"
                 priority
               />
             </div>
 
             {/* Right Side - Content */}
-            <div className="absolute left-[640px] top-0 w-[548.17px] h-[482.75px] flex items-center">
+            <div className="flex-1 max-w-[548px]">
               <div className="w-full space-y-8 font-fira">
                 {/* Title */}
                 <div>
