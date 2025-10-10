@@ -66,8 +66,8 @@ export default function ProductCards() {
         </p>
       </motion.div>
 
-      {/* Mobile/Tablet: Horizontal Scroll with Navigation */}
-      <div className="lg:hidden relative mt-[40px] pb-[40px]">
+      {/* Mobile: Horizontal Scroll with Navigation */}
+      <div className="md:hidden relative mt-[40px] pb-[40px]">
         {/* Left Arrow */}
         <button
           onClick={() => scroll('left')}
@@ -229,13 +229,13 @@ export default function ProductCards() {
         </div>
       </div>
 
-      {/* Desktop: Grid Layout */}
-      <div className="hidden lg:flex justify-center px-4 mt-[80px] pb-[80px]">
-        <div className="grid grid-cols-3 gap-6 max-w-[1400px]">
+      {/* Tablet/Desktop: Grid Layout */}
+      <div className="hidden md:flex justify-center px-4 mt-[80px] pb-[80px]">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1400px] mx-auto">
           {/* Row 1 - Sova Classic */}
           <motion.a
             href="/products/sovaclassic"
-            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
+            className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -257,7 +257,7 @@ export default function ProductCards() {
           {/* Sova Premium */}
           <motion.a
             href="/products/sovapremium"
-            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
+            className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -279,7 +279,7 @@ export default function ProductCards() {
           {/* Sova Luxury */}
           <motion.a
             href="/products/sovaluxury"
-            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
+            className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -301,7 +301,7 @@ export default function ProductCards() {
           {/* Row 2 - Ultima Classic */}
           <motion.a
             href="/products/ultimaclassic"
-            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
+            className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -322,7 +322,7 @@ export default function ProductCards() {
           {/* Ultima Premium */}
           <motion.a
             href="/products/ultimapremium"
-            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
+            className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
@@ -343,7 +343,7 @@ export default function ProductCards() {
           {/* Ultima Luxury */}
           <motion.a
             href="/products/ultimaluxury"
-            className="rounded-lg overflow-hidden cursor-pointer w-[358px] h-[474px]"
+            className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05, y: -8 }}
