@@ -52,8 +52,8 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
     <>
     <section className="bg-base-cream py-8 md:py-12 lg:py-20">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        {/* Mobile: Stack vertically */}
-        <div className="md:hidden flex flex-col items-center space-y-8">
+        {/* Mobile and Tablet Portrait: Stack vertically */}
+        <div className="lg:hidden flex flex-col items-center space-y-8">
           {/* Hero Image */}
           <div className="w-full max-w-md">
             <Image
@@ -163,8 +163,8 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
           </div>
         </div>
 
-        {/* Tablet/Desktop: Original layout */}
-        <div className="hidden md:flex items-center justify-center px-4">
+        {/* Desktop and Tablet Landscape: Original layout */}
+        <div className="hidden lg:flex items-center justify-center px-4">
           <div className="w-full max-w-[1280px] flex items-center gap-8 lg:gap-16">
             {/* Left Side - Vintage Illustration */}
             <div className="flex-shrink-0">

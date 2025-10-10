@@ -66,8 +66,8 @@ export default function ProductCards() {
         </p>
       </motion.div>
 
-      {/* Mobile: Horizontal Scroll with Navigation */}
-      <div className="md:hidden relative mt-[40px] pb-[40px]">
+      {/* Mobile and Tablet Portrait: Horizontal Scroll with Navigation */}
+      <div className="lg:hidden relative mt-[40px] pb-[40px]">
         {/* Left Arrow */}
         <button
           onClick={() => scroll('left')}
@@ -229,9 +229,9 @@ export default function ProductCards() {
         </div>
       </div>
 
-      {/* Tablet/Desktop: Grid Layout */}
-      <div className="hidden md:block px-4 mt-[80px] pb-[80px]">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1400px] mx-auto justify-items-center">
+      {/* Desktop and Tablet Landscape: Grid Layout */}
+      <div className="hidden lg:block px-4 mt-[80px] pb-[80px]">
+        <div className="grid grid-cols-3 gap-4 lg:gap-6 max-w-[1400px] mx-auto justify-items-center">
           {/* Row 1 - Sova Classic */}
           <motion.a
             href="/products/sovaclassic"
