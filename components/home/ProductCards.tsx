@@ -230,8 +230,8 @@ export default function ProductCards() {
       </div>
 
       {/* Tablet/Desktop: Grid Layout */}
-      <div className="hidden md:flex justify-center px-4 mt-[80px] pb-[80px]">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1400px] mx-auto">
+      <div className="hidden md:block px-4 mt-[80px] pb-[80px]">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-[1400px] mx-auto justify-items-center">
           {/* Row 1 - Sova Classic */}
           <motion.a
             href="/products/sovaclassic"
