@@ -160,12 +160,12 @@ export default function Navigation() {
                       <AnimatePresence>
                         {productsDropdownOpen && (
                           <motion.div
-                            className="absolute top-full left-0 mt-2 bg-white shadow-xl rounded-2xl overflow-hidden flex"
+                            className="absolute top-full left-0 md:left-auto md:-right-4 lg:-right-8 xl:-right-20 mt-2 bg-white shadow-xl rounded-2xl overflow-hidden flex"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
-                            style={{ width: '360px' }}
+                            style={{ width: 'min(360px, calc(100vw - 3rem))' }}
                           >
                             {/* Left Column - Product Lines */}
                             <div className="bg-white p-4 flex-1">
@@ -314,20 +314,32 @@ export default function Navigation() {
                           >
                             {item.dropdownItems.map((dropdownItem) => (
                               <div key={dropdownItem.name} className="py-1">
-                                {dropdownItem.href ? (
+                                <div className="block py-3 px-3 font-semibold text-dark min-h-[44px]">
+                                  {dropdownItem.name}
+                                </div>
+                                <div className="pl-6 space-y-1">
                                   <Link
-                                    href={dropdownItem.href}
+                                    href={dropdownItem.name === 'Sova' ? '/products/sovaclassic' : '/products/ultimaclassic'}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="block py-3 px-3 font-semibold text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg active:scale-[0.98] min-h-[44px]"
+                                    className="block py-2 px-3 text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg text-sm"
                                   >
-                                    {dropdownItem.name}
+                                    Classic
                                   </Link>
-                                ) : (
-                                  <div className="block py-3 px-3 font-semibold text-dark min-h-[44px]">
-                                    {dropdownItem.name}
-                                  </div>
-                                )}
-                                <p className="text-sm text-light-gray mt-1 px-3">{dropdownItem.desc}</p>
+                                  <Link
+                                    href={dropdownItem.name === 'Sova' ? '/products/sovapremium' : '/products/ultimapremium'}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="block py-2 px-3 text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg text-sm"
+                                  >
+                                    Premium
+                                  </Link>
+                                  <Link
+                                    href={dropdownItem.name === 'Sova' ? '/products/sovaluxury' : '/products/ultimaluxury'}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="block py-2 px-3 text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg text-sm"
+                                  >
+                                    Luxury
+                                  </Link>
+                                </div>
                               </div>
                             ))}
                           </motion.div>
