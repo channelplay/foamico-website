@@ -275,8 +275,6 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
                 </div>
               </div>
             </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
