@@ -275,11 +275,12 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
                 </div>
               </div>
             </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
     {/* Mobile: Layers Section with Heading and Dropdown */}
     <section className="bg-base-cream md:hidden py-8">
       <div className="container mx-auto px-4">
@@ -407,7 +408,6 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
         </div>
       </div>
     </section>
-
     {/* Tablet/Desktop: Original Layers Image */}
     <section className="bg-base-cream hidden md:block">
       <div className="flex items-center justify-center">

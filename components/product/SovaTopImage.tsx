@@ -272,11 +272,12 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
                 </motion.button>
               </div>
             </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
     {/* Mobile: Layers Section with Heading and Dropdown */}
     <section className="bg-base-cream md:hidden py-8">
       <div className="container mx-auto px-4">
@@ -304,7 +305,7 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
             alt={`Inside the Layers of Comfort - Sova ${variant.charAt(0).toUpperCase() + variant.slice(1)} mattress layers`}
             width={462}
             height={483}
-            className="w-full h-auto object-cover landscape:scale-90"
+            className="w-full h-auto object-cover"
           />
         </div>
         
@@ -404,7 +405,6 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
         </div>
       </div>
     </section>
-
     {/* Tablet/Desktop: Original Layers Image */}
     <section className="bg-base-cream hidden md:block">
       <div className="flex items-center justify-center">
