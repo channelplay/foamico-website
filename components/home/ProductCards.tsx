@@ -96,7 +96,7 @@ export default function ProductCards() {
           className="overflow-x-auto scrollbar-hide scroll-smooth"
           onScroll={checkScrollButtons}
         >
-          <div className="flex gap-4 md:gap-6 px-12 md:px-16 w-max">
+          <div className="flex gap-4 md:gap-6 px-12 md:px-16" style={{ width: 'fit-content' }}>
           {/* Row 1 - Sova Classic */}
           <motion.a
             href="/products/sovaclassic"
