@@ -169,7 +169,7 @@ export default function Navigation() {
                           >
                             {/* Left Column - Product Lines */}
                             <div className="bg-white p-4 flex-1">
-                              {item.dropdownItems.map((dropdownItem, index) => (
+                              {item.dropdownItems.map((dropdownItem) => (
                                 <div
                                   key={dropdownItem.name}
                                   className="flex items-center justify-between py-3 px-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors"
