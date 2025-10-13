@@ -338,14 +338,16 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
                 <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
                   <span className="text-white font-semibold text-sm">2</span>
                 </div>
-                <h4 className="font-semibold text-[#39250E] text-sm">Aeroflex Foam Quilt</h4>
+                <h4 className="font-semibold text-[#39250E] text-sm">{variant === 'premium' || variant === 'luxury' ? 'Memorest Foam Quilt' : 'Aeroflex Foam Quilt'}</h4>
               </div>
               <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
             <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-              Advanced Aeroflex foam quilting provides optimal pressure relief and temperature regulation.
+              {variant === 'premium' || variant === 'luxury'
+                ? 'Memory-adaptive foam offering deep contouring and personalized support for premium comfort.'
+                : 'Advanced Aeroflex foam quilting provides optimal pressure relief and temperature regulation.'}
             </div>
           </details>
 
@@ -374,14 +376,16 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
                 <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
                   <span className="text-white font-semibold text-sm">4</span>
                 </div>
-                <h4 className="font-semibold text-[#39250E] text-sm">Bondtech Support Foam</h4>
+                <h4 className="font-semibold text-[#39250E] text-sm">{variant === 'luxury' ? 'Zero G Latex Foam' : 'Bondtech Support Foam'}</h4>
               </div>
               <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
             <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-              High-density Bondtech foam ensures long-lasting durability and consistent support throughout the mattress life.
+              {variant === 'luxury' 
+                ? 'Orthopedic support core ensuring optimal spinal alignment and long-lasting durability.'
+                : 'High-density Bondtech foam ensures long-lasting durability and consistent support throughout the mattress life.'}
             </div>
           </details>
 
