@@ -13,17 +13,17 @@ const variantDescriptions = {
   classic: `Balanced comfort built for everyday sleep. Sova Classic delivers steady orthopedic support with just the right amount of surface cushioning—ideal for consistent posture support and long-term comfort.
 
 Thickness: 6"
-Comfort Scale: Medium–Firm
+Comfort Scale: Firm
 Best for: Back & combination sleepers, daily use`,
   premium: `Enhanced comfort with smarter pressure relief. Sova Premium adds advanced comfort layers that respond to your body while maintaining strong spinal support for deeper, more restorative sleep.
 
-Thickness: 8"
-Firmness: Medium
+Thickness: 6.5"
+Comfort Scale: Medium Firm
 Best for: Back & side sleepers, comfort-upgrade seekers`,
   luxury: `Refined comfort with a plush, responsive feel. Sova Luxury is designed for sleepers who want elevated softness without compromising support—delivering a premium sleep experience every night.
 
-Thickness: 10"
-Comfort Scale: Medium (plush comfort)
+Thickness: 7"
+Comfort Scale: Medium
 Best for: Side sleepers, comfort-first buyers`,
 }
 

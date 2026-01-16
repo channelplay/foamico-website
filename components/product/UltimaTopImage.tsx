@@ -13,16 +13,16 @@ const variantDescriptions = {
   classic: `Reliable comfort built to last. Ultima Classic is engineered for consistent support and durability—making it a dependable choice for long-term everyday use.
 
 Thickness: 6"
-Firmness: Firm
+Comfort Scale: Firm
 Best for: Back sleepers, firm mattress users`,
   premium: `Enhanced support with added comfort layers. Ultima Premium balances firmness with improved cushioning—ideal for sleepers who want support without stiffness.
 
-Thickness: 8"
-Comfort Scale: Medium–Firm
+Thickness: 6.5"
+Comfort Scale: Medium Firm
 Best for: Back & combination sleepers`,
   luxury: `Performance-driven comfort with a refined feel. Ultima Luxury offers premium cushioning over a strong support base—designed for sleepers who demand durability with comfort.
 
-Thickness: 10"
+Thickness: 7"
 Comfort Scale: Medium
 Best for: Long-term users, comfort + support seekers`,
 }

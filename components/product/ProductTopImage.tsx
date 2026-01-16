@@ -14,7 +14,7 @@ const productConfig = {
       classic: `Everyday comfort with dependable orthopedic support. Resto Classic is built to feel cushioned on top, yet stable underneath—so you wake up fresher, with better posture support night after night.
 
 Thickness: 6"
-Comfort Scale: Medium to Medium-Firm (balanced support)
+Comfort Scale: Firm
 Best for: Daily use, back & combination sleepers, reliable support seekers`,
       premium: `A step-up in comfort with a more responsive feel. Resto Premium adds an extra comfort layer for better pressure relief and smoother body-contouring—without losing the stable support you need for long, uninterrupted sleep.
 
@@ -23,8 +23,8 @@ Comfort Scale: Medium Firm
 Best for: Back/side sleepers, comfort-upgrade buyers, longer sleepers`,
       luxury: `Indulgent comfort with deeper pressure relief. Resto Luxury is designed to hug your body gently while keeping your spine aligned—ideal if you want a softer, more "luxury hotel" sleep feel every night.
 
-Thickness: 6.5"
-Comfort Scale: Medium Firm (plush, pressure-relieving)
+Thickness: 7"
+Comfort Scale: Medium
 Best for: Side sleepers, comfort-first shoppers, pressure-point relief`,
     },
     variants: ['classic', 'premium', 'luxury'],
@@ -56,12 +56,12 @@ Best for: Combination sleepers, daily comfort seekers`,
       premium: `Deeper comfort with enhanced body contouring. Luma Premium is crafted to cradle your body while maintaining stability—perfect for sleepers who value pressure relief and comfort equally.
 
 Thickness: 8"
-Comfort Scale: Medium–Soft
+Comfort Scale: Medium
 Best for: Side sleepers, long sleep durations`,
       luxury: `Plush comfort with a premium, hotel-like feel. Luma Luxury delivers superior softness and smooth body alignment for sleepers who want indulgent comfort without sagging.
 
 Thickness: 10"
-Comfort Scale: Soft to Medium
+Comfort Scale: Medium Soft
 Best for: Comfort-first sleepers, pressure-sensitive users`,
     },
     variants: ['classic', 'premium', 'luxury'],
@@ -93,7 +93,7 @@ Best for: Comfort seekers, combo sleepers, people who like a buoyant latex feel`
       natura2: `Targeted latex support for better alignment. Natura 2.0 is built with zoned latex to deliver more structured, full-body support while staying breathable and responsive.
 
 Thickness: 6"
-Firmness: Medium
+Firmness: Medium Soft
 Best for: Posture support + comfort balance, sleepers who want "support with bounce"`,
     },
     variants: ['natura1', 'natura2'],
