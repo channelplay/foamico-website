@@ -62,7 +62,7 @@ export default function ProductCards() {
         </h2>
         
         <p className="mx-auto font-fira text-sm md:text-[15px] text-[#39250E] max-w-full lg:max-w-[787.81px] px-4 md:px-8 lg:px-0">
-          Each mattress is meticulously designed using premium materials and innovative foam technology, ensuring exceptional comfort and support for years to come.
+          Each range is meticulously designed using premium materials and innovative foam technology, ensuring exceptional comfort and support for years to come.
         </p>
       </motion.div>
 
@@ -97,7 +97,29 @@ export default function ProductCards() {
           onScroll={checkScrollButtons}
         >
           <div className="flex gap-4 md:gap-6 px-12 md:px-16" style={{ width: 'fit-content' }}>
-          {/* Row 1 - Sova Classic */}
+          {/* Row 1 - Resto */}
+          <motion.a
+            href="/products/restoclassic"
+            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05, y: -8 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src="/Resto Range.png"
+                alt="Resto Range"
+                fill
+                className="object-cover"
+                sizes="358px"
+                priority
+              />
+            </div>
+          </motion.a>
+
+          {/* Sova */}
           <motion.a
             href="/products/sovaclassic"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
@@ -109,8 +131,8 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/sova-classic-card.png"
-                alt="Sova Classic"
+                src="/Sova Range.png"
+                alt="Sova Range"
                 fill
                 className="object-cover"
                 sizes="358px"
@@ -118,10 +140,10 @@ export default function ProductCards() {
               />
             </div>
           </motion.a>
-          
-          {/* Sova Premium */}
+
+          {/* Luma */}
           <motion.a
-            href="/products/sovapremium"
+            href="/products/lumaclassic"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -131,8 +153,8 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/sova-premium-card.png"
-                alt="Sova Premium"
+                src="/Luma Range.png"
+                alt="Luma Range"
                 fill
                 className="object-cover"
                 sizes="358px"
@@ -140,30 +162,8 @@ export default function ProductCards() {
               />
             </div>
           </motion.a>
-          
-          {/* Sova Luxury */}
-          <motion.a
-            href="/products/sovaluxury"
-            className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.05, y: -8 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="relative w-full h-full">
-              <Image
-                src="/sova-luxury-card.png"
-                alt="Sova Luxury"
-                fill
-                className="object-cover"
-                sizes="358px"
-                priority
-              />
-            </div>
-          </motion.a>
-          
-          {/* Row 2 - Ultima Classic */}
+
+          {/* Row 2 - Ultima */}
           <motion.a
             href="/products/ultimaclassic"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
@@ -175,18 +175,18 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/ultima-classic-card.png"
-                alt="Ultima Classic"
+                src="/Ultima Range.png"
+                alt="Ultima Range"
                 fill
                 className="object-cover"
                 sizes="358px"
               />
             </div>
           </motion.a>
-          
-          {/* Ultima Premium */}
+
+          {/* Natura */}
           <motion.a
-            href="/products/ultimapremium"
+            href="/products/natura1"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -196,18 +196,18 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/ultima-premium-card.png"
-                alt="Ultima Premium"
+                src="/Natura Range.png"
+                alt="Natura Range"
                 fill
                 className="object-cover"
                 sizes="358px"
               />
             </div>
           </motion.a>
-          
-          {/* Ultima Luxury */}
+
+          {/* Riva */}
           <motion.a
-            href="/products/ultimaluxury"
+            href="/products/riva1000"
             className="rounded-lg overflow-hidden cursor-pointer flex-shrink-0 w-[280px] h-[370px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -217,8 +217,8 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/ultima-luxury-card.png"
-                alt="Ultima Luxury"
+                src="/Riva Range.png"
+                alt="Riva Range"
                 fill
                 className="object-cover"
                 sizes="358px"
@@ -232,7 +232,29 @@ export default function ProductCards() {
       {/* Desktop and Tablet Landscape: Grid Layout */}
       <div className="hidden lg:block px-4 mt-[80px] pb-[80px]">
         <div className="grid grid-cols-3 gap-4 lg:gap-6 max-w-[1400px] mx-auto justify-items-center">
-          {/* Row 1 - Sova Classic */}
+          {/* Row 1 - Resto */}
+          <motion.a
+            href="/products/restoclassic"
+            className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05, y: -8 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src="/Resto Range.png"
+                alt="Resto Range"
+                fill
+                className="object-cover"
+                sizes="358px"
+                priority
+              />
+            </div>
+          </motion.a>
+
+          {/* Sova */}
           <motion.a
             href="/products/sovaclassic"
             className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
@@ -244,8 +266,8 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/sova-classic-card.png"
-                alt="Sova Classic"
+                src="/Sova Range.png"
+                alt="Sova Range"
                 fill
                 className="object-cover"
                 sizes="358px"
@@ -253,10 +275,10 @@ export default function ProductCards() {
               />
             </div>
           </motion.a>
-          
-          {/* Sova Premium */}
+
+          {/* Luma */}
           <motion.a
-            href="/products/sovapremium"
+            href="/products/lumaclassic"
             className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -266,8 +288,8 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/sova-premium-card.png"
-                alt="Sova Premium"
+                src="/Luma Range.png"
+                alt="Luma Range"
                 fill
                 className="object-cover"
                 sizes="358px"
@@ -275,30 +297,8 @@ export default function ProductCards() {
               />
             </div>
           </motion.a>
-          
-          {/* Sova Luxury */}
-          <motion.a
-            href="/products/sovaluxury"
-            className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.05, y: -8 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="relative w-full h-full">
-              <Image
-                src="/sova-luxury-card.png"
-                alt="Sova Luxury"
-                fill
-                className="object-cover"
-                sizes="358px"
-                priority
-              />
-            </div>
-          </motion.a>
-          
-          {/* Row 2 - Ultima Classic */}
+
+          {/* Row 2 - Ultima */}
           <motion.a
             href="/products/ultimaclassic"
             className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
@@ -310,18 +310,18 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/ultima-classic-card.png"
-                alt="Ultima Classic"
+                src="/Ultima Range.png"
+                alt="Ultima Range"
                 fill
                 className="object-cover"
                 sizes="358px"
               />
             </div>
           </motion.a>
-          
-          {/* Ultima Premium */}
+
+          {/* Natura */}
           <motion.a
-            href="/products/ultimapremium"
+            href="/products/natura1"
             className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -331,18 +331,18 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/ultima-premium-card.png"
-                alt="Ultima Premium"
+                src="/Natura Range.png"
+                alt="Natura Range"
                 fill
                 className="object-cover"
                 sizes="358px"
               />
             </div>
           </motion.a>
-          
-          {/* Ultima Luxury */}
+
+          {/* Riva */}
           <motion.a
-            href="/products/ultimaluxury"
+            href="/products/riva1000"
             className="rounded-lg overflow-hidden cursor-pointer w-full max-w-[358px] h-[400px] lg:h-[474px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -352,8 +352,8 @@ export default function ProductCards() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/ultima-luxury-card.png"
-                alt="Ultima Luxury"
+                src="/Riva Range.png"
+                alt="Riva Range"
                 fill
                 className="object-cover"
                 sizes="358px"

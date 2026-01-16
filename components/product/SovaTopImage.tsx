@@ -9,6 +9,24 @@ interface SovaTopImageProps {
   variant?: 'classic' | 'premium' | 'luxury'
 }
 
+const variantDescriptions = {
+  classic: `Balanced comfort built for everyday sleep. Sova Classic delivers steady orthopedic support with just the right amount of surface cushioning—ideal for consistent posture support and long-term comfort.
+
+Thickness: 6"
+Comfort Scale: Medium–Firm
+Best for: Back & combination sleepers, daily use`,
+  premium: `Enhanced comfort with smarter pressure relief. Sova Premium adds advanced comfort layers that respond to your body while maintaining strong spinal support for deeper, more restorative sleep.
+
+Thickness: 8"
+Firmness: Medium
+Best for: Back & side sleepers, comfort-upgrade seekers`,
+  luxury: `Refined comfort with a plush, responsive feel. Sova Luxury is designed for sleepers who want elevated softness without compromising support—delivering a premium sleep experience every night.
+
+Thickness: 10"
+Comfort Scale: Medium (plush comfort)
+Best for: Side sleepers, comfort-first buyers`,
+}
+
 export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps) {
   const router = useRouter()
   const [selectedModel, setSelectedModel] = useState('sova')
@@ -16,23 +34,43 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
 
   // Determine the hero image based on variant
   const getHeroImage = () => {
-    if (variant === 'luxury') return '/sova-luxury-hero-new.png?v=2'
-    if (variant === 'premium') return '/sova-premium-hero-new.png?v=2'
-    return '/sova-hero-new.png?v=2' // classic variant, cache bust to force reload
+    return '/Sova.png'
+  }
+
+  const renderDescription = () => {
+    const desc = variantDescriptions[variant]
+    const lines = desc.split('\n')
+    return lines.map((line, index) => {
+      const labelMatch = line.match(/^(Thickness:|Comfort Scale:|Firmness:|Best for:)(.*)$/)
+      if (labelMatch) {
+        return (
+          <span key={index}>
+            <strong>{labelMatch[1]}</strong>{labelMatch[2]}
+            {index < lines.length - 1 && '\n'}
+          </span>
+        )
+      }
+      return (
+        <span key={index}>
+          {line}
+          {index < lines.length - 1 && '\n'}
+        </span>
+      )
+    })
   }
 
   // Determine the layers image based on variant for desktop
   const getLayersImage = () => {
-    if (variant === 'luxury') return '/Sova Luxury Layers.png'
-    if (variant === 'premium') return '/Sova Premium Layers.png'
-    return '/Sova Classic Layers.png' // classic variant
+    if (variant === 'luxury') return '/Sova Luxury.png'
+    if (variant === 'premium') return '/Sova Premium.png'
+    return '/Sova Classic.png' // classic variant
   }
 
   // Determine the layers image for mobile
   const getMobileLayersImage = () => {
-    if (variant === 'luxury') return '/Sova luxury ultima classic mobile.png'
-    if (variant === 'premium') return '/Sova classic premium.png'
-    return '/Sova classic premium.png' // classic variant uses same image as premium
+    if (variant === 'luxury') return '/Sova Luxury.png'
+    if (variant === 'premium') return '/Sova Premium.png'
+    return '/Sova Classic.png' // classic variant
   }
 
   const handleModelChange = (model: string) => {
@@ -72,44 +110,9 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
               <h1 className="font-bold text-[#39250E] text-3xl md:text-4xl mb-3">
                 Sova <span className="text-[#AD702A]">{selectedProduct.charAt(0).toUpperCase() + selectedProduct.slice(1)}</span>
               </h1>
-              <p className="text-[#39250E]/70 leading-relaxed text-sm md:text-base px-4">
-                Experience the perfect balance of firmness and comfort with our innovative Latex foam technology, designed for enhanced orthopedic support and exceptional sleep quality.
+              <p className="text-[#39250E]/70 leading-relaxed text-sm md:text-base px-4 whitespace-pre-line">
+                {renderDescription()}
               </p>
-            </div>
-
-            {/* Model Type Selector */}
-            <div className="px-4">
-              <h3 className="font-semibold text-[#39250E] mb-3 uppercase tracking-wider text-sm">
-                Model Type:
-              </h3>
-              <div className="flex gap-2 justify-center">
-                <motion.button
-                  onClick={() => handleModelChange('sova')}
-                  className={`transition-all border font-semibold flex-1 max-w-[172px] h-[39px] text-sm
-                    ${selectedModel === 'sova'
-                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                      : 'bg-white text-[#39250E] border-hermes-gold/40 hover:border-[#AD702A] hover:bg-hermes-cream'
-                    }`}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{ borderRadius: '5px' }}
-                >
-                  Sova
-                </motion.button>
-                <motion.button
-                  onClick={() => handleModelChange('ultima')}
-                  className={`transition-all border font-semibold flex-1 max-w-[172px] h-[39px] text-sm
-                    ${selectedModel === 'ultima'
-                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                      : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
-                    }`}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{ borderRadius: '5px' }}
-                >
-                  Ultima
-                </motion.button>
-              </div>
             </div>
 
             {/* Product Type Selector */}
@@ -185,44 +188,9 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
               <h1 className="font-bold text-[#39250E]" style={{ fontSize: '40.26px', marginBottom: '14px' }}>
                 Sova <span className="text-[#AD702A]">{selectedProduct.charAt(0).toUpperCase() + selectedProduct.slice(1)}</span>
               </h1>
-              <p className="text-[#39250E]/70 leading-relaxed" style={{ fontSize: '15px' }}>
-                Experience the perfect balance of firmness and comfort with our innovative Latex foam technology, designed for enhanced orthopedic support and exceptional sleep quality.
+              <p className="text-[#39250E]/70 leading-relaxed whitespace-pre-line" style={{ fontSize: '15px' }}>
+                {renderDescription()}
               </p>
-            </div>
-
-            {/* Model Type Selector */}
-            <div>
-              <h3 className="font-semibold text-[#39250E] mb-4 uppercase tracking-wider" style={{ fontSize: '15px' }}>
-                Model Type:
-              </h3>
-              <div className="flex gap-3">
-                <motion.button
-                  onClick={() => handleModelChange('sova')}
-                  className={`transition-all border font-semibold w-[172.03px] h-[39px]
-                    ${selectedModel === 'sova'
-                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                      : 'bg-white text-[#39250E] border-hermes-gold/40 hover:border-[#AD702A] hover:bg-hermes-cream'
-                    }`}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{ fontSize: '15px', borderRadius: '5px' }}
-                >
-                  Sova
-                </motion.button>
-                <motion.button
-                  onClick={() => handleModelChange('ultima')}
-                  className={`transition-all border font-semibold w-[172.03px] h-[39px]
-                    ${selectedModel === 'ultima'
-                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                      : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
-                    }`}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{ fontSize: '15px', borderRadius: '5px' }}
-                >
-                  Ultima
-                </motion.button>
-              </div>
             </div>
 
             {/* Product Type Selector */}

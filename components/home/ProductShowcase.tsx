@@ -34,7 +34,7 @@ export default function ProductShowcase() {
             </h2>
             <div className="divider-line divider-center" />
             <p className="text-body text-light-gray max-w-2xl mx-auto mt-6 px-4">
-              Each mattress is meticulously designed using premium materials and innovative foam technology, 
+              Each range is meticulously designed using premium materials and innovative foam technology, 
               ensuring exceptional comfort and support for years to come.
             </p>
           </motion.div>

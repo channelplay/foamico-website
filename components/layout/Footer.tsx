@@ -7,12 +7,29 @@ import Container from '@/components/ui/Container'
 export default function Footer() {
   const footerLinks = {
     products: [
+      // Resto
+      { name: 'Resto Classic', href: '/products/restoclassic' },
+      { name: 'Resto Premium', href: '/products/restopremium' },
+      { name: 'Resto Luxury', href: '/products/restoluxury' },
+      // Sova
       { name: 'Sova Classic', href: '/products/sovaclassic' },
       { name: 'Sova Premium', href: '/products/sovapremium' },
       { name: 'Sova Luxury', href: '/products/sovaluxury' },
+      // Luma
+      { name: 'Luma Classic', href: '/products/lumaclassic' },
+      { name: 'Luma Premium', href: '/products/lumapremium' },
+      { name: 'Luma Luxury', href: '/products/lumaluxury' },
+      // Ultima
       { name: 'Ultima Classic', href: '/products/ultimaclassic' },
       { name: 'Ultima Premium', href: '/products/ultimapremium' },
       { name: 'Ultima Luxury', href: '/products/ultimaluxury' },
+      // Natura
+      { name: 'Natura 1.0', href: '/products/natura1' },
+      { name: 'Natura 2.0', href: '/products/natura2' },
+      // Riva
+      { name: 'Riva1000', href: '/products/riva1000' },
+      { name: 'Riva2000', href: '/products/riva2000' },
+      { name: 'Riva3000', href: '/products/riva3000' },
     ],
     company: [
       { name: 'About Us', href: '/about' },
@@ -52,7 +69,7 @@ export default function Footer() {
               <h3 className="text-sm font-semibold text-[#f5f0e8] mb-4 uppercase tracking-wider">
                 Products
               </h3>
-              <ul className="space-y-3">
+              <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
                 {footerLinks.products.map((link) => (
                   <li key={link.name}>
                     <Link

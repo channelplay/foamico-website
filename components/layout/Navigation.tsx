@@ -12,15 +12,58 @@ const navigation = [
     name: 'Products',
     href: '/products',
     dropdownItems: [
-      { 
-        name: 'Sova', 
-        href: null, 
-        desc: 'Premium Comfort',
+      {
+        name: 'Resto',
+        desc: 'Restful Sleep',
+        categories: [
+          { name: 'Classic', href: '/products/restoclassic' },
+          { name: 'Premium', href: '/products/restopremium' },
+          { name: 'Luxury', href: '/products/restoluxury' },
+        ],
       },
-      { 
-        name: 'Ultima', 
-        href: null, 
+      {
+        name: 'Sova',
+        desc: 'Premium Comfort',
+        categories: [
+          { name: 'Classic', href: '/products/sovaclassic' },
+          { name: 'Premium', href: '/products/sovapremium' },
+          { name: 'Luxury', href: '/products/sovaluxury' },
+        ],
+      },
+      {
+        name: 'Luma',
+        desc: 'Light Comfort',
+        categories: [
+          { name: 'Classic', href: '/products/lumaclassic' },
+          { name: 'Premium', href: '/products/lumapremium' },
+          { name: 'Luxury', href: '/products/lumaluxury' },
+        ],
+      },
+      {
+        name: 'Ultima',
         desc: 'Ultimate Luxury',
+        categories: [
+          { name: 'Classic', href: '/products/ultimaclassic' },
+          { name: 'Premium', href: '/products/ultimapremium' },
+          { name: 'Luxury', href: '/products/ultimaluxury' },
+        ],
+      },
+      {
+        name: 'Natura',
+        desc: 'Natural Choice',
+        categories: [
+          { name: 'Natura 1.0', href: '/products/natura1' },
+          { name: 'Natura 2.0', href: '/products/natura2' },
+        ],
+      },
+      {
+        name: 'Riva',
+        desc: 'River of Comfort',
+        categories: [
+          { name: 'Riva1000', href: '/products/riva1000' },
+          { name: 'Riva2000', href: '/products/riva2000' },
+          { name: 'Riva3000', href: '/products/riva3000' },
+        ],
       },
     ]
   },
@@ -186,11 +229,11 @@ export default function Navigation() {
                                 </div>
                               ))}
                             </div>
-                            
-                            {/* Right Column - Categories (only visible on hover) */}
+
+                            {/* Right Column - Categories (visible on hover) */}
                             <AnimatePresence>
                               {hoveredProduct && (
-                                <motion.div 
+                                <motion.div
                                   className="bg-[#f8f8f8] p-4 border-l border-gray-200"
                                   initial={{ opacity: 0 }}
                                   animate={{ opacity: 1 }}
@@ -199,24 +242,17 @@ export default function Navigation() {
                                   style={{ width: '160px' }}
                                 >
                                   <div className="space-y-2">
-                                    <Link
-                                      href={hoveredProduct === 'Sova' ? '/products/sovaclassic' : '/products/ultimaclassic'}
-                                      className="block py-2 px-3 text-[#2c2c2c] hover:bg-white rounded-lg transition-colors font-medium text-sm"
-                                    >
-                                      Classic
-                                    </Link>
-                                    <Link
-                                      href={hoveredProduct === 'Sova' ? '/products/sovapremium' : '/products/ultimapremium'}
-                                      className="block py-2 px-3 text-[#2c2c2c] hover:bg-white rounded-lg transition-colors font-medium text-sm"
-                                    >
-                                      Premium
-                                    </Link>
-                                    <Link
-                                      href={hoveredProduct === 'Sova' ? '/products/sovaluxury' : '/products/ultimaluxury'}
-                                      className="block py-2 px-3 text-[#2c2c2c] hover:bg-white rounded-lg transition-colors font-medium text-sm"
-                                    >
-                                      Luxury
-                                    </Link>
+                                    {item.dropdownItems
+                                      .find((p) => p.name === hoveredProduct)
+                                      ?.categories.map((cat) => (
+                                        <Link
+                                          key={cat.name}
+                                          href={cat.href}
+                                          className="block py-2 px-3 text-[#2c2c2c] hover:bg-white rounded-lg transition-colors font-medium text-sm"
+                                        >
+                                          {cat.name}
+                                        </Link>
+                                      ))}
                                   </div>
                                 </motion.div>
                               )}
@@ -318,27 +354,16 @@ export default function Navigation() {
                                   {dropdownItem.name}
                                 </div>
                                 <div className="pl-6 space-y-1">
-                                  <Link
-                                    href={dropdownItem.name === 'Sova' ? '/products/sovaclassic' : '/products/ultimaclassic'}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    className="block py-2 px-3 text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg text-sm"
-                                  >
-                                    Classic
-                                  </Link>
-                                  <Link
-                                    href={dropdownItem.name === 'Sova' ? '/products/sovapremium' : '/products/ultimapremium'}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    className="block py-2 px-3 text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg text-sm"
-                                  >
-                                    Premium
-                                  </Link>
-                                  <Link
-                                    href={dropdownItem.name === 'Sova' ? '/products/sovaluxury' : '/products/ultimaluxury'}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    className="block py-2 px-3 text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg text-sm"
-                                  >
-                                    Luxury
-                                  </Link>
+                                  {dropdownItem.categories.map((cat) => (
+                                    <Link
+                                      key={cat.name}
+                                      href={cat.href}
+                                      onClick={() => setMobileMenuOpen(false)}
+                                      className="block py-2 px-3 text-dark hover:text-primary hover:bg-soft-cream transition-all rounded-lg text-sm"
+                                    >
+                                      {cat.name}
+                                    </Link>
+                                  ))}
                                 </div>
                               </div>
                             ))}

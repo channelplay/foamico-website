@@ -9,6 +9,24 @@ interface UltimaTopImageProps {
   variant?: 'classic' | 'premium' | 'luxury'
 }
 
+const variantDescriptions = {
+  classic: `Reliable comfort built to last. Ultima Classic is engineered for consistent support and durability—making it a dependable choice for long-term everyday use.
+
+Thickness: 6"
+Firmness: Firm
+Best for: Back sleepers, firm mattress users`,
+  premium: `Enhanced support with added comfort layers. Ultima Premium balances firmness with improved cushioning—ideal for sleepers who want support without stiffness.
+
+Thickness: 8"
+Comfort Scale: Medium–Firm
+Best for: Back & combination sleepers`,
+  luxury: `Performance-driven comfort with a refined feel. Ultima Luxury offers premium cushioning over a strong support base—designed for sleepers who demand durability with comfort.
+
+Thickness: 10"
+Comfort Scale: Medium
+Best for: Long-term users, comfort + support seekers`,
+}
+
 export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImageProps) {
   const router = useRouter()
   const [selectedModel, setSelectedModel] = useState('ultima')
@@ -16,24 +34,43 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
 
   // Determine the hero image based on variant
   const getHeroImage = () => {
-    if (variant === 'luxury') return '/ultima-luxury-hero-new.png'
-    if (variant === 'premium') return '/ultima-premium-hero-new.png'
-    return '/ultima-classic-hero-new.png' // classic variant
+    return '/Ultima.png'
+  }
+
+  const renderDescription = () => {
+    const desc = variantDescriptions[variant]
+    const lines = desc.split('\n')
+    return lines.map((line, index) => {
+      const labelMatch = line.match(/^(Thickness:|Comfort Scale:|Firmness:|Best for:)(.*)$/)
+      if (labelMatch) {
+        return (
+          <span key={index}>
+            <strong>{labelMatch[1]}</strong>{labelMatch[2]}
+            {index < lines.length - 1 && '\n'}
+          </span>
+        )
+      }
+      return (
+        <span key={index}>
+          {line}
+          {index < lines.length - 1 && '\n'}
+        </span>
+      )
+    })
   }
 
   // Determine the layers image based on variant for desktop
   const getLayersImage = () => {
-    if (variant === 'luxury') return '/Ultima Luxury Layers.png'
-    if (variant === 'premium') return '/Ultima Premium Layers.png'
-    return '/Ultima Classic Layers.png' // classic variant
+    if (variant === 'luxury') return '/Ultima Luxury.png'
+    if (variant === 'premium') return '/Ultima Premium.png'
+    return '/Ultima Classic.png' // classic variant
   }
 
   // Determine the layers image for mobile
   const getMobileLayersImage = () => {
-    if (variant === 'classic') return '/Sova luxury ultima classic mobile.png'
-    if (variant === 'premium') return '/Ultima Premium luxury mobile.png'
-    if (variant === 'luxury') return '/Ultima Premium luxury mobile.png'
-    return '/Ultima Premium luxury mobile.png'
+    if (variant === 'luxury') return '/Ultima Luxury.png'
+    if (variant === 'premium') return '/Ultima Premium.png'
+    return '/Ultima Classic.png' // classic variant
   }
 
   const handleModelChange = (model: string) => {
@@ -73,44 +110,9 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
               <h1 className="font-bold text-[#39250E] text-3xl md:text-4xl mb-3">
                 Ultima <span className="text-[#AD702A]">{selectedProduct.charAt(0).toUpperCase() + selectedProduct.slice(1)}</span>
               </h1>
-              <p className="text-[#39250E]/70 leading-relaxed text-sm md:text-base px-4">
-                Ultimate luxury and support with our premium foam technology, designed for the most discerning sleepers seeking exceptional comfort.
+              <p className="text-[#39250E]/70 leading-relaxed text-sm md:text-base px-4 whitespace-pre-line">
+                {renderDescription()}
               </p>
-            </div>
-
-            {/* Model Type Selector */}
-            <div className="px-4">
-              <h3 className="font-semibold text-[#39250E] mb-3 uppercase tracking-wider text-sm">
-                Model Type:
-              </h3>
-              <div className="flex gap-2 justify-center">
-                <motion.button
-                  onClick={() => handleModelChange('sova')}
-                  className={`transition-all border font-semibold flex-1 max-w-[172px] h-[39px] text-sm
-                    ${selectedModel === 'sova'
-                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                      : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
-                    }`}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{ borderRadius: '5px' }}
-                >
-                  Sova
-                </motion.button>
-                <motion.button
-                  onClick={() => handleModelChange('ultima')}
-                  className={`transition-all border font-semibold flex-1 max-w-[172px] h-[39px] text-sm
-                    ${selectedModel === 'ultima'
-                      ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                      : 'bg-white text-[#39250E] border-hermes-gold/40 hover:border-[#AD702A] hover:bg-hermes-cream'
-                    }`}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{ borderRadius: '5px' }}
-                >
-                  Ultima
-                </motion.button>
-              </div>
             </div>
 
             {/* Product Type Selector */}
@@ -186,44 +188,9 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
                   <h1 className="font-bold text-[#39250E]" style={{ fontSize: '40.26px', marginBottom: '14px' }}>
                     Ultima <span className="text-[#AD702A]">{selectedProduct.charAt(0).toUpperCase() + selectedProduct.slice(1)}</span>
                   </h1>
-                  <p className="text-[#39250E]/70 leading-relaxed" style={{ fontSize: '15px' }}>
-                    Ultimate luxury and support with our premium foam technology, designed for the most discerning sleepers seeking exceptional comfort.
+                  <p className="text-[#39250E]/70 leading-relaxed whitespace-pre-line" style={{ fontSize: '15px' }}>
+                    {renderDescription()}
                   </p>
-                </div>
-
-                {/* Model Type Selector */}
-                <div>
-                  <h3 className="font-semibold text-[#39250E] mb-4 uppercase tracking-wider" style={{ fontSize: '15px' }}>
-                    Model Type:
-                  </h3>
-                  <div className="flex gap-3">
-                    <motion.button
-                      onClick={() => handleModelChange('sova')}
-                      className={`transition-all border font-semibold w-[172.03px] h-[39px]
-                        ${selectedModel === 'sova'
-                          ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                          : 'bg-white text-[#AD702A] border-[#AD702A] hover:bg-[#AD702A] hover:text-white'
-                        }`}
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.97 }}
-                      style={{ fontSize: '15px', borderRadius: '5px' }}
-                    >
-                      Sova
-                    </motion.button>
-                    <motion.button
-                      onClick={() => handleModelChange('ultima')}
-                      className={`transition-all border font-semibold w-[172.03px] h-[39px]
-                        ${selectedModel === 'ultima'
-                          ? 'bg-[#4C6462] text-white border-[#4C6462]'
-                          : 'bg-white text-[#39250E] border-hermes-gold/40 hover:border-[#AD702A] hover:bg-hermes-cream'
-                        }`}
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.97 }}
-                      style={{ fontSize: '15px', borderRadius: '5px' }}
-                    >
-                      Ultima
-                    </motion.button>
-                  </div>
                 </div>
 
                 {/* Product Type Selector */}
