@@ -68,9 +68,9 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
 
   // Determine the layers image for mobile
   const getMobileLayersImage = () => {
-    if (variant === 'luxury') return '/Sova Luxury.png'
-    if (variant === 'premium') return '/Sova Premium.png'
-    return '/Sova Classic.png' // classic variant
+    if (variant === 'luxury') return '/Sova Luxury mobile.png'
+    if (variant === 'premium') return '/Sova Premium mobile.png'
+    return '/Sova Classic mobile.png' // classic variant
   }
 
   const handleModelChange = (model: string) => {

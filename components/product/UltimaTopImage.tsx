@@ -68,9 +68,9 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
 
   // Determine the layers image for mobile
   const getMobileLayersImage = () => {
-    if (variant === 'luxury') return '/Ultima Luxury.png'
-    if (variant === 'premium') return '/Ultima Premium.png'
-    return '/Ultima Classic.png' // classic variant
+    if (variant === 'luxury') return '/Ultima Luxury mobile.png'
+    if (variant === 'premium') return '/Ultima Premium mobile.png'
+    return '/Ultima Classic mobile.png' // classic variant
   }
 
   const handleModelChange = (model: string) => {
