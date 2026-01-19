@@ -294,7 +294,7 @@ export default function ProductTopImage({ product, variant }: ProductTopImagePro
     return config.mobileLayersImages[variant as keyof typeof config.mobileLayersImages] || '/placeholder-layers-mobile.png'
   }
 
-  const getLayers = () => {
+  const getLayers = (): { name: string; description: string }[] => {
     const productLayers = layerDetails[product]
     if (productLayers && variant in productLayers) {
       return productLayers[variant as keyof typeof productLayers]

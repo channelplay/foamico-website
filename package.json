@@ -16,7 +16,7 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@anthropic-ai/claude-code": "^1.0.108",
+    "@anthropic-ai/claude-code": "^2.1.12",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
