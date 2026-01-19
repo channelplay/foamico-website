@@ -39,9 +39,9 @@ Best for: Side sleepers, comfort-first shoppers, pressure-point relief`,
       luxury: '/Resto Luxury.png',
     },
     mobileLayersImages: {
-      classic: '/Resto Classic mobile.png',
-      premium: '/Resto Premium mobile.png',
-      luxury: '/Resto Luxury mobile.png',
+      classic: '/Resto Classic Mobile.png',
+      premium: '/Resto Premium Mobile.png',
+      luxury: '/Resto Luxury Mobile.png',
     },
   },
   luma: {
@@ -76,9 +76,9 @@ Best for: Comfort-first sleepers, pressure-sensitive users`,
       luxury: '/Luma Luxury.png',
     },
     mobileLayersImages: {
-      classic: '/Luma Classic mobile.png',
-      premium: '/Luma Premium mobile.png',
-      luxury: '/Luma Luxury mobile.png',
+      classic: '/Luma Classic Mobile.png',
+      premium: '/Luma Premium Mobile.png',
+      luxury: '/Luma Luxury Mobile.png',
     },
   },
   natura: {
@@ -110,8 +110,8 @@ Best for: Posture support + comfort balance, sleepers who want "support with bou
       natura2: '/Natura 2.0.png',
     },
     mobileLayersImages: {
-      natura1: '/Natura 1.0 mobile.png',
-      natura2: '/Natura 2.0 mobile.png',
+      natura1: '/Natura 1.0 Mobile.png',
+      natura2: '/Natura 2.0 Mobile.png',
     },
   },
   riva: {
@@ -151,10 +151,112 @@ Best for: Luxury comfort lovers, side sleepers`,
       riva3000: '/Riva3000.png',
     },
     mobileLayersImages: {
-      riva1000: '/Riva1000 mobile.png',
-      riva2000: '/Riva2000 mobile.png',
-      riva3000: '/Riva3000 mobile.png',
+      riva1000: '/Riva1000 Mobile.png',
+      riva2000: '/Riva2000 Mobile.png',
+      riva3000: '/Riva3000 Mobile.png',
     },
+  },
+}
+
+// Layer details for each product variant
+const layerDetails = {
+  resto: {
+    classic: [
+      { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+      { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+      { name: 'Pro Nexa Foam', description: 'Delivering lightweight stability, durability, and consistent orthopaedic base support.' },
+      { name: 'Enduro HR Foam', description: 'High-resilience foam providing durable comfort, elasticity, and stable pressure-responsive support.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+    premium: [
+      { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+      { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+      { name: 'Cosmic Byte Foam', description: 'Offering balanced comfort, responsive support, and long-lasting performance for everyday restful sleep.' },
+      { name: 'Pro Nexa Foam', description: 'Delivering lightweight stability, durability, and consistent orthopaedic base support.' },
+      { name: 'Enduro HR Foam', description: 'High-resilience foam providing durable comfort, elasticity, and stable pressure-responsive support.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+    luxury: [
+      { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+      { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+      { name: 'Memorest Foam', description: 'Body-contouring memory foam reducing pressure points and enhancing personalized comfort.' },
+      { name: 'Cosmic Byte Foam', description: 'Offering balanced comfort, responsive support, and long-lasting performance for everyday restful sleep.' },
+      { name: 'Pro Nexa Foam', description: 'Delivering lightweight stability, durability, and consistent orthopaedic base support.' },
+      { name: 'Enduro HR Foam', description: 'High-resilience foam providing durable comfort, elasticity, and stable pressure-responsive support.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+  },
+  luma: {
+    classic: [
+      { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+      { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+      { name: 'Pro Nexa Foam', description: 'Delivering lightweight stability, durability, and consistent orthopaedic base support.' },
+      { name: 'Vector Base Felt', description: 'High-density felt providing structural stability, load distribution, and long-lasting mattress durability.' },
+      { name: 'Hybrid Pocket Spring', description: 'Individually pocketed springs offering targeted support, motion isolation, and breathable comfort.' },
+      { name: 'Vector Base Felt', description: 'High-density felt providing structural stability, load distribution, and long-lasting mattress durability.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+    premium: [
+      { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+      { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+      { name: 'Pro Nexa Foam', description: 'Delivering lightweight stability, durability, and consistent orthopaedic base support.' },
+      { name: 'Vector Base Felt', description: 'High-density felt providing structural stability, load distribution, and long-lasting mattress durability.' },
+      { name: 'Hybrid Pocket Spring', description: 'Individually pocketed springs offering targeted support, motion isolation, and breathable comfort.' },
+      { name: 'Vector Base Felt', description: 'High-density felt providing structural stability, load distribution, and long-lasting mattress durability.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+    luxury: [
+      { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+      { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+      { name: 'Memorest Foam', description: 'Body-contouring memory foam reducing pressure points and enhancing personalized comfort.' },
+      { name: 'Pro Nexa Foam', description: 'Delivering lightweight stability, durability, and consistent orthopaedic base support.' },
+      { name: 'Vector Base Felt', description: 'High-density felt providing structural stability, load distribution, and long-lasting mattress durability.' },
+      { name: 'Hybrid Pocket Spring', description: 'Individually pocketed springs offering targeted support, motion isolation, and breathable comfort.' },
+      { name: 'Vector Base Felt', description: 'High-density felt providing structural stability, load distribution, and long-lasting mattress durability.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+  },
+  natura: {
+    natura1: [
+      { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+      { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+      { name: 'Pincore Latex Foam', description: 'Ventilated latex with pinholes ensuring airflow, responsiveness, and pressure-relieving comfort.' },
+      { name: 'Cloud Sense Foam', description: 'Plush and adaptive layer delivering cloud-like comfort and pressure relief.' },
+      { name: 'Zero G Latex Foam', description: 'Firm and supportive core layer delivering long-lasting orthopedic support and durability.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+    natura2: [
+      { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+      { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+      { name: '7 Zone Latex Foam', description: 'Seven-zone latex delivering targeted support and enhanced full-body spinal alignment.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+  },
+  riva: {
+    riva1000: [
+      { name: 'UltraLuxe Adaptive Knit Fabric', description: 'High-performance fabric engineered for superior breathability and an indulgently soft, skin-friendly feel that enhances overall sleep comfort.' },
+      { name: 'NubeSoave™', description: 'Advanced adaptive foam gently cradling the body, reducing pressure points, enhancing relaxation.' },
+      { name: 'Struttura Forte™M', description: 'Firm support layer ensuring stability, spinal alignment, and long-term mattress durability.' },
+      { name: 'FondoCore Italia™M', description: 'Robust base foam delivering foundational strength, motion control, and extended mattress life.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+    riva2000: [
+      { name: 'UltraLuxe Adaptive Knit Fabric', description: 'High-performance fabric engineered for superior breathability and an indulgently soft, skin-friendly feel that enhances overall sleep comfort.' },
+      { name: 'SetaComforto™M', description: 'Refined transition foam balancing plush comfort with responsive support and pressure distribution.' },
+      { name: 'NubeSoave™', description: 'Advanced adaptive foam gently cradling the body, reducing pressure points, enhancing relaxation.' },
+      { name: 'Struttura Forte™M', description: 'Firm support layer ensuring stability, spinal alignment, and long-term mattress durability.' },
+      { name: 'FondoCore Italia™', description: 'Robust base foam delivering foundational strength, motion control, and extended mattress life.' },
+      { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
+    riva3000: [
+      { name: 'UltraLuxe Adaptive Knit Fabric', description: 'High-performance fabric engineered for superior breathability and an indulgently soft, skin-friendly feel that enhances overall sleep comfort.' },
+      { name: 'SetaComforto™M', description: 'Refined transition foam balancing plush comfort with responsive support and pressure distribution.' },
+      { name: 'LussoMorbido™', description: 'High-resilience comfort foam delivering deep luxury softness with lasting structural integrity.' },
+      { name: 'NubeSoave™', description: 'Advanced adaptive foam gently cradling the body, reducing pressure points, enhancing relaxation.' },
+      { name: 'Struttura Forte™M', description: 'Firm support layer ensuring stability, spinal alignment, and long-term mattress durability.' },
+      { name: 'FondoCore Italia™', description: 'Robust base foam delivering foundational strength, motion control, and extended mattress life.' },
+      { name: 'Soft Foam Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+    ],
   },
 }
 
@@ -190,6 +292,14 @@ export default function ProductTopImage({ product, variant }: ProductTopImagePro
 
   const getMobileLayersImage = () => {
     return config.mobileLayersImages[variant as keyof typeof config.mobileLayersImages] || '/placeholder-layers-mobile.png'
+  }
+
+  const getLayers = () => {
+    const productLayers = layerDetails[product]
+    if (productLayers && variant in productLayers) {
+      return productLayers[variant as keyof typeof productLayers]
+    }
+    return []
   }
 
   const getDescription = () => {
@@ -385,6 +495,33 @@ export default function ProductTopImage({ product, variant }: ProductTopImagePro
               height={483}
               className="w-full h-auto object-cover"
             />
+          </div>
+
+          {/* Layer Details - Dropdowns */}
+          <div className="bg-white rounded-lg shadow-md p-4 space-y-3 max-w-md mx-auto">
+            <h3 className="font-bold text-[#39250E] text-lg mb-4 text-center">Layer Details</h3>
+
+            {getLayers().map((layer, index) => (
+              <details
+                key={index}
+                className={`group ${index < getLayers().length - 1 ? 'border-b border-gray-200 pb-3' : 'pb-3'}`}
+              >
+                <summary className="flex items-center justify-between cursor-pointer list-none">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
+                      <span className="text-white font-semibold text-sm">{index + 1}</span>
+                    </div>
+                    <h4 className="font-semibold text-[#39250E] text-sm">{layer.name}</h4>
+                  </div>
+                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
+                  {layer.description}
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>

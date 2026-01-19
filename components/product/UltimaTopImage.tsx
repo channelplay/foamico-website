@@ -27,6 +27,33 @@ Comfort Scale: Medium
 Best for: Long-term users, comfort + support seekers`,
 }
 
+const layerDetails = {
+  classic: [
+    { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+    { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+    { name: 'Cloud Sense Foam', description: 'Supportive latex foam ensuring spinal alignment, weight balance, and pressure-free comfort.' },
+    { name: 'Zero G Latex Foam', description: 'High-resilience foam providing durable comfort, elasticity, and stable pressure-responsive support.' },
+    { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+  ],
+  premium: [
+    { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+    { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+    { name: 'Cosmic Byte Foam', description: 'Offering balanced comfort, responsive support, and long-lasting performance for everyday restful sleep.' },
+    { name: 'Cloud Sense Foam', description: 'Plush and adaptive layer delivering cloud-like comfort and pressure relief.' },
+    { name: 'Zero G Latex Foam', description: 'Firm and supportive core layer delivering long-lasting orthopedic support and durability.' },
+    { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+  ],
+  luxury: [
+    { name: 'Luxnit Premium Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+    { name: 'Aeroflex Quilting', description: 'Breathable quilted layer providing enhanced softness, airflow and smooth surface comfort.' },
+    { name: 'Memorest Foam', description: 'Body-contouring memory foam reducing pressure points and enhancing personalized comfort.' },
+    { name: 'Cosmic Byte Foam', description: 'Offering balanced comfort, responsive support, and long-lasting performance for everyday restful sleep.' },
+    { name: 'Cloud Sense Foam', description: 'Plush and adaptive layer delivering cloud-like comfort and pressure relief.' },
+    { name: 'Zero G Latex Foam', description: 'Firm and supportive core layer delivering long-lasting orthopedic support and durability.' },
+    { name: 'Soft Foam Quilting', description: 'Cushioned foam quilting adding softness, pressure relief, and inviting surface comfort.' },
+  ],
+}
+
 export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImageProps) {
   const router = useRouter()
   const [selectedModel, setSelectedModel] = useState('ultima')
@@ -68,9 +95,9 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
 
   // Determine the layers image for mobile
   const getMobileLayersImage = () => {
-    if (variant === 'luxury') return '/Ultima Luxury mobile.png'
-    if (variant === 'premium') return '/Ultima Premium mobile.png'
-    return '/Ultima Classic mobile.png' // classic variant
+    if (variant === 'luxury') return '/Ultima Luxury Mobile.png'
+    if (variant === 'premium') return '/Ultima Premium Mobile.png'
+    return '/Ultima Classic Mobile.png' // classic variant
   }
 
   const handleModelChange = (model: string) => {
@@ -280,323 +307,28 @@ export default function UltimaTopImage({ variant = 'classic' }: UltimaTopImagePr
         {/* Layers Description - Individual Dropdowns */}
         <div className="bg-white rounded-lg shadow-md p-4 space-y-3 max-w-md mx-auto">
           <h3 className="font-bold text-[#39250E] text-lg mb-4 text-center">Layer Details</h3>
-          
-          {variant === 'classic' ? (
-            <>
-              {/* Ultima Classic Layers - 5 layers */}
-              {/* Layer 1 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">1</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Super Plush Luxeknit Fabric</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Soft, breathable stretch-knit fabric for a smooth, luxurious surface.
-                </div>
-              </details>
 
-              {/* Layer 2 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">2</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Aeroflex Foam Quilt</h4>
+          {layerDetails[variant].map((layer, index) => (
+            <details
+              key={index}
+              className={`group ${index < layerDetails[variant].length - 1 ? 'border-b border-gray-200 pb-3' : 'pb-3'}`}
+            >
+              <summary className="flex items-center justify-between cursor-pointer list-none">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
+                    <span className="text-white font-semibold text-sm">{index + 1}</span>
                   </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Plush cushioning layer offering softness and contouring support.
+                  <h4 className="font-semibold text-[#39250E] text-sm">{layer.name}</h4>
                 </div>
-              </details>
-
-              {/* Layer 3 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">3</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Cloud Sense Foam</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Adaptive comfort layer delivering cloud-like support and pressure relief.
-                </div>
-              </details>
-
-              {/* Layer 4 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">4</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Zero G Latex Foam</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Firm orthopedic core for spine support and long-lasting stability.
-                </div>
-              </details>
-
-              {/* Layer 5 */}
-              <details className="group pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">5</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Soft Foam with Quilt</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Balanced cushioning for cozy, restorative comfort.
-                </div>
-              </details>
-            </>
-          ) : variant === 'premium' ? (
-            <>
-              {/* Ultima Premium Layers - 6 layers */}
-              {/* Layer 1 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">1</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Super Plush Luxeknit Fabric</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Stretch-knit luxury fabric for breathable softness and durability.
-                </div>
-              </details>
-
-              {/* Layer 2 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">2</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Aeroflex Foam Quilt</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Soft, cushioned layer with gentle contouring comfort.
-                </div>
-              </details>
-
-              {/* Layer 3 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">3</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Pulse Core Foam</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Body-adaptive layer reducing pressure points for personalized comfort.
-                </div>
-              </details>
-
-              {/* Layer 4 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">4</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Cloud Sense Foam</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Responsive foam delivering cloud-like softness and adaptive support.
-                </div>
-              </details>
-
-              {/* Layer 5 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">5</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Zero G Latex Foam</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Firm, orthopedic base for long-lasting durability.
-                </div>
-              </details>
-
-              {/* Layer 6 */}
-              <details className="group pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">6</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Soft Foam with Quilt</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Final layer of cushioning for enhanced comfort.
-                </div>
-              </details>
-            </>
-          ) : (
-            <>
-              {/* Ultima Luxury Layers - 6 layers */}
-              {/* Layer 1 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">1</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Super Plush Luxeknit Fabric</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Premium breathable knit fabric for a smooth, luxurious feel.
-                </div>
-              </details>
-
-              {/* Layer 2 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">2</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Aeroflex Foam Quilt</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Soft cushioning that enhances plush comfort.
-                </div>
-              </details>
-
-              {/* Layer 3 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">3</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Memorest Foam Quilt</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Memory-adaptive foam offering deep contouring and personalized support.
-                </div>
-              </details>
-
-              {/* Layer 4 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">4</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Cloud Sense Foam</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Adaptive foam layer providing cloud-like comfort and pressure relief.
-                </div>
-              </details>
-
-              {/* Layer 5 */}
-              <details className="group border-b border-gray-200 pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">5</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Zero G Latex Foam</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Orthopedic support core ensuring spinal alignment.
-                </div>
-              </details>
-
-              {/* Layer 6 */}
-              <details className="group pb-3">
-                <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">6</span>
-                    </div>
-                    <h4 className="font-semibold text-[#39250E] text-sm">Soft Foam with Quilt</h4>
-                  </div>
-                  <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-                  Cozy cushioning base for complete sleeping comfort.
-                </div>
-              </details>
-            </>
-          )}
+                <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
+                {layer.description}
+              </div>
+            </details>
+          ))}
         </div>
       </div>
     </section>

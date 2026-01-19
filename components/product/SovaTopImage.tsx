@@ -27,6 +27,33 @@ Comfort Scale: Medium
 Best for: Side sleepers, comfort-first buyers`,
 }
 
+const layerDetails = {
+  classic: [
+    { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+    { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+    { name: 'Plush Core Latex Foam', description: 'Conforms to body contours, reducing pressure points and enhancing personalized comfort.' },
+    { name: 'Posture Bond Foam', description: 'High-density bonded foam delivering firm orthopedic support and superior durability.' },
+    { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+  ],
+  premium: [
+    { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+    { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+    { name: 'Cosmic Byte Foam', description: 'Offering balanced comfort, responsive support, and long-lasting performance for everyday restful sleep.' },
+    { name: 'Plush Core Latex Foam', description: 'Plush and adaptive layer delivering cloud-like comfort and pressure relief.' },
+    { name: 'Posture Bond Foam', description: 'High-density bonded foam delivering firm orthopedic support and superior durability.' },
+    { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+  ],
+  luxury: [
+    { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
+    { name: 'Aeroflex Foam Quilting', description: 'Cushioned comfort layer offering enhanced softness and gentle contouring support.' },
+    { name: 'Memorest Foam', description: 'Body-contouring memory foam reducing pressure points and enhancing personalized comfort.' },
+    { name: 'Cosmic Byte Foam', description: 'Offering balanced comfort, responsive support, and long-lasting performance for everyday restful sleep.' },
+    { name: 'Plush Core Latex Foam', description: 'Plush and adaptive layer delivering cloud-like comfort and pressure relief.' },
+    { name: 'Posture Bond Foam', description: 'High-density bonded foam delivering firm orthopedic support and superior durability.' },
+    { name: 'Soft Foam with Quilting', description: 'Additional cushioning for enhanced comfort and a cozy sleeping experience.' },
+  ],
+}
+
 export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps) {
   const router = useRouter()
   const [selectedModel, setSelectedModel] = useState('sova')
@@ -68,9 +95,9 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
 
   // Determine the layers image for mobile
   const getMobileLayersImage = () => {
-    if (variant === 'luxury') return '/Sova Luxury mobile.png'
-    if (variant === 'premium') return '/Sova Premium mobile.png'
-    return '/Sova Classic mobile.png' // classic variant
+    if (variant === 'luxury') return '/Sova Luxury Mobile.png'
+    if (variant === 'premium') return '/Sova Premium Mobile.png'
+    return '/Sova Classic Mobile.png' // classic variant
   }
 
   const handleModelChange = (model: string) => {
@@ -280,100 +307,28 @@ export default function SovaTopImage({ variant = 'classic' }: SovaTopImageProps)
         {/* Layers Description - Individual Dropdowns */}
         <div className="bg-white rounded-lg shadow-md p-4 space-y-3 max-w-md mx-auto">
           <h3 className="font-bold text-[#39250E] text-lg mb-4 text-center">Layer Details</h3>
-          
-          {/* Layer 1 */}
-          <details className="group border-b border-gray-200 pb-3">
-            <summary className="flex items-center justify-between cursor-pointer list-none">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">1</span>
-                </div>
-                <h4 className="font-semibold text-[#39250E] text-sm">Super Plush Luxeknit Fabric</h4>
-              </div>
-              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-              Premium Luxeknit fabric provides exceptional comfort and breathability for a luxurious sleep experience.
-            </div>
-          </details>
 
-          {/* Layer 2 */}
-          <details className="group border-b border-gray-200 pb-3">
-            <summary className="flex items-center justify-between cursor-pointer list-none">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">2</span>
+          {layerDetails[variant].map((layer, index) => (
+            <details
+              key={index}
+              className={`group ${index < layerDetails[variant].length - 1 ? 'border-b border-gray-200 pb-3' : 'pb-3'}`}
+            >
+              <summary className="flex items-center justify-between cursor-pointer list-none">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
+                    <span className="text-white font-semibold text-sm">{index + 1}</span>
+                  </div>
+                  <h4 className="font-semibold text-[#39250E] text-sm">{layer.name}</h4>
                 </div>
-                <h4 className="font-semibold text-[#39250E] text-sm">{variant === 'premium' || variant === 'luxury' ? 'Memorest Foam Quilt' : 'Aeroflex Foam Quilt'}</h4>
+                <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
+                {layer.description}
               </div>
-              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-              {variant === 'premium' || variant === 'luxury'
-                ? 'Memory-adaptive foam offering deep contouring and personalized support for premium comfort.'
-                : 'Advanced Aeroflex foam quilting provides optimal pressure relief and temperature regulation.'}
-            </div>
-          </details>
-
-          {/* Layer 3 */}
-          <details className="group border-b border-gray-200 pb-3">
-            <summary className="flex items-center justify-between cursor-pointer list-none">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">3</span>
-                </div>
-                <h4 className="font-semibold text-[#39250E] text-sm">Pulse Core Foam</h4>
-              </div>
-              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-              Pulse Core technology adapts to your body contours, providing targeted support where you need it most.
-            </div>
-          </details>
-
-          {/* Layer 4 */}
-          <details className="group border-b border-gray-200 pb-3">
-            <summary className="flex items-center justify-between cursor-pointer list-none">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">4</span>
-                </div>
-                <h4 className="font-semibold text-[#39250E] text-sm">{variant === 'luxury' ? 'Zero G Latex Foam' : 'Bondtech Support Foam'}</h4>
-              </div>
-              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-              {variant === 'luxury' 
-                ? 'Orthopedic support core ensuring optimal spinal alignment and long-lasting durability.'
-                : 'High-density Bondtech foam ensures long-lasting durability and consistent support throughout the mattress life.'}
-            </div>
-          </details>
-
-          {/* Layer 5 */}
-          <details className="group pb-3">
-            <summary className="flex items-center justify-between cursor-pointer list-none">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-[#4C6462] rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">5</span>
-                </div>
-                <h4 className="font-semibold text-[#39250E] text-sm">Support Foam Quilt</h4>
-              </div>
-              <svg className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <div className="mt-3 ml-11 text-sm text-[#39250E]/70">
-              Foundation support foam quilt provides stable base support and enhances mattress longevity.
-            </div>
-          </details>
+            </details>
+          ))}
         </div>
       </div>
     </section>
