@@ -5,6 +5,12 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 
+// Layer type definition
+interface LayerInfo {
+  name: string
+  description: string
+}
+
 // Product configurations
 const productConfig = {
   resto: {
@@ -159,7 +165,7 @@ Best for: Luxury comfort lovers, side sleepers`,
 }
 
 // Layer details for each product variant
-const layerDetails = {
+const layerDetails: Record<string, Record<string, LayerInfo[]>> = {
   resto: {
     classic: [
       { name: 'Super Plush Luxeknit Fabric', description: 'Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.' },
@@ -294,10 +300,10 @@ export default function ProductTopImage({ product, variant }: ProductTopImagePro
     return config.mobileLayersImages[variant as keyof typeof config.mobileLayersImages] || '/placeholder-layers-mobile.png'
   }
 
-  const getLayers = () => {
+  const getLayers = (): LayerInfo[] => {
     const productLayers = layerDetails[product]
     if (productLayers && variant in productLayers) {
-      return productLayers[variant as keyof typeof productLayers]
+      return productLayers[variant] || []
     }
     return []
   }
