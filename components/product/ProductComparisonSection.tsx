@@ -9,52 +9,48 @@ const comparisonConfigs = {
     name: 'Resto',
     columns: ['Classic', 'Premium', 'Luxury'],
     data: [
-      { feature: 'Top Fabric', classic: 'Luxeknit Fabric', premium: 'Luxeknit Fabric', luxury: 'Luxeknit Fabric' },
-      { feature: 'Comfort Layer', classic: 'Aeroflex Foam Quilt', premium: 'Memorest Foam Quilt', luxury: 'Memorest Foam Quilt' },
-      { feature: 'Body Support Layer', classic: 'Pulse Core Foam', premium: 'Pulse Core Foam', luxury: 'Pulse Core Foam' },
-      { feature: 'Main Support', classic: 'Bondtech Support Foam', premium: 'Bondtech Support Foam', luxury: 'Zero G Latex Foam' },
-      { feature: 'Bottom Layer', classic: 'Support Foam Quilt', premium: 'Support Foam Quilt', luxury: 'Soft Foam with Quilt' },
-      { feature: 'Best For', classic: 'Basic orthopedic comfort', premium: 'Memory foam comfort with support', luxury: 'Premium feel with latex durability' },
-      { feature: 'Warranty', classic: '10 Years', premium: '10 Years', luxury: '25 Years' },
+      { feature: 'Top Fabric', classic: 'Super Plush Luxeknit Fabric', premium: 'Super Plush Luxeknit Fabric', luxury: 'Super Plush Luxeknit Fabric' },
+      { feature: 'Comfort Layer', classic: 'Aeroflex Foam Quilting', premium: 'Aeroflex Foam Quilting', luxury: 'Aeroflex Foam Quilting' },
+      { feature: 'Body Support Layer', classic: 'Pro Nexa Foam', premium: 'Cosmic Byte Foam', luxury: 'Memorest Foam + Cosmic Byte Foam' },
+      { feature: 'Main Support', classic: 'Enduro HR Foam', premium: 'Enduro HR Foam', luxury: 'Enduro HR Foam' },
+      { feature: 'Bottom Layer', classic: 'Soft Foam with Quilting', premium: 'Soft Foam with Quilting', luxury: 'Soft Foam with Quilting' },
+      { feature: 'Warranty', classic: '10 Years Warranty +\n5 Years Full Replacement*', premium: '10 Years Warranty +\n5 Years Full Replacement*', luxury: '10 Years Warranty +\n5 Years Full Replacement*' },
     ],
   },
   luma: {
     name: 'Luma',
     columns: ['Classic', 'Premium', 'Luxury'],
     data: [
-      { feature: 'Top Fabric', classic: 'Luxeknit Fabric', premium: 'Luxeknit Fabric', luxury: 'Luxeknit Fabric' },
-      { feature: 'Comfort Layer', classic: 'Aeroflex Foam Quilt', premium: 'Memorest Foam Quilt', luxury: 'Memorest Foam Quilt' },
-      { feature: 'Body Support Layer', classic: 'Pulse Core Foam', premium: 'Pulse Core Foam', luxury: 'Pulse Core Foam' },
-      { feature: 'Main Support', classic: 'Bondtech Support Foam', premium: 'Bondtech Support Foam', luxury: 'Zero G Latex Foam' },
-      { feature: 'Bottom Layer', classic: 'Support Foam Quilt', premium: 'Support Foam Quilt', luxury: 'Soft Foam with Quilt' },
-      { feature: 'Best For', classic: 'Basic orthopedic comfort', premium: 'Memory foam comfort with support', luxury: 'Premium feel with latex durability' },
-      { feature: 'Warranty', classic: '10 Years', premium: '10 Years', luxury: '25 Years' },
+      { feature: 'Top Fabric', classic: 'Super Plush Luxeknit Fabric', premium: 'Super Plush Luxeknit Fabric', luxury: 'Super Plush Luxeknit Fabric' },
+      { feature: 'Comfort Layer', classic: 'Aeroflex Foam Quilting', premium: 'Aeroflex Foam Quilting', luxury: 'Aeroflex Foam Quilting' },
+      { feature: 'Body Support Layer', classic: 'Pro Nexa Foam', premium: 'Pro Nexa Foam', luxury: 'Memorest Foam + Pro Nexa Foam' },
+      { feature: 'Main Support', classic: 'Hybrid Pocket Spring', premium: 'Hybrid Pocket Spring', luxury: 'Hybrid Pocket Spring' },
+      { feature: 'Bottom Layer', classic: 'Vector Base Felt + Soft Foam with Quilting', premium: 'Vector Base Felt + Soft Foam with Quilting', luxury: 'Vector Base Felt + Soft Foam with Quilting' },
+      { feature: 'Warranty', classic: '7 Years Warranty +\n5 Years Full Replacement*', premium: '7 Years Warranty +\n5 Years Full Replacement*', luxury: '7 Years Warranty +\n5 Years Full Replacement*' },
     ],
   },
   natura: {
     name: 'Natura',
     columns: ['Natura 1.0', 'Natura 2.0'],
     data: [
-      { feature: 'Top Fabric', col1: 'Natural Cotton Fabric', col2: 'Organic Cotton Fabric' },
-      { feature: 'Comfort Layer', col1: 'Natural Latex Quilt', col2: 'Premium Natural Latex' },
-      { feature: 'Body Support Layer', col1: 'Eco Foam Core', col2: 'Advanced Eco Foam' },
-      { feature: 'Main Support', col1: 'Natural Support Foam', col2: 'Organic Support Foam' },
-      { feature: 'Bottom Layer', col1: 'Eco Base Layer', col2: 'Premium Eco Base' },
-      { feature: 'Best For', col1: 'Eco-conscious comfort', col2: 'Premium natural sleep' },
-      { feature: 'Warranty', col1: '10 Years', col2: '15 Years' },
+      { feature: 'Top Fabric', col1: 'Super Plush Luxeknit Fabric', col2: 'Super Plush Luxeknit Fabric' },
+      { feature: 'Comfort Layer', col1: 'Aeroflex Foam Quilting', col2: 'Aeroflex Foam Quilting' },
+      { feature: 'Body Support Layer', col1: 'Pincore Latex Foam + Cloud Sense Foam', col2: '7 Zone Latex Foam' },
+      { feature: 'Main Support', col1: 'Zero G Latex Foam', col2: '-' },
+      { feature: 'Bottom Layer', col1: 'Soft Foam with Quilting', col2: 'Soft Foam with Quilting' },
+      { feature: 'Warranty', col1: '25 Years Warranty +\n5 Years Full Replacement*', col2: '25 Years Warranty +\n5 Years Full Replacement*' },
     ],
   },
   riva: {
     name: 'Riva',
-    columns: ['Riva1000', 'Riva2000', 'Riva3000'],
+    columns: ['RIVA 1000', 'RIVA 2000', 'RIVA 3000'],
     data: [
-      { feature: 'Top Fabric', col1: 'Luxeknit Fabric', col2: 'Premium Luxeknit', col3: 'Ultra Luxeknit' },
-      { feature: 'Comfort Layer', col1: 'Aeroflex Foam', col2: 'Memorest Foam', col3: 'Advanced Memorest' },
-      { feature: 'Body Support Layer', col1: 'Core Foam', col2: 'Pulse Core Foam', col3: 'Advanced Pulse Core' },
-      { feature: 'Main Support', col1: 'Support Foam', col2: 'Bondtech Foam', col3: 'Zero G Latex Foam' },
-      { feature: 'Bottom Layer', col1: 'Base Foam', col2: 'Support Quilt', col3: 'Premium Quilt' },
-      { feature: 'Best For', col1: 'Essential comfort', col2: 'Enhanced support', col3: 'Ultimate luxury' },
-      { feature: 'Warranty', col1: '7 Years', col2: '10 Years', col3: '25 Years' },
+      { feature: 'Top Fabric', col1: 'UltraLuxe Adaptive Knit Fabric', col2: 'UltraLuxe Adaptive Knit Fabric', col3: 'UltraLuxe Adaptive Knit Fabric' },
+      { feature: 'Comfort Layer', col1: 'NubeSoave™', col2: 'SetaComfort™', col3: 'SetaComfort™' },
+      { feature: 'Body Support Layer', col1: 'Struttura Forte™', col2: 'NubeSoave™ + Struttura Forte™', col3: 'LussoMorbido™ + NubeSoave™ + Struttura Forte™' },
+      { feature: 'Main Support', col1: 'FondoCore Italia™', col2: 'FondoCore Italia™', col3: 'FondoCore Italia™' },
+      { feature: 'Bottom Layer', col1: 'Soft Foam with Quilting', col2: 'Soft Foam with Quilting', col3: 'Soft Foam with Quilting' },
+      { feature: 'Warranty', col1: '30 Years Warranty +\n5 Years Full Replacement*', col2: '30 Years Warranty +\n5 Years Full Replacement*', col3: '30 Years Warranty +\n5 Years Full Replacement*' },
     ],
   },
 }
@@ -132,36 +128,36 @@ export default function ProductComparisonSection({ product }: ProductComparisonS
                     </td>
                     {config.columns.length === 3 && 'classic' in row && (
                       <>
-                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                           {(row as { classic: string }).classic}
                         </td>
-                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                           {(row as { premium: string }).premium}
                         </td>
-                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                           {(row as { luxury: string }).luxury}
                         </td>
                       </>
                     )}
                     {config.columns.length === 2 && 'col1' in row && (
                       <>
-                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                           {(row as { col1: string }).col1}
                         </td>
-                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                           {(row as { col2: string }).col2}
                         </td>
                       </>
                     )}
                     {config.columns.length === 3 && 'col1' in row && (
                       <>
-                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                           {(row as { col1: string }).col1}
                         </td>
-                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                           {(row as { col2: string }).col2}
                         </td>
-                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                        <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                           {(row as { col3: string }).col3}
                         </td>
                       </>
@@ -170,6 +166,40 @@ export default function ProductComparisonSection({ product }: ProductComparisonS
                 ))}
               </tbody>
             </table>
+          </div>
+        </motion.div>
+
+        {/* CTA Banner */}
+        <motion.div
+          className="mt-12 md:mt-16 bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center border border-[#AD702A]/10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-[#39250E] mb-4">
+            Not Sure Which One to Pick?
+          </h2>
+          <p className="text-base md:text-lg text-[#39250E]/70 mb-8 max-w-2xl mx-auto">
+            Use our comparison tool to find the perfect mattress for your needs, or visit our store to try them in person.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.a
+              href="/products/compare"
+              className="inline-flex items-center justify-center gap-3 bg-[#4C6462] text-white border-none font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#3d504e] rounded-xl text-sm lg:text-base"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Compare Products
+            </motion.a>
+            <motion.a
+              href="/find-store"
+              className="inline-flex items-center justify-center gap-3 bg-transparent text-[#4C6462] border-2 border-[#4C6462] font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#4C6462] hover:text-white rounded-xl text-sm lg:text-base"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Visit a Store
+            </motion.a>
           </div>
         </motion.div>
       </Container>

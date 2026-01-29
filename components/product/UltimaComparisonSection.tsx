@@ -7,21 +7,21 @@ export default function UltimaComparisonSection() {
   const comparisonData = [
     {
       feature: 'Top Fabric',
-      classic: 'Luxeknit Fabric',
-      premium: 'Luxeknit Fabric',
-      luxury: 'Luxeknit Fabric'
+      classic: 'Super Plush Luxeknit Fabric',
+      premium: 'Super Plush Luxeknit Fabric',
+      luxury: 'Super Plush Luxeknit Fabric'
     },
     {
       feature: 'Comfort Layer',
-      classic: 'Aeroflex Foam Quilt',
-      premium: 'Aeroflex Foam Quilt',
-      luxury: 'Aeroflex Foam Quilt'
+      classic: 'Aeroflex Foam Quilting',
+      premium: 'Aeroflex Foam Quilting',
+      luxury: 'Aeroflex Foam Quilting'
     },
     {
-      feature: 'Adaptive Layer',
+      feature: 'Body Support Layer',
       classic: 'Cloud Sense Foam',
-      premium: 'Pulse Core + Cloud Sense',
-      luxury: 'Memorest + Cloud Sense'
+      premium: 'Cosmic Byte Foam + Cloud Sense Foam',
+      luxury: 'Memorest Foam + Cosmic Byte Foam + Cloud Sense Foam'
     },
     {
       feature: 'Main Support',
@@ -31,21 +31,15 @@ export default function UltimaComparisonSection() {
     },
     {
       feature: 'Bottom Layer',
-      classic: 'Soft Foam with Quilt',
-      premium: 'Soft Foam with Quilt',
-      luxury: 'Soft Foam with Quilt'
-    },
-    {
-      feature: 'Best For',
-      classic: 'Cloud-like comfort seekers',
-      premium: 'Balanced softness with support',
-      luxury: 'Ultimate plush experience'
+      classic: 'Soft Foam with Quilting',
+      premium: 'Soft Foam with Quilting',
+      luxury: 'Soft Foam with Quilting'
     },
     {
       feature: 'Warranty',
-      classic: '25 Years',
-      premium: '25 Years',
-      luxury: '25 Years'
+      classic: '25 Years Warranty +\n5 Years Full Replacement*',
+      premium: '25 Years Warranty +\n5 Years Full Replacement*',
+      luxury: '25 Years Warranty +\n5 Years Full Replacement*'
     }
   ]
 
@@ -119,13 +113,13 @@ export default function UltimaComparisonSection() {
                     <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 font-semibold border-r-2 border-hermes-gold/20 text-xs md:text-sm lg:text-[15px] text-[#39250E]">
                       {row.feature}
                     </td>
-                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                       {row.classic}
                     </td>
-                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                       {row.premium}
                     </td>
-                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80">
+                    <td className="px-3 md:px-4 lg:px-6 py-3 md:py-4 lg:py-5 text-center text-xs md:text-sm lg:text-[15px] text-[#39250E]/80 whitespace-pre-line">
                       {row.luxury}
                     </td>
                   </motion.tr>
@@ -135,6 +129,39 @@ export default function UltimaComparisonSection() {
           </div>
         </motion.div>
 
+        {/* CTA Banner */}
+        <motion.div
+          className="mt-12 md:mt-16 bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center border border-[#AD702A]/10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-[#39250E] mb-4">
+            Not Sure Which One to Pick?
+          </h2>
+          <p className="text-base md:text-lg text-[#39250E]/70 mb-8 max-w-2xl mx-auto">
+            Use our comparison tool to find the perfect mattress for your needs, or visit our store to try them in person.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.a
+              href="/products/compare"
+              className="inline-flex items-center justify-center gap-3 bg-[#4C6462] text-white border-none font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#3d504e] rounded-xl text-sm lg:text-base"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Compare Products
+            </motion.a>
+            <motion.a
+              href="/find-store"
+              className="inline-flex items-center justify-center gap-3 bg-transparent text-[#4C6462] border-2 border-[#4C6462] font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#4C6462] hover:text-white rounded-xl text-sm lg:text-base"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Visit a Store
+            </motion.a>
+          </div>
+        </motion.div>
       </Container>
     </section>
   )

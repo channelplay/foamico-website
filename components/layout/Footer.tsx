@@ -27,13 +27,17 @@ export default function Footer() {
       { name: 'Natura 1.0', href: '/products/natura1' },
       { name: 'Natura 2.0', href: '/products/natura2' },
       // Riva
-      { name: 'Riva1000', href: '/products/riva1000' },
-      { name: 'Riva2000', href: '/products/riva2000' },
-      { name: 'Riva3000', href: '/products/riva3000' },
+      { name: 'Riva 1000', href: '/products/riva1000' },
+      { name: 'Riva 2000', href: '/products/riva2000' },
+      { name: 'Riva 3000', href: '/products/riva3000' },
     ],
     company: [
       { name: 'About Us', href: '/about' },
       { name: 'Contact', href: '/contact' },
+    ],
+    quickLinks: [
+      { name: 'Store Locator', href: '/find-store' },
+      { name: 'Compare Mattresses', href: '/products/compare' },
     ],
   }
 
@@ -41,9 +45,9 @@ export default function Footer() {
     <footer className="bg-[#342917] text-[#f5f0e8] border-t border-[#342917]/20">
       <Container>
         <div className="py-8 md:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8">
             {/* Brand Section */}
-            <div>
+            <div className="lg:col-span-3">
               <div className="mb-6">
                 <div className="bg-white rounded-lg p-3 inline-block">
                   <Image
@@ -65,12 +69,69 @@ export default function Footer() {
             </div>
 
             {/* Products */}
-            <div>
+            <div className="lg:col-span-5">
               <h3 className="text-sm font-semibold text-[#f5f0e8] mb-4 uppercase tracking-wider">
                 Products
               </h3>
-              <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
-                {footerLinks.products.map((link) => (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4">
+                <div>
+                  <h4 className="text-xs font-semibold text-[#f5f0e8]/60 mb-2 uppercase tracking-wider">Resto</h4>
+                  <ul className="space-y-2">
+                    {footerLinks.products.filter(l => l.name.startsWith('Resto')).map((link) => (
+                      <li key={link.name}><Link href={link.href} className="text-sm text-[#d4c4a8] hover:text-[#f5f0e8] transition-colors duration-200">{link.name}</Link></li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xs font-semibold text-[#f5f0e8]/60 mb-2 uppercase tracking-wider">Sova</h4>
+                  <ul className="space-y-2">
+                    {footerLinks.products.filter(l => l.name.startsWith('Sova')).map((link) => (
+                      <li key={link.name}><Link href={link.href} className="text-sm text-[#d4c4a8] hover:text-[#f5f0e8] transition-colors duration-200">{link.name}</Link></li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xs font-semibold text-[#f5f0e8]/60 mb-2 uppercase tracking-wider">Luma</h4>
+                  <ul className="space-y-2">
+                    {footerLinks.products.filter(l => l.name.startsWith('Luma')).map((link) => (
+                      <li key={link.name}><Link href={link.href} className="text-sm text-[#d4c4a8] hover:text-[#f5f0e8] transition-colors duration-200">{link.name}</Link></li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xs font-semibold text-[#f5f0e8]/60 mb-2 uppercase tracking-wider">Ultima</h4>
+                  <ul className="space-y-2">
+                    {footerLinks.products.filter(l => l.name.startsWith('Ultima')).map((link) => (
+                      <li key={link.name}><Link href={link.href} className="text-sm text-[#d4c4a8] hover:text-[#f5f0e8] transition-colors duration-200">{link.name}</Link></li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xs font-semibold text-[#f5f0e8]/60 mb-2 uppercase tracking-wider">Natura</h4>
+                  <ul className="space-y-2">
+                    {footerLinks.products.filter(l => l.name.startsWith('Natura')).map((link) => (
+                      <li key={link.name}><Link href={link.href} className="text-sm text-[#d4c4a8] hover:text-[#f5f0e8] transition-colors duration-200">{link.name}</Link></li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xs font-semibold text-[#f5f0e8]/60 mb-2 uppercase tracking-wider">Riva</h4>
+                  <ul className="space-y-2">
+                    {footerLinks.products.filter(l => l.name.startsWith('Riva')).map((link) => (
+                      <li key={link.name}><Link href={link.href} className="text-sm text-[#d4c4a8] hover:text-[#f5f0e8] transition-colors duration-200">{link.name}</Link></li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Company */}
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-semibold text-[#f5f0e8] mb-4 uppercase tracking-wider">
+                Company
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.company.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
@@ -83,13 +144,13 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Company */}
-            <div>
+            {/* Quick Links */}
+            <div className="lg:col-span-2">
               <h3 className="text-sm font-semibold text-[#f5f0e8] mb-4 uppercase tracking-wider">
-                Company
+                Quick Links
               </h3>
               <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
+                {footerLinks.quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}

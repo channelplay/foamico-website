@@ -142,9 +142,9 @@ Best for: Luxury comfort lovers, side sleepers`,
     },
     variants: ['riva1000', 'riva2000', 'riva3000'],
     variantLabels: {
-      riva1000: 'Riva1000',
-      riva2000: 'Riva2000',
-      riva3000: 'Riva3000',
+      riva1000: 'Riva 1000',
+      riva2000: 'Riva 2000',
+      riva3000: 'Riva 3000',
     },
     heroImages: {
       riva1000: '/Riva.png',

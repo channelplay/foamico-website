@@ -1,232 +1,160 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { motion } from 'framer-motion'
 import Container from '@/components/ui/Container'
-import Card from '@/components/ui/Card'
-import Button from '@/components/ui/Button'
-import Badge from '@/components/ui/Badge'
+import { Phone, MapPin, Clock, Navigation } from 'lucide-react'
 import { stores } from '@/data/stores'
 
 export default function StoreLocator() {
-  const [selectedCity, setSelectedCity] = useState<string>('all')
-  const [selectedStore, setSelectedStore] = useState<string | null>(null)
-
-  const cities = useMemo(() => {
-    const uniqueCities = [...new Set(stores.map(store => store.city))]
-    return ['all', ...uniqueCities.sort()]
-  }, [])
-
-  const filteredStores = useMemo(() => {
-    if (selectedCity === 'all') return stores
-    return stores.filter(store => store.city === selectedCity)
-  }, [selectedCity])
-
-  const handleStoreSelect = (storeId: string) => {
-    setSelectedStore(storeId === selectedStore ? null : storeId)
-  }
+  const store = stores[0]
 
   return (
-    <div className="py-8 lg:py-12">
+    <section className="min-h-screen py-16 md:py-24 font-fira" style={{ backgroundColor: '#e9e4cd' }}>
       <Container>
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold text-foamico-black mb-4">
-            Find Your Nearest Store
+        <motion.div
+          className="text-center mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-8 md:w-12 h-[1px] bg-[#AD702A]" />
+            <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-[#AD702A] font-semibold">
+              Visit Us
+            </span>
+            <div className="w-8 md:w-12 h-[1px] bg-[#AD702A]" />
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-[#39250E] mb-4 md:mb-6 px-4">
+            Our Store
           </h1>
-          <p className="text-lg text-foamico-gray-600 max-w-2xl mx-auto">
-            Visit our stores to experience Foamico mattresses in person. 
+          <p className="text-base sm:text-lg md:text-xl text-[#39250E]/80 max-w-2xl mx-auto px-4">
+            Visit our store to experience Foamico mattresses in person.
             Our sleep experts are ready to help you find your perfect match.
           </p>
-        </div>
+        </motion.div>
 
-        {/* City Filter */}
-        <div className="mb-8">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {cities.map((city) => (
-              <button
-                key={city}
-                onClick={() => setSelectedCity(city)}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  selectedCity === city
-                    ? 'bg-foamico-lime text-white'
-                    : 'bg-foamico-gray-100 text-foamico-gray-700 hover:bg-foamico-gray-200'
-                }`}
-              >
-                {city === 'all' ? 'All Cities' : city}
-              </button>
-            ))}
-          </div>
-        </div>
+        {/* Store Info + Map */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16 md:mb-20">
+          {/* Store Details */}
+          <motion.div
+            className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#AD702A]/10"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h3 className="text-xl md:text-2xl font-bold text-[#39250E] mb-6">
+              {store.name}
+            </h3>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Store List */}
-          <div className="space-y-4 max-h-[800px] overflow-y-auto">
-            {filteredStores.map((store) => (
-              <Card
-                key={store.id}
-                className={`cursor-pointer transition-all ${
-                  selectedStore === store.id
-                    ? 'ring-2 ring-foamico-lime shadow-lg'
-                    : 'hover:shadow-md'
-                }`}
-                onClick={() => handleStoreSelect(store.id)}
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-semibold text-foamico-black">
-                    {store.name}
-                  </h3>
-                  {selectedStore === store.id && (
-                    <Badge variant="primary" size="small">
-                      Selected
-                    </Badge>
-                  )}
-                </div>
-                
-                <p className="text-foamico-gray-600 mb-2">
-                  {store.address}, {store.city} - {store.pincode}
+            <div className="space-y-4 mb-8">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-[#AD702A] mt-0.5 flex-shrink-0" />
+                <p className="text-sm md:text-base text-[#39250E]/80">
+                  {store.address}, {store.city}, {store.state} - {store.pincode}
                 </p>
-                
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <span className="text-foamico-lime">📞</span>
-                    <a 
-                      href={`tel:${store.phone}`}
-                      className="text-foamico-gray-700 hover:text-foamico-lime"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {store.phone}
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-foamico-lime">⏰</span>
-                    <span className="text-foamico-gray-700">{store.timings}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-foamico-lime">✉️</span>
-                    <a 
-                      href={`mailto:${store.email}`}
-                      className="text-foamico-gray-700 hover:text-foamico-lime"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {store.email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {store.features.map((feature) => (
-                    <span
-                      key={feature}
-                      className="text-xs px-3 py-1 bg-foamico-gray-100 text-foamico-gray-600 rounded-full"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-4 flex gap-3">
-                  <Button
-                    href={`https://maps.google.com/?q=${store.coordinates.lat},${store.coordinates.lng}`}
-                    target="_blank"
-                    size="small"
-                    variant="outline"
-                    className="flex-1"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Get Directions
-                  </Button>
-                  <Button
-                    href={`tel:${store.phone}`}
-                    size="small"
-                    className="flex-1"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Call Store
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          {/* Map Placeholder */}
-          <div className="lg:sticky lg:top-24">
-            <Card className="h-[400px] lg:h-[800px] flex items-center justify-center bg-foamico-gray-50">
-              <div className="text-center">
-                <div className="text-6xl mb-4">🗺️</div>
-                <h3 className="text-xl font-semibold text-foamico-black mb-2">
-                  Interactive Map
-                </h3>
-                <p className="text-foamico-gray-600 max-w-sm">
-                  {selectedStore 
-                    ? `Showing location for ${stores.find(s => s.id === selectedStore)?.name}`
-                    : 'Select a store to view its location on the map'
-                  }
-                </p>
-                {selectedStore && (
-                  <Button
-                    href={`https://maps.google.com/?q=${stores.find(s => s.id === selectedStore)?.coordinates.lat},${stores.find(s => s.id === selectedStore)?.coordinates.lng}`}
-                    target="_blank"
-                    size="small"
-                    className="mt-4"
-                  >
-                    Open in Google Maps
-                  </Button>
-                )}
               </div>
-            </Card>
-          </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-[#AD702A] flex-shrink-0" />
+                <a
+                  href={`tel:${store.phone}`}
+                  className="text-sm md:text-base text-[#39250E]/80 hover:text-[#AD702A] transition-colors"
+                >
+                  {store.phone}
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-[#AD702A] flex-shrink-0" />
+                <span className="text-sm md:text-base text-[#39250E]/80">{store.timings}</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              {store.features.map((feature) => (
+                <span
+                  key={feature}
+                  className="text-xs md:text-sm px-4 py-1.5 bg-[#AD702A]/10 text-[#39250E]/70 rounded-full border border-[#AD702A]/20"
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <motion.a
+                href={`https://maps.google.com/?q=${store.coordinates.lat},${store.coordinates.lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 bg-[#4C6462] text-white border-none font-semibold px-8 py-3 transition-all hover:bg-[#3d504e] rounded-xl text-sm lg:text-base flex-1"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Navigation className="w-5 h-5" />
+                <span>Get Directions</span>
+              </motion.a>
+              <motion.a
+                href={`tel:${store.phone}`}
+                className="inline-flex items-center justify-center gap-3 bg-[#4C6462] text-white border-none font-semibold px-8 py-3 transition-all hover:bg-[#3d504e] rounded-xl text-sm lg:text-base flex-1"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Phone className="w-5 h-5" />
+                <span>Call Store</span>
+              </motion.a>
+            </div>
+          </motion.div>
+
+          {/* Map */}
+          <motion.div
+            className="rounded-2xl overflow-hidden h-[400px] lg:h-full min-h-[400px] border border-[#AD702A]/10"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <iframe
+              className="w-full h-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src={`https://www.google.com/maps?q=${store.coordinates.lat},${store.coordinates.lng}&z=15&output=embed`}
+              allowFullScreen
+            />
+          </motion.div>
         </div>
 
         {/* Additional Info */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
-          <Card className="text-center">
-            <div className="text-4xl mb-4">🏪</div>
-            <h3 className="text-xl font-semibold text-foamico-black mb-2">
-              {stores.length}+ Stores
-            </h3>
-            <p className="text-foamico-gray-600">
-              Across major cities in India with more coming soon
-            </p>
-          </Card>
-          <Card className="text-center">
-            <div className="text-4xl mb-4">🛏️</div>
-            <h3 className="text-xl font-semibold text-foamico-black mb-2">
-              Try Before You Buy
-            </h3>
-            <p className="text-foamico-gray-600">
-              Experience all our mattress variants in comfortable trial rooms
-            </p>
-          </Card>
-          <Card className="text-center">
-            <div className="text-4xl mb-4">👨‍⚕️</div>
-            <h3 className="text-xl font-semibold text-foamico-black mb-2">
-              Expert Consultation
-            </h3>
-            <p className="text-foamico-gray-600">
-              Get personalized recommendations from our sleep experts
-            </p>
-          </Card>
-        </div>
+        <motion.div
+          className="grid md:grid-cols-3 gap-6 md:gap-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          {[
+            { icon: '🛏️', title: 'Try Before You Buy', desc: 'Experience all our mattress variants in comfortable trial rooms' },
+            { icon: '👨‍⚕️', title: 'Expert Consultation', desc: 'Get personalized recommendations from our sleep experts' },
+            { icon: '🚚', title: 'Home Delivery', desc: 'Free delivery and installation at your doorstep' },
+          ].map((item, i) => (
+            <motion.div
+              key={item.title}
+              className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-[#AD702A]/10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <div className="text-4xl mb-4">{item.icon}</div>
+              <h3 className="text-lg md:text-xl font-bold text-[#39250E] mb-2">
+                {item.title}
+              </h3>
+              <p className="text-sm md:text-base text-[#39250E]/70">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
 
-        {/* CTA Section */}
-        <div className="mt-16 bg-foamico-lime-light rounded-lg p-8 text-center">
-          <h2 className="text-3xl font-bold text-foamico-black mb-4">
-            Can&apos;t Visit a Store?
-          </h2>
-          <p className="text-lg text-foamico-gray-700 mb-6 max-w-2xl mx-auto">
-            No worries! We offer free home delivery and installation across India. 
-            Shop online with confidence backed by our 100-night trial period.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/products" size="large">
-              Shop Online
-            </Button>
-            <Button href="/products/compare" variant="outline" size="large">
-              Compare Products
-            </Button>
-          </div>
-        </div>
+
       </Container>
-    </div>
+    </section>
   )
 }

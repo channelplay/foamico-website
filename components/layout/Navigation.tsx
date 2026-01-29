@@ -60,9 +60,9 @@ const navigation = [
         name: 'Riva',
         desc: 'River of Comfort',
         categories: [
-          { name: 'Riva1000', href: '/products/riva1000' },
-          { name: 'Riva2000', href: '/products/riva2000' },
-          { name: 'Riva3000', href: '/products/riva3000' },
+          { name: 'Riva 1000', href: '/products/riva1000' },
+          { name: 'Riva 2000', href: '/products/riva2000' },
+          { name: 'Riva 3000', href: '/products/riva3000' },
         ],
       },
     ]

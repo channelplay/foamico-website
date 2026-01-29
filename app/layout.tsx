@@ -3,6 +3,7 @@ import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
   title: "Foamico Mattress",
   description: "Experience revolutionary sleep technology with Foamico luxury mattresses. Featuring premium foam layers, orthopedic support, and innovative design for exceptional comfort.",
   keywords: "luxury mattress, premium sleep, smart foam technology, Foamico, orthopedic support, memory foam, Sova mattress, Ultima mattress",
+  icons: {
+    icon: "/foamicologo.png",
+    shortcut: "/foamicologo.png",
+    apple: "/foamicologo.png",
+  },
   openGraph: {
     title: "Foamico Mattress",
     description: "Experience revolutionary sleep technology with Foamico luxury mattresses featuring premium foam layers and orthopedic support.",
@@ -38,6 +44,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
