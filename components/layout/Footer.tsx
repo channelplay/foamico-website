@@ -45,7 +45,7 @@ export default function Footer() {
     <footer className="bg-[#342917] text-[#f5f0e8] border-t border-[#342917]/20">
       <Container>
         <div className="py-8 md:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Brand Section */}
             <div className="lg:col-span-3">
               <div className="mb-6">
@@ -69,7 +69,7 @@ export default function Footer() {
             </div>
 
             {/* Products */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-4">
               <h3 className="text-sm font-semibold text-[#f5f0e8] mb-4 uppercase tracking-wider">
                 Products
               </h3>
@@ -125,10 +125,10 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Company */}
+            {/* Quick Links */}
             <div className="lg:col-span-2">
               <h3 className="text-sm font-semibold text-[#f5f0e8] mb-4 uppercase tracking-wider">
-                Company
+                Quick Links
               </h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
@@ -141,15 +141,6 @@ export default function Footer() {
                     </Link>
                   </li>
                 ))}
-              </ul>
-            </div>
-
-            {/* Quick Links */}
-            <div className="lg:col-span-2">
-              <h3 className="text-sm font-semibold text-[#f5f0e8] mb-4 uppercase tracking-wider">
-                Quick Links
-              </h3>
-              <ul className="space-y-3">
                 {footerLinks.quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
@@ -161,6 +152,38 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Office & Contact */}
+            <div className="lg:col-span-3">
+              {/* Registered Office */}
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold text-[#f5f0e8] mb-3 uppercase tracking-wider">
+                  Regd. Office
+                </h3>
+                <p className="text-sm text-[#d4c4a8] leading-relaxed">
+                  9/3 A, Club Drive Road,<br />
+                  Ghitorni, New Delhi,<br />
+                  India 110030
+                </p>
+              </div>
+
+              {/* Contact Us */}
+              <div className="pt-4 border-t border-[#d4c4a8]/20">
+                <h3 className="text-sm font-semibold text-[#f5f0e8] mb-3 uppercase tracking-wider">
+                  Contact Us
+                </h3>
+                <div className="flex items-center gap-2 text-sm text-[#d4c4a8] mb-3">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <a href="tel:+917496982886" className="hover:text-[#f5f0e8] transition-colors">+91 7496982886</a>
+                </div>
+                <div className="text-sm text-[#d4c4a8]">
+                  <p className="font-medium text-[#f5f0e8]/80">Operational hours</p>
+                  <p>Mon-Sat: 9:00 AM - 6:00 PM</p>
+                </div>
+              </div>
             </div>
 
           </div>

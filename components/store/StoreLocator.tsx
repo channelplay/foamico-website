@@ -25,17 +25,13 @@ export default function StoreLocator() {
             </span>
             <div className="w-8 md:w-12 h-[1px] bg-[#AD702A]" />
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-[#39250E] mb-4 md:mb-6 px-4">
-            Our Store
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-[#39250E]/80 max-w-2xl mx-auto px-4">
-            Visit our store to experience Foamico mattresses in person.
-            Our sleep experts are ready to help you find your perfect match.
-          </p>
+          <h2 className="text-base sm:text-lg md:text-xl text-[#39250E]/80 max-w-2xl mx-auto px-4">
+            Visit us to experience
+          </h2>
         </motion.div>
 
         {/* Store Info + Map */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16 md:mb-20">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Store Details */}
           <motion.div
             className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#AD702A]/10"
@@ -120,39 +116,6 @@ export default function StoreLocator() {
             />
           </motion.div>
         </div>
-
-        {/* Additional Info */}
-        <motion.div
-          className="grid md:grid-cols-3 gap-6 md:gap-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          {[
-            { icon: '🛏️', title: 'Try Before You Buy', desc: 'Experience all our mattress variants in comfortable trial rooms' },
-            { icon: '👨‍⚕️', title: 'Expert Consultation', desc: 'Get personalized recommendations from our sleep experts' },
-            { icon: '🚚', title: 'Home Delivery', desc: 'Free delivery and installation at your doorstep' },
-          ].map((item, i) => (
-            <motion.div
-              key={item.title}
-              className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center border border-[#AD702A]/10"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-            >
-              <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-lg md:text-xl font-bold text-[#39250E] mb-2">
-                {item.title}
-              </h3>
-              <p className="text-sm md:text-base text-[#39250E]/70">
-                {item.desc}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
-
 
       </Container>
     </section>

@@ -27,11 +27,11 @@ export default function HeroSection() {
         priority
       />
       
-      {/* Button - positioned differently for mobile vs desktop */}
-      <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 lg:top-[64.37%] lg:left-[20.63%] lg:translate-x-0 lg:-translate-y-0 lg:bottom-auto">
+      {/* Buttons - centered below the text */}
+      <div className="absolute bottom-[8%] left-[43%] -translate-x-1/2 lg:top-[64.37%] lg:left-[13.63%] lg:translate-x-0 lg:-translate-y-0 lg:bottom-auto flex flex-row gap-3 lg:gap-4 items-center justify-center">
         <motion.a
           href="/contact"
-          className="inline-block bg-[#4C6462] text-white border-none font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#3d504e] rounded-xl text-sm lg:text-lg lg:scale-85 lg:origin-left whitespace-nowrap"
+          className="inline-block bg-[#4C6462] text-white border-none font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#3d504e] rounded-xl text-sm lg:text-lg lg:scale-85 lg:origin-left whitespace-nowrap text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -39,6 +39,19 @@ export default function HeroSection() {
           whileTap={{ scale: 0.97 }}
         >
           Contact Us &gt;
+        </motion.a>
+        <motion.a
+          href="/FOAMICO - CATALOG 2026.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#4C6462] text-white border-none font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#3d504e] rounded-xl text-sm lg:text-lg lg:scale-85 lg:origin-left whitespace-nowrap text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+        >
+          Download Brochure &gt;
         </motion.a>
       </div>
     </section>
