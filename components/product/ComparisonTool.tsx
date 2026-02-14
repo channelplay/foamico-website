@@ -224,7 +224,7 @@ export default function ComparisonTool() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
-            Find Your Nearest Store
+            Contact Us
           </motion.a>
         </motion.div>
       </Container>

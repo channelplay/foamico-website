@@ -203,7 +203,7 @@ export default function ProductCategoryView({ product }: ProductCategoryViewProp
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3">
             <Button href="/contact" size="large" className="flex-1">
-              Find a Store
+              Contact Us
             </Button>
             <Button href={`/products/compare?products=${product.id}`} variant="outline" size="large" className="flex-1">
               Talk to an Expert

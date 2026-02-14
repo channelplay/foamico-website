@@ -65,7 +65,7 @@ export default function ProductsPage() {
               Compare Products
             </Button>
             <Button href="/contact" variant="outline">
-              Visit a Store
+              Contact Us
             </Button>
           </div>
         </div>

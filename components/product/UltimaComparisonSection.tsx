@@ -158,7 +158,7 @@ export default function UltimaComparisonSection() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              Visit a Store
+              Contact Us
             </motion.a>
           </div>
         </motion.div>
