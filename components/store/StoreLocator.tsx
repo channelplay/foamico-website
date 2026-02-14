@@ -25,9 +25,9 @@ export default function StoreLocator() {
             </span>
             <div className="w-8 md:w-12 h-[1px] bg-[#AD702A]" />
           </div>
-          <h2 className="text-base sm:text-lg md:text-xl text-[#39250E]/80 max-w-2xl mx-auto px-4">
-            Visit us to experience
-          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-[#39250E]/80 max-w-2xl mx-auto px-4">
+            Visit our store to experience Foamico mattresses in person. Our sleep experts are ready to help you find your perfect match.
+          </p>
         </motion.div>
 
         {/* Store Info + Map */}
