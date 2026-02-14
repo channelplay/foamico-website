@@ -170,7 +170,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <Button href="/products" size="small">
                   Explore Mattresses
                 </Button>
-                <Button href="/find-store" variant="outline" size="small">
+                <Button href="/contact" variant="outline" size="small">
                   Visit Store
                 </Button>
               </div>

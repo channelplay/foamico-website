@@ -219,7 +219,7 @@ export default function ComparisonTool() {
             Visit our store to try these mattresses in person and get personalized recommendations from our sleep experts.
           </p>
           <motion.a
-            href="/find-store"
+            href="/contact"
             className="inline-flex items-center justify-center gap-3 bg-[#4C6462] text-white border-none font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#3d504e] rounded-xl text-sm lg:text-base"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}

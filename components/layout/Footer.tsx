@@ -36,7 +36,6 @@ export default function Footer() {
       { name: 'Contact', href: '/contact' },
     ],
     quickLinks: [
-      { name: 'Store Locator', href: '/find-store' },
       { name: 'Compare Mattresses', href: '/products/compare' },
     ],
   }

@@ -153,7 +153,7 @@ export default function UltimaComparisonSection() {
               Compare Products
             </motion.a>
             <motion.a
-              href="/find-store"
+              href="/contact"
               className="inline-flex items-center justify-center gap-3 bg-transparent text-[#4C6462] border-2 border-[#4C6462] font-semibold px-8 py-3 lg:px-12 lg:py-4 transition-all hover:bg-[#4C6462] hover:text-white rounded-xl text-sm lg:text-base"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
