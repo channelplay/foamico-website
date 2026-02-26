@@ -50,7 +50,7 @@ export default function BlogPage() {
                 Featured Article
               </span>
             </div>
-            <Link href={`/blog/${featuredPost.slug}`}>
+            <Link href={`/blog/${featuredPost.slug}`} className="block cursor-pointer">
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#AD702A]/10 hover:border-[#AD702A]/30 transition-all duration-300 hover:shadow-lg group">
                 <div className="grid lg:grid-cols-2">
                   <div className="relative h-64 lg:h-[400px] overflow-hidden">
@@ -115,7 +115,7 @@ export default function BlogPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
               >
-                <Link href={`/blog/${post.slug}`}>
+                <Link href={`/blog/${post.slug}`} className="block cursor-pointer h-full">
                   <div className="bg-white/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#AD702A]/10 hover:border-[#AD702A]/30 transition-all duration-300 hover:shadow-lg group h-full">
                     <div className="relative h-48 overflow-hidden">
                       <Image
