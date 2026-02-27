@@ -14,6 +14,369 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'which-mattress-material-lasts-longest',
+    title: 'Which Material Lasts Longest in a Mattress? A Complete Guide',
+    excerpt: 'Compare mattress lifespans by material — natural latex, memory foam, hybrid & innerspring. Learn what affects durability and how to choose a long-lasting mattress.',
+    author: 'Foamico Sleep Experts',
+    date: 'February 27, 2025',
+    readTime: '5 min read',
+    category: 'Mattress Guide',
+    thumbnail: 'blog-durability-thumbnail-600x400',
+    heroImage: '/blog-nature.svg',
+    thumbnailUrl: '/blog-nature.svg',
+    content: `
+When buying a mattress, longevity matters just as much as comfort. A mattress is a long-term investment that should support healthy sleep for many years without sagging or losing shape.
+
+## 1. Mattress Lifespan by Material
+
+### Natural Latex Mattresses (12–15+ years)
+
+[Natural latex mattresses](/blog/what-is-latex-mattress) are widely regarded as the most durable mattress material available. High-quality latex resists sagging, maintains shape, and can last 12 to 15 years or more with proper care. It is naturally elastic, resilient against compression, and breathable.
+
+### High-Density Memory Foam (8–12 years)
+
+High-density [memory foam](/blog/what-is-memory-foam-mattress) provides excellent contouring and pressure relief. Premium high-density foam generally lasts 8 to 12 years. Higher foam density usually indicates better durability and slower softening over time.
+
+### Hybrid Mattresses (7–10 years)
+
+Hybrid mattresses combine foam layers with innerspring support systems. Their lifespan depends on coil quality and foam density, but good-quality hybrids can last 7 to 10 years or more.
+
+### Innerspring Mattresses (5–8 years)
+
+Traditional innerspring mattresses typically last 5 to 8 years. Over time, springs lose tension and surface comfort layers compress faster than latex or high-density foam.
+
+## Quick Comparison – Lifespan by Material
+
+| Mattress Type | Typical Lifespan |
+|---|---|
+| Natural Latex | 12–15+ years |
+| High-Density Memory Foam | 8–12 years |
+| Hybrid (Foam + Coil) | 7–10 years |
+| Innerspring | 5–8 years |
+
+## What Affects Mattress Durability?
+
+Durability depends not only on material but also on:
+
+- **Construction quality** — how well the layers are bonded and engineered
+- **Foam density or coil gauge** — higher density foam and thicker coils last longer
+- **Body weight** — heavier sleepers put more stress on materials
+- **Sleep position** — concentrated pressure in one area can accelerate wear
+- **Bed base support** — a sturdy, well-ventilated base extends mattress life
+- **Regular maintenance** — rotating your mattress prevents uneven wear
+
+## Foamico Mattresses – Material and Warranty Guide
+
+Foamico mattresses are engineered with premium foam, latex-enhanced layers, and hybrid spring systems designed for Indian sleepers.
+
+### Foamico Material Highlights
+
+- Multi-layer foam construction for comfort and contouring
+- High-density support foam for durability
+- Latex-enhanced layers in select models for added resilience
+- Hybrid pocket spring options for balanced support and airflow
+- Graphite-infused and engineered foam options in premium ranges
+
+### Foamico Warranty Coverage
+
+Foamico offers warranties of **up to 25 years** on select premium mattresses. Warranty coverage generally includes protection against manufacturing defects and excessive sagging, depending on the specific model. Customers are advised to review product-specific warranty terms at the time of purchase.
+
+## Final Takeaway
+
+If longevity is your priority, **natural latex mattresses typically last the longest**, followed by high-density memory foam and quality hybrids. When evaluating options, consider material quality, construction, and warranty support.
+
+Brands offering long warranties, such as Foamico with up to 25 years on select models, often reflect confidence in their product durability.
+
+*Looking for a mattress built to last? [Explore the Foamico range](/products) and find your perfect long-term sleep investment.*
+    `
+  },
+  {
+    slug: 'ultimate-mattress-buying-guide-india',
+    title: 'The Ultimate Mattress Buying Guide for Indians: Sleep Position, Body Type & More',
+    excerpt: 'Learn how to choose the perfect mattress based on your sleep position, body type, comfort preference, and Indian weather conditions for better sleep and long-term value.',
+    author: 'Foamico Sleep Experts',
+    date: 'February 27, 2025',
+    readTime: '6 min read',
+    category: 'Buying Guide',
+    thumbnail: 'blog-buying-guide-thumbnail-600x400',
+    heroImage: '/blog-healthy-lifestyle.svg',
+    thumbnailUrl: '/blog-healthy-lifestyle.svg',
+    content: `
+Buying a mattress in India isn't just about picking "soft" or "hard." Our climate, body types, sleeping habits, and even room sizes play a huge role in choosing the right mattress.
+
+If you've ever woken up with back pain, shoulder stiffness, or night sweats, your mattress might be the real culprit.
+
+This ultimate guide will help you choose the perfect mattress based on:
+
+- Your sleep position
+- Your body type
+- Your comfort preference
+- Indian weather conditions
+- Durability & long-term value
+
+## 1. Choose Based on Your Sleep Position
+
+### Side Sleepers
+
+Side sleepers need **soft to medium comfort** with pressure relief on shoulders and hips. Look for plush layers like [memory foam](/blog/what-is-memory-foam-mattress) or velvety comfort foam that cushion your body's curves.
+
+### Back Sleepers
+
+Back sleepers need **medium-firm support** with strong lower back reinforcement. Balanced comfort and support layers work best — [HR foam](/blog/what-is-hr-foam-mattress) mattresses are an excellent choice.
+
+### Stomach Sleepers
+
+Stomach sleepers need **firm support** with minimal sink. Orthopedic support layers are ideal to keep the spine aligned and prevent the hips from sinking too deep.
+
+## 2. Choose Based on Your Body Type
+
+### Below 60 kg
+
+Softer mattresses feel more comfortable for lighter individuals. Avoid overly firm surfaces as they may not contour enough to your body.
+
+### 60–85 kg
+
+Medium-firm mattresses provide the right balance of comfort and support for average weight individuals. This is the sweet spot where most mattress types work well.
+
+### 85 kg+
+
+Heavy-duty support is essential for heavier individuals. High-density foam or [latex](/blog/what-is-latex-mattress) support systems help prevent sagging and ensure the mattress maintains its shape over time.
+
+## 3. Consider Indian Climate
+
+### Hot or Humid Cities
+
+Choose breathable, moisture-resistant materials like latex or graphite-infused foam. [Latex mattresses](/blog/what-is-latex-mattress) feel naturally cooler and are particularly suitable for Indian summers.
+
+Memory foam tends to retain heat, so if you live in a warm region, look for cooling technologies like gel-infused foam or open-cell construction.
+
+## 4. Foam vs Latex vs Spring
+
+### Memory Foam
+
+Great for contouring and [motion isolation](/blog/what-is-motion-isolation-mattress). Ideal for couples where one partner's movements shouldn't disturb the other.
+
+### Latex
+
+Bouncy, durable, and cooler. Natural latex is also hypoallergenic and eco-friendly — perfect for allergy sufferers and environmentally conscious buyers.
+
+### Spring (Hotel Feel)
+
+Provides bounce and breathability. Good for combination sleepers who change positions throughout the night and prefer that classic hotel mattress feel.
+
+## 5. Layer Count – Does It Matter?
+
+More layers don't always mean better quality. **Intelligent engineering matters more** than sheer layer count.
+
+Premium mattresses combine:
+
+- **Comfort quilting** — for that initial soft feel
+- **Pressure relief foam** — to cushion joints and pressure points
+- **Structural support** — to maintain spinal alignment
+- **Durable base layers** — for longevity and stability
+
+## 6. Longevity & Per Night Cost
+
+Instead of focusing only on price, divide the mattress cost by years of use. A ₹30,000 mattress that lasts 10 years costs just ₹8 per night — a small price for quality sleep.
+
+A durable mattress reduces replacement frequency and improves long-term sleep health. Investing in quality upfront often saves money in the long run.
+
+## Quick Recommendation Guide
+
+| Sleep Style | Recommended Mattress Type |
+|---|---|
+| Side Sleeper | Soft–Medium Memory or Plush Foam |
+| Back Sleeper | Medium-Firm Foam with HR Base |
+| Stomach Sleeper | Firm Orthopedic Foam |
+| Plus Size (85kg+) | Latex + High-Density Base |
+| Hot Climate | Latex or Cooling Foam |
+| Hotel Feel Lover | Hybrid Spring |
+
+## Final Thoughts
+
+A mattress is not just furniture. It is a **health investment**.
+
+Choosing based on sleep position, body type, and climate ensures:
+
+- Better spine alignment
+- Reduced pain and stiffness
+- Improved sleep quality
+- Long-term durability
+
+Take your time, consider your unique needs, and invest in a mattress that will support you for years to come. Your body — and your mornings — will thank you.
+
+*Ready to find your perfect mattress? [Explore the Foamico range](/products) or [contact us](/contact) for personalised recommendations.*
+    `
+  },
+  {
+    slug: 'types-of-mattress-in-india',
+    title: 'Types of Mattresses in India: The Complete Guide to Finding Your Perfect Sleep',
+    excerpt: 'Explore all mattress types available in India — latex, memory foam, HR foam, spring & coir. Learn which one suits your sleep position, body type, and budget.',
+    author: 'Foamico Sleep Experts',
+    date: 'February 27, 2025',
+    readTime: '12 min read',
+    category: 'Mattress Guide',
+    thumbnail: 'blog-types-mattress-thumbnail-600x400',
+    heroImage: '/blog-mindfulness.svg',
+    thumbnailUrl: '/blog-mindfulness.svg',
+    content: `
+According to recent industry reports, the Indian mattress market amounts to US$256.40 million and is expected to grow annually by 8.18% (CAGR 2024–2028). This growth can be attributed to several factors, including rising awareness about the importance of quality sleep, increased urbanisation, and changing consumer preferences.
+
+In a country where the average workday can be long and demanding, and stress levels are often high, quality sleep becomes essential for overall well-being. Hence, it's no surprise that the demand for different types of mattresses tailored to individual needs has surged.
+
+## The Quest for the Perfect Mattress
+
+In this guide, we will take a look at various types of mattresses available in India — from traditional materials like coir and cotton to modern innovations like memory foam and latex. We will dissect the characteristics, benefits, and drawbacks of each mattress type.
+
+Furthermore, we will also consider various factors such as sleeping conditions, body types, and sleep positions, ensuring that readers can make informed choices that align with their specific needs. Whether you're a side sleeper seeking relief from shoulder pain or a hot sleeper searching for a cooling solution, this guide is your compass in the world of mattresses tailored to the Indian subcontinent.
+
+## Types of Mattresses Based on Materials
+
+The material of a mattress determines everything — comfort, support, durability, and even temperature regulation. Here's a deep dive into the most popular mattress types available in India today.
+
+### 1. Latex Foam Mattress
+
+For comfortable and supportive sleep, a [latex foam mattress](/blog/what-is-latex-mattress) is a great pick — especially if you have joint pain or want to keep your spine in a natural position. They give you a light, bouncy feeling and take pressure off your joints and lower back. The mattress gently supports your neck and back to keep your spine in a natural alignment. Latex mattresses are also hypoallergenic, which is ideal if you have allergies or sensitivities.
+
+**Pros:** Long-lasting, naturally bouncy, hypoallergenic, and eco-friendly.
+
+**Cons:** On the expensive side; may not contour as closely as memory foam.
+
+**Best for:** Those who want durability and support from natural materials, allergy sufferers, and eco-conscious buyers.
+
+### 2. Memory Foam Mattress
+
+[Memory foam mattresses](/blog/what-is-memory-foam-mattress) are crafted from a viscoelastic material that contours to your body shape, giving a slow-moving, cradling feel. Most memory foam beds have all-foam layers, but some hybrid models also use this material. Typically, you'll find memory foam on top and a solid polyfoam base.
+
+When you press your body onto it, the foam takes your shape and slowly returns to its normal form when you get up. This extra cushioning and support makes memory foam perfect for side sleepers and those dealing with chronic pain conditions.
+
+**Pros:** Excellent pressure relief, [motion isolation](/blog/what-is-motion-isolation-mattress), and body contouring.
+
+**Cons:** Can retain heat (advanced versions like those with 3D Air-Flo™ technology help you sleep up to 5° cooler); may have an off-gassing smell for the first couple of nights.
+
+**Best for:** People with joint pain, side sleepers, or couples who want minimal motion transfer.
+
+### 3. HR Foam Mattress (High Resilience Foam)
+
+[HR Foam](/blog/what-is-hr-foam-mattress) — or High Resilience Foam — is one of the most popular mattress types in India due to its balance of comfort and affordability. As the name suggests, this foam bounces back quickly after compression, making it more durable than standard polyurethane foam. It offers a firmer sleeping surface with a supportive feel.
+
+HR foam mattresses are particularly well-suited for India's tropical climate because they tend to sleep cooler than memory foam. They're a popular choice for families, guest rooms, and budget-conscious buyers who don't want to compromise on quality.
+
+**Pros:** Highly durable, budget-friendly, good air circulation, and available in a wide range of firmness levels.
+
+**Cons:** Less contouring than memory foam; may feel firmer for those used to plush surfaces.
+
+**Best for:** Hot sleepers, families, back sleepers, and those looking for value-for-money options.
+
+### 4. Spring Mattress (Innerspring)
+
+Spring mattresses are one of the oldest and most widely used mattress types in India. They use a system of metal coils or springs as the primary support layer, topped with layers of foam or fabric padding. The type and count of coils determine the mattress's support, comfort, and durability.
+
+There are different types of spring systems: Bonnell coils (traditional hourglass-shaped), offset coils, continuous coils, and the premium pocketed coils (also called individually wrapped springs). Pocketed spring mattresses are particularly popular today because each coil works independently, offering better body contouring and motion isolation.
+
+**Pros:** Excellent breathability, good bounce, widely available, and often more affordable than foam mattresses.
+
+**Cons:** Motion transfer can be an issue with Bonnell coils; springs may squeak over time; less body-contouring compared to foam types.
+
+**Best for:** Hot sleepers, those who like a traditional bouncy feel, stomach sleepers, and combination sleepers.
+
+### 5. Coir Mattress
+
+Coir mattresses are a uniquely Indian staple, made from the natural fibre extracted from coconut husks. They are one of the firmest mattress options available and have been a household favourite for generations. Coir is typically rubberised to add resilience and paired with foam layers for added comfort.
+
+They are breathable, eco-friendly, and biodegradable — making them a sustainable choice. While they may not have the pressure-relieving features of memory foam, they offer robust support that many Indians prefer, especially those accustomed to sleeping on harder surfaces.
+
+**Pros:** Eco-friendly, highly breathable, very firm, and durable.
+
+**Cons:** May be too firm for those with pressure-sensitive joints; not ideal for side sleepers.
+
+**Best for:** Back sleepers, stomach sleepers, those who prefer firm support, and eco-conscious buyers.
+
+## How to Choose the Right Mattress Type for You?
+
+With so many options on the market, choosing the right mattress can feel overwhelming. The best mattress is not necessarily the most expensive — it's the one that suits your specific body type, sleep position, health needs, and climate.
+
+Here are the key factors to consider when choosing a mattress in India:
+
+### Consider Your Sleep Position
+
+- **Side sleepers** need softer mattresses that cushion the shoulders and hips — memory foam or latex are ideal.
+- **Back sleepers** need medium-firm support to maintain spinal alignment — HR foam or pocketed spring work well.
+- **Stomach sleepers** need a firmer surface to prevent the hips from sinking — coir or HR foam are good choices.
+
+### Account for Your Body Weight
+
+- **Lighter individuals** (under 60 kg) tend to do better on softer mattresses that provide enough contouring.
+- **Average weight individuals** (60–90 kg) have the widest range of options and should focus on their sleep position.
+- **Heavier individuals** (above 90 kg) need firmer, high-density mattresses for adequate support and durability.
+
+### Think About Temperature & Climate
+
+India's hot and humid climate can make sleeping on heat-retaining mattresses uncomfortable. Memory foam tends to trap heat, while latex, spring, and coir mattresses offer better airflow. If you live in a warmer region or tend to sleep hot, look for mattresses with cooling technologies or naturally breathable materials.
+
+### Health & Medical Considerations
+
+- **Back pain:** Medium-firm mattresses (HR foam or latex) are generally recommended by orthopedic experts.
+- **Joint pain:** Memory foam or latex provides excellent pressure relief for arthritic joints.
+- **Allergies:** Latex and high-density foam are naturally resistant to dust mites and allergens.
+- **Couples:** Pocketed spring or memory foam mattresses minimise motion transfer for uninterrupted sleep.
+
+## How to Enhance the Comfort and Durability of Your Mattress?
+
+Buying the right mattress is just the first step. To ensure it serves you well for years and maintains its comfort, proper care and accessorising make a significant difference.
+
+### Use a Mattress Protector
+
+A good quality waterproof mattress protector shields your mattress from spills, sweat, dust mites, and allergens. It's a small investment that can significantly extend the life of your mattress — especially in India's humid climate.
+
+### Rotate Your Mattress Regularly
+
+Rotating your mattress 180 degrees every 3–6 months ensures even wear and prevents permanent body indentations. Note: not all mattresses should be flipped — always check the manufacturer's guidelines.
+
+### Choose the Right Bed Base
+
+The foundation beneath your mattress matters just as much as the mattress itself. A sturdy, well-ventilated base — whether a solid platform, slatted frame, or box spring — ensures your mattress performs as designed and remains well-ventilated.
+
+### Air It Out Periodically
+
+Once a month, remove your bedding and allow the mattress to air out for a few hours. This helps dissipate moisture and keeps the mattress fresh, especially during India's monsoon season when humidity levels are high.
+
+### Invest in the Right Pillow
+
+Your mattress and pillow work together to support your neck and spine. A pillow that's too high or too flat can negate the benefits of even the best mattress. Choose a pillow thickness based on your sleep position for optimal support.
+
+## Closing Thoughts
+
+Choosing the right mattress is one of the most impactful decisions you can make for your health and well-being. In a country as diverse as India — with its varying climates, body types, sleep habits, and budgets — there's no one-size-fits-all answer. But armed with the right knowledge, you can make a choice that transforms your sleep quality night after night.
+
+Whether you're drawn to the natural buoyancy of latex, the body-hugging feel of memory foam, the economical durability of HR foam, the classic bounce of spring, or the firm earthiness of coir — there's a mattress made exactly for you.
+
+Remember: the best mattress is not the most expensive one. It's the one that aligns perfectly with your sleep style, health needs, and lifestyle. Invest wisely, sleep deeply, and wake up ready to take on whatever India's busy days bring your way.
+
+## Frequently Asked Questions
+
+### Which type of mattress is best in India?
+
+There is no single 'best' mattress for everyone. Memory foam suits side sleepers and those with joint pain, while HR foam is great for back sleepers and hot climates. Latex is ideal for eco-conscious buyers, and coir suits those who prefer firm support. Your choice should depend on your sleep position, body weight, health conditions, and budget.
+
+### How long does a mattress last in India?
+
+On average, a good quality mattress lasts between 7 to 10 years in India. Latex and high-density HR foam mattresses tend to be the most durable. Proper care — including using a mattress protector, rotating it regularly, and keeping it ventilated — can extend its lifespan significantly.
+
+### Is memory foam good for India's hot climate?
+
+Traditional memory foam can retain heat, making it uncomfortable in India's warmer regions. However, modern memory foam mattresses often come with cooling technologies such as gel infusions or advanced air-circulation layers that address this issue effectively.
+
+### What firmness level is best for back pain?
+
+A medium-firm mattress is generally recommended for those suffering from back pain. It provides enough support to keep the spine aligned while offering sufficient cushioning to relieve pressure points. Always consult a healthcare professional for personalised medical advice.
+
+### What is the difference between a spring and a foam mattress?
+
+Spring mattresses use metal coils for support and tend to be more breathable and bouncy, making them great for hot climates and those who like a traditional feel. Foam mattresses (memory foam, HR foam, latex) contour to the body for pressure relief and motion isolation but may retain more heat unless equipped with cooling technology.
+    `
+  },
+  {
     slug: 'better-sleep-guide',
     title: 'The Complete Guide to Better Sleep: Science-Backed Tips',
     excerpt: 'Discover scientifically proven methods to improve your sleep quality and wake up refreshed every morning.',

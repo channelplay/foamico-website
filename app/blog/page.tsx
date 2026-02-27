@@ -1,7 +1,6 @@
 'use client'
 
 import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Container from '@/components/ui/Container'
@@ -53,15 +52,7 @@ export default function BlogPage() {
             <Link href={`/blog/${featuredPost.slug}`} className="block cursor-pointer">
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#AD702A]/10 hover:border-[#AD702A]/30 transition-all duration-300 hover:shadow-lg group">
                 <div className="grid lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-[400px] overflow-hidden">
-                    <Image
-                      src={featuredPost.thumbnailUrl}
-                      alt={featuredPost.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      unoptimized
-                    />
-                  </div>
+                  <div className="relative h-64 lg:h-[400px] overflow-hidden pointer-events-none bg-[#A76515] group-hover:brightness-110 transition-all duration-500" />
                   <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
                     <span className="inline-block px-3 py-1 bg-[#AD702A]/10 text-[#AD702A] text-xs font-semibold rounded-full mb-4 w-fit">
                       {featuredPost.category}
@@ -117,15 +108,7 @@ export default function BlogPage() {
               >
                 <Link href={`/blog/${post.slug}`} className="block cursor-pointer h-full">
                   <div className="bg-white/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#AD702A]/10 hover:border-[#AD702A]/30 transition-all duration-300 hover:shadow-lg group h-full">
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={post.thumbnailUrl}
-                        alt={post.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        unoptimized
-                      />
-                    </div>
+                    <div className="relative h-48 overflow-hidden pointer-events-none bg-[#A76515] group-hover:brightness-110 transition-all duration-500" />
                     <div className="p-5 md:p-6">
                       <div className="flex items-center gap-3 mb-3">
                         <span className="px-2.5 py-0.5 bg-[#AD702A]/10 text-[#AD702A] text-xs font-semibold rounded-full">
@@ -158,36 +141,6 @@ export default function BlogPage() {
           </div>
         </motion.div>
 
-        {/* Newsletter CTA */}
-        <motion.div
-          className="mt-16 md:mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <div className="bg-[#4C6462] rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Stay Updated
-            </h2>
-            <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-              Get the latest sleep tips, mattress care advice, and exclusive offers
-              delivered straight to your inbox.
-            </p>
-            <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-xl text-[#39250E] placeholder-[#39250E]/50 bg-white focus:outline-none focus:ring-2 focus:ring-[#AD702A]"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-[#AD702A] text-white font-semibold rounded-xl hover:bg-[#8d5a22] transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </motion.div>
       </Container>
     </section>
   )

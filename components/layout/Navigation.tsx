@@ -72,6 +72,10 @@ const navigation = [
     href: '/about',
   },
   {
+    name: 'Blogs',
+    href: '/blog',
+  },
+  {
     name: 'Contact Us',
     href: '/contact',
   },

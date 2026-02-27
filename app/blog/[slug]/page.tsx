@@ -1,7 +1,6 @@
 'use client'
 
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Container from '@/components/ui/Container'
@@ -318,64 +317,53 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       )}
       <section className="min-h-screen" style={{ backgroundColor: '#e9e4cd' }}>
       {/* Hero Section */}
-      <div className="relative h-[300px] md:h-[400px] lg:h-[500px]">
-        <Image
-          src={post.heroImage}
-          alt={post.title}
-          fill
-          className="object-cover"
-          unoptimized
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
-          <Container>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Breadcrumb */}
-              <nav className="mb-4">
-                <ol className="flex items-center space-x-2 text-sm text-white/80">
-                  <li>
-                    <Link href="/" className="hover:text-white transition-colors">
-                      Home
-                    </Link>
-                  </li>
-                  <li><ChevronRight className="w-4 h-4" /></li>
-                  <li>
-                    <Link href="/blog" className="hover:text-white transition-colors">
-                      Blog
-                    </Link>
-                  </li>
-                  <li><ChevronRight className="w-4 h-4" /></li>
-                  <li className="text-white font-medium line-clamp-1">{post.title}</li>
-                </ol>
-              </nav>
+      <div className="bg-[#4C6462] pt-24 pb-12 md:pt-28 md:pb-16">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Breadcrumb */}
+            <nav className="mb-4">
+              <ol className="flex items-center space-x-2 text-sm text-white/80">
+                <li>
+                  <Link href="/" className="hover:text-white transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li><ChevronRight className="w-4 h-4" /></li>
+                <li>
+                  <Link href="/blog" className="hover:text-white transition-colors">
+                    Blog
+                  </Link>
+                </li>
+                <li><ChevronRight className="w-4 h-4" /></li>
+                <li className="text-white font-medium line-clamp-1">{post.title}</li>
+              </ol>
+            </nav>
 
-              <span className="inline-block px-3 py-1 bg-[#AD702A] text-white text-xs font-semibold rounded-full mb-4">
-                {post.category}
+            <span className="inline-block px-3 py-1 bg-[#AD702A] text-white text-xs font-semibold rounded-full mb-4">
+              {post.category}
+            </span>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 max-w-4xl">
+              {post.title}
+            </h1>
+            <div className="flex flex-wrap items-center gap-4 text-sm text-white/80">
+              <span className="flex items-center gap-1.5">
+                <User className="w-4 h-4" />
+                {post.author}
               </span>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 max-w-4xl">
-                {post.title}
-              </h1>
-              <div className="flex flex-wrap items-center gap-4 text-sm text-white/80">
-                <span className="flex items-center gap-1.5">
-                  <User className="w-4 h-4" />
-                  {post.author}
-                </span>
-                <span>•</span>
-                <span>{post.date}</span>
-                <span>•</span>
-                <span className="flex items-center gap-1.5">
-                  <Clock className="w-4 h-4" />
-                  {post.readTime}
-                </span>
-              </div>
-            </motion.div>
-          </Container>
-        </div>
+              <span>•</span>
+              <span>{post.date}</span>
+              <span>•</span>
+              <span className="flex items-center gap-1.5">
+                <Clock className="w-4 h-4" />
+                {post.readTime}
+              </span>
+            </div>
+          </motion.div>
+        </Container>
       </div>
 
       {/* Content */}
