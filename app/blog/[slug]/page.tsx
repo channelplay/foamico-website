@@ -153,7 +153,7 @@ function parseInlineFormatting(text: string): React.ReactNode {
 
 function formatContent(content: string, faqs: FAQItem[]) {
   const lines = content.trim().split('\n').map(l => l.trim())
-  const elements: JSX.Element[] = []
+  const elements: React.JSX.Element[] = []
   let i = 0
   let inFAQSection = false
 

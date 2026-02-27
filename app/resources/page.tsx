@@ -5,7 +5,6 @@ import Container from '@/components/ui/Container'
 import Card from '@/components/ui/Card'
 import Badge from '@/components/ui/Badge'
 import { blogPosts } from '@/data/blogs'
-import { getPlaceholderImage } from '@/lib/placeholder-images'
 
 export const metadata: Metadata = {
   title: 'Resources & Blog | Foamico',
@@ -39,7 +38,7 @@ export default function ResourcesPage() {
                   <div className="grid lg:grid-cols-5 h-full">
                     <div className="lg:col-span-2 relative h-48 lg:h-full">
                       <Image
-                        src={getPlaceholderImage(post.thumbnail as keyof typeof import('@/lib/placeholder-images').placeholderImages)}
+                        src={post.thumbnailUrl}
                         alt={post.title}
                         fill
                         className="object-cover"
