@@ -37,6 +37,7 @@ export default function Footer() {
     ],
     quickLinks: [
       { name: 'Compare Mattresses', href: '/products/compare' },
+      { name: 'Blog', href: '/blog' },
     ],
   }
 
