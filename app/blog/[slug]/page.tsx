@@ -283,6 +283,28 @@ function formatContent(content: string, faqs: FAQItem[]) {
       continue
     }
 
+    // YouTube iframe embeds
+    if (line.startsWith('<iframe') && line.includes('youtube.com')) {
+      const srcMatch = line.match(/src="([^"]+)"/)
+      if (srcMatch) {
+        const videoSrc = srcMatch[1]
+        elements.push(
+          <div key={i} className="relative w-full my-6" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              src={videoSrc}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full rounded-lg"
+            />
+          </div>
+        )
+      }
+      i++
+      continue
+    }
+
     // Regular paragraphs (with inline formatting)
     if (line.trim()) {
       elements.push(<p key={i} className="text-[#39250E]/80 mb-4 leading-relaxed">{parseInlineFormatting(line)}</p>)

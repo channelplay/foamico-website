@@ -57,6 +57,8 @@ In this blog, you will also find out why you should choose the best-quality matt
 
 ## Top 6 Best Mattresses in India
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ayNUNbV26qA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### 1. Resto Mattress Collection
 
 Everyday comfort with dependable orthopedic support. Resto Classic is built to feel cushioned on top, yet stable underneath—so you wake up fresher, with better posture support night after night.
@@ -97,7 +99,7 @@ Elevated comfort with a balanced, premium feel. Riva 1000 is designed to feel pl
 
 ### Q1. Which mattress is best in India?
 
-The best mattress in India depends on your sleep position, body weight, and health needs. At Foamico, we offer a range of mattresses including orthopedic [memory foam](/blog/what-is-memory-foam-mattress) and hybrid options designed specifically for Indian sleep needs. Look for at least 6–8 inches of height, good [motion isolation](/blog/what-is-motion-isolation-mattress), and a minimum 5-year warranty before deciding.
+The best mattress in India depends on your sleep position, body weight, and health needs. At Foamico, we offer a range of mattresses including orthopedic memory foam and hybrid options designed specifically for Indian sleep needs. Look for at least 6–8 inches of height, good motion isolation, and a minimum 5-year warranty before deciding.
 
 ### Q2. How to choose the best mattress in India?
 
