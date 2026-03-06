@@ -14,6 +14,129 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'best-6-mattresses-in-india-for-2026',
+    title: 'Best 6 Mattresses in India for 2026',
+    excerpt: 'From memory foam to latex foam, discover which Indian mattresses actually relieve back pain, beat the heat & last for years.',
+    author: 'Foamico Sleep Experts',
+    date: 'March 6, 2025',
+    readTime: '10 min read',
+    category: 'Buying Guide',
+    thumbnail: 'blog-best-mattresses-thumbnail-600x400',
+    heroImage: '/blog-healthy-lifestyle.svg',
+    thumbnailUrl: '/blog-healthy-lifestyle.svg',
+    content: `
+When you are tired and ready to go to bed, you need a mattress that allows you to rest comfortably and sleep peacefully.
+
+So, this time, we are going to share a list of the best mattresses in India that are also among the best-selling and most reasonably priced.
+
+Whether you are looking for a luxury mattress or a good-quality mattress, this blog will help you.
+
+In this blog, you will also find out why you should choose the best-quality mattress, along with all the specifications that combine durability and comfort.
+
+## Why You Should Choose the Best Mattress in India?
+
+- The average Indian adult spends 6–8 hours on a mattress every night, making it one of the most-used pieces of furniture in any home — yet one of the most overlooked purchases.
+- A poor-quality mattress leads to chronic back pain, stiff joints, and disrupted sleep cycles, which directly impacts your productivity, mood, and long-term health.
+- India's climate — high humidity, heat, and dust — demands a mattress built specifically for these conditions, not generic imports designed for colder regions.
+- With the Indian mattress market now flooded with hundreds of brands and types (foam, coir, latex, spring, hybrid), choosing the right one without proper guidance means risking thousands of rupees on the wrong product.
+- The right mattress actively supports spinal alignment, reduces pressure points, and improves deep sleep quality — benefits that compound positively over years of use.
+- Investing in a quality mattress is a long-term decision; a good one lasts 8–10 years, making even a ₹15,000–₹20,000 spend less than ₹6 per night.
+
+## Key Considerations for Choosing the Best Mattress in India
+
+- **Sleeping position** — Side sleepers need softer, pressure-relieving foam; back and stomach sleepers benefit more from medium-firm to firm orthopedic support.
+- **Body weight** — Heavier individuals require higher-density foam (40 kg/m³ or above) for adequate support without premature sagging.
+- **Back and joint health** — Those with existing back pain or spine issues should prioritise doctor-recommended orthopedic or SmartGrid mattresses over standard foam options.
+- **Climate and ventilation** — In hot and humid Indian cities, open-cell foam, coir layers, or grid-based mattresses offer far better airflow than traditional memory foam, which traps heat.
+- **Mattress type** — Memory foam contours the body; latex is durable and hypoallergenic; coir offers firm natural support; hybrid combines the benefits of multiple materials.
+- **Budget and value** — Good mattresses in India are available from ₹8,000 to ₹50,000+; the goal is not the cheapest or costliest, but the best value for your specific sleep needs.
+- **Trial period and warranty** — Reputable brands offer 30–100 night free trials and 5–10 year warranties; always check these before buying, especially online.
+- **Couple compatibility** — For shared beds, look for [motion isolation](/blog/what-is-motion-isolation-mattress) technology so one partner's movement doesn't disturb the other's sleep.
+- **Size and room fit** — Choose between single, double, queen, or king size based on your room dimensions, and verify the mattress fits your bed frame before ordering.
+- **Brand credibility** — Stick to established names like Foamico that have verifiable customer reviews and after-sales support across India.
+
+## Top 6 Best Mattresses in India
+
+### 1. Resto Mattress Collection
+
+Everyday comfort with dependable orthopedic support. Resto Classic is built to feel cushioned on top, yet stable underneath—so you wake up fresher, with better posture support night after night.
+
+[Visit the Resto collection](/products/restoclassic)
+
+### 2. Sova Mattresses Collection
+
+Balanced comfort built for everyday sleep. Sova Classic delivers steady orthopedic support with just the right amount of surface cushioning—ideal for consistent posture support and long-term comfort.
+
+[Visit the Sova collection](/products/sovaclassic)
+
+### 3. Luma Mattresses Collection
+
+Comfort that adapts to your everyday rhythm. Luma Classic provides gentle cushioning and dependable support—making it an ideal choice for relaxed, uninterrupted sleep.
+
+[Visit the Luma collection](/products/lumaclassic)
+
+### 4. Ultima Mattresses Collection
+
+Reliable comfort built to last. Ultima Classic is engineered for consistent support and durability—making it a dependable choice for long-term everyday use.
+
+[Visit the Ultima collection](/products/ultimaclassic)
+
+### 5. Natura 2.0 Mattresses Collection
+
+Naturally responsive comfort with deep cushioning. Natura 1.0 combines latex support with plush comfort layers to deliver a breathable, pressure-relieving sleep feel.
+
+[Visit the Natura collection](/products/natura1)
+
+### 6. Riva 1000 Mattresses Collection
+
+Elevated comfort with a balanced, premium feel. Riva 1000 is designed to feel plush on top while keeping your body supported and stable.
+
+[Visit the Riva collection](/products/riva1000)
+
+## Frequently Asked Questions
+
+### Q1. Which mattress is best in India?
+
+The best mattress in India depends on your sleep position, body weight, and health needs. At Foamico, we offer a range of mattresses including orthopedic [memory foam](/blog/what-is-memory-foam-mattress) and hybrid options designed specifically for Indian sleep needs. Look for at least 6–8 inches of height, good [motion isolation](/blog/what-is-motion-isolation-mattress), and a minimum 5-year warranty before deciding.
+
+### Q2. How to choose the best mattress in India?
+
+To choose the best mattress in India, consider four factors: your preferred sleep position (back, side, or stomach), your body weight, whether you sleep hot or cold, and your budget. Foamico mattresses come with a home trial period so you can test comfort risk-free before committing — no pressure, no hassle.
+
+### Q3. Who is the best mattress in India?
+
+Foamico is one of India's most trusted mattress brands, built around the belief that every Indian deserves quality sleep without compromise. Whether you need orthopaedic support, cooling comfort, or a budget-friendly option, Foamico has a mattress designed for your exact sleep need.
+
+### Q4. What is the best mattress type in India?
+
+[Memory foam](/blog/what-is-memory-foam-mattress), hybrid, coir, and spring are the four main [mattress types](/blog/types-of-mattress-in-india) available in India. Foamico specialises in high-density memory foam and hybrid mattresses that suit the Indian climate and a wide range of sleep preferences — from firm orthopaedic support to plush pressure-relieving comfort.
+
+### Q5. Which mattress type is best for side sleepers?
+
+Side sleepers need a medium-soft to medium-firm mattress that cushions the shoulders and hips while keeping the spine aligned. Foamico's [memory foam](/blog/what-is-memory-foam-mattress) and hybrid mattresses are engineered with pressure-relieving layers that contour to your body shape, making them an ideal choice for side sleepers across all body types.
+
+### Q6. What is the best mattress in India for back pain?
+
+The best mattress in India for back pain is an orthopaedic or medium-firm memory foam mattress that supports the lumbar region without being too hard or too soft. Foamico's orthopaedic mattress range is designed with zoned support and high-density base foam to relieve back pain and promote healthy spinal alignment from the very first night.
+
+### Q7. What is a comparison of memory foam vs spring mattress in India?
+
+[Memory foam](/blog/what-is-memory-foam-mattress) mattresses offer better pressure relief, [motion isolation](/blog/what-is-motion-isolation-mattress), and back support — making them ideal for couples and back pain sufferers. Spring mattresses are more breathable and budget-friendly but wear out faster. Foamico's hybrid mattresses combine the best of both, giving you the bounce of springs with the comfort and support of memory foam — perfect for Indian climate conditions.
+
+### Q8. Which mattress brands offer a trial period in India?
+
+Foamico offers a generous home trial period so you can sleep on your new mattress in the comfort of your own home before making a final decision. If it's not the right fit, our hassle-free return process ensures you're never stuck with a mattress that doesn't work for you. Check our website for the latest trial period details.
+
+### Q9. Where can I find affordable mattresses in India?
+
+You can shop Foamico mattresses directly on our website and leading platforms like Amazon and Flipkart. Foamico is built on the promise of delivering premium quality at honest prices, so you never have to choose between comfort and affordability. Keep an eye on our website for seasonal offers and festive sale discounts.
+
+### Q10. What are the top-rated mattresses available for purchase in India?
+
+Foamico's top-rated mattresses available for purchase in India include our Orthopaedic Memory Foam, Hybrid Comfort, and our signature Deep Sleep series — each designed to address a specific sleep need, body type, and budget. Thousands of Indian customers have rated Foamico mattresses highly for durability, comfort, and back support, making us one of the most trusted names in the Indian sleep space.
+    `
+  },
+  {
     slug: 'which-mattress-material-lasts-longest',
     title: 'Which Material Lasts Longest in a Mattress? A Complete Guide',
     excerpt: 'Compare mattress lifespans by material — natural latex, memory foam, hybrid & innerspring. Learn what affects durability and how to choose a long-lasting mattress.',
