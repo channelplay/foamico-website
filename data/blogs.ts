@@ -1387,7 +1387,379 @@ Yes — HR foam with medium-to-firm density is an excellent choice for children'
 
 *Want to experience the Foamico difference? Explore our HR Foam Mattress collection — engineered for India's climate, built to last.*
     `
-  }
+  },
+  {
+    slug: 'different-sleep-styles-mattress-guide',
+    title: 'Different Bodies, Different Sleep Styles — How to Choose the Right Mattress for Your Body',
+    excerpt: 'Not every body sleeps the same way. Learn how to choose the right mattress based on your body type, comfort preference, and sleep style.',
+    author: 'Foamico Sleep Experts',
+    date: 'March 26, 2026',
+    readTime: '5 min read',
+    category: 'Buying Guide',
+    thumbnail: 'blog-sleep-styles-thumbnail-600x400',
+    heroImage: '/blog-dreamer.svg',
+    thumbnailUrl: '/blog-dreamer.svg',
+    content: `
+When people shop for a mattress, they usually do the same thing.
+
+Press the top. Sit on the edge. Maybe lie down for a minute.
+
+If it feels comfortable, they assume it's the right choice.
+
+But sleep comfort isn't just about what feels good for five minutes in a showroom. It's about how well a mattress supports your body through hundreds of nights.
+
+Because the truth is simple: **different bodies need different kinds of support.**
+
+Here's a simple way to think about it before choosing your next mattress.
+
+## 1. If You Prefer a Firm Mattress
+
+For some people, sleep comfort begins with one clear preference: firmness.
+
+They don't want to sink too much into the mattress. They want something stable, grounded, and supportive right from the start.
+
+If that sounds like you, a balanced foam mattress is usually the right place to begin.
+
+The **RESTO range** is designed for sleepers who prefer a firmer feel without excessive bounce. It offers a slightly less rubbery texture while still providing comfort through carefully layered foam construction.
+
+[Explore the Resto Collection](/products/restoclassic)
+
+It's a great entry point into premium foam mattresses for people who want dependable support without too much sink.
+
+Think of it as steady comfort that doesn't try too hard to feel soft.
+
+## 2. If Your Body Needs Stronger Support
+
+Firmness alone isn't always enough.
+
+Heavier body types often require a mattress that goes a step further — one with stronger internal structure to maintain proper spinal alignment night after night.
+
+Standard foam can sometimes compress too quickly under heavier weight, which is why reinforced support layers matter.
+
+The **SOVA range** is built for that extra durability.
+
+It has a denser, more rubbery feel and stronger support layers designed specifically for plus-size sleepers or anyone who needs a more robust mattress structure.
+
+[Explore the Sova Collection](/products/sovaclassic)
+
+The result is a mattress that feels stable, supportive, and built for everyday use without losing comfort.
+
+Because the right mattress shouldn't adapt only for a few months. It should support you for years.
+
+## 3. If You're Thinking About Long-Term Value
+
+A mattress isn't just about comfort today.
+
+It's also about how well it performs five, ten, or even twenty years from now.
+
+Durability, moisture resistance, and material quality all play a role in how long a mattress truly lasts.
+
+That's where the **ULTIMA range** comes in.
+
+These mattresses use graphite-infused comfort layers designed to manage moisture and improve longevity. Combined with engineered support layers, they're positioned to last significantly longer than typical mattresses — even up to **25 years of mattress life**.
+
+[Explore the Ultima Collection](/products/ultimaclassic)
+
+If you're thinking about long-term comfort and better value over time, this range focuses on engineering that lasts.
+
+## 4. If You Want Luxury Comfort or Cooler Sleep
+
+Some sleepers love that plush, buoyant hotel-style bounce.
+
+Others prefer a cooler, more natural sleep experience that feels breathable and light.
+
+Two different mattress technologies offer these two distinct sensations.
+
+### Hotel-Style Bounce — The LUMA Range
+
+The **LUMA range** uses hybrid pocket springs to create that classic hotel-like bounce. Springs respond to movement, giving the mattress a lively, soft feel while still maintaining structure underneath.
+
+If you enjoy a mattress that feels plush, responsive, and luxurious, this is usually the experience people describe as "hotel comfort."
+
+[Explore the Luma Collection](/products/lumaclassic)
+
+### Natural Cooling Comfort — The NATURA Range
+
+The **NATURA range** focuses on natural latex comfort. Latex is known for its resilience, breathability, and cooling properties — often delivering a sleep surface that can feel around **4°C cooler** than traditional foam.
+
+[Explore the Natura Collection](/products/naturaclassic)
+
+So the choice becomes simple:
+
+- **Want plush bounce?** → LUMA
+- **Want cooler natural comfort?** → NATURA
+
+Your body will tell you which one feels right.
+
+## Your Body Deserves Better Sleep
+
+Choosing a mattress isn't just a purchase. It's a decision that affects how you wake up every single day.
+
+- Some people need firm foam.
+- Some need heavy-duty support.
+- Some want long-term durability.
+- Others want luxury bounce or cooler sleep.
+
+The right mattress is the one engineered for your body, your comfort, and your sleep style.
+
+If you're ready to find the one that suits you best, it might be time to [explore your options with Foamico](/) and experience the difference yourself!
+
+Because better sleep starts with the right mattress.
+
+## Frequently Asked Questions
+
+### How do I know which mattress firmness is right for me?
+
+It depends on your body type and sleep preference. If you prefer a stable, grounded feel without too much sink, try a firm foam mattress like the RESTO range. Heavier body types may need reinforced support like the SOVA range. The best way to decide is to match your body's needs with the right mattress engineering.
+
+### Which Foamico mattress is best for heavy body types?
+
+The **SOVA range** is specifically designed for plus-size sleepers. It uses denser, more rubbery foam with stronger support layers to maintain spinal alignment and prevent sagging over time.
+
+### What makes the ULTIMA range last up to 25 years?
+
+ULTIMA mattresses use graphite-infused comfort layers that manage moisture and resist material breakdown. Combined with engineered support layers, they're built to maintain performance far longer than standard mattresses.
+
+### Which mattress gives that hotel-style bounce?
+
+The **LUMA range** uses hybrid pocket springs to deliver that classic hotel-like plush bounce. If you love responsive, buoyant comfort, LUMA is the right choice.
+
+### Is latex really cooler than memory foam?
+
+Yes. Natural latex, like that used in the **NATURA range**, is naturally breathable and can feel around 4°C cooler than traditional foam. It's an excellent choice for sleepers in warm climates.
+    `
+  },
+  {
+    slug: 'sleep-lab-myth-busting-firm-mattress',
+    title: 'The Sleep Lab Files #1: Myth-Busting the Rock-Hard Mattress Theory',
+    excerpt: 'Is a firm mattress always better for your back? We bust this common myth and explain the engineering science behind real mattress comfort.',
+    author: 'Foamico Sleep Experts',
+    date: 'March 26, 2026',
+    readTime: '6 min read',
+    category: 'Sleep Science',
+    thumbnail: 'blog-sleep-lab-thumbnail-600x400',
+    heroImage: '/blog-medicine.svg',
+    thumbnailUrl: '/blog-medicine.svg',
+    content: `
+It's funny how we view sleep. There is a common obsession with finding the "perfect" night's sleep, yet much of the population operates on outdated information.
+
+When analysing data and technical structures, it is fascinating to observe how sleep is often treated as a simple off-switch. There is a general assumption that the body simply "does the rest" once it lies down.
+
+In reality, sleep is a complex biomechanical process that requires specific equipment to function efficiently. It is not merely about lying still; it is about **Engineering Comfort**.
+
+The first step in optimising this system is dismantling one of the oldest myths in the industry.
+
+## The Myth: "A Firm Mattress Is Always Better for the Back"
+
+**The Origin Story:** For decades, "legacy advice" suggested that those experiencing back pain should essentially sleep on a slab of granite. The logic followed that a hard surface would keep the spine "straight."
+
+**The Reality (The "Bust"):** Modern sleep science (and many a grumpy morning) proves this to be false. A mattress that is too firm fails to contour to the natural "S" curve of the spine.
+
+Instead of providing support, it creates **pressure points** at the shoulders and hips, leaving the lower back hanging without central support. This leads to persistent muscle tension because the body must work throughout the night to maintain spinal alignment. Rather than resting, you're effectively performing a low-intensity plank for eight hours.
+
+## The Fact: It's All About "Zonal Support" and Material Density
+
+Optimal rest does not require "hardness"; it requires **engineered support**. This is where the physics of sleep becomes critical. Depending on body type and sleep style, the "right" firmness is a variable, not a constant.
+
+Here is how different engineering approaches solve the support puzzle:
+
+### 1. Heavy-Duty Support (The Sova Range)
+
+For plus-size individuals or those who prefer a "rubbery" bounce over a sinking sensation, high-density support is required to prevent excessive compression.
+
+- **Sova Classic:** Utilises Posture Bond Foam, a heavy-duty support layer designed specifically to maintain structural integrity under higher weight loads.
+- **Sova Luxury:** Combines a heavy base with Plush Core Latex Foam for a springy, rubbery response that prevents the sleeper from "bottoming out."
+
+[Explore the Sova Collection](/products/sovaclassic)
+
+### 2. The "Firm-but-Flexible" Feel (The Resto Range)
+
+For those seeking a classic firm feel without "sidewalk" hardness, a balance of core strength and surface softness is necessary.
+
+- **Resto Classic:** Uses Pro Nexa Foam and Enduro HR Foam for a solid base, but adds Aeroluxe Foam Quilting on top. This serves as the "flavour layer" — providing initial surface comfort while the core keeps the skeletal structure intact.
+
+[Explore the Resto Collection](/products/restoclassic)
+
+### 3. The High-Tech Cooling Hybrid (The Natura Range)
+
+Frequently, the "breakdown" in sleep engineering is not support-related, but rather a matter of thermal regulation.
+
+- **Natura 1.0:** Specifically designed for cooling. It uses Pincore Latex Foam, which is naturally about 4°C cooler. This allows muscles to relax into the support without the "heat trap" common in basic foams.
+
+[Explore the Natura Collection](/products/naturaclassic)
+
+### 4. "No-Sinking" Memory (The Ultima & Riva)
+
+For those who require the contouring of [memory foam](/blog/what-is-memory-foam-mattress) without the sensation of being "stuck" in a structural hole:
+
+- **Ultima Luxury:** Features MemoryX Foam. This is modern memory foam — plush, but engineered without the typical "quicksand" sinking sensation.
+- **Riva 3000:** Represents the peak of advanced comfort layering for those seeking a "floating on a cloud" sensation while maintaining proper alignment.
+
+[Explore the Ultima Collection](/products/ultimaclassic)
+
+## The Verdict
+
+The spine should not be punished with a "rock-hard" mattress based on outdated health brochures. The goal is to find a system that balances **Base Support** (such as Enduro HR or Posture Bond) with a **Comfort Flavour Layer** (such as Cosmic Epic or Aeroluxe).
+
+> Your spine is a curve, not a plank. It should be treated as such.
+
+Ready to upgrade your sleep specs? Stop guessing and start engineering your perfect night's rest with [Foamico](/) today!
+
+## Frequently Asked Questions
+
+### Is a firm mattress really bad for your back?
+
+Not necessarily — but a mattress that is **too** firm can be harmful. If it doesn't contour to your spine's natural S-curve, it creates pressure points at the shoulders and hips while leaving the lower back unsupported. The key is engineered support that matches your body type, not just maximum hardness.
+
+### What is zonal support in a mattress?
+
+Zonal support means different areas of the mattress provide different levels of firmness. Your shoulders and hips need more give (to relieve pressure), while your lower back needs firmer support (to maintain alignment). This is achieved through layered foam engineering rather than uniform firmness.
+
+### Which Foamico mattress is best for back pain?
+
+It depends on your body type. The **Resto range** offers firm-but-flexible support for average builds, while the **Sova range** provides heavy-duty orthopedic support for plus-size individuals. Both are engineered to maintain spinal alignment without excessive hardness.
+
+### Does memory foam cause a sinking feeling?
+
+Traditional memory foam can create a "quicksand" sensation, but modern engineered foams like MemoryX Foam (used in the **Ultima Luxury**) are designed to contour without trapping you. They provide pressure relief while maintaining enough responsiveness to move freely.
+
+### What makes latex mattresses cooler than foam?
+
+Natural latex has an open-cell structure that allows air to circulate freely. Pincore Latex Foam (used in the **Natura range**) is naturally about 4°C cooler than traditional foam, making it ideal for hot sleepers and warm Indian climates.
+    `
+  },
+  {
+    slug: 'what-i-wish-i-knew-before-buying-mattress',
+    title: 'What I Wish I Knew Before Buying a Mattress',
+    excerpt: 'A first-person account of mattress buying mistakes and the lessons that can save you from making the same ones. Everything you should know before your next purchase.',
+    author: 'Foamico Sleep Experts',
+    date: 'March 26, 2026',
+    readTime: '7 min read',
+    category: 'Buying Guide',
+    thumbnail: 'blog-mattress-tips-thumbnail-600x400',
+    heroImage: '/blog-couple.svg',
+    thumbnailUrl: '/blog-couple.svg',
+    content: `
+I bought my first mattress during a Diwali sale.
+
+The salesman smiled and said, *"Madam, hotel jaisa feel."*
+
+It felt soft. Plush. Luxurious.
+
+So I said yes.
+
+**My back said no.**
+
+A few weeks later, I realised something important: a mattress isn't about how it feels for five minutes in a showroom. It's about how it supports you for the next 10 years.
+
+Here's what I wish I had known when I bought my first mattress — and what you should remember before buying yours.
+
+## 1. Soft and Supportive Are Not the Same
+
+The biggest mistake? Confusing softness with support.
+
+That fluffy top layer is just the comfort surface. What really matters is the **structure underneath**.
+
+For example, the Foamico **RESTO range** is designed for people who want firm foam comfort without too much rubbery bounce. While the surface uses plush materials like Super Plush Luxknit Fabric and Aeroluxe Foam Quilting, the real work happens below — with layers like Pro Nexa Foam and Enduro HR Foam that maintain structure and durability.
+
+If you want affordable, dependable firmness, [RESTO Classic or Premium](/products/restoclassic) are smart entry points.
+
+> **Lesson:** Don't just press the top. Ask what's inside.
+
+## 2. India's Climate Changes Everything
+
+Heat and humidity matter more than most people think. Some foams trap heat, which means sweaty, restless nights.
+
+If you live in India, **moisture resistance and airflow** are essential. That's where the **ULTIMA range** stands out.
+
+Ultima mattresses feature Cloud Sense Foam (graphite-infused for moisture resistance) and Zero G Latex Foam (lightweight yet strong support). They're engineered for long-term durability — even positioned as **25-year mattresses**.
+
+If you're buying for the long haul and want better "cost per night" value, [Ultima Premium or Luxury](/products/ultimaclassic) are built for that.
+
+> **Cooling isn't a luxury feature here. It's a necessity.**
+
+## 3. Weight Matters More Than You Think
+
+Not all mattresses are built for every body type.
+
+If you're on the heavier side, standard foam can sag faster. You need stronger internal support.
+
+The **SOVA range** is specifically built for heavy-duty performance. It combines Posture Bond Foam (orthopedic-grade support) with Plush Core Latex Foam for rubber-like resilience.
+
+[Explore the Sova Collection](/products/sovaclassic)
+
+Sova is more rubbery, denser, and ideal for **plus-size individuals** or anyone needing stronger spinal support.
+
+> **Softness is optional. Structural support isn't.**
+
+## 4. That "Hotel Bounce"? It's Springs.
+
+When someone says "hotel jaisa feel," they usually mean bounce.
+
+That bounce comes from **Hybrid Pocket Springs**.
+
+The **LUMA range** is Foamico's hotel-style collection. It uses pocket springs supported by foam comfort layers and a stabilising base. The Premium versions are thicker and softer, while Luxury models add extra comfort layers for a richer plush feel.
+
+If you love that springy, buoyant hotel experience, [explore the Luma range](/products/lumaclassic).
+
+> **Now you know it's engineering. Not magic.**
+
+## 5. Latex Isn't Hype
+
+[Natural latex](/blog/what-is-latex-mattress) is one of the most resilient and breathable materials available.
+
+It's rubbery, responsive, and typically **~4°C cooler** than traditional [memory foam](/blog/what-is-memory-foam-mattress).
+
+The **NATURA range** is built around natural latex technology, including Pincore Latex Foam and 7-Zone Latex Foam for balanced, cooling support.
+
+If you want breathable luxury without the deep sinking feel, [latex is worth considering](/products/naturaclassic).
+
+## 6. Want to Feel Like You're Floating?
+
+Some people want firmness. Some want bounce. Some want to feel weightless.
+
+The **RIVA range** is designed for that "flying cloud" sensation. As you move from Riva 1000 to 3000, the comfort layering becomes more advanced, creating a richer, floating feel for ultra-premium buyers.
+
+## Final Lesson: This Is a 10-Year Decision
+
+We spend one-third of our lives sleeping. Yet we often buy mattresses impulsively.
+
+Before choosing, ask yourself:
+
+- **Do I need firm foam?** → [RESTO](/products/restoclassic)
+- **Heavy-duty support?** → [SOVA](/products/sovaclassic)
+- **Moisture-resistant engineering?** → [ULTIMA](/products/ultimaclassic)
+- **Hotel-style bounce?** → [LUMA](/products/lumaclassic)
+- **Natural cooling latex?** → [NATURA](/products/naturaclassic)
+- **Cloud-like indulgence?** → RIVA
+
+Your mattress decides how you feel every morning. Don't buy it like bedsheets.
+
+**Choose the one that's engineered for your body. Not just the one that feels soft for five minutes in a store.**
+
+## Frequently Asked Questions
+
+### How do I know if my mattress is too soft?
+
+If you wake up with lower back pain, feel like you're sinking into the bed, or struggle to change positions at night, your mattress may be too soft. A good mattress should support your spine's natural alignment — not let you collapse into it.
+
+### How long should a good mattress last?
+
+A quality mattress should last **8 to 12 years** depending on the material. Premium options like the Foamico ULTIMA range are engineered to last up to 25 years thanks to graphite-infused foam and advanced support layers.
+
+### Is a spring mattress better than foam?
+
+Neither is universally "better" — they serve different preferences. Spring/hybrid mattresses (like the **LUMA range**) offer bounce and responsiveness. Foam mattresses (like **RESTO** or **SOVA**) offer firm, motion-isolated support. The best choice depends on your body type and sleep style.
+
+### Why does my mattress feel hot at night?
+
+Standard memory foam can trap body heat. If heat is an issue, look for mattresses with natural latex (like the **NATURA range**, which sleeps ~4°C cooler) or graphite-infused foam (like the **ULTIMA range**) designed for better thermal regulation.
+
+### What mattress should I buy if I'm overweight?
+
+The **SOVA range** is designed specifically for plus-size sleepers. It uses high-density Posture Bond Foam and Plush Core Latex for heavy-duty orthopedic support that resists sagging and maintains spinal alignment under higher weight loads.
+    `
+  },
 ]
 
 export function getBlogPost(slug: string): BlogPost | undefined {
